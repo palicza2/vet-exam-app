@@ -3,44 +3,32 @@ import { initializeApp } from 'firebase/app';
 import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, onAuthStateChanged, signOut, signInWithCustomToken } from 'firebase/auth';
 import { getFirestore, doc, setDoc, updateDoc, onSnapshot } from 'firebase/firestore';
 import { 
+  Book, 
   BookOpen, CheckCircle, PieChart, Activity, RotateCcw, ChevronRight, Check, X, 
   Brain, LogOut, Lock, Mail, Microscope, AlertTriangle, Pill, ShieldAlert,
   ChevronDown, ChevronUp
 } from 'lucide-react';
 
 // --- Firebase Configuration Setup ---
-let app, auth, db;
-let configError = false;
-const appId = typeof __app_id !== 'undefined' ? __app_id : 'vet-exam-app';
 
-try {
-  // 1. Try to use the Preview Environment config (Works in this Chat)
-  const firebaseConfig = JSON.parse(__firebase_config);
-  app = initializeApp(firebaseConfig);
-  auth = getAuth(app);
-  db = getFirestore(app);
-} catch (e) {
-  // 2. Fallback for GitHub/Vercel
-  // I have applied your specific configuration here.
-  const myRealConfig = {
-    apiKey: "AIzaSyDY0pJFOZl2qvBldGqdpY8hDvBKryEhE-w",
-    authDomain: "vet-exam-app.firebaseapp.com",
-    projectId: "vet-exam-app",
-    storageBucket: "vet-exam-app.firebasestorage.app",
-    messagingSenderId: "667121013022",
-    appId: "1:667121013022:web:d12599eb4250315c21f90f",
-    measurementId: "G-84Z79H0EMC"
-  };
+// 1. Hardcoded App ID ensures the database path is always valid (fixes the "7 segments" error)
+const appId = 'vet-exam-app'; 
 
-  try {
-    app = initializeApp(myRealConfig);
-    auth = getAuth(app);
-    db = getFirestore(app);
-  } catch (err) {
-    console.error("Firebase init failed:", err);
-    configError = true;
-  }
-}
+// 2. Your Real Configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyDY0pJFOZl2qvBldGqdpY8hDvBKryEhE-w",
+  authDomain: "vet-exam-app.firebaseapp.com",
+  projectId: "vet-exam-app",
+  storageBucket: "vet-exam-app.firebasestorage.app",
+  messagingSenderId: "667121013022",
+  appId: "1:667121013022:web:d12599eb4250315c21f90f",
+  measurementId: "G-84Z79H0EMC"
+};
+
+// 3. Initialize Firebase directly (Removed the try/catch logic that was causing issues)
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
 
 // --- Structured Data & Content ---
 
@@ -509,7 +497,7 @@ const QuestionCard = ({ question, onAnswer, showFeedback, userAnswer }) => {
 
 export default function App() {
   const [user, setUser] = useState(null);
-  const [authLoading, setAuthLoading] = useState(!configError); // Don't load if config is missing
+  const [authLoading, setAuthLoading] = useState(true);
   const [view, setView] = useState('landing'); 
   
   // Login State
@@ -539,13 +527,6 @@ export default function App() {
 
   // --- Auth & Init ---
   useEffect(() => {
-    if (configError) return; // Skip if config is bad
-
-    if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
-       signInWithCustomToken(auth, __initial_auth_token)
-         .catch(err => console.error("Preview auth failed", err));
-    }
-
     const unsubscribe = onAuthStateChanged(auth, (u) => {
       setUser(u);
       setAuthLoading(false);
@@ -555,9 +536,11 @@ export default function App() {
 
   // --- Firestore Sync ---
   useEffect(() => {
-    if (!user || configError) return;
+    if (!user) return;
     
+    // Explicitly using the sanitized appId
     const statsRef = doc(db, 'artifacts', appId, 'users', user.uid, 'data', 'stats');
+    
     const unsub = onSnapshot(statsRef, (docSnap) => {
       if (docSnap.exists()) {
         setStats(docSnap.data());
@@ -574,7 +557,6 @@ export default function App() {
   // --- Auth Functions ---
   const handleAuth = async (e) => {
     e.preventDefault();
-    if (configError) return;
     setAuthError('');
     try {
       if (isRegistering) {
@@ -588,7 +570,6 @@ export default function App() {
   };
 
   const handleSignOut = () => {
-    if (configError) return;
     signOut(auth);
     setStats({ totalAnswered: 0, totalCorrect: 0, byTopic: {}, examHistory: [] });
     setView('landing');
@@ -597,7 +578,7 @@ export default function App() {
   // --- App Actions ---
 
   const updateStats = async (isCorrect, topic, isExam = false, examScoreVal = 0) => {
-    if (!user || configError) return;
+    if (!user) return;
     const statsRef = doc(db, 'artifacts', appId, 'users', user.uid, 'data', 'stats');
     
     const newStats = { ...stats };
@@ -687,39 +668,13 @@ export default function App() {
     setExamScore(correctCount);
     setExamSubmitted(true);
     
-    if (user && !configError) {
+    if (user) {
       const statsRef = doc(db, 'artifacts', appId, 'users', user.uid, 'data', 'stats');
       await updateDoc(statsRef, newStats);
     }
   };
 
   // --- Views ---
-
-  // Safety Fallback View
-  if (configError) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-red-50 p-4">
-        <div className="bg-white p-8 rounded-2xl shadow-xl max-w-lg w-full text-center border-2 border-red-100">
-          <div className="bg-red-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
-            <ShieldAlert className="text-red-600" size={32} />
-          </div>
-          <h2 className="text-2xl font-bold text-slate-800 mb-3">Database Setup Required</h2>
-          <p className="text-slate-600 mb-6">
-            The app cannot connect to Firebase. This usually happens on Vercel/GitHub 
-            if you haven't replaced the placeholder keys yet.
-          </p>
-          <div className="text-left bg-slate-50 p-4 rounded-lg border border-slate-200 text-sm font-mono text-slate-600 mb-6">
-            1. Open src/App.jsx on GitHub<br/>
-            2. Find "const myRealConfig"<br/>
-            3. Paste your keys from Firebase Console
-          </div>
-          <a href="https://console.firebase.google.com" target="_blank" className="inline-block bg-red-600 text-white px-6 py-2 rounded-lg font-bold hover:bg-red-700">
-            Go to Firebase Console
-          </a>
-        </div>
-      </div>
-    );
-  }
 
   if (authLoading) return <div className="min-h-screen flex items-center justify-center bg-slate-50"><Activity className="animate-spin text-indigo-600" size={32} /></div>;
 
