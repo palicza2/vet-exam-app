@@ -620,66 +620,84 @@ export default function App() {
 
   if (!user) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-slate-50 px-4">
-        <div className="bg-white p-8 rounded-2xl shadow-xl max-w-md w-full border border-slate-100">
-          <div className="text-center mb-8">
-            <div className="bg-indigo-100 w-16 h-16 rounded-xl flex items-center justify-center mx-auto mb-4 text-indigo-600">
-              <Brain size={32} />
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-50 via-white to-blue-50 px-4">
+        <div className="w-full max-w-md">
+          <div className="bg-white p-8 rounded-2xl shadow-xl border border-slate-100">
+            <div className="text-center mb-8">
+              <div className="inline-flex p-3 rounded-2xl bg-indigo-600 text-white mb-4 shadow-lg shadow-indigo-200">
+                <Brain size={32} />
+              </div>
+              <h1 className="text-2xl font-bold text-slate-900 mb-2">Welcome Back</h1>
+              <p className="text-slate-500">
+                {isRegistering ? 'Create an account to track your progress' : 'Sign in to continue your preparation'}
+              </p>
             </div>
-            <h1 className="text-2xl font-bold text-slate-800">Vet Exam Prep</h1>
-            <p className="text-slate-500">Sign in to save your progress across devices.</p>
+
+            <form onSubmit={handleAuth} className="space-y-5">
+              {/* Email Input */}
+              <div className="space-y-1">
+                <label className="text-sm font-semibold text-slate-700 ml-1">Email Address</label>
+                <div className="relative group">
+                  <div className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-indigo-600 transition-colors">
+                    <Mail size={18} />
+                  </div>
+                  <input 
+                    type="email" 
+                    required
+                    className="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all font-medium text-slate-800 placeholder:text-slate-400"
+                    placeholder="name@example.com"
+                    value={email}
+                    onChange={e => setEmail(e.target.value)}
+                  />
+                </div>
+              </div>
+              
+              {/* Password Input */}
+              <div className="space-y-1">
+                <label className="text-sm font-semibold text-slate-700 ml-1">Password</label>
+                <div className="relative group">
+                  <div className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-indigo-600 transition-colors">
+                    <Lock size={18} />
+                  </div>
+                  <input 
+                    type="password" 
+                    required
+                    className="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all font-medium text-slate-800 placeholder:text-slate-400"
+                    placeholder="••••••••"
+                    value={password}
+                    onChange={e => setPassword(e.target.value)}
+                  />
+                </div>
+              </div>
+
+              {authError && (
+                <div className="p-4 bg-red-50 border border-red-100 text-red-600 text-sm rounded-xl flex items-start gap-3">
+                  <div className="shrink-0 mt-0.5"><X size={16} /></div>
+                  {authError}
+                </div>
+              )}
+
+              <button type="submit" className="w-full bg-indigo-600 text-white py-3.5 rounded-xl font-bold hover:bg-indigo-700 focus:ring-4 focus:ring-indigo-500/20 transition-all shadow-lg shadow-indigo-200 hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0">
+                {isRegistering ? 'Create Account' : 'Sign In'}
+              </button>
+            </form>
+
+            <div className="mt-8 pt-6 border-t border-slate-100 text-center">
+              <p className="text-slate-500 text-sm mb-2">
+                {isRegistering ? 'Already have an account?' : "Don't have an account yet?"}
+              </p>
+              <button 
+                onClick={() => { setIsRegistering(!isRegistering); setAuthError(''); }}
+                className="text-indigo-600 font-bold hover:text-indigo-700 transition-colors"
+              >
+                {isRegistering ? 'Sign in instead' : 'Create a free account'}
+              </button>
+            </div>
           </div>
-
-          <form onSubmit={handleAuth} className="space-y-4">
-            <div>
-              <label className="block text-sm font-medium text-slate-700 mb-1">Email</label>
-              <div className="relative">
-                <Mail className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" size={18} />
-                <input 
-                  type="email" 
-                  required
-                  className="w-full pl-10 pr-4 py-2 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                  placeholder="name@example.com"
-                  value={email}
-                  onChange={e => setEmail(e.target.value)}
-                />
-              </div>
-            </div>
-            
-            <div>
-              <label className="block text-sm font-medium text-slate-700 mb-1">Password</label>
-              <div className="relative">
-                <Lock className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" size={18} />
-                <input 
-                  type="password" 
-                  required
-                  className="w-full pl-10 pr-4 py-2 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                  placeholder="••••••••"
-                  value={password}
-                  onChange={e => setPassword(e.target.value)}
-                />
-              </div>
-            </div>
-
-            {authError && (
-              <div className="p-3 bg-red-50 text-red-600 text-sm rounded-lg">
-                {authError}
-              </div>
-            )}
-
-            <button type="submit" className="w-full bg-indigo-600 text-white py-2 rounded-lg font-bold hover:bg-indigo-700 transition-colors">
-              {isRegistering ? 'Create Account' : 'Sign In'}
-            </button>
-          </form>
-
-          <div className="mt-6 text-center">
-            <button 
-              onClick={() => { setIsRegistering(!isRegistering); setAuthError(''); }}
-              className="text-indigo-600 text-sm hover:underline"
-            >
-              {isRegistering ? 'Already have an account? Sign in' : "Don't have an account? Sign up"}
-            </button>
-          </div>
+          
+          <p className="text-center text-slate-400 text-xs mt-8">
+            © {new Date().getFullYear()} Veterinary Exam Prep
+          </p>
         </div>
       </div>
     );
