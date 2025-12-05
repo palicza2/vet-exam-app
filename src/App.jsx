@@ -9,7 +9,6 @@ import {
 } from 'lucide-react';
 
 // --- Firebase Configuration Setup ---
-// We wrap this in a try-catch to prevent the app from crashing white if variables are missing.
 let app, auth, db;
 let configError = false;
 const appId = typeof __app_id !== 'undefined' ? __app_id : 'vet-exam-app';
@@ -21,28 +20,25 @@ try {
   auth = getAuth(app);
   db = getFirestore(app);
 } catch (e) {
-  // 2. If that fails (e.g. on Vercel), we check if you have replaced the keys yet.
-  // REPLACE THE OBJECT BELOW WITH YOUR OWN KEYS FROM FIREBASE CONSOLE
+  // 2. Fallback for GitHub/Vercel
+  // I have applied your specific configuration here.
   const myRealConfig = {
-  apiKey: "AIzaSyDY0pJFOZl2qvBldGqdpY8hDvBKryEhE-w",
-  authDomain: "vet-exam-app.firebaseapp.com",
-  projectId: "vet-exam-app",
-  storageBucket: "vet-exam-app.firebasestorage.app",
-  messagingSenderId: "667121013022",
-  appId: "1:667121013022:web:d12599eb4250315c21f90f",
-  measurementId: "G-84Z79H0EMC"
+    apiKey: "AIzaSyDY0pJFOZl2qvBldGqdpY8hDvBKryEhE-w",
+    authDomain: "vet-exam-app.firebaseapp.com",
+    projectId: "vet-exam-app",
+    storageBucket: "vet-exam-app.firebasestorage.app",
+    messagingSenderId: "667121013022",
+    appId: "1:667121013022:web:d12599eb4250315c21f90f",
+    measurementId: "G-84Z79H0EMC"
   };
 
   try {
-    // Check if user has actually updated the placeholder values
-    if (myRealConfig.apiKey === "AIzaSyDY0pJFOZl2qvBldGqdpY8hDvBKryEhE-w") {
-      throw new Error("Config not set");
-    }
     app = initializeApp(myRealConfig);
     auth = getAuth(app);
     db = getFirestore(app);
   } catch (err) {
-    configError = true; // Flag to show the setup screen
+    console.error("Firebase init failed:", err);
+    configError = true;
   }
 }
 
