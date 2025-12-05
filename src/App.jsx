@@ -2,11 +2,28 @@ import React, { useState, useEffect } from 'react';
 import { initializeApp } from 'firebase/app';
 import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, onAuthStateChanged, signOut, signInWithCustomToken } from 'firebase/auth';
 import { getFirestore, doc, setDoc, updateDoc, onSnapshot } from 'firebase/firestore';
-import { BookOpen, CheckCircle, PieChart, Activity, RotateCcw, ChevronRight, Check, X, Book, Brain, LogOut, Lock, Mail } from 'lucide-react';
+import { 
+  BookOpen, CheckCircle, PieChart, Activity, RotateCcw, ChevronRight, Check, X, 
+  Brain, LogOut, Lock, Mail, Microscope, AlertTriangle, Pill, ShieldAlert,
+  ChevronDown, ChevronUp
+} from 'lucide-react';
 
-// --- Firebase Configuration ---
-// NOTE: When deploying, REPLACE this section with your own Firebase Config from the console!
-const firebaseConfig = {
+// --- Firebase Configuration Setup ---
+// We wrap this in a try-catch to prevent the app from crashing white if variables are missing.
+let app, auth, db;
+let configError = false;
+const appId = typeof __app_id !== 'undefined' ? __app_id : 'vet-exam-app';
+
+try {
+  // 1. Try to use the Preview Environment config (Works in this Chat)
+  const firebaseConfig = JSON.parse(__firebase_config);
+  app = initializeApp(firebaseConfig);
+  auth = getAuth(app);
+  db = getFirestore(app);
+} catch (e) {
+  // 2. If that fails (e.g. on Vercel), we check if you have replaced the keys yet.
+  // REPLACE THE OBJECT BELOW WITH YOUR OWN KEYS FROM FIREBASE CONSOLE
+  const myRealConfig = {
   apiKey: "AIzaSyDY0pJFOZl2qvBldGqdpY8hDvBKryEhE-w",
   authDomain: "vet-exam-app.firebaseapp.com",
   projectId: "vet-exam-app",
@@ -14,139 +31,154 @@ const firebaseConfig = {
   messagingSenderId: "667121013022",
   appId: "1:667121013022:web:d12599eb4250315c21f90f",
   measurementId: "G-84Z79H0EMC"
-};
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-const db = getFirestore(app);
-const appId = "vet-exam-app-v1"; // You can give this any name
+  };
 
+  try {
+    // Check if user has actually updated the placeholder values
+    if (myRealConfig.apiKey === "AIzaSyDY0pJFOZl2qvBldGqdpY8hDvBKryEhE-w") {
+      throw new Error("Config not set");
+    }
+    app = initializeApp(myRealConfig);
+    auth = getAuth(app);
+    db = getFirestore(app);
+  } catch (err) {
+    configError = true; // Flag to show the setup screen
+  }
+}
 
-// --- Data & Content ---
+// --- Structured Data & Content ---
 
 const STUDY_CONTENT = [
   {
-    title: "1. A Clostridium fajok általános jellemzői",
-    content: `**Morfológia és Életmód:**
-- Gram-pozitív, pálca alakú, endospórát képző baktériumok.
-- Többségük obligát (szigorúan) anaerob.
-- Spóraképzés: A spórák a sejten belül terminálisan, szubterminálisan vagy centrálisan helyezkednek el, gyakran deformálva a sejtet (pl. C. tetani "dobverő" vagy "teniszütő" alak).
-- Ellenálló képesség: A spórák évekig túlélnek a talajban, trágyában, porban.
-- Előfordulás: Környezetben (szaprofita), de az egészséges állatok és ember bélflórájában is megtalálhatók.
-
-**Patogenitás és Toxinok:**
-- A patogenitás alapja az exotoxin termelés.
-- C. perfringens típusok (A–E) a fő toxinok alapján (alfa, béta, epsilon, iota).
-- Sertésben főleg az **A** és **C** típus jelentős.
-- Hatásmechanizmusok:
-  1. Szövetbontó toxinok (foszfolipázok, proteázok).
-  2. Enterotoxinok (bélnyálkahártya károsítás).
-  3. Neurotoxinok (idegméreg).
-- Szöveti hatás: Roncsolják a bélbolyhokat, sejtpusztulást okoznak, gázképződés (H2S), emphysema, toxémia, sokk.
-- Tenyésztés: Véres agaron gyakran jellegzetes kettős hemolízist ("céltábla" alakú zóna) mutatnak.`
+    title: "1. A Clostridium fajok jellemzői",
+    icon: <Microscope size={24} className="text-blue-500" />,
+    color: "bg-blue-50 border-blue-200",
+    sections: [
+      {
+        header: "Morfológia és Életmód",
+        points: [
+          "**Gram-pozitív**, pálca alakú, **endospórát** képző baktériumok.",
+          "Többségük **obligát (szigorúan) anaerob**.",
+          "**Spórák:** A sejten belül terminálisan, szubterminálisan vagy centrálisan. Gyakran deformálják a sejtet (pl. C. tetani \"dobverő\" alak).",
+          "**Ellenálló képesség:** A spórák évekig túlélnek a talajban, trágyában.",
+          "**Előfordulás:** Szaprofita (környezet) és normál bélflóra része."
+        ]
+      },
+      {
+        header: "Patogenitás és Toxinok",
+        points: [
+          "Fő fegyverük az **exotoxin** termelés.",
+          "**C. perfringens típusok (A–E):** Fő toxinok alapján (alfa, béta, epsilon, iota).",
+          "Sertésben jelentős: **A** és **C** típus.",
+          "**Hatásmechanizmusok:** Szövetbontó (pl. foszfolipáz), Enterotoxin (bél), Neurotoxin (ideg).",
+          "**Szöveti hatás:** Gázképződés (H₂S), szövetelhalás (necrosis), toxémia.",
+          "**Labor:** Véres agaron jellegzetes **kettős hemolízis** (\"céltábla\")."
+        ]
+      }
+    ]
   },
   {
-    title: "2. Enterális kórképek I: C. perfringens",
-    content: `**C. perfringens C típus (Enteritis Necroticans):**
-- **Célcsoport:** Újszülött malacok (élet első pár napja).
-- **Kórkép:** Hemorrágiás-elhalásos vékonybélgyulladást okoz (transzmurális, vérzéses-necrotikus).
-- **Virulenciafaktor:** Béta-toxin.
-  - *Tripszinérzékeny:* Ezért csak az első héten veszélyes (amikor a kolosztrum tripszin-inhibitorai védenek és a malac saját tripszin termelése alacsony).
-- **Tünetek:** Hirtelen elhullás, véres-híg hasmenés, gyors kiszáradás. Gyakran gázképződéssel jár.
-- **Megelőzés:** Kocák vakcinázása (kolosztrális védelem). Ma már ritka a vakcinázásnak köszönhetően.
-
-**C. perfringens A típus:**
-- **Kórkép:** Dysbacteriosis jellegű, enyhébb hasmenés.
-- **Tünetek:** Sárgás vagy szürkés, híg (nem véres) hasmenés. Elhúzódó növekedés, boholyatrophia.
-- **Ok:** Normál bélflóra zavara (pl. antibiotikum), béta2-toxin termelő törzsek elszaporodása.
-- **Diagnózis:** Nehéz, mert egészségesekben is ott van. Toxin/gén kimutatás szükséges.`
+    title: "2. Enterális kórképek (Bél)",
+    icon: <AlertTriangle size={24} className="text-orange-500" />,
+    color: "bg-orange-50 border-orange-200",
+    sections: [
+      {
+        header: "C. perfringens C típus (Enteritis Necroticans)",
+        points: [
+          "**Célcsoport:** Újszülött malacok (1-3 napos kor).",
+          "**Kórkép:** Hemorrágiás-elhalásos vékonybélgyulladást okoz.",
+          "**Oka:** **Béta-toxin**. Ez tripszinérzékeny, ezért csak az első héten veszélyes (amíg alacsony a tripszin szint).",
+          "**Tünetek:** Véres hasmenés, hirtelen elhullás, gázos belek.",
+          "**Megelőzés:** Koca vakcinázása (kolosztrális védelem)."
+        ]
+      },
+      {
+        header: "C. perfringens A típus",
+        points: [
+          "**Kórkép:** Enyhébb **dysbacteriosis**, hasmenés.",
+          "**Tünetek:** Sárgás/szürkés, híg (nem véres) bélsár. Lassú növekedés.",
+          "**Ok:** Béta2-toxin termelő törzsek elszaporodása (pl. antibiotikum után)."
+        ]
+      },
+      {
+        header: "C. difficile colitis",
+        points: [
+          "**Jellemző:** Antibiotikum-kúra utáni (dysbacteriosis) vastagbélgyulladás.",
+          "**Toxinok:** A (enterotoxin) és B (citotoxin).",
+          "**Elváltozás:** Fibrines-álhártyás gyulladás, **\"Vulkán lézió\"**, mesocolon ödéma."
+        ]
+      }
+    ]
   },
   {
-    title: "3. Enterális kórképek II: C. difficile és Egyéb",
-    content: `**Clostridioides (C.) difficile colitis:**
-- **Háttere:** Gyakran antibiotikum-kúrához (dysbacteriosis) kötött túlszaporodás a vastagbélben.
-- **Toxinok:** A (enterotoxin) és B (citotoxin).
-- **Kórbonctan:**
-  - Fibrines-álhártyás (pseudomembranosus) gyulladás a vastagbélben/vakbélben.
-  - **"Vulkán lézió"**: Szövettani jellegzetesség (álhártya alól feltörő granulociták).
-  - Mesocolon (bélfodor) ödéma, esetleg ascites.
-- **Tünetek:** Vizes/pépes hasmenés, hasi fájdalom, nem feltétlenül véres.
-
-**Dysbacteriosis / "Hemorrágiás bél szindróma":**
-- **Ok:** Takarmányváltás, stressz, magas fehérje -> gázképző baktériumok elszaporodása.
-- **Tünetek:** Hirtelen bélfelfúvódás, "bélcsavarodás-szerű" tünetek, gyors elhullás, sápadt hulla.
-- **Megelőzés:** Takarmányozás-technológia (fokozatosság).`
+    title: "3. Hisztotoxikus (Gázödémás) Fertőzések",
+    icon: <ShieldAlert size={24} className="text-red-500" />,
+    color: "bg-red-50 border-red-200",
+    sections: [
+      {
+        header: "Általános Mechanizmus",
+        points: [
+          "Spórák bejutása sebbe (exogén) vagy bélből az izomba (endogén).",
+          "Anaerob környezet (zúzódás) -> Aktiválódás -> Gázgangréna."
+        ]
+      },
+      {
+        header: "Specifikus Kórképek",
+        points: [
+          "**C. chauvoei ('Sercegő üszög'):** Ritka. Izomelhalás, fekete izom, **crepitatio** (gázos ropogás tapintásra).",
+          "**C. novyi:** Heveny májelhalás (kocák hirtelen elhullása). Máj: sötét, omlós, szivacsos."
+        ]
+      }
+    ]
   },
   {
-    title: "4. Gázödémás (Hisztotoxikus) Fertőzések",
-    content: `A baktériumok a szövetek mélyére jutva (exogén sebfertőzés vagy endogén bélből) szaporodnak el.
-
-**"Sercegő üszög" (C. chauvoei):**
-- Ritka sertésben.
-- **Tünetek:** Izomelhalás, sötétvörös/fekete izom, gázbuborékok (crepitatio/ropogás tapintáskor), sántaság, gyors elhullás.
-- **Mechanizmus:** Endogén (spóra aktiválódása zúzódás helyén) vagy sebfertőzés.
-
-**C. novyi ("Black disease" szerű):**
-- **Tünetek:** Hirtelen koca elhullás.
-- **Boncolás:** Heveny májelhalás. A máj sötét csokoládébarna, omlós, szivacsos (gázos).
-- **Egyéb:** Clostridiumos méhgyulladás (ellés, sérülés után) -> bűzös, gázos méhfal.
-
-**Diagnózis:**
-- Bélyegzőlenyomat (Gram+ pálcák).
-- Immunfluoreszcens vizsgálat (fajazonosítás).
-- PCR.`
+    title: "4. Neurotoxikus Kórképek",
+    icon: <Brain size={24} className="text-purple-500" />,
+    color: "bg-purple-50 border-purple-200",
+    sections: [
+      {
+        header: "Tetanusz (C. tetani)",
+        points: [
+          "**Fertőzés:** Mély, szennyezett seb (kasztrálás, köldök).",
+          "**Toxin:** Tetanospazmin (gátolja a gátló neurotranszmittereket).",
+          "**Tünet:** **Merevgörcsös (spasztikus) bénulás**.",
+          "**Jelek:** Szájzár, **\"fűrészbak állás\"**, mimikai torzulás."
+        ]
+      },
+      {
+        header: "Botulizmus (C. botulinum)",
+        points: [
+          "**Jelleg:** Intoxikáció (Mérgezés), nem fertőzés!",
+          "**Forrás:** Dög, romlott szilázs toxinja.",
+          "**Toxin:** Gátolja az acetilkolin felszabadulását.",
+          "**Tünet:** **Petyhüdt bénulás** (lefelé terjed).",
+          "**Jelek:** Támolygás, nyelészavar, elfekvés."
+        ]
+      }
+    ]
   },
   {
-    title: "5. Neurotoxikus Kórképek",
-    content: `Idegméreg toxinok által okozott betegségek.
-
-**Tetanusz (C. tetani):**
-- **Fertőzés:** Mély, szennyezett seb (pl. kasztrálás, farokkurtítás, méhelőesés).
-- **Toxin:** Tetanospazmin.
-- **Hatás:** Gátolja a gátló neurotranszmittereket -> Spasztikus (merevgörcsös) bénulás.
-- **Tünetek:** Szájzár, izommerevség, **"fűrészbak állás"**, mimikai izmok torzulása, opisthotonus (hátrafeszülés).
-- **Lappangás:** 1-3 hét.
-
-**Botulizmus (C. botulinum):**
-- **Jelleg:** Intoxikáció (mérgezés), nem fertőzés. Toxin felvétele (dög, romlott szilázs).
-- **Hatás:** Gátolja az acetilkolin felszabadulását -> Petyhüdt bénulás.
-- **Tünetek:** Progresszív, lefelé terjedő bénulás. Támolygás -> elfekvés -> légzésbénulás. Nyelészavar, nyálcsorgás.
-- **Kezelés:** Csak tüneti, megelőzés (higiénia) a kulcs.`
-  },
-  {
-    title: "6. Diagnosztikai Módszerek",
-    content: `**Klinikum & Boncolás:**
-- Véres hasmenés + újszülött = C. perfringens C.
-- Antibiotikum + vastagbélgyulladás = C. difficile.
-- Gázos izom/máj = Hisztotoxikus.
-- Görcs vs Bénulás = Tetanusz vs Botulizmus.
-
-**Laboratórium:**
-- **Tenyésztés:** Anaerob (pl. C. difficile "lótrágya" szagú telepek, C. perfringens dupla hemolízis).
-- **Toxin kimutatás (Kulcsfontosságú!):** Mivel a baktérium jelenléte önmagában nem diagnosztikus (normál flóra része is lehet).
-  - PCR (toxin gének: alfa, béta, A, B, stb.).
-  - ELISA (C. perf béta, C. diff A/B).
-  - Egér-biopróba (Botulizmus standardja, de ritkul).
-- **Szövettan:** "Vulkán lézió" (C. diff).`
-  },
-  {
-    title: "7. Kezelés és Megelőzés",
-    content: `**Antibiotikumok:**
-- **Hatásos:** Penicillinek (amoxicillin, ampicillin), lincosamidok (lincomycin), makrolidok (tylosin, tilmicosin), tetraciklinek.
-- **REZISZTENSEK (TILOS):** Aminoglikozidok (pl. gentamicin), Quinolonok (pl. enrofloxacin) - *Mert felvételük oxigénigényes!*
-
-**Megelőzés (Legfontosabb):**
-1. **Vakcinázás:**
-   - Kocák C. perfringens C toxoid oltása (kolosztrális védelem a malacnak).
-   - Tetanusz: Csak egyedi/hobbi esetben.
-   - Hisztotoxikus: Marha vakcinák off-label használata járvány esetén.
-2. **Higiénia:**
-   - Steril műtétek (kasztrálás, farok).
-   - Tiszta fialó.
-   - Trágyakezelés, fertőtlenítés (spóraölő szerek: peroxi-ecetsav, glutáraldehid).
-3. **Takarmányozás:**
-   - Fokozatosság elve (dysbacteriosis ellen).
-   - Dög/romlott takarmány kerülése (botulizmus).
-   - **Adalékok:** Probiotikumok (Lactobacillus, Bacillus), prebiotikumok, szerves savak (pH csökkentés), Cink-oxid (ZnO) választáskor.`
+    title: "5. Terápia és Megelőzés",
+    icon: <Pill size={24} className="text-emerald-500" />,
+    color: "bg-emerald-50 border-emerald-200",
+    sections: [
+      {
+        header: "Kezelés (Antibiotikum)",
+        points: [
+          "**JÓ:** Penicillinek, Lincosamidok, Makrolidok, Tetraciklinek.",
+          "**TILOS (Hatástalan):** Aminoglikozidok (pl. gentamicin), Quinolonok. (Mert oxigénigényes a felvételük)."
+        ]
+      },
+      {
+        header: "Megelőzés (Kulcsfontosságú)",
+        points: [
+          "**Vakcina:** Kocák C. perfringens C (kolosztrális védelem).",
+          "**Higiénia:** Steril műtétek, tiszta fialó, fertőtlenítés (spóraölő szerek).",
+          "**Takarmány:** Fokozatos váltás, dögök távoltartása.",
+          "**Adalékok:** Probiotikumok, szerves savak, cink-oxid (ZnO)."
+        ]
+      }
+    ]
   }
 ];
 
@@ -340,6 +372,63 @@ const QUESTION_BANK = [
 
 // --- Components ---
 
+const StudyCard = ({ data }) => {
+  const [isOpen, setIsOpen] = useState(true);
+
+  // Simple Markdown parser for Bold text
+  const renderText = (text) => {
+    const parts = text.split(/(\*\*.*?\*\*)/g);
+    return parts.map((part, i) => {
+      if (part.startsWith('**') && part.endsWith('**')) {
+        return <strong key={i} className="font-bold text-slate-800">{part.slice(2, -2)}</strong>;
+      }
+      return part;
+    });
+  };
+
+  return (
+    <div className={`mb-6 rounded-xl border transition-all duration-300 ${data.color} shadow-sm overflow-hidden`}>
+      <button 
+        onClick={() => setIsOpen(!isOpen)}
+        className="w-full flex items-center justify-between p-4 bg-white/50 backdrop-blur-sm hover:bg-white/80 transition-colors text-left"
+      >
+        <div className="flex items-center gap-3">
+          <div className="p-2 bg-white rounded-lg shadow-sm border border-slate-100">
+            {data.icon}
+          </div>
+          <h3 className="text-lg font-bold text-slate-800">{data.title}</h3>
+        </div>
+        <div className="text-slate-400">
+          {isOpen ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
+        </div>
+      </button>
+
+      {isOpen && (
+        <div className="p-4 pt-0">
+          <div className="grid gap-6 mt-4">
+            {data.sections.map((section, idx) => (
+              <div key={idx} className="bg-white rounded-lg p-5 shadow-sm border border-slate-100/50">
+                <h4 className="font-bold text-slate-700 mb-3 border-b border-slate-100 pb-2 flex items-center gap-2">
+                  <div className="w-1.5 h-1.5 rounded-full bg-indigo-500"></div>
+                  {section.header}
+                </h4>
+                <ul className="space-y-3">
+                  {section.points.map((point, pIdx) => (
+                    <li key={pIdx} className="text-slate-600 text-sm leading-relaxed flex items-start gap-2.5">
+                      <div className="mt-1.5 min-w-[4px] h-[4px] rounded-full bg-slate-300 shrink-0" />
+                      <span>{renderText(point)}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
+
 const ProgressBar = ({ value, max, color = "bg-blue-600", label }) => (
   <div className="mb-4">
     <div className="flex justify-between mb-1">
@@ -348,15 +437,6 @@ const ProgressBar = ({ value, max, color = "bg-blue-600", label }) => (
     </div>
     <div className="w-full bg-slate-200 rounded-full h-2.5">
       <div className={`${color} h-2.5 rounded-full transition-all duration-500`} style={{ width: `${Math.min(100, (value / max) * 100)}%` }}></div>
-    </div>
-  </div>
-);
-
-const StudySection = ({ data }) => (
-  <div className="bg-white p-6 rounded-lg shadow-sm border border-slate-100 mb-6">
-    <h3 className="text-xl font-bold text-slate-800 mb-3">{data.title}</h3>
-    <div className="prose prose-slate text-slate-600 whitespace-pre-line leading-relaxed">
-      {data.content}
     </div>
   </div>
 );
@@ -433,8 +513,8 @@ const QuestionCard = ({ question, onAnswer, showFeedback, userAnswer }) => {
 
 export default function App() {
   const [user, setUser] = useState(null);
-  const [authLoading, setAuthLoading] = useState(true);
-  const [view, setView] = useState('landing'); // landing, study, practice, exam, stats
+  const [authLoading, setAuthLoading] = useState(!configError); // Don't load if config is missing
+  const [view, setView] = useState('landing'); 
   
   // Login State
   const [email, setEmail] = useState('');
@@ -463,7 +543,8 @@ export default function App() {
 
   // --- Auth & Init ---
   useEffect(() => {
-    // If we have a custom token (Preview environment), sign in with it
+    if (configError) return; // Skip if config is bad
+
     if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
        signInWithCustomToken(auth, __initial_auth_token)
          .catch(err => console.error("Preview auth failed", err));
@@ -478,7 +559,7 @@ export default function App() {
 
   // --- Firestore Sync ---
   useEffect(() => {
-    if (!user) return;
+    if (!user || configError) return;
     
     const statsRef = doc(db, 'artifacts', appId, 'users', user.uid, 'data', 'stats');
     const unsub = onSnapshot(statsRef, (docSnap) => {
@@ -497,6 +578,7 @@ export default function App() {
   // --- Auth Functions ---
   const handleAuth = async (e) => {
     e.preventDefault();
+    if (configError) return;
     setAuthError('');
     try {
       if (isRegistering) {
@@ -510,6 +592,7 @@ export default function App() {
   };
 
   const handleSignOut = () => {
+    if (configError) return;
     signOut(auth);
     setStats({ totalAnswered: 0, totalCorrect: 0, byTopic: {}, examHistory: [] });
     setView('landing');
@@ -518,7 +601,7 @@ export default function App() {
   // --- App Actions ---
 
   const updateStats = async (isCorrect, topic, isExam = false, examScoreVal = 0) => {
-    if (!user) return;
+    if (!user || configError) return;
     const statsRef = doc(db, 'artifacts', appId, 'users', user.uid, 'data', 'stats');
     
     const newStats = { ...stats };
@@ -608,13 +691,39 @@ export default function App() {
     setExamScore(correctCount);
     setExamSubmitted(true);
     
-    if (user) {
+    if (user && !configError) {
       const statsRef = doc(db, 'artifacts', appId, 'users', user.uid, 'data', 'stats');
       await updateDoc(statsRef, newStats);
     }
   };
 
   // --- Views ---
+
+  // Safety Fallback View
+  if (configError) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-red-50 p-4">
+        <div className="bg-white p-8 rounded-2xl shadow-xl max-w-lg w-full text-center border-2 border-red-100">
+          <div className="bg-red-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+            <ShieldAlert className="text-red-600" size={32} />
+          </div>
+          <h2 className="text-2xl font-bold text-slate-800 mb-3">Database Setup Required</h2>
+          <p className="text-slate-600 mb-6">
+            The app cannot connect to Firebase. This usually happens on Vercel/GitHub 
+            if you haven't replaced the placeholder keys yet.
+          </p>
+          <div className="text-left bg-slate-50 p-4 rounded-lg border border-slate-200 text-sm font-mono text-slate-600 mb-6">
+            1. Open src/App.jsx on GitHub<br/>
+            2. Find "const myRealConfig"<br/>
+            3. Paste your keys from Firebase Console
+          </div>
+          <a href="https://console.firebase.google.com" target="_blank" className="inline-block bg-red-600 text-white px-6 py-2 rounded-lg font-bold hover:bg-red-700">
+            Go to Firebase Console
+          </a>
+        </div>
+      </div>
+    );
+  }
 
   if (authLoading) return <div className="min-h-screen flex items-center justify-center bg-slate-50"><Activity className="animate-spin text-indigo-600" size={32} /></div>;
 
@@ -634,7 +743,6 @@ export default function App() {
             </div>
 
             <form onSubmit={handleAuth} className="space-y-5">
-              {/* Email Input */}
               <div className="space-y-1">
                 <label className="text-sm font-semibold text-slate-700 ml-1">Email Address</label>
                 <div className="relative group">
@@ -652,7 +760,6 @@ export default function App() {
                 </div>
               </div>
               
-              {/* Password Input */}
               <div className="space-y-1">
                 <label className="text-sm font-semibold text-slate-700 ml-1">Password</label>
                 <div className="relative group">
@@ -775,11 +882,13 @@ export default function App() {
         <h2 className="text-2xl font-bold text-slate-800">Clostridial Diseases in Pigs</h2>
       </div>
       
-      {STUDY_CONTENT.map((section, idx) => (
-        <StudySection key={idx} data={section} />
-      ))}
+      <div className="space-y-4">
+        {STUDY_CONTENT.map((section, idx) => (
+          <StudyCard key={idx} data={section} />
+        ))}
+      </div>
 
-      <div className="flex justify-center mt-8">
+      <div className="flex justify-center mt-12 mb-8">
         <button 
           onClick={startPractice}
           className="bg-indigo-600 text-white px-8 py-3 rounded-full font-semibold shadow-lg hover:bg-indigo-700 hover:shadow-indigo-200/50 transition-all flex items-center gap-2"
