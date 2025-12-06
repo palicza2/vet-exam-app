@@ -3,363 +3,52 @@ import { initializeApp } from 'firebase/app';
 import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, onAuthStateChanged, signOut, signInWithCustomToken } from 'firebase/auth';
 import { getFirestore, doc, setDoc, updateDoc, onSnapshot } from 'firebase/firestore';
 import { 
-  Book, 
   BookOpen, CheckCircle, PieChart, Activity, RotateCcw, ChevronRight, Check, X, 
-  Brain, LogOut, Lock, Mail, Microscope, AlertTriangle, Pill, ShieldAlert,
-  ChevronDown, ChevronUp
+  Brain, LogOut, Lock, Mail, ShieldAlert, ChevronDown, ChevronUp, Book
 } from 'lucide-react';
 
+// --- ÚJ IMPORT: Adatok betöltése a moduláris rendszerből ---
+import { ALL_TOPICS, GET_ALL_QUESTIONS } from './data/index';
+
 // --- Firebase Configuration Setup ---
+let app, auth, db;
+let configError = false;
+const appId = typeof __app_id !== 'undefined' ? __app_id : 'vet-exam-app';
 
-// 1. Hardcoded App ID ensures the database path is always valid (fixes the "7 segments" error)
-const appId = 'vet-exam-app'; 
+try {
+  const firebaseConfig = JSON.parse(__firebase_config);
+  app = initializeApp(firebaseConfig);
+  auth = getAuth(app);
+  db = getFirestore(app);
+} catch (e) {
+  // REPLACE THE OBJECT BELOW WITH YOUR OWN KEYS FROM FIREBASE CONSOLE
+  const myRealConfig = {
+    apiKey: "AIzaSyDY0pJFOZl2qvBldGqdpY8hDvBKryEhE-w",
+    authDomain: "vet-exam-app.firebaseapp.com",
+    projectId: "vet-exam-app",
+    storageBucket: "vet-exam-app.firebasestorage.app",
+    messagingSenderId: "667121013022",
+    appId: "1:667121013022:web:d12599eb4250315c21f90f",
+    measurementId: "G-84Z79H0EMC"
+  };
 
-// 2. Your Real Configuration
-const firebaseConfig = {
-  apiKey: "AIzaSyDY0pJFOZl2qvBldGqdpY8hDvBKryEhE-w",
-  authDomain: "vet-exam-app.firebaseapp.com",
-  projectId: "vet-exam-app",
-  storageBucket: "vet-exam-app.firebasestorage.app",
-  messagingSenderId: "667121013022",
-  appId: "1:667121013022:web:d12599eb4250315c21f90f",
-  measurementId: "G-84Z79H0EMC"
-};
-
-// 3. Initialize Firebase directly (Removed the try/catch logic that was causing issues)
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-const db = getFirestore(app);
-
-// --- Structured Data & Content ---
-
-const STUDY_CONTENT = [
-  {
-    title: "1. A Clostridium fajok jellemzői",
-    icon: <Microscope size={24} className="text-blue-500" />,
-    color: "bg-blue-50 border-blue-200",
-    sections: [
-      {
-        header: "Morfológia és Életmód",
-        points: [
-          "**Gram-pozitív**, pálca alakú, **endospórát** képző baktériumok.",
-          "Többségük **obligát (szigorúan) anaerob**.",
-          "**Spórák:** A sejten belül terminálisan, szubterminálisan vagy centrálisan. Gyakran deformálják a sejtet (pl. C. tetani \"dobverő\" alak).",
-          "**Ellenálló képesség:** A spórák évekig túlélnek a talajban, trágyában.",
-          "**Előfordulás:** Szaprofita (környezet) és normál bélflóra része."
-        ]
-      },
-      {
-        header: "Patogenitás és Toxinok",
-        points: [
-          "Fő fegyverük az **exotoxin** termelés.",
-          "**C. perfringens típusok (A–E):** Fő toxinok alapján (alfa, béta, epsilon, iota).",
-          "Sertésben jelentős: **A** és **C** típus.",
-          "**Hatásmechanizmusok:** Szövetbontó (pl. foszfolipáz), Enterotoxin (bél), Neurotoxin (ideg).",
-          "**Szöveti hatás:** Gázképződés (H₂S), szövetelhalás (necrosis), toxémia.",
-          "**Labor:** Véres agaron jellegzetes **kettős hemolízis** (\"céltábla\")."
-        ]
-      }
-    ]
-  },
-  {
-    title: "2. Enterális kórképek (Bél)",
-    icon: <AlertTriangle size={24} className="text-orange-500" />,
-    color: "bg-orange-50 border-orange-200",
-    sections: [
-      {
-        header: "C. perfringens C típus (Enteritis Necroticans)",
-        points: [
-          "**Célcsoport:** Újszülött malacok (1-3 napos kor).",
-          "**Kórkép:** Hemorrágiás-elhalásos vékonybélgyulladást okoz.",
-          "**Oka:** **Béta-toxin**. Ez tripszinérzékeny, ezért csak az első héten veszélyes (amíg alacsony a tripszin szint).",
-          "**Tünetek:** Véres hasmenés, hirtelen elhullás, gázos belek.",
-          "**Megelőzés:** Koca vakcinázása (kolosztrális védelem)."
-        ]
-      },
-      {
-        header: "C. perfringens A típus",
-        points: [
-          "**Kórkép:** Enyhébb **dysbacteriosis**, hasmenés.",
-          "**Tünetek:** Sárgás/szürkés, híg (nem véres) bélsár. Lassú növekedés.",
-          "**Ok:** Béta2-toxin termelő törzsek elszaporodása (pl. antibiotikum után)."
-        ]
-      },
-      {
-        header: "C. difficile colitis",
-        points: [
-          "**Jellemző:** Antibiotikum-kúra utáni (dysbacteriosis) vastagbélgyulladás.",
-          "**Toxinok:** A (enterotoxin) és B (citotoxin).",
-          "**Elváltozás:** Fibrines-álhártyás gyulladás, **\"Vulkán lézió\"**, mesocolon ödéma."
-        ]
-      }
-    ]
-  },
-  {
-    title: "3. Hisztotoxikus (Gázödémás) Fertőzések",
-    icon: <ShieldAlert size={24} className="text-red-500" />,
-    color: "bg-red-50 border-red-200",
-    sections: [
-      {
-        header: "Általános Mechanizmus",
-        points: [
-          "Spórák bejutása sebbe (exogén) vagy bélből az izomba (endogén).",
-          "Anaerob környezet (zúzódás) -> Aktiválódás -> Gázgangréna."
-        ]
-      },
-      {
-        header: "Specifikus Kórképek",
-        points: [
-          "**C. chauvoei ('Sercegő üszög'):** Ritka. Izomelhalás, fekete izom, **crepitatio** (gázos ropogás tapintásra).",
-          "**C. novyi:** Heveny májelhalás (kocák hirtelen elhullása). Máj: sötét, omlós, szivacsos."
-        ]
-      }
-    ]
-  },
-  {
-    title: "4. Neurotoxikus Kórképek",
-    icon: <Brain size={24} className="text-purple-500" />,
-    color: "bg-purple-50 border-purple-200",
-    sections: [
-      {
-        header: "Tetanusz (C. tetani)",
-        points: [
-          "**Fertőzés:** Mély, szennyezett seb (kasztrálás, köldök).",
-          "**Toxin:** Tetanospazmin (gátolja a gátló neurotranszmittereket).",
-          "**Tünet:** **Merevgörcsös (spasztikus) bénulás**.",
-          "**Jelek:** Szájzár, **\"fűrészbak állás\"**, mimikai torzulás."
-        ]
-      },
-      {
-        header: "Botulizmus (C. botulinum)",
-        points: [
-          "**Jelleg:** Intoxikáció (Mérgezés), nem fertőzés!",
-          "**Forrás:** Dög, romlott szilázs toxinja.",
-          "**Toxin:** Gátolja az acetilkolin felszabadulását.",
-          "**Tünet:** **Petyhüdt bénulás** (lefelé terjed).",
-          "**Jelek:** Támolygás, nyelészavar, elfekvés."
-        ]
-      }
-    ]
-  },
-  {
-    title: "5. Terápia és Megelőzés",
-    icon: <Pill size={24} className="text-emerald-500" />,
-    color: "bg-emerald-50 border-emerald-200",
-    sections: [
-      {
-        header: "Kezelés (Antibiotikum)",
-        points: [
-          "**JÓ:** Penicillinek, Lincosamidok, Makrolidok, Tetraciklinek.",
-          "**TILOS (Hatástalan):** Aminoglikozidok (pl. gentamicin), Quinolonok. (Mert oxigénigényes a felvételük)."
-        ]
-      },
-      {
-        header: "Megelőzés (Kulcsfontosságú)",
-        points: [
-          "**Vakcina:** Kocák C. perfringens C (kolosztrális védelem).",
-          "**Higiénia:** Steril műtétek, tiszta fialó, fertőtlenítés (spóraölő szerek).",
-          "**Takarmány:** Fokozatos váltás, dögök távoltartása.",
-          "**Adalékok:** Probiotikumok, szerves savak, cink-oxid (ZnO)."
-        ]
-      }
-    ]
+  try {
+    if (myRealConfig.apiKey === "AIzaSyDY0pJFOZl2qvBldGqdpY8hDvBKryEhE-w") {
+      throw new Error("Config not set");
+    }
+    app = initializeApp(myRealConfig);
+    auth = getAuth(app);
+    db = getFirestore(app);
+  } catch (err) {
+    configError = true;
   }
-];
-
-const QUESTION_BANK = [
-  // General / Jellemzők
-  {
-    id: 1,
-    topic: "General",
-    type: "mcq",
-    question: "Milyen festődésűek és alakúak a Clostridiumok?",
-    options: ["Gram-negatív pálcák", "Gram-pozitív pálcák", "Gram-pozitív coccusok", "Gram-negatív coccusok"],
-    correctAnswer: 1,
-    explanation: "A Clostridiumok Gram-pozitív, pálca alakú, endospórát képző baktériumok."
-  },
-  {
-    id: 2,
-    topic: "General",
-    type: "bool",
-    question: "A Clostridium fajok spórái érzékenyek a környezeti hatásokra és gyorsan elpusztulnak a talajban.",
-    options: ["Igaz", "Hamis"],
-    correctAnswer: 1,
-    explanation: "Hamis. A spórák rendkívül ellenállóak és évekig túlélhetnek a környezetben."
-  },
-  {
-    id: 3,
-    topic: "General",
-    type: "mcq",
-    question: "Melyik toxinérzékenység jellemző a C. perfringens béta-toxinjára?",
-    options: ["Hőérzékeny", "Tripszinérzékeny", "Savérzékeny", "Alkoholérzékeny"],
-    correctAnswer: 1,
-    explanation: "A béta-toxin tripszinérzékeny, ezért okoz betegséget főleg az élet első hetében, amikor a tripszinaktivitás alacsony."
-  },
-  // Enteric
-  {
-    id: 4,
-    topic: "Enteric",
-    type: "mcq",
-    question: "Mit okoz a Clostridium perfringens C típus újszülött malacokban?",
-    options: ["Idült vastagbélgyulladást", "Hemorrágiás-elhalásos vékonybélgyulladást", "Tüdőgyulladást", "Agyhártyagyulladást"],
-    correctAnswer: 1,
-    explanation: "Klasszikus enterotoxémiát, véres-elhalásos bélgyulladást okoz."
-  },
-  {
-    id: 5,
-    topic: "Enteric",
-    type: "mcq",
-    question: "Melyik kórképre jellemző a 'vulkán lézió' és a mesocolon ödéma?",
-    options: ["C. perfringens A", "C. perfringens C", "C. difficile", "C. tetani"],
-    correctAnswer: 2,
-    explanation: "Ezek a Clostridioides difficile okozta colitis tipikus kórbonctani jelei."
-  },
-  {
-    id: 6,
-    topic: "Enteric",
-    type: "bool",
-    question: "A C. perfringens A típus csak immunszupprimált felnőtt sertésekben okoz tüneteket.",
-    options: ["Igaz", "Hamis"],
-    correctAnswer: 1,
-    explanation: "Hamis. Szopós malacokban is okozhat dysbacteriosis jellegű, enyhébb hasmenést."
-  },
-  // Histotoxic
-  {
-    id: 7,
-    topic: "Histotoxic",
-    type: "mcq",
-    question: "Melyik kórokozó okozza a sertések 'sercegő üszög' (blackleg-like) betegségét?",
-    options: ["C. septicum", "C. novyi", "C. chauvoei", "C. sordellii"],
-    correctAnswer: 2,
-    explanation: "Bár ritka sertésben, a C. chauvoei okozza a sercegő üszögöt."
-  },
-  {
-    id: 8,
-    topic: "Histotoxic",
-    type: "mcq",
-    question: "Milyen szerv elváltozása jellemző a C. novyi fertőzésre?",
-    options: ["Tüdővizenyő", "Lépduzzanat", "Nekrotizáló hepatitis (májelhalás)", "Veseelégtelenség"],
-    correctAnswer: 2,
-    explanation: "A máj megnagyobbodott, omlós, csokoládébarna színű és szivacsos tapintatú."
-  },
-  // Neurotoxic
-  {
-    id: 9,
-    topic: "Neurotoxic",
-    type: "mcq",
-    question: "Mi a tetanusz jellemző klinikai tünete sertésben?",
-    options: ["Petyhüdt bénulás", "Fűrészbak állás", "Véres hasmenés", "Körkörös mozgás"],
-    correctAnswer: 1,
-    explanation: "A merevgörcs miatti 'fűrészbak állás' és a szájzár a jellemző."
-  },
-  {
-    id: 10,
-    topic: "Neurotoxic",
-    type: "bool",
-    question: "A botulizmus toxinja gátolja az acetilkolin felszabadulását, petyhüdt bénulást okozva.",
-    options: ["Igaz", "Hamis"],
-    correctAnswer: 0,
-    explanation: "Igaz. Ez a botulinum toxin hatásmechanizmusa."
-  },
-  {
-    id: 11,
-    topic: "Neurotoxic",
-    type: "mcq",
-    question: "Hogyan fertőződnek leggyakrabban botulizmussal a sertések?",
-    options: ["Sebfertőzéssel", "Kullancscsípéssel", "Toxin tartalmú takarmány (dög, romlott szilázs) felvételével", "Cseppfertőzéssel"],
-    correctAnswer: 2,
-    explanation: "A botulizmus intoxikáció, nem valódi fertőzés; a toxint veszik fel a környezetből."
-  },
-  // Treatment & Prevention
-  {
-    id: 12,
-    topic: "Treatment",
-    type: "mcq",
-    question: "Melyik antibiotikum csoport hatástalan a Clostridiumok ellen?",
-    options: ["Penicillinek", "Aminoglikozidok (pl. gentamicin)", "Makrolidok", "Tetraciklinek"],
-    correctAnswer: 1,
-    explanation: "Az aminoglikozidok (és quinolonok) hatástalanok, mivel felvételük oxigénigényes."
-  },
-  {
-    id: 13,
-    topic: "Treatment",
-    type: "bool",
-    question: "A C. perfringens C típusú enteritis megelőzésére a kocákat vakcinázzák.",
-    options: ["Igaz", "Hamis"],
-    correctAnswer: 0,
-    explanation: "Igaz. A kocák vakcinázása kolosztrális védelmet biztosít a malacoknak."
-  },
-  {
-    id: 14,
-    topic: "General",
-    type: "mcq",
-    question: "Milyen hemolízist mutatnak gyakran a Clostridiumok véres agaron?",
-    options: ["Alfa (zöldítő)", "Nincs hemolízis", "Kettős (céltábla alakú) hemolízis", "Gamma hemolízis"],
-    correctAnswer: 2,
-    explanation: "Jellegzetes a kettős hemolízis zóna."
-  },
-  {
-    id: 15,
-    topic: "Enteric",
-    type: "mcq",
-    question: "Melyik állatcsoport a legfogékonyabb a C. perfringens C okozta elhullásra?",
-    options: ["Hízósertések", "Választási malacok", "Újszülött malacok (1 hetes korig)", "Kocák"],
-    correctAnswer: 2,
-    explanation: "A tripszin inhibíció hiánya miatt az első napokban/héten a legfogékonyabbak."
-  },
-  {
-    id: 16,
-    topic: "Histotoxic",
-    type: "bool",
-    question: "A malignus ödéma (gázödéma) kórokozói soha nem jutnak be sebzéseken keresztül.",
-    options: ["Igaz", "Hamis"],
-    correctAnswer: 1,
-    explanation: "Hamis. Az exogén fertőzés éppen sebzéseken (injekció, harapás) keresztül történik."
-  },
-  {
-    id: 17,
-    topic: "Neurotoxic",
-    type: "mcq",
-    question: "Melyik a tetanusz lappangási ideje általában?",
-    options: ["1-2 óra", "1-3 hét", "2-3 hónap", "Fél év"],
-    correctAnswer: 1,
-    explanation: "A lappangási idő általában 1-3 hét."
-  },
-  {
-    id: 18,
-    topic: "Treatment",
-    type: "mcq",
-    question: "Milyen preventív intézkedés javasolt botulizmus ellen?",
-    options: ["Kocák vakcinázása", "Döghús és romlott takarmány etetésének kerülése", "Antibiotikumos profilaxis", "Farokkurtítás"],
-    correctAnswer: 1,
-    explanation: "A legfontosabb a toxinforrások (dög, romlott szilázs) kizárása."
-  },
-  {
-    id: 19,
-    topic: "General",
-    type: "bool",
-    question: "A Clostridiumok obligát aerob baktériumok.",
-    options: ["Igaz", "Hamis"],
-    correctAnswer: 1,
-    explanation: "Hamis. A Clostridiumok anaerob (többségében obligát anaerob) baktériumok."
-  },
-  {
-    id: 20,
-    topic: "Enteric",
-    type: "mcq",
-    question: "A C. difficile melyik két toxint termeli?",
-    options: ["Alfa és Béta", "A és B toxin", "Tetanospazmin és Botulinum", "Epsilon és Iota"],
-    correctAnswer: 1,
-    explanation: "A C. difficile fő virulenciafaktorai az A (enterotoxin) és B (citotoxin) toxinok."
-  }
-];
+}
 
 // --- Components ---
 
 const StudyCard = ({ data }) => {
   const [isOpen, setIsOpen] = useState(true);
 
-  // Simple Markdown parser for Bold text
   const renderText = (text) => {
     const parts = text.split(/(\*\*.*?\*\*)/g);
     return parts.map((part, i) => {
@@ -434,7 +123,7 @@ const QuestionCard = ({ question, onAnswer, showFeedback, userAnswer }) => {
         <span className="px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full text-xs font-semibold uppercase tracking-wide">
           {question.topic}
         </span>
-        <span className="text-slate-400 text-sm">Question {question.id}</span>
+        <span className="text-slate-400 text-sm">ID: {question.id}</span>
       </div>
       
       <h3 className="text-xl font-semibold text-slate-800 mb-6">{question.question}</h3>
@@ -497,7 +186,7 @@ const QuestionCard = ({ question, onAnswer, showFeedback, userAnswer }) => {
 
 export default function App() {
   const [user, setUser] = useState(null);
-  const [authLoading, setAuthLoading] = useState(true);
+  const [authLoading, setAuthLoading] = useState(!configError);
   const [view, setView] = useState('landing'); 
   
   // Login State
@@ -527,6 +216,13 @@ export default function App() {
 
   // --- Auth & Init ---
   useEffect(() => {
+    if (configError) return;
+
+    if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
+       signInWithCustomToken(auth, __initial_auth_token)
+         .catch(err => console.error("Preview auth failed", err));
+    }
+
     const unsubscribe = onAuthStateChanged(auth, (u) => {
       setUser(u);
       setAuthLoading(false);
@@ -536,11 +232,9 @@ export default function App() {
 
   // --- Firestore Sync ---
   useEffect(() => {
-    if (!user) return;
+    if (!user || configError) return;
     
-    // Explicitly using the sanitized appId
     const statsRef = doc(db, 'artifacts', appId, 'users', user.uid, 'data', 'stats');
-    
     const unsub = onSnapshot(statsRef, (docSnap) => {
       if (docSnap.exists()) {
         setStats(docSnap.data());
@@ -557,6 +251,7 @@ export default function App() {
   // --- Auth Functions ---
   const handleAuth = async (e) => {
     e.preventDefault();
+    if (configError) return;
     setAuthError('');
     try {
       if (isRegistering) {
@@ -570,6 +265,7 @@ export default function App() {
   };
 
   const handleSignOut = () => {
+    if (configError) return;
     signOut(auth);
     setStats({ totalAnswered: 0, totalCorrect: 0, byTopic: {}, examHistory: [] });
     setView('landing');
@@ -578,7 +274,7 @@ export default function App() {
   // --- App Actions ---
 
   const updateStats = async (isCorrect, topic, isExam = false, examScoreVal = 0) => {
-    if (!user) return;
+    if (!user || configError) return;
     const statsRef = doc(db, 'artifacts', appId, 'users', user.uid, 'data', 'stats');
     
     const newStats = { ...stats };
@@ -602,8 +298,17 @@ export default function App() {
     await updateDoc(statsRef, newStats);
   };
 
+  // --- MODOSÍTOTT START PRACTICE LOGIKA ---
   const startPractice = () => {
-    const randomQ = QUESTION_BANK[Math.floor(Math.random() * QUESTION_BANK.length)];
+    // Itt most már az összesítő függvényt használjuk
+    const allQuestions = GET_ALL_QUESTIONS();
+    
+    if (allQuestions.length === 0) {
+      alert("Nincsenek elérhető kérdések!");
+      return;
+    }
+
+    const randomQ = allQuestions[Math.floor(Math.random() * allQuestions.length)];
     setCurrentPracticeQ(randomQ);
     setPracticeFeedback(false);
     setPracticeUserAnswer(null);
@@ -617,21 +322,34 @@ export default function App() {
     updateStats(isCorrect, currentPracticeQ.topic);
   };
 
+  // --- MODOSÍTOTT NEXT QUESTION LOGIKA ---
   const nextPracticeQuestion = () => {
+    const allQuestions = GET_ALL_QUESTIONS();
     let newQ;
+    // Biztosítjuk, hogy ne ugyanazt a kérdést dobja be újra egyből
     do {
-      newQ = QUESTION_BANK[Math.floor(Math.random() * QUESTION_BANK.length)];
-    } while (newQ.id === currentPracticeQ.id && QUESTION_BANK.length > 1);
+      newQ = allQuestions[Math.floor(Math.random() * allQuestions.length)];
+    } while (newQ.id === currentPracticeQ.id && allQuestions.length > 1);
     
     setCurrentPracticeQ(newQ);
     setPracticeFeedback(false);
     setPracticeUserAnswer(null);
   };
 
+  // --- MODOSÍTOTT EXAM LOGIKA ---
   const startExam = () => {
-    const shuffled = [...QUESTION_BANK].sort(() => 0.5 - Math.random());
-    const selected = shuffled.slice(0, 20);
-    setExamQuestions(selected);
+    const allQuestions = GET_ALL_QUESTIONS();
+    
+    if (allQuestions.length < 20) {
+        // Ha kevesebb mint 20 kérdés van összesen, akkor mindet berakjuk
+        const shuffled = [...allQuestions].sort(() => 0.5 - Math.random());
+        setExamQuestions(shuffled);
+    } else {
+        const shuffled = [...allQuestions].sort(() => 0.5 - Math.random());
+        const selected = shuffled.slice(0, 20);
+        setExamQuestions(selected);
+    }
+    
     setExamAnswers({});
     setExamSubmitted(false);
     setExamScore(0);
@@ -668,13 +386,29 @@ export default function App() {
     setExamScore(correctCount);
     setExamSubmitted(true);
     
-    if (user) {
+    if (user && !configError) {
       const statsRef = doc(db, 'artifacts', appId, 'users', user.uid, 'data', 'stats');
       await updateDoc(statsRef, newStats);
     }
   };
 
   // --- Views ---
+
+  if (configError) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-red-50 p-4">
+        <div className="bg-white p-8 rounded-2xl shadow-xl max-w-lg w-full text-center border-2 border-red-100">
+          <div className="bg-red-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+            <ShieldAlert className="text-red-600" size={32} />
+          </div>
+          <h2 className="text-2xl font-bold text-slate-800 mb-3">Database Setup Required</h2>
+          <p className="text-slate-600 mb-6">
+            The app cannot connect to Firebase.
+          </p>
+        </div>
+      </div>
+    );
+  }
 
   if (authLoading) return <div className="min-h-screen flex items-center justify-center bg-slate-50"><Activity className="animate-spin text-indigo-600" size={32} /></div>;
 
@@ -752,10 +486,6 @@ export default function App() {
               </button>
             </div>
           </div>
-          
-          <p className="text-center text-slate-400 text-xs mt-8">
-            © {new Date().getFullYear()} Veterinary Exam Prep
-          </p>
         </div>
       </div>
     );
@@ -775,8 +505,8 @@ export default function App() {
         </div>
         <h1 className="text-4xl font-bold text-slate-900 mb-4">Veterinary Exam Prep</h1>
         <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-          Master Clostridial diseases in swine. Study the material, practice with instant feedback, 
-          or simulate a full exam to test your readiness.
+          Állatorvosi vizsgafelkészítő. Tanuld meg a tételeket, gyakorolj azonnali visszajelzéssel, 
+          vagy teszteld tudásod vizsga módban.
         </p>
       </div>
 
@@ -786,9 +516,9 @@ export default function App() {
             <div className="p-3 bg-blue-50 text-blue-600 rounded-lg group-hover:scale-110 transition-transform">
               <Book size={24} />
             </div>
-            <h3 className="text-xl font-bold text-slate-800">Study Material</h3>
+            <h3 className="text-xl font-bold text-slate-800">Tananyagok</h3>
           </div>
-          <p className="text-slate-500">Review the official exam content about Clostridial infections.</p>
+          <p className="text-slate-500">Vizsgatételek áttekintése kidolgozott anyagokkal.</p>
         </button>
 
         <button onClick={startPractice} className="group p-8 bg-white rounded-2xl shadow-sm border border-slate-200 hover:shadow-md hover:border-indigo-200 transition-all text-left">
@@ -796,9 +526,9 @@ export default function App() {
             <div className="p-3 bg-green-50 text-green-600 rounded-lg group-hover:scale-110 transition-transform">
               <CheckCircle size={24} />
             </div>
-            <h3 className="text-xl font-bold text-slate-800">Practice Mode</h3>
+            <h3 className="text-xl font-bold text-slate-800">Gyakorlás</h3>
           </div>
-          <p className="text-slate-500">Single questions with immediate feedback and explanations.</p>
+          <p className="text-slate-500">Kérdések azonnali visszajelzéssel és magyarázattal.</p>
         </button>
 
         <button onClick={startExam} className="group p-8 bg-white rounded-2xl shadow-sm border border-slate-200 hover:shadow-md hover:border-indigo-200 transition-all text-left">
@@ -806,9 +536,9 @@ export default function App() {
             <div className="p-3 bg-purple-50 text-purple-600 rounded-lg group-hover:scale-110 transition-transform">
               <Activity size={24} />
             </div>
-            <h3 className="text-xl font-bold text-slate-800">Take Exam</h3>
+            <h3 className="text-xl font-bold text-slate-800">Vizsga</h3>
           </div>
-          <p className="text-slate-500">20 random questions. No hints. See your score at the end.</p>
+          <p className="text-slate-500">20 véletlenszerű kérdés, nincs segítség, csak a végén.</p>
         </button>
 
         <button onClick={() => setView('stats')} className="group p-8 bg-white rounded-2xl shadow-sm border border-slate-200 hover:shadow-md hover:border-indigo-200 transition-all text-left">
@@ -816,28 +546,38 @@ export default function App() {
             <div className="p-3 bg-orange-50 text-orange-600 rounded-lg group-hover:scale-110 transition-transform">
               <PieChart size={24} />
             </div>
-            <h3 className="text-xl font-bold text-slate-800">My Statistics</h3>
+            <h3 className="text-xl font-bold text-slate-800">Statisztikák</h3>
           </div>
-          <p className="text-slate-500">Track your progress, history, and identify weak topics.</p>
+          <p className="text-slate-500">Kövesd nyomon a haladásodat és a gyenge pontjaidat.</p>
         </button>
       </div>
     </div>
   );
 
+  // --- MODOSÍTOTT RENDER STUDY ---
   const renderStudy = () => (
     <div className="max-w-3xl mx-auto px-4 py-8">
       <div className="flex items-center gap-4 mb-8">
         <button onClick={() => setView('landing')} className="p-2 hover:bg-slate-100 rounded-full transition-colors">
           <RotateCcw size={20} className="text-slate-500" />
         </button>
-        <h2 className="text-2xl font-bold text-slate-800">Clostridial Diseases in Pigs</h2>
+        <h2 className="text-2xl font-bold text-slate-800">Tananyagok</h2>
       </div>
       
-      <div className="space-y-4">
-        {STUDY_CONTENT.map((section, idx) => (
-          <StudyCard key={idx} data={section} />
-        ))}
-      </div>
+      {/* Végigmegyünk az összes témán */}
+      {ALL_TOPICS.map((topic) => (
+        <div key={topic.id} className="mb-12 border-b border-slate-200 pb-8 last:border-0">
+            <h3 className="text-xl font-bold text-indigo-700 mb-6 flex items-center gap-2">
+                <BookOpen size={24} />
+                {topic.title}
+            </h3>
+            <div className="space-y-4">
+                {topic.studyMaterial.map((section, idx) => (
+                    <StudyCard key={idx} data={section} />
+                ))}
+            </div>
+        </div>
+      ))}
 
       <div className="flex justify-center mt-12 mb-8">
         <button 
@@ -854,9 +594,9 @@ export default function App() {
     <div className="max-w-3xl mx-auto px-4 py-8 min-h-screen flex flex-col">
       <div className="flex items-center justify-between mb-8">
         <button onClick={() => setView('landing')} className="flex items-center gap-2 text-slate-500 hover:text-slate-800 font-medium">
-          <RotateCcw size={18} /> Exit
+          <RotateCcw size={18} /> Kilépés
         </button>
-        <div className="text-sm font-semibold text-slate-400 uppercase tracking-wider">Practice Mode</div>
+        <div className="text-sm font-semibold text-slate-400 uppercase tracking-wider">Gyakorló Mód</div>
       </div>
 
       <div className="flex-grow flex flex-col justify-center">
@@ -877,7 +617,7 @@ export default function App() {
               onClick={nextPracticeQuestion}
               className="bg-indigo-600 text-white px-8 py-3 rounded-lg font-bold shadow hover:bg-indigo-700 transition-colors flex items-center gap-2"
             >
-              Next Question <ChevronRight size={20} />
+              Következő kérdés <ChevronRight size={20} />
             </button>
           </div>
         </div>
@@ -888,14 +628,14 @@ export default function App() {
   const renderExam = () => (
     <div className="max-w-4xl mx-auto px-4 py-8">
       <div className="flex items-center justify-between mb-8 sticky top-0 bg-slate-50/90 backdrop-blur-sm py-4 z-10 border-b border-slate-200">
-        <h2 className="text-2xl font-bold text-slate-800">Exam Session</h2>
+        <h2 className="text-2xl font-bold text-slate-800">Vizsga</h2>
         {!examSubmitted ? (
            <div className="text-slate-600 font-medium">
-             Answered: {Object.keys(examAnswers).length} / {examQuestions.length}
+             Megválaszolva: {Object.keys(examAnswers).length} / {examQuestions.length}
            </div>
         ) : (
            <div className="text-2xl font-bold text-indigo-600">
-             Score: {Math.round((examScore / examQuestions.length) * 100)}%
+             Eredmény: {Math.round((examScore / examQuestions.length) * 100)}%
            </div>
         )}
       </div>
@@ -903,17 +643,17 @@ export default function App() {
       {examSubmitted && (
         <div className="bg-indigo-900 text-white p-8 rounded-2xl shadow-xl mb-8 text-center">
           <h3 className="text-3xl font-bold mb-2">
-            {examScore >= 16 ? 'Excellent Work!' : examScore >= 12 ? 'Good Job!' : 'Keep Studying!'}
+            {examScore / examQuestions.length >= 0.8 ? 'Kiváló munka!' : examScore / examQuestions.length >= 0.6 ? 'Szép teljesítmény!' : 'Gyakorolj még!'}
           </h3>
           <p className="text-indigo-200 mb-6">
-            You answered {examScore} out of {examQuestions.length} questions correctly.
+            {examScore} helyes válasz a {examQuestions.length}-ből.
           </p>
           <div className="flex justify-center gap-4">
             <button onClick={() => setView('landing')} className="bg-white/10 hover:bg-white/20 px-6 py-2 rounded-lg font-medium transition-colors">
-              Back to Home
+              Vissza a főoldalra
             </button>
             <button onClick={startExam} className="bg-white text-indigo-900 px-6 py-2 rounded-lg font-bold hover:bg-indigo-50 transition-colors">
-              Try Again
+              Újrapróbálom
             </button>
           </div>
         </div>
@@ -958,7 +698,7 @@ export default function App() {
                 </div>
                 {examSubmitted && (
                   <div className="mt-4 text-sm text-slate-600 bg-white p-3 rounded border border-slate-100">
-                    <span className="font-bold">Explanation:</span> {q.explanation}
+                    <span className="font-bold">Magyarázat:</span> {q.explanation}
                   </div>
                 )}
               </div>
@@ -977,7 +717,7 @@ export default function App() {
                 ? 'bg-slate-300 text-slate-500 cursor-not-allowed' 
                 : 'bg-indigo-600 text-white hover:bg-indigo-700'}`}
           >
-            Submit Exam
+            Vizsga Beküldése
           </button>
         </div>
       )}
@@ -1003,31 +743,31 @@ export default function App() {
           <button onClick={() => setView('landing')} className="p-2 hover:bg-slate-100 rounded-full transition-colors">
             <RotateCcw size={20} className="text-slate-500" />
           </button>
-          <h2 className="text-2xl font-bold text-slate-800">Your Progress</h2>
+          <h2 className="text-2xl font-bold text-slate-800">Előrehaladás</h2>
         </div>
 
         <div className="grid md:grid-cols-3 gap-6 mb-8">
           <div className="bg-white p-6 rounded-xl border border-slate-100 shadow-sm">
-            <div className="text-slate-500 text-sm font-medium uppercase tracking-wide mb-2">Total Questions</div>
+            <div className="text-slate-500 text-sm font-medium uppercase tracking-wide mb-2">Összes Kérdés</div>
             <div className="text-4xl font-bold text-slate-800">{stats.totalAnswered}</div>
           </div>
           <div className="bg-white p-6 rounded-xl border border-slate-100 shadow-sm">
-            <div className="text-slate-500 text-sm font-medium uppercase tracking-wide mb-2">Success Rate</div>
+            <div className="text-slate-500 text-sm font-medium uppercase tracking-wide mb-2">Sikerességi Ráta</div>
             <div className={`text-4xl font-bold ${overallRate >= 80 ? 'text-green-600' : overallRate >= 50 ? 'text-indigo-600' : 'text-orange-600'}`}>
               {Math.round(overallRate)}%
             </div>
           </div>
           <div className="bg-white p-6 rounded-xl border border-slate-100 shadow-sm">
-            <div className="text-slate-500 text-sm font-medium uppercase tracking-wide mb-2">Needs Focus</div>
+            <div className="text-slate-500 text-sm font-medium uppercase tracking-wide mb-2">Fejlesztendő</div>
             <div className="text-xl font-bold text-red-500">
-              {weakness ? `${weakness.topic} (${Math.round(weakness.rate)}%)` : "No data yet"}
+              {weakness ? `${weakness.topic} (${Math.round(weakness.rate)}%)` : "Nincs adat"}
             </div>
           </div>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8">
           <div className="bg-white p-6 rounded-xl border border-slate-100 shadow-sm">
-            <h3 className="text-lg font-bold text-slate-800 mb-6">Topic Breakdown</h3>
+            <h3 className="text-lg font-bold text-slate-800 mb-6">Témakörök bontása</h3>
             {topicStats.length > 0 ? (
               topicStats.map((t) => (
                 <ProgressBar 
@@ -1039,12 +779,12 @@ export default function App() {
                 />
               ))
             ) : (
-              <p className="text-slate-400 italic">Answer questions to see topic breakdown.</p>
+              <p className="text-slate-400 italic">Válaszolj kérdésekre a statisztikákhoz.</p>
             )}
           </div>
 
           <div className="bg-white p-6 rounded-xl border border-slate-100 shadow-sm">
-            <h3 className="text-lg font-bold text-slate-800 mb-6">Exam History</h3>
+            <h3 className="text-lg font-bold text-slate-800 mb-6">Vizsga Előzmények</h3>
             <div className="space-y-4">
               {stats.examHistory && stats.examHistory.length > 0 ? (
                 [...stats.examHistory].reverse().slice(0, 5).map((exam, i) => (
@@ -1056,7 +796,7 @@ export default function App() {
                   </div>
                 ))
               ) : (
-                <p className="text-slate-400 italic">No completed exams yet.</p>
+                <p className="text-slate-400 italic">Nincs még befejezett vizsga.</p>
               )}
             </div>
           </div>
