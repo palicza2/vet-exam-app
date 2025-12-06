@@ -317,6 +317,276 @@ export const clostridiumData = {
       options: ["Alfa és Béta", "A és B toxin", "Tetanospazmin és Botulinum", "Epsilon és Iota"],
       correctAnswer: 1,
       explanation: "A C. difficile fő virulenciafaktorai az A (enterotoxin) és B (citotoxin) toxinok."
+    },
+    {
+      id: "clos_21",
+      topic: "Clostridium - General",
+      type: "mcq",
+      question: "Milyen morfológiai alakot vehet fel a Clostridium tetani a spóraképzés miatt?",
+      options: ["Teniszütő vagy dobverő", "Szőlőfürt", "Lánc", "Spirál"],
+      correctAnswer: 0,
+      explanation: "A terminális spóra deformálja a sejtet, dobverő alakot kölcsönözve neki."
+    },
+    {
+      id: "clos_22",
+      topic: "Clostridium - General",
+      type: "bool",
+      question: "A Clostridiumok spórái hőérzékenyek és 60 fokon elpusztulnak.",
+      options: ["Igaz", "Hamis"],
+      correctAnswer: 1,
+      explanation: "Hamis. A spórák rendkívül ellenállóak, forralást is kibírhatnak."
+    },
+    {
+      id: "clos_23",
+      topic: "Clostridium - General",
+      type: "mcq",
+      question: "Milyen szagú lehet a Clostridium difficile tenyészete?",
+      options: ["Édeskés", "Záptojás", "Lótrágya", "Földszerű"],
+      correctAnswer: 2,
+      explanation: "Jellegzetes 'lótrágya' szagú telepeket képezhet speciális táptalajon."
+    },
+    {
+      id: "clos_24",
+      topic: "Clostridium - Enteric",
+      type: "mcq",
+      question: "Mi a 'dysbacteriosis'?",
+      options: ["A bélflóra egyensúlyának felborulása", "A bélfal kilyukadása", "A gyomorgyulladás", "A májelégtelenség"],
+      correctAnswer: 0,
+      explanation: "A diszbiózis a bélflóra zavara, ami opportunista baktériumok elszaporodásához vezet."
+    },
+    {
+      id: "clos_25",
+      topic: "Clostridium - Enteric",
+      type: "mcq",
+      question: "Melyik C. perfringens toxin felelős főként a C típusú enteritiszért?",
+      options: ["Alfa", "Béta", "Epsilon", "Iota"],
+      correctAnswer: 1,
+      explanation: "A béta-toxin a fő virulenciafaktor a necrotizáló enteritisben."
+    },
+    {
+      id: "clos_26",
+      topic: "Clostridium - Enteric",
+      type: "bool",
+      question: "A C. perfringens A típus sosem okoz hasmenést malacokban.",
+      options: ["Igaz", "Hamis"],
+      correctAnswer: 1,
+      explanation: "Hamis. Okozhat enyhébb, dysbacteriosis jellegű hasmenést."
+    },
+    {
+      id: "clos_27",
+      topic: "Clostridium - Enteric",
+      type: "mcq",
+      question: "Milyen színű hasmenés jellemző a C. perfringens A fertőzésre?",
+      options: ["Véres, vörös", "Sárgás vagy szürkés, híg", "Fekete", "Zöld"],
+      correctAnswer: 1,
+      explanation: "Ellentétben a C típussal, az A típusnál nem jellemző a véres hasmenés."
+    },
+    {
+      id: "clos_28",
+      topic: "Clostridium - Histotoxic",
+      type: "mcq",
+      question: "Mi a 'sercegő üszög' latin neve?",
+      options: ["Gangraena emphysematosa", "Tetanus", "Botulismus", "Enterotoxemia"],
+      correctAnswer: 0,
+      explanation: "Kórokozója a C. chauvoei."
+    },
+    {
+      id: "clos_29",
+      topic: "Clostridium - Histotoxic",
+      type: "bool",
+      question: "A gázödémás fertőzések exogén úton, sebzéseken át is létrejöhetnek.",
+      options: ["Igaz", "Hamis"],
+      correctAnswer: 0,
+      explanation: "Igaz. Ez az egyik fő fertőzési kapu."
+    },
+    {
+      id: "clos_30",
+      topic: "Clostridium - Histotoxic",
+      type: "mcq",
+      question: "Melyik szerv károsodása jellemző a C. novyi fertőzésre?",
+      options: ["Vese", "Máj (hepatitis necroticans)", "Tüdő", "Szív"],
+      correctAnswer: 1,
+      explanation: "A májban okoz elhalásos gyulladást."
+    },
+    {
+      id: "clos_31",
+      topic: "Clostridium - Neurotoxic",
+      type: "mcq",
+      question: "Mi a tetanuszotoxin hatásmechanizmusa?",
+      options: ["Gátolja az acetilkolin felszabadulását", "Gátolja a gátló neurotranszmitterek felszabadulását", "Szöveteket roncsol", "Vérzést okoz"],
+      correctAnswer: 1,
+      explanation: "A gátlás gátlása miatt alakul ki a merevgörcs."
+    },
+    {
+      id: "clos_32",
+      topic: "Clostridium - Neurotoxic",
+      type: "mcq",
+      question: "Milyen állás jellemző a tetanuszos sertésre?",
+      options: ["Kutyaülés", "Fűrészbak állás", "Oldalfekvés petyhüdt lábakkal", "Fejoldaltartás"],
+      correctAnswer: 1,
+      explanation: "Az izmok merevsége miatt fűrészbakhoz hasonlít."
+    },
+    {
+      id: "clos_33",
+      topic: "Clostridium - Neurotoxic",
+      type: "bool",
+      question: "A botulizmus valódi fertőzés, a baktérium szaporodik a vérben.",
+      options: ["Igaz", "Hamis"],
+      correctAnswer: 1,
+      explanation: "Hamis. Ez intoxikáció (mérgezés), a toxint veszi fel az állat."
+    },
+    {
+      id: "clos_34",
+      topic: "Clostridium - Treatment",
+      type: "mcq",
+      question: "Melyik szer alkalmas az anaerobok ellen?",
+      options: ["Gentamicin", "Penicillin", "Enrofloxacin", "Neomicin"],
+      correctAnswer: 1,
+      explanation: "A penicillinek hatékonyak a Clostridiumok ellen."
+    },
+    {
+      id: "clos_35",
+      topic: "Clostridium - Treatment",
+      type: "mcq",
+      question: "Mi a legfontosabb teendő botulizmus gyanúja esetén?",
+      options: ["Antibiotikum adása", "A toxinforrás (dög, romlott takarmány) megszüntetése", "Vakcinázás", "Kényszervágás"],
+      correctAnswer: 1,
+      explanation: "Mivel mérgezésről van szó, a további toxinbevitelt kell megakadályozni."
+    },
+    {
+      id: "clos_36",
+      topic: "Clostridium - Prevention",
+      type: "bool",
+      question: "A probiotikumok segíthetnek a Clostridiumok kiszorításában.",
+      options: ["Igaz", "Hamis"],
+      correctAnswer: 0,
+      explanation: "Igaz. A kompetitív kizárás elve alapján működnek."
+    },
+    {
+      id: "clos_37",
+      topic: "Clostridium - Prevention",
+      type: "mcq",
+      question: "Milyen anyagot adnak a takarmányhoz a pH csökkentésére?",
+      options: ["Szerves savak (pl. hangyasav)", "Lúg", "Só", "Cukor"],
+      correctAnswer: 0,
+      explanation: "A savanyítás gátolja a Clostridiumok szaporodását."
+    },
+    {
+      id: "clos_38",
+      topic: "Clostridium - General",
+      type: "mcq",
+      question: "Mit jelent a 'crepitatio'?",
+      options: ["Láz", "Hasmenés", "Gázos sercegés/ropogás tapintáskor", "Bénulás"],
+      correctAnswer: 2,
+      explanation: "A gázödémás izmok tapintásakor érezhető jelenség."
+    },
+    {
+      id: "clos_39",
+      topic: "Clostridium - Enteric",
+      type: "mcq",
+      question: "Melyik baktérium okozhat 'vulkán léziót' a vastagbélben?",
+      options: ["C. perfringens", "C. difficile", "C. septicum", "E. coli"],
+      correctAnswer: 1,
+      explanation: "Ez a C. difficile colitis kórbonctani jellemzője."
+    },
+    {
+      id: "clos_40",
+      topic: "Clostridium - General",
+      type: "bool",
+      question: "A C. perfringens törzseket A-tól E-ig tipizálják.",
+      options: ["Igaz", "Hamis"],
+      correctAnswer: 0,
+      explanation: "Igaz. A termelt fő toxinok alapján."
+    },
+    {
+      id: "clos_41",
+      topic: "Clostridium - Enteric",
+      type: "mcq",
+      question: "Miért csak az első napokban betegíti meg a malacokat a C. perfringens C?",
+      options: ["Mert később kialakul az immunitás", "Mert a béta-toxin tripszinérzékeny", "Mert a baktérium elpusztul", "Mert a koca teje megvédi őket"],
+      correctAnswer: 1,
+      explanation: "A kolosztrum tripszininhibitora védi a toxint, később a malac saját tripszinje lebontja."
+    },
+    {
+      id: "clos_42",
+      topic: "Clostridium - Neurotoxic",
+      type: "mcq",
+      question: "Melyik állatfajra jellemző a 'black disease'?",
+      options: ["Sertés", "Szarvasmarha/Juh", "Kutya", "Ló"],
+      correctAnswer: 1,
+      explanation: "Bár sertésben is előfordulhat C. novyi fertőzés, a klasszikus Black disease kérődzőkben van."
+    },
+    {
+      id: "clos_43",
+      topic: "Clostridium - Treatment",
+      type: "bool",
+      question: "Az aminoglikozidok kiválóak anaerob fertőzésekre.",
+      options: ["Igaz", "Hamis"],
+      correctAnswer: 1,
+      explanation: "Hamis. Hatástalanok, mert felvételük oxigénigényes."
+    },
+    {
+      id: "clos_44",
+      topic: "Clostridium - General",
+      type: "mcq",
+      question: "Hol találhatók a Clostridiumok a természetben?",
+      options: ["Csak beteg állatokban", "Talajban, trágyában, bélcsatornában", "Csak vízben", "Levegőben"],
+      correctAnswer: 1,
+      explanation: "Ubikviter (mindenhol előforduló) baktériumok."
+    },
+    {
+      id: "clos_45",
+      topic: "Clostridium - Prevention",
+      type: "mcq",
+      question: "Mikor oltják a kocákat C. perfringens C ellen?",
+      options: ["Fedeztetéskor", "Vemhesség végén", "Ellés után", "Választáskor"],
+      correctAnswer: 1,
+      explanation: "A kolosztrális immunitás átadása érdekében a vemhesség végén."
+    },
+    {
+      id: "clos_46",
+      topic: "Clostridium - Neurotoxic",
+      type: "bool",
+      question: "A tetanusz lappangási ideje általában néhány óra.",
+      options: ["Igaz", "Hamis"],
+      correctAnswer: 1,
+      explanation: "Hamis. Általában 1-3 hét."
+    },
+    {
+      id: "clos_47",
+      topic: "Clostridium - Enteric",
+      type: "mcq",
+      question: "Milyen kórképet okoz a C. perfringens D típus?",
+      options: ["Enterotoxémiát (vesevelő-lágyulás) főleg juhokban", "Tüdőgyulladást", "Bőrtüneteket", "Semmit"],
+      correctAnswer: 0,
+      explanation: "Sertésben ritka, juhokban okoz pulpy kidney betegséget."
+    },
+    {
+      id: "clos_48",
+      topic: "Clostridium - Treatment",
+      type: "mcq",
+      question: "Mivel kezelhető a C. difficile colitis?",
+      options: ["Gentamicin", "Penicillin, Tilozin", "Szulfonamidok", "Semmivel"],
+      correctAnswer: 1,
+      explanation: "A penicillin és makrolidok hatásosak lehetnek."
+    },
+    {
+      id: "clos_49",
+      topic: "Clostridium - General",
+      type: "bool",
+      question: "A C. tetani spórája centrális elhelyezkedésű.",
+      options: ["Igaz", "Hamis"],
+      correctAnswer: 1,
+      explanation: "Hamis. Terminális (végálló) spórája van."
+    },
+    {
+      id: "clos_50",
+      topic: "Clostridium - Prevention",
+      type: "mcq",
+      question: "Mi a ZnO szerepe a takarmányban?",
+      options: ["Vitaminpótlás", "Hasmenés csökkentése", "Ízesítés", "Tartósítás"],
+      correctAnswer: 1,
+      explanation: "A cink-oxidot választási hasmenés megelőzésére használják."
     }
   ]
 };
