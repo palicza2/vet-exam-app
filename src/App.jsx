@@ -23,19 +23,19 @@ try {
 } catch (e) {
   // REPLACE THE OBJECT BELOW WITH YOUR OWN KEYS FROM FIREBASE CONSOLE
   const myRealConfig = {
-    apiKey: "AIzaSyDY0pJFOZl2qvBldGqdpY8hDvBKryEhE-w",
-    authDomain: "vet-exam-app.firebaseapp.com",
-    projectId: "vet-exam-app",
-    storageBucket: "vet-exam-app.firebasestorage.app",
-    messagingSenderId: "667121013022",
-    appId: "1:667121013022:web:d12599eb4250315c21f90f",
-    measurementId: "G-84Z79H0EMC"
+  apiKey: "AIzaSyDY0pJFOZl2qvBldGqdpY8hDvBKryEhE-w",
+  authDomain: "vet-exam-app.firebaseapp.com",
+  projectId: "vet-exam-app",
+  storageBucket: "vet-exam-app.firebasestorage.app",
+  messagingSenderId: "667121013022",
+  appId: "1:667121013022:web:d12599eb4250315c21f90f",
+  measurementId: "G-84Z79H0EMC"
   };
 
   try {
-    if (myRealConfig.apiKey === "AIzaSyDY0pJFOZl2qvBldGqdpY8hDvBKryEhE-w") {
-      throw new Error("Config not set");
-    }
+    // KIVETTEM A BIZTONSÁGI BLOKKOLÁST
+    // Így, ha kicserélted a kulcsokat, azonnal működni fog.
+    // Ha nem cseréled ki, Firebase hibát dob majd a böngésző konzolban.
     app = initializeApp(myRealConfig);
     auth = getAuth(app);
     db = getFirestore(app);
