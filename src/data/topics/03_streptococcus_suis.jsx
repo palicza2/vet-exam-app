@@ -1,94 +1,127 @@
 import React from 'react';
+import { Microscope, Activity, Stethoscope, Syringe } from 'lucide-react';
 
 export const streptococcus_suis = {
   id: "streptococcus_suis",
   title: "3. Streptococcus suis",
   shortTitle: "S. suis",
   description: "A Streptococcus suis jellemzői, klinikai formái, diagnosztikája és védekezés.",
-  content: (
-    <div className="space-y-6 text-gray-800">
-      <section>
-        <h3 className="text-xl font-bold text-blue-700 mb-3">A kórokozó jellemzői</h3>
-        <p className="mb-2">
-          A <strong>Streptococcus suis</strong> Gram-pozitív, láncokban elhelyezkedő coccus, mely poliszacharid tokja alapján szerotípusokba sorolható. Fakultatív anaerob baktérium, véres agaron <strong>alfa-hemolízist</strong> okoz. Jelenleg <strong>35 szerotípusát</strong> ismerjük; az 1–9. szerotípusok a leggyakoribbak, és előfordulnak tok nélküli, szerológiailag nem tipizálható törzsek is.
-        </p>
-        <p className="mb-2">
-          Egy adott sertésben akár több szerotípus egyidejű jelenléte is lehetséges. Molekuláris tipizálásra multilocus szekvencia-tipizálást (MLST) alkalmaznak (pl. 2. szerotípus ST1 törzs). A törzsek virulenciája változó; a tok fontos szerepet játszik a kórokozó ellenálló képességében és patogenitásában.
-        </p>
-        <ul className="list-disc list-inside ml-4 bg-blue-50 p-4 rounded-lg border-l-4 border-blue-500">
-          <li><strong>Hordozás:</strong> Felső légutak nyálkahártyáján (tonsillák, orrüreg) és a húgy-nemi traktusban.</li>
-          <li><strong>Terjedés:</strong> Fertőzött élő állatok, ragályfogó tárgyak, rovarok.</li>
-          <li><strong>Ellenálló képesség:</strong> Környezetben rövid ideig, hullákban hetekig fertőzőképes.</li>
-        </ul>
-        <p className="mt-2 text-red-600 font-semibold">
-          ⚠️ Zoonózis: Állatról emberre terjedhet (főleg Délkelet-Ázsiában). Emberben agyhártyagyulladást okozhat, főleg vágóhídi dolgozóknál.
-        </p>
-      </section>
-
-      <section>
-        <h3 className="text-xl font-bold text-blue-700 mb-3">Klinikai formák sertésben</h3>
-        <p className="mb-2">
-          A tünetek többnyire a <strong>választást követő korban (5–10 hetes malacoknál)</strong> válnak észlelhetővé.
-        </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div className="bg-white p-4 rounded shadow border border-gray-200">
-            <h4 className="font-bold text-lg mb-2">Perakut és Akut forma</h4>
-            <ul className="list-disc list-inside space-y-1">
-              <li><strong>Perakut:</strong> Hirtelen elhullás (fulmináns szepszis).</li>
-              <li><strong>Akut:</strong> Magas láz, bizonytalan mozgás (ataxia).</li>
-              <li><strong>Idegrendszeri tünetek:</strong> Opisthotonus (hátrahajló fejtartás), nystagmus (szemtekerezgés).</li>
-              <li>Jellemző: <strong>Agyburokgyulladás (meningitis)</strong>.</li>
-            </ul>
-          </div>
-          <div className="bg-white p-4 rounded shadow border border-gray-200">
-            <h4 className="font-bold text-lg mb-2">Félheveny (Szubakut) forma</h4>
-            <ul className="list-disc list-inside space-y-1">
-              <li>Lokalizált gyulladások.</li>
-              <li><strong>Ízületgyulladás (arthritis):</strong> Sántaság, "bánulás".</li>
-              <li><strong>Tüdőgyulladás:</strong> Interstitialis vagy bronchopneumonia.</li>
-              <li><strong>Szívbelhártya-gyulladás (endocarditis):</strong> Hirtelen elhulláshoz vezethet.</li>
-              <li>Ritkábban: Vaginitis, vetélés.</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section>
-        <h3 className="text-xl font-bold text-blue-700 mb-3">Kórbonctan és Diagnosztika</h3>
-        <p className="mb-2">
-          <strong>Boncolás:</strong> Szeptikémia jelei (vérzések, lépmegnagyobbodás). Fibrines/gennyes meningitis, polyarthritis, pneumonia, endocarditis.
-        </p>
-        <div className="bg-yellow-50 p-4 rounded border-l-4 border-yellow-500">
-          <h4 className="font-bold text-yellow-800">Diagnosztika kulcspontjai:</h4>
-          <ul className="list-disc list-inside mt-2 text-yellow-900">
-            <li><strong>Minta:</strong> Agyvelő, agyhártya, ízületi folyadék, lép. (Az orr/garat minta NEM diagnosztikus a hordozás miatt!)</li>
-            <li><strong>Tenyésztés:</strong> Véragaron jól nő, Gram-pozitív láncok.</li>
-            <li><strong>Azonosítás:</strong> PCR, szerotipizálás (tárgylemez-agglutináció).</li>
-            <li><strong>Elkülönítés:</strong> Glässer-kór (G. parasuis), Ödémabetegség (E. coli), Sómmérgezés, Sertésorbánc.</li>
-          </ul>
-        </div>
-      </section>
-
-      <section>
-        <h3 className="text-xl font-bold text-blue-700 mb-3">Kezelés és Megelőzés</h3>
-        <ul className="list-disc list-inside mb-4">
-          <li><strong>Kezelés:</strong> Béta-laktámok (Penicillin G, aminopenicillinek). Rezisztencia esetén (pl. tetraciklinek ellen) antibiotikum-váltás antibiogram alapján.</li>
-          <li>Korai injekciós kezelés életmentő lehet, kiegészítve gyulladáscsökkentőkkel.</li>
-        </ul>
-        <div className="bg-green-50 p-4 rounded border-l-4 border-green-500">
-          <h4 className="font-bold text-green-800">Vakcinázás stratégiája</h4>
-          <p className="mt-1 text-green-900">
-            Nincs univerzális vakcina a sok szerotípus miatt. A védekezés alapja a <strong>telepspecifikus (autogén) vakcina</strong>.
-          </p>
-          <ul className="list-disc list-inside mt-2 text-green-900">
-            <li>Kocák oltása &rarr; passzív immunitás a malacoknak.</li>
-            <li>Szükség esetén a malacok oltása választás után.</li>
-            <li>Rendszeres törzsfrissítés szükséges a vakcinában.</li>
-          </ul>
-        </div>
-      </section>
-    </div>
-  ),
+  studyMaterial: [
+    {
+      title: "1. A Kórokozó Jellemzői",
+      icon: <Microscope size={24} className="text-blue-600" />,
+      color: "bg-blue-50 border-blue-200",
+      sections: [
+        {
+          header: "Streptococcus suis",
+          points: [
+            "**Gram-pozitív**, láncokban elhelyezkedő coccus, mely poliszacharid tokja alapján szerotípusokba sorolható.",
+            "**Fakultatív anaerob** baktérium, véres agaron **alfa-hemolízist** okoz.",
+            "Jelenleg **35 szerotípusát** ismerjük; az **1–9. szerotípusok** a leggyakoribbak.",
+            "Előfordulnak tok nélküli, szerológiailag nem tipizálható törzsek is.",
+            "Egy adott sertésben akár **több szerotípus egyidejű jelenléte** is lehetséges.",
+            "**Molekuláris tipizálás:** MLST (multilocus sequence typing) - pl. 2. szerotípus ST1 törzs.",
+            "A törzsek virulenciája változó; a **tok fontos szerepet játszik** a kórokozó ellenálló képességében és patogenitásában."
+          ]
+        },
+        {
+          header: "Hordozás és Terjedés",
+          points: [
+            "**Hordozás:** Felső légutak nyálkahártyáján (tonsillák, orrüreg) és a húgy-nemi traktusban.",
+            "**Terjedés:** Fertőzött élő állatok, ragályfogó tárgyak, rovarok.",
+            "**Ellenálló képesség:** Környezetben rövid ideig, hullákban hetekig fertőzőképes."
+          ]
+        },
+        {
+          header: "Zoonózis",
+          points: [
+            "⚠️ **Zoonózis:** Állatról emberre terjedhet (főleg Délkelet-Ázsiában).",
+            "Emberben **agyhártyagyulladást (meningitis)** okozhat, főleg vágóhídi dolgozóknál."
+          ]
+        }
+      ]
+    },
+    {
+      title: "2. Klinikai Formák Sertésben",
+      icon: <Activity size={24} className="text-purple-600" />,
+      color: "bg-purple-50 border-purple-200",
+      sections: [
+        {
+          header: "Általános Jellemzők",
+          points: [
+            "A tünetek többnyire a **választást követő korban (5–10 hetes malacoknál)** válnak észlelhetővé."
+          ]
+        },
+        {
+          header: "Perakut és Akut Forma",
+          points: [
+            "**Perakut:** Hirtelen elhullás (fulmináns szepszis).",
+            "**Akut:** Magas láz, bizonytalan mozgás (ataxia).",
+            "**Idegrendszeri tünetek:** Opisthotonus (hátrahajló fejtartás), nystagmus (szemtekerezgés).",
+            "Jellemző: **Agyburokgyulladás (meningitis)**."
+          ]
+        },
+        {
+          header: "Félheveny (Szubakut) Forma",
+          points: [
+            "Lokalizált gyulladások.",
+            "**Ízületgyulladás (arthritis):** Sántaság, \"bánulás\".",
+            "**Tüdőgyulladás:** Interstitialis vagy bronchopneumonia.",
+            "**Szívbelhártya-gyulladás (endocarditis):** Hirtelen elhulláshoz vezethet.",
+            "Ritkábban: Vaginitis, vetélés."
+          ]
+        }
+      ]
+    },
+    {
+      title: "3. Kórbonctan és Diagnosztika",
+      icon: <Stethoscope size={24} className="text-amber-600" />,
+      color: "bg-amber-50 border-amber-200",
+      sections: [
+        {
+          header: "Kórbonctan",
+          points: [
+            "**Boncolás:** Szeptikémia jelei (vérzések, lépmegnagyobbodás).",
+            "Fibrines/gennyes meningitis, polyarthritis, pneumonia, endocarditis."
+          ]
+        },
+        {
+          header: "Diagnosztika Kulcspontjai",
+          points: [
+            "**Minta:** Agyvelő, agyhártya, ízületi folyadék, lép. (Az orr/garat minta **NEM diagnosztikus** a hordozás miatt!)",
+            "**Tenyésztés:** Véragaron jól nő, Gram-pozitív láncok.",
+            "**Azonosítás:** PCR, szerotipizálás (tárgylemez-agglutináció).",
+            "**Elkülönítés:** Glässer-kór (G. parasuis), Ödémabetegség (E. coli), Sómmérgezés, Sertésorbánc."
+          ]
+        }
+      ]
+    },
+    {
+      title: "4. Kezelés és Megelőzés",
+      icon: <Syringe size={24} className="text-green-600" />,
+      color: "bg-green-50 border-green-200",
+      sections: [
+        {
+          header: "Kezelés",
+          points: [
+            "**Antibiotikum:** **Béta-laktámok** (Penicillin G, aminopenicillinek).",
+            "Rezisztencia esetén (pl. tetraciklinek ellen) **antibiotikum-váltás antibiogram** alapján.",
+            "**Korai injekciós kezelés** életmentő lehet, kiegészítve **gyulladáscsökkentőkkel**."
+          ]
+        },
+        {
+          header: "Vakcinázás Stratégiája",
+          points: [
+            "**Nincs univerzális vakcina** a sok szerotípus miatt.",
+            "A védekezés alapja a **telepspecifikus (autogén) vakcina**.",
+            "**Kocák oltása** → passzív immunitás a malacoknak.",
+            "Szükség esetén a **malacok oltása választás után**.",
+            "**Rendszeres törzsfrissítés** szükséges a vakcinában."
+          ]
+        }
+      ]
+    }
+  ],
   questions: [
     {
       id: 1,
