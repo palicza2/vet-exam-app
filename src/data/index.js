@@ -3,11 +3,13 @@
 // 1. IMPORTÁLÁS: Itt húzzuk be az egyes témakörök fájljait
 import { clostridiumData } from './topics/01_clostridium.jsx';
 import { sertesorbancData } from './topics/02_sertesorbanc.jsx'; // <--- EZT ADTUK HOZZÁ
+import { streptococcus_suis as streptococcusSuisData } from './topics/03_streptococcus_suis.jsx';
 
 // 2. LISTA: Ez a tömb határozza meg, mi jelenik meg az alkalmazásban
 export const ALL_TOPICS = [
   clostridiumData,
   sertesorbancData, // <--- EZT ADTUK HOZZÁ (Így már 2 téma lesz)
+  streptococcusSuisData,
 ];
 
 // --- Segédfüggvények (Ezekhez NEM kell nyúlni, automatikusan működnek) ---
