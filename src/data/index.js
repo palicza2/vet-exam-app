@@ -1,21 +1,27 @@
 // src/data/index.js
-import { clostridiumData } from './topics/01_clostridium.jsx';
-// Később: import { masikTetelData } from './topics/02_masik_tetel';
 
-// 1. Összes study anyag egy tömbben (ha listázni akarod a témákat)
+// 1. IMPORTÁLÁS: Itt húzzuk be az egyes témakörök fájljait
+import { clostridiumData } from './topics/01_clostridium.jsx';
+import { sertesorbancData } from './topics/02_sertesorbanc.jsx'; // <--- EZT ADTUK HOZZÁ
+
+// 2. LISTA: Ez a tömb határozza meg, mi jelenik meg az alkalmazásban
 export const ALL_TOPICS = [
   clostridiumData,
-  // masikTetelData
+  sertesorbancData, // <--- EZT ADTUK HOZZÁ (Így már 2 téma lesz)
 ];
 
-// 2. Helper: Az összes kérdés egyetlen nagy tömbben (a Vizsga módhoz)
+// --- Segédfüggvények (Ezekhez NEM kell nyúlni, automatikusan működnek) ---
+
+// Összegyűjti az összes kérdést egy nagy közös kalapba a Vizsga módhoz
 export const GET_ALL_QUESTIONS = () => {
   return ALL_TOPICS.reduce((acc, topic) => {
-    return [...acc, ...topic.questions];
+    // Biztonsági ellenőrzés: ha véletlenül nincs kérdés, üres tömböt ad
+    const questions = topic.questions || [];
+    return [...acc, ...questions];
   }, []);
 };
 
-// 3. Helper: Csak egy adott téma kérdései (ha témánként akarsz gyakorolni)
+// Visszaadja egy adott téma kérdéseit a Gyakorló módhoz
 export const GET_TOPIC_QUESTIONS = (topicId) => {
   const topic = ALL_TOPICS.find(t => t.id === topicId);
   return topic ? topic.questions : [];
