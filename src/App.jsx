@@ -8,7 +8,7 @@ import {
 } from 'lucide-react';
 
 // --- ÚJ IMPORT: Adatok betöltése a moduláris rendszerből ---
-import { ALL_TOPICS, GET_ALL_QUESTIONS } from './data/index';
+import { ALL_TOPICS, GET_ALL_QUESTIONS } from './data/index.js';
 
 // --- Firebase Configuration Setup ---
 let app, auth, db;
