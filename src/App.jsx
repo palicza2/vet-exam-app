@@ -205,7 +205,8 @@ export default function App() {
     totalAnswered: 0,
     totalCorrect: 0,
     byTopic: {}, 
-    examHistory: [] 
+    examHistory: [],
+    dailyActivity: {} // { "2024-01-15": 5, "2024-01-16": 12, ... }
   });
 
   // Practice State
@@ -245,7 +246,7 @@ export default function App() {
       if (docSnap.exists()) {
         setStats(docSnap.data());
       } else {
-        const initialStats = { totalAnswered: 0, totalCorrect: 0, byTopic: {}, examHistory: [] };
+        const initialStats = { totalAnswered: 0, totalCorrect: 0, byTopic: {}, examHistory: [], dailyActivity: {} };
         setDoc(statsRef, initialStats);
         setStats(initialStats);
       }
@@ -273,11 +274,17 @@ export default function App() {
   const handleSignOut = () => {
     if (configError) return;
     signOut(auth);
-    setStats({ totalAnswered: 0, totalCorrect: 0, byTopic: {}, examHistory: [] });
+    setStats({ totalAnswered: 0, totalCorrect: 0, byTopic: {}, examHistory: [], dailyActivity: {} });
     setView('landing');
   };
 
   // --- Helpers ---
+  
+  // Helper function to get today's date string (YYYY-MM-DD)
+  const getTodayDateString = () => {
+    const today = new Date();
+    return today.toISOString().split('T')[0];
+  };
   
   // Segédfüggvény a kérdések szűrésére
   const getQuestionsForTopic = (topic) => {
@@ -300,6 +307,11 @@ export default function App() {
     const statsRef = doc(db, 'artifacts', appId, 'users', user.uid, 'data', 'stats');
     
     const newStats = { ...stats };
+    const today = getTodayDateString();
+    
+    // Initialize dailyActivity if it doesn't exist
+    if (!newStats.dailyActivity) newStats.dailyActivity = {};
+    if (!newStats.dailyActivity[today]) newStats.dailyActivity[today] = 0;
     
     if (!isExam) {
        newStats.totalAnswered += 1;
@@ -308,6 +320,9 @@ export default function App() {
        if (!newStats.byTopic[topic]) newStats.byTopic[topic] = { total: 0, correct: 0 };
        newStats.byTopic[topic].total += 1;
        if (isCorrect) newStats.byTopic[topic].correct += 1;
+       
+       // Track daily activity for practice questions
+       newStats.dailyActivity[today] += 1;
     } else {
       const historyEntry = {
         date: new Date().toISOString(),
@@ -409,6 +424,11 @@ export default function App() {
   const submitExam = async () => {
     let correctCount = 0;
     const newStats = { ...stats }; 
+    const today = getTodayDateString();
+    
+    // Initialize dailyActivity if it doesn't exist
+    if (!newStats.dailyActivity) newStats.dailyActivity = {};
+    if (!newStats.dailyActivity[today]) newStats.dailyActivity[today] = 0;
     
     examQuestions.forEach(q => {
       const isCorrect = examAnswers[q.id] === q.correctAnswer;
@@ -421,6 +441,9 @@ export default function App() {
 
     newStats.totalAnswered += examQuestions.length;
     newStats.totalCorrect += correctCount;
+    
+    // Track daily activity for exam questions
+    newStats.dailyActivity[today] += examQuestions.length;
     
     newStats.examHistory = [...(newStats.examHistory || []), {
        date: new Date().toISOString(),
@@ -911,6 +934,25 @@ export default function App() {
     })).sort((a, b) => b.rate - a.rate); // Best to worst
 
     const weakness = topicStats.length > 0 ? topicStats[topicStats.length - 1] : null;
+    
+    // Process daily activity for timeline
+    const dailyActivity = stats.dailyActivity || {};
+    const today = new Date();
+    const last30Days = [];
+    
+    for (let i = 29; i >= 0; i--) {
+      const date = new Date(today);
+      date.setDate(date.getDate() - i);
+      const dateString = date.toISOString().split('T')[0];
+      const count = dailyActivity[dateString] || 0;
+      last30Days.push({
+        date: dateString,
+        dateObj: date,
+        count: count
+      });
+    }
+    
+    const maxCount = Math.max(...last30Days.map(d => d.count), 1);
 
     return (
       <div className="max-w-4xl mx-auto px-4 py-8">
@@ -938,6 +980,46 @@ export default function App() {
               {weakness ? `${weakness.topic} (${Math.round(weakness.rate)}%)` : "Nincs adat"}
             </div>
           </div>
+        </div>
+
+        {/* Timeline Section */}
+        <div className="bg-white p-6 rounded-xl border border-slate-100 shadow-sm mb-8">
+          <h3 className="text-lg font-bold text-slate-800 mb-6">Napi Aktivítás (Utolsó 30 nap)</h3>
+          {maxCount > 0 ? (
+            <div className="space-y-4">
+              <div className="flex items-end gap-1 h-48 pb-4 border-b border-slate-200">
+                {last30Days.map((day, idx) => {
+                  const heightPercent = (day.count / maxCount) * 100;
+                  const isToday = day.date === getTodayDateString();
+                  return (
+                    <div key={idx} className="flex-1 flex flex-col items-center group relative">
+                      <div 
+                        className={`w-full rounded-t transition-all hover:opacity-80 cursor-pointer ${
+                          isToday ? 'bg-indigo-600' : 'bg-indigo-400'
+                        }`}
+                        style={{ height: `${Math.max(heightPercent, 2)}%` }}
+                        title={`${day.dateObj.toLocaleDateString('hu-HU', { month: 'short', day: 'numeric' })}: ${day.count} kérdés`}
+                      />
+                      {idx % 5 === 0 && (
+                        <span className="text-xs text-slate-500 mt-1 transform -rotate-45 origin-top-left whitespace-nowrap">
+                          {day.dateObj.toLocaleDateString('hu-HU', { month: 'short', day: 'numeric' })}
+                        </span>
+                      )}
+                      <div className="absolute bottom-full mb-2 hidden group-hover:block bg-slate-800 text-white text-xs rounded px-2 py-1 whitespace-nowrap z-10">
+                        {day.dateObj.toLocaleDateString('hu-HU', { year: 'numeric', month: 'long', day: 'numeric' })}: {day.count} kérdés
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+              <div className="flex justify-between items-center text-sm text-slate-600">
+                <span>Összesen: {last30Days.reduce((sum, d) => sum + d.count, 0)} kérdés</span>
+                <span>Átlag: {Math.round(last30Days.reduce((sum, d) => sum + d.count, 0) / 30)} kérdés/nap</span>
+              </div>
+            </div>
+          ) : (
+            <p className="text-slate-400 italic">Még nincs napi aktivitás adat.</p>
+          )}
         </div>
 
         <div className="grid md:grid-cols-2 gap-8">
