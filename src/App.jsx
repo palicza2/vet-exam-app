@@ -4,7 +4,7 @@ import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, on
 import { getFirestore, doc, setDoc, updateDoc, onSnapshot } from 'firebase/firestore';
 import { 
   BookOpen, CheckCircle, PieChart, Activity, RotateCcw, ChevronRight, Check, X, 
-  Brain, LogOut, Lock, Mail, ShieldAlert, ChevronDown, ChevronUp, Book, ArrowLeft
+  Brain, LogOut, Lock, Mail, ShieldAlert, ChevronDown, ChevronUp, Book, ArrowLeft, Layers
 } from 'lucide-react';
 
 // --- ADATOK IMPORTÁLÁSA ---
@@ -186,8 +186,13 @@ const QuestionCard = ({ question, onAnswer, showFeedback, userAnswer }) => {
 export default function App() {
   const [user, setUser] = useState(null);
   const [authLoading, setAuthLoading] = useState(!configError);
+  
+  // Views: 'landing', 'study', 'practice', 'exam', 'stats', 'topic-selection'
   const [view, setView] = useState('landing'); 
-  const [selectedTopicId, setSelectedTopicId] = useState(null); // ÚJ: Kiválasztott téma ID
+  
+  // Selection Logic
+  const [selectionMode, setSelectionMode] = useState(null); // 'practice' or 'exam'
+  const [selectedTopicId, setSelectedTopicId] = useState(null); // For study mode specific
   
   // Login State
   const [email, setEmail] = useState('');
@@ -205,6 +210,7 @@ export default function App() {
 
   // Practice State
   const [currentPracticeQ, setCurrentPracticeQ] = useState(null);
+  const [practicePool, setPracticePool] = useState([]); // A kiválasztott témakör kérdései
   const [practiceFeedback, setPracticeFeedback] = useState(false);
   const [practiceUserAnswer, setPracticeUserAnswer] = useState(null);
 
@@ -271,9 +277,25 @@ export default function App() {
     setView('landing');
   };
 
-  // --- App Actions ---
+  // --- Helpers ---
+  
+  // Segédfüggvény a kérdések szűrésére
+  const getQuestionsForTopic = (topic) => {
+    const allQuestions = GET_ALL_QUESTIONS();
+    
+    // Ha nincs téma (Mixed) vagy a témának nincsenek direkt kérdései
+    if (!topic) return allQuestions;
 
-  const updateStats = async (isCorrect, topic, isExam = false, examScoreVal = 0) => {
+    // 1. Próbáljuk a topic objektumból kinyerni, ha ott van
+    if (topic.questions && topic.questions.length > 0) {
+      return topic.questions;
+    }
+    
+    // 2. Ha nincs, szűrjünk név/cím alapján a nagy listából
+    return allQuestions.filter(q => q.topic === topic.title);
+  };
+
+  const updateStats = async (isCorrect, topic, isExam = false, examScoreVal = 0, examTotal = 0) => {
     if (!user || configError) return;
     const statsRef = doc(db, 'artifacts', appId, 'users', user.uid, 'data', 'stats');
     
@@ -290,7 +312,7 @@ export default function App() {
       const historyEntry = {
         date: new Date().toISOString(),
         score: examScoreVal,
-        total: 20
+        total: examTotal
       };
       newStats.examHistory = [...(newStats.examHistory || []), historyEntry];
     }
@@ -298,15 +320,35 @@ export default function App() {
     await updateDoc(statsRef, newStats);
   };
 
-  const startPractice = () => {
-    const allQuestions = GET_ALL_QUESTIONS();
+  // --- Selection Flow ---
+
+  const initiateSelection = (mode) => {
+    setSelectionMode(mode);
+    setView('topic-selection');
+  };
+
+  const handleTopicSelect = (topic) => {
+    // topic can be null (for Mixed/All) or a topic object
+    const questions = getQuestionsForTopic(topic);
     
-    if (allQuestions.length === 0) {
-      alert("Nincsenek elérhető kérdések!");
+    if (questions.length === 0) {
+      alert("Nincsenek elérhető kérdések ebben a témakörben!");
       return;
     }
 
-    const randomQ = allQuestions[Math.floor(Math.random() * allQuestions.length)];
+    if (selectionMode === 'practice') {
+      startPracticeWithQuestions(questions);
+    } else if (selectionMode === 'exam') {
+      startExamWithQuestions(questions);
+    }
+  };
+
+  // --- Practice Logic ---
+
+  const startPracticeWithQuestions = (questions) => {
+    setPracticePool(questions); // Elmentjük a pool-t, hogy ebből sorsoljunk
+    
+    const randomQ = questions[Math.floor(Math.random() * questions.length)];
     setCurrentPracticeQ(randomQ);
     setPracticeFeedback(false);
     setPracticeUserAnswer(null);
@@ -321,29 +363,38 @@ export default function App() {
   };
 
   const nextPracticeQuestion = () => {
-    const allQuestions = GET_ALL_QUESTIONS();
+    // A practicePool-ból választunk, nem az összesből
+    if (practicePool.length === 0) return;
+
     let newQ;
+    // Megpróbálunk új kérdést adni, de ha csak 1 van, akkor marad ugyanaz
+    let attempts = 0;
     do {
-      newQ = allQuestions[Math.floor(Math.random() * allQuestions.length)];
-    } while (newQ.id === currentPracticeQ.id && allQuestions.length > 1);
+      newQ = practicePool[Math.floor(Math.random() * practicePool.length)];
+      attempts++;
+    } while (newQ.id === currentPracticeQ.id && practicePool.length > 1 && attempts < 10);
     
     setCurrentPracticeQ(newQ);
     setPracticeFeedback(false);
     setPracticeUserAnswer(null);
   };
 
-  const startExam = () => {
-    const allQuestions = GET_ALL_QUESTIONS();
+  // --- Exam Logic ---
+
+  const startExamWithQuestions = (questions) => {
+    const EXAM_LENGTH = 40; // MÓDOSÍTVA 40-re
     
-    if (allQuestions.length < 20) {
-        const shuffled = [...allQuestions].sort(() => 0.5 - Math.random());
-        setExamQuestions(shuffled);
+    let selected = [];
+    if (questions.length <= EXAM_LENGTH) {
+        // Ha kevesebb kérdés van mint 40, vegyük az összeset véletlenszerű sorrendben
+        selected = [...questions].sort(() => 0.5 - Math.random());
     } else {
-        const shuffled = [...allQuestions].sort(() => 0.5 - Math.random());
-        const selected = shuffled.slice(0, 20);
-        setExamQuestions(selected);
+        // Vegyünk 40 véletlenszerűt
+        const shuffled = [...questions].sort(() => 0.5 - Math.random());
+        selected = shuffled.slice(0, EXAM_LENGTH);
     }
     
+    setExamQuestions(selected);
     setExamAnswers({});
     setExamSubmitted(false);
     setExamScore(0);
@@ -518,24 +569,24 @@ export default function App() {
           <p className="text-slate-500">Vizsgatételek áttekintése kidolgozott anyagokkal.</p>
         </button>
 
-        <button onClick={startPractice} className="group p-8 bg-white rounded-2xl shadow-sm border border-slate-200 hover:shadow-md hover:border-indigo-200 transition-all text-left">
+        <button onClick={() => initiateSelection('practice')} className="group p-8 bg-white rounded-2xl shadow-sm border border-slate-200 hover:shadow-md hover:border-indigo-200 transition-all text-left">
           <div className="flex items-center gap-4 mb-3">
             <div className="p-3 bg-green-50 text-green-600 rounded-lg group-hover:scale-110 transition-transform">
               <CheckCircle size={24} />
             </div>
             <h3 className="text-xl font-bold text-slate-800">Gyakorlás</h3>
           </div>
-          <p className="text-slate-500">Kérdések azonnali visszajelzéssel és magyarázattal.</p>
+          <p className="text-slate-500">Válassz témakört vagy gyakorolj mindből.</p>
         </button>
 
-        <button onClick={startExam} className="group p-8 bg-white rounded-2xl shadow-sm border border-slate-200 hover:shadow-md hover:border-indigo-200 transition-all text-left">
+        <button onClick={() => initiateSelection('exam')} className="group p-8 bg-white rounded-2xl shadow-sm border border-slate-200 hover:shadow-md hover:border-indigo-200 transition-all text-left">
           <div className="flex items-center gap-4 mb-3">
             <div className="p-3 bg-purple-50 text-purple-600 rounded-lg group-hover:scale-110 transition-transform">
               <Activity size={24} />
             </div>
             <h3 className="text-xl font-bold text-slate-800">Vizsga</h3>
           </div>
-          <p className="text-slate-500">20 véletlenszerű kérdés, nincs segítség, csak a végén.</p>
+          <p className="text-slate-500">40 kérdéses teszt. Válassz témát vagy vegyeset.</p>
         </button>
 
         <button onClick={() => setView('stats')} className="group p-8 bg-white rounded-2xl shadow-sm border border-slate-200 hover:shadow-md hover:border-indigo-200 transition-all text-left">
@@ -551,7 +602,77 @@ export default function App() {
     </div>
   );
 
-  // --- MODOSÍTOTT RENDER STUDY ---
+  // --- ÚJ TÉMA VÁLASZTÓ NÉZET (Gyakorlás/Vizsga előtt) ---
+  const renderTopicSelection = () => (
+    <div className="max-w-5xl mx-auto px-4 py-8">
+      <div className="flex items-center gap-4 mb-8">
+        <button onClick={() => setView('landing')} className="p-2 hover:bg-slate-100 rounded-full transition-colors flex items-center gap-2 text-slate-500 hover:text-slate-800">
+          <ArrowLeft size={20} />
+          <span className="font-medium">Vissza a főoldalra</span>
+        </button>
+      </div>
+      
+      <div className="mb-8">
+        <h2 className="text-3xl font-bold text-slate-800 mb-2">
+          {selectionMode === 'practice' ? 'Gyakorlás indítása' : 'Vizsga indítása'}
+        </h2>
+        <p className="text-slate-500 text-lg">
+          Válassz egy konkrét témakört, vagy teszteld tudásod mindegyikből egyszerre.
+        </p>
+      </div>
+
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* MIXED / ÖSSZES OPCIÓ */}
+        <button 
+          onClick={() => handleTopicSelect(null)} // null = vegyes
+          className="bg-gradient-to-br from-indigo-600 to-purple-700 p-6 rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all text-left group h-full flex flex-col justify-between relative overflow-hidden"
+        >
+          <div className="absolute top-0 right-0 p-32 bg-white/10 rounded-full -mr-16 -mt-16 blur-3xl"></div>
+          <div className="relative z-10">
+            <div className="flex items-center justify-between mb-4">
+              <div className="p-3 bg-white/20 text-white rounded-lg backdrop-blur-sm">
+                <Layers size={24} />
+              </div>
+              <ChevronRight className="text-indigo-200 group-hover:text-white transition-colors" size={20} />
+            </div>
+            <h3 className="text-xl font-bold text-white mb-2">
+              Vegyes / Összes Téma
+            </h3>
+            <p className="text-indigo-100 text-sm">
+              Kérdések válogatása az összes elérhető témakörből. A legátfogóbb teszt.
+            </p>
+          </div>
+        </button>
+
+        {/* EGYÉNI TÉMÁK */}
+        {ALL_TOPICS.map((topic) => (
+          <button 
+            key={topic.id}
+            onClick={() => handleTopicSelect(topic)}
+            className="bg-white p-6 rounded-xl border border-slate-200 hover:border-indigo-400 hover:shadow-lg hover:-translate-y-1 transition-all text-left group h-full flex flex-col justify-between"
+          >
+            <div>
+              <div className="flex items-center justify-between mb-4">
+                <div className="p-3 bg-indigo-50 text-indigo-600 rounded-lg group-hover:scale-110 transition-transform">
+                  <Book size={24} />
+                </div>
+                <ChevronRight className="text-slate-300 group-hover:text-indigo-400 transition-colors" size={20} />
+              </div>
+              <h3 className="text-lg font-bold text-slate-800 mb-2 group-hover:text-indigo-700 transition-colors line-clamp-2">
+                {topic.title}
+              </h3>
+            </div>
+            <div className="pt-4 mt-2 border-t border-slate-100">
+              <span className="text-slate-500 text-xs font-semibold uppercase tracking-wide">
+                {topic.questions ? `${topic.questions.length} kérdés` : 'Választható'}
+              </span>
+            </div>
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+
   const renderStudy = () => {
     // 1. Ha van kiválasztott téma, mutassuk a tartalmát
     if (selectedTopicId) {
@@ -586,10 +707,13 @@ export default function App() {
             </div>
           </div>
 
-          {/* Opcionális: Gyakorlás indítása ebből a témából */}
+          {/* Gyakorlás indítása ebből a témából */}
           <div className="flex justify-center mt-12 mb-8">
             <button 
-              onClick={() => startPractice()} 
+              onClick={() => {
+                setSelectionMode('practice');
+                handleTopicSelect(topic);
+              }} 
               className="bg-indigo-600 text-white px-8 py-3 rounded-full font-semibold shadow-lg hover:bg-indigo-700 hover:shadow-indigo-200/50 transition-all flex items-center gap-2"
             >
               Gyakorlás indítása <ChevronRight size={20} />
@@ -642,10 +766,12 @@ export default function App() {
   const renderPractice = () => (
     <div className="max-w-3xl mx-auto px-4 py-8 min-h-screen flex flex-col">
       <div className="flex items-center justify-between mb-8">
-        <button onClick={() => setView('landing')} className="flex items-center gap-2 text-slate-500 hover:text-slate-800 font-medium">
-          <RotateCcw size={18} /> Kilépés
+        <button onClick={() => setView('topic-selection')} className="flex items-center gap-2 text-slate-500 hover:text-slate-800 font-medium">
+          <ArrowLeft size={18} /> Vissza a választáshoz
         </button>
-        <div className="text-sm font-semibold text-slate-400 uppercase tracking-wider">Gyakorló Mód</div>
+        <div className="text-sm font-semibold text-slate-400 uppercase tracking-wider">
+           Gyakorló Mód {practicePool.length > 0 && `(${practicePool.length} kérdés)`}
+        </div>
       </div>
 
       <div className="flex-grow flex flex-col justify-center">
@@ -701,8 +827,8 @@ export default function App() {
             <button onClick={() => setView('landing')} className="bg-white/10 hover:bg-white/20 px-6 py-2 rounded-lg font-medium transition-colors">
               Vissza a főoldalra
             </button>
-            <button onClick={startExam} className="bg-white text-indigo-900 px-6 py-2 rounded-lg font-bold hover:bg-indigo-50 transition-colors">
-              Újrapróbálom
+            <button onClick={() => initiateSelection('exam')} className="bg-white text-indigo-900 px-6 py-2 rounded-lg font-bold hover:bg-indigo-50 transition-colors">
+              Új vizsga indítása
             </button>
           </div>
         </div>
@@ -839,7 +965,7 @@ export default function App() {
                 [...stats.examHistory].reverse().slice(0, 5).map((exam, i) => (
                   <div key={i} className="flex items-center justify-between p-3 bg-slate-50 rounded-lg">
                     <span className="text-slate-600 text-sm">{new Date(exam.date).toLocaleDateString()}</span>
-                    <span className={`font-bold ${exam.score >= 16 ? 'text-green-600' : 'text-slate-700'}`}>
+                    <span className={`font-bold ${exam.score / exam.total >= 0.8 ? 'text-green-600' : 'text-slate-700'}`}>
                       {exam.score} / {exam.total}
                     </span>
                   </div>
@@ -861,6 +987,7 @@ export default function App() {
       {view === 'practice' && renderPractice()}
       {view === 'exam' && renderExam()}
       {view === 'stats' && renderStats()}
+      {view === 'topic-selection' && renderTopicSelection()}
     </div>
   );
 }
