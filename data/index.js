@@ -1,5 +1,5 @@
 // src/data/index.js
-import { clostridiumData } from './topics/01_clostridium';
+import { clostridiumData } from './topics/01_clostridium.jsx';
 // Később: import { masikTetelData } from './topics/02_masik_tetel';
 
 // 1. Összes study anyag egy tömbben (ha listázni akarod a témákat)
