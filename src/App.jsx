@@ -4,10 +4,10 @@ import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, on
 import { getFirestore, doc, setDoc, updateDoc, onSnapshot } from 'firebase/firestore';
 import { 
   BookOpen, CheckCircle, PieChart, Activity, RotateCcw, ChevronRight, Check, X, 
-  Brain, LogOut, Lock, Mail, ShieldAlert, ChevronDown, ChevronUp, Book
+  Brain, LogOut, Lock, Mail, ShieldAlert, ChevronDown, ChevronUp, Book, ArrowLeft
 } from 'lucide-react';
 
-// --- ÚJ IMPORT: Adatok betöltése a moduláris rendszerből ---
+// --- ADATOK IMPORTÁLÁSA ---
 import { ALL_TOPICS, GET_ALL_QUESTIONS } from './data/index.js';
 
 // --- Firebase Configuration Setup ---
@@ -16,30 +16,29 @@ let configError = false;
 const appId = typeof __app_id !== 'undefined' ? __app_id : 'vet-exam-app';
 
 try {
+  // 1. Fejlesztői környezet (Chat Preview)
   const firebaseConfig = JSON.parse(__firebase_config);
   app = initializeApp(firebaseConfig);
   auth = getAuth(app);
   db = getFirestore(app);
 } catch (e) {
-  // REPLACE THE OBJECT BELOW WITH YOUR OWN KEYS FROM FIREBASE CONSOLE
+  // 2. Éles környezet (Vercel) - A Te saját kulcsaid
   const myRealConfig = {
-  apiKey: "AIzaSyDY0pJFOZl2qvBldGqdpY8hDvBKryEhE-w",
-  authDomain: "vet-exam-app.firebaseapp.com",
-  projectId: "vet-exam-app",
-  storageBucket: "vet-exam-app.firebasestorage.app",
-  messagingSenderId: "667121013022",
-  appId: "1:667121013022:web:d12599eb4250315c21f90f",
-  measurementId: "G-84Z79H0EMC"
+    apiKey: "AIzaSyDY0pJFOZl2qvBldGqdpY8hDvBKryEhE-w",
+    authDomain: "vet-exam-app.firebaseapp.com",
+    projectId: "vet-exam-app",
+    storageBucket: "vet-exam-app.firebasestorage.app",
+    messagingSenderId: "667121013022",
+    appId: "1:667121013022:web:d12599eb4250315c21f90f",
+    measurementId: "G-84Z79H0EMC"
   };
 
   try {
-    // KIVETTEM A BIZTONSÁGI BLOKKOLÁST
-    // Így, ha kicserélted a kulcsokat, azonnal működni fog.
-    // Ha nem cseréled ki, Firebase hibát dob majd a böngésző konzolban.
     app = initializeApp(myRealConfig);
     auth = getAuth(app);
     db = getFirestore(app);
   } catch (err) {
+    console.error("Firebase init error:", err);
     configError = true;
   }
 }
@@ -188,6 +187,7 @@ export default function App() {
   const [user, setUser] = useState(null);
   const [authLoading, setAuthLoading] = useState(!configError);
   const [view, setView] = useState('landing'); 
+  const [selectedTopicId, setSelectedTopicId] = useState(null); // ÚJ: Kiválasztott téma ID
   
   // Login State
   const [email, setEmail] = useState('');
@@ -298,9 +298,7 @@ export default function App() {
     await updateDoc(statsRef, newStats);
   };
 
-  // --- MODOSÍTOTT START PRACTICE LOGIKA ---
   const startPractice = () => {
-    // Itt most már az összesítő függvényt használjuk
     const allQuestions = GET_ALL_QUESTIONS();
     
     if (allQuestions.length === 0) {
@@ -322,11 +320,9 @@ export default function App() {
     updateStats(isCorrect, currentPracticeQ.topic);
   };
 
-  // --- MODOSÍTOTT NEXT QUESTION LOGIKA ---
   const nextPracticeQuestion = () => {
     const allQuestions = GET_ALL_QUESTIONS();
     let newQ;
-    // Biztosítjuk, hogy ne ugyanazt a kérdést dobja be újra egyből
     do {
       newQ = allQuestions[Math.floor(Math.random() * allQuestions.length)];
     } while (newQ.id === currentPracticeQ.id && allQuestions.length > 1);
@@ -336,12 +332,10 @@ export default function App() {
     setPracticeUserAnswer(null);
   };
 
-  // --- MODOSÍTOTT EXAM LOGIKA ---
   const startExam = () => {
     const allQuestions = GET_ALL_QUESTIONS();
     
     if (allQuestions.length < 20) {
-        // Ha kevesebb mint 20 kérdés van összesen, akkor mindet berakjuk
         const shuffled = [...allQuestions].sort(() => 0.5 - Math.random());
         setExamQuestions(shuffled);
     } else {
@@ -511,7 +505,10 @@ export default function App() {
       </div>
 
       <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
-        <button onClick={() => setView('study')} className="group p-8 bg-white rounded-2xl shadow-sm border border-slate-200 hover:shadow-md hover:border-indigo-200 transition-all text-left">
+        <button 
+          onClick={() => { setView('study'); setSelectedTopicId(null); }} 
+          className="group p-8 bg-white rounded-2xl shadow-sm border border-slate-200 hover:shadow-md hover:border-indigo-200 transition-all text-left"
+        >
           <div className="flex items-center gap-4 mb-3">
             <div className="p-3 bg-blue-50 text-blue-600 rounded-lg group-hover:scale-110 transition-transform">
               <Book size={24} />
@@ -555,40 +552,92 @@ export default function App() {
   );
 
   // --- MODOSÍTOTT RENDER STUDY ---
-  const renderStudy = () => (
-    <div className="max-w-3xl mx-auto px-4 py-8">
-      <div className="flex items-center gap-4 mb-8">
-        <button onClick={() => setView('landing')} className="p-2 hover:bg-slate-100 rounded-full transition-colors">
-          <RotateCcw size={20} className="text-slate-500" />
-        </button>
-        <h2 className="text-2xl font-bold text-slate-800">Tananyagok</h2>
-      </div>
+  const renderStudy = () => {
+    // 1. Ha van kiválasztott téma, mutassuk a tartalmát
+    if (selectedTopicId) {
+      const topic = ALL_TOPICS.find(t => t.id === selectedTopicId);
       
-      {/* Végigmegyünk az összes témán */}
-      {ALL_TOPICS.map((topic) => (
-        <div key={topic.id} className="mb-12 border-b border-slate-200 pb-8 last:border-0">
-            <h3 className="text-xl font-bold text-indigo-700 mb-6 flex items-center gap-2">
-                <BookOpen size={24} />
-                {topic.title}
-            </h3>
-            <div className="space-y-4">
-                {topic.studyMaterial.map((section, idx) => (
-                    <StudyCard key={idx} data={section} />
-                ))}
-            </div>
-        </div>
-      ))}
+      if (!topic) return <div>Hiba: A téma nem található.</div>;
 
-      <div className="flex justify-center mt-12 mb-8">
-        <button 
-          onClick={startPractice}
-          className="bg-indigo-600 text-white px-8 py-3 rounded-full font-semibold shadow-lg hover:bg-indigo-700 hover:shadow-indigo-200/50 transition-all flex items-center gap-2"
-        >
-          Start Practicing <ChevronRight size={20} />
-        </button>
+      return (
+        <div className="max-w-3xl mx-auto px-4 py-8">
+          <div className="flex items-center gap-4 mb-8">
+            <button 
+              onClick={() => setSelectedTopicId(null)}
+              className="p-2 hover:bg-slate-100 rounded-full transition-colors flex items-center gap-2 text-slate-500 hover:text-indigo-600"
+            >
+              <ArrowLeft size={20} />
+              <span className="font-medium">Vissza a listához</span>
+            </button>
+          </div>
+          
+          <div className="mb-12">
+            <h2 className="text-3xl font-bold text-slate-800 mb-6 flex items-center gap-3">
+              <div className="p-2 bg-indigo-100 rounded-lg text-indigo-600">
+                <BookOpen size={32} />
+              </div>
+              {topic.title}
+            </h2>
+            
+            <div className="space-y-4">
+              {topic.studyMaterial.map((section, idx) => (
+                <StudyCard key={idx} data={section} />
+              ))}
+            </div>
+          </div>
+
+          {/* Opcionális: Gyakorlás indítása ebből a témából */}
+          <div className="flex justify-center mt-12 mb-8">
+            <button 
+              onClick={() => startPractice()} 
+              className="bg-indigo-600 text-white px-8 py-3 rounded-full font-semibold shadow-lg hover:bg-indigo-700 hover:shadow-indigo-200/50 transition-all flex items-center gap-2"
+            >
+              Gyakorlás indítása <ChevronRight size={20} />
+            </button>
+          </div>
+        </div>
+      );
+    }
+
+    // 2. Ha nincs kiválasztva semmi, mutassuk a CSEMPÉKET (Témaválasztó)
+    return (
+      <div className="max-w-4xl mx-auto px-4 py-8">
+        <div className="flex items-center gap-4 mb-8">
+          <button onClick={() => setView('landing')} className="p-2 hover:bg-slate-100 rounded-full transition-colors">
+            <RotateCcw size={20} className="text-slate-500" />
+          </button>
+          <h2 className="text-2xl font-bold text-slate-800">Tananyagok</h2>
+        </div>
+        
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {ALL_TOPICS.map((topic) => (
+            <button 
+              key={topic.id}
+              onClick={() => setSelectedTopicId(topic.id)}
+              className="bg-white p-6 rounded-xl border border-slate-200 hover:border-indigo-400 hover:shadow-lg hover:-translate-y-1 transition-all text-left group h-full flex flex-col justify-between"
+            >
+              <div>
+                <div className="flex items-center justify-between mb-4">
+                  <div className="p-3 bg-indigo-50 text-indigo-600 rounded-lg group-hover:scale-110 transition-transform">
+                    <Book size={24} />
+                  </div>
+                  <ChevronRight className="text-slate-300 group-hover:text-indigo-400 transition-colors" size={20} />
+                </div>
+                <h3 className="text-lg font-bold text-slate-800 mb-2 group-hover:text-indigo-700 transition-colors line-clamp-2">
+                  {topic.title}
+                </h3>
+              </div>
+              <div className="pt-4 mt-2 border-t border-slate-100">
+                <span className="text-slate-500 text-xs font-semibold uppercase tracking-wide">
+                  {topic.questions ? `${topic.questions.length} kérdés` : 'Tananyag'}
+                </span>
+              </div>
+            </button>
+          ))}
+        </div>
       </div>
-    </div>
-  );
+    );
+  };
 
   const renderPractice = () => (
     <div className="max-w-3xl mx-auto px-4 py-8 min-h-screen flex flex-col">
