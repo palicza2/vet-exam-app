@@ -1,0 +1,111 @@
+{
+  "common": {
+    "back": "Vissza",
+    "next": "Következő",
+    "submit": "Beküldés",
+    "loading": "Betöltés...",
+    "error": "Hiba",
+    "sign_out": "Kijelentkezés",
+    "app_name": "Vet Exam Prep",
+    "questions": "kérdés",
+    "start": "Indítás"
+  },
+  "auth": {
+    "welcome": "Üdvözöljük újra",
+    "create_account": "Fiók létrehozása",
+    "sign_in": "Bejelentkezés",
+    "email": "Email cím",
+    "password": "Jelszó",
+    "no_account": "Még nincs fiókja?",
+    "have_account": "Már van fiókja?",
+    "sign_in_instead": "Jelentkezzen be helyette",
+    "create_free_account": "Hozzon létre egy ingyenes fiókot",
+    "description_login": "Jelentkezzen be a felkészülés folytatásához",
+    "description_register": "Hozzon létre fiókot a haladás nyomon követéséhez"
+  },
+  "landing": {
+    "tagline": "Állatorvosi vizsgafelkészítő rendszer. Tanuljon hatékonyan, gyakoroljon azonnali visszajelzéssel, vagy tesztelje tudását éles vizsgahelyzetben.",
+    "study_title": "Tananyagok",
+    "study_desc": "Vizsgatételek áttekintése kidolgozott anyagokkal.",
+    "practice_title": "Gyakorlás",
+    "practice_desc": "Válassz témakört vagy gyakorolj mindből.",
+    "exam_title": "Vizsga",
+    "exam_desc": "40 kérdéses teszt. Válassz témát vagy vegyeset.",
+    "stats_title": "Statisztikák",
+    "stats_desc": "Kövesd nyomon a haladásodat és a gyenge pontjaidat."
+  },
+  "topic_selection": {
+    "title_practice": "Gyakorlás",
+    "title_exam": "Vizsga",
+    "subtitle": "Válasszon témakört az induláshoz",
+    "all_topics": "Összes témakör",
+    "mixed_questions": "Vegyes kérdések mindenből",
+    "how_it_works": "Hogy működik?",
+    "practice_how": "A gyakorló módban azonnali visszajelzést kap minden válasz után, és kérhet AI alapú részletes magyarázatot is a Geminitől.",
+    "exam_how": "A vizsga módban 40 véletlenszerű kérdést kell megválaszolnia időlimit nélkül. A pontszámot a végén láthatja."
+  },
+  "study": {
+    "title": "Tananyagok",
+    "subtitle": "Böngésszen a kidolgozott vizsgatételek között",
+    "back_to_list": "Vissza a listához",
+    "start_practice": "Gyakorlás indítása",
+    "not_found": "A téma nem található."
+  },
+  "practice": {
+    "title": "Gyakorlás",
+    "subtitle": "Azonnali visszajelzés és AI segítség",
+    "next_question": "Következő kérdés",
+    "no_questions": "Nincsenek elérhető kérdések",
+    "back_home": "Vissza a főoldalra",
+    "correct": "Helyes!",
+    "explanation": "Magyarázat:",
+    "ai_thinking": "AI gondolkodik...",
+    "ai_get_explanation": "AI magyarázat kérése (Gemini)",
+    "ai_analysis": "Gemini AI Elemzés:"
+  },
+  "exam": {
+    "title": "Vizsga mód",
+    "subtitle": "kérdés • Nincs visszajelzés",
+    "progress": "Haladás",
+    "submit_exam": "Vizsga beküldése",
+    "questions_answered": "Kérdések megválaszolva",
+    "finished": "Vizsga befejezve!",
+    "thank_you": "Köszönjük a részvételt.",
+    "result": "Eredmény",
+    "passed": "Gratulálunk! Sikeres vizsga.",
+    "failed": "Sajnos nem érte el a 80%-os határt.",
+    "passed_desc": "Ön kiválóan felkészült ebből a témakörből.",
+    "failed_desc": "Javasoljuk a tananyag további tanulmányozását és a gyakorló mód használatát.",
+    "new_exam": "Új vizsga indítása"
+  },
+  "stats": {
+    "title": "Előrehaladás",
+    "total_questions": "Összes Kérdés",
+    "success_rate": "Sikerességi Ráta",
+    "to_improve": "Fejlesztendő",
+    "daily_activity": "Napi Aktivítás (Utolsó 30 nap)",
+    "total": "Összesen",
+    "average_per_day": "Átlag",
+    "questions_per_day": "kérdés/nap",
+    "topics_breakdown": "Témakörök bontása",
+    "exam_history": "Vizsga Előzmények",
+    "no_data": "Nincs adat",
+    "no_activity": "Még nincs napi aktivitás adat.",
+    "no_exam_history": "Nincs még befejezett vizsga.",
+    "answer_questions_for_stats": "Válaszolj kérdésekre a statisztikákhoz.",
+    "mastery_levels": "Tudásszintek",
+    "mistake_dist": "Hiba Eloszlás",
+    "activity_heatmap": "Aktivítási Térkép",
+    "exam_trends": "Vizsga Trendek",
+    "streak": "Napi Sorozat",
+    "days": "nap",
+    "best_exam": "Legjobb Vizsga",
+    "average_score": "Átlagpontszám",
+    "mastery": {
+      "novice": "Kezdő",
+      "competent": "Haladó",
+      "master": "Mester",
+      "expert": "Szakértő"
+    }
+  }
+}
