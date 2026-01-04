@@ -18,13 +18,13 @@ let app, auth, db;
 let configError = false;
 
 const myRealConfig = {
-  apiKey: "AIzaSyDY0pJFOZl2qvBldGqdpY8hDvBKryEhE-w",
-  authDomain: "vet-exam-app.firebaseapp.com",
-  projectId: "vet-exam-app",
-  storageBucket: "vet-exam-app.firebasestorage.app",
-  messagingSenderId: "667121013022",
-  appId: "1:667121013022:web:d12599eb4250315c21f90f",
-  measurementId: "G-84Z79H0EMC"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
+  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID
 };
 
 try {
