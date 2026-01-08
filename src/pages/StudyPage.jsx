@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { ArrowLeft, BookOpen, ChevronRight, RotateCcw, Book } from 'lucide-react';
 import StudyCard from '../components/StudyCard';
 import { Button } from "@/components/ui/button"
@@ -7,12 +7,47 @@ import { useTranslation } from 'react-i18next';
 
 const StudyPage = ({ selectedTopicId, setSelectedTopicId, ALL_TOPICS, setView, handleTopicSelect, setSelectionMode }) => {
   const { t } = useTranslation();
+  const [loadedTopicData, setLoadedTopicData] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
 
-  // 1. Ha van kiválasztott téma, mutassuk a tartalmát
+  useEffect(() => {
+    const loadTopicData = async () => {
+      setIsLoading(true);
+      const topicMetadata = ALL_TOPICS.find(t_item => t_item.id === selectedTopicId);
+
+      if (!topicMetadata) {
+        setLoadedTopicData(null);
+        setIsLoading(false);
+        return;
+      }
+
+      if (topicMetadata.isLazy) {
+        // Dynamically import the full topic data
+        const { latinTermsData } = await import('../data/topics/latin_terms.js');
+        setLoadedTopicData(latinTermsData);
+      } else {
+        setLoadedTopicData(topicMetadata);
+      }
+      setIsLoading(false);
+    };
+
+    if (selectedTopicId) {
+      loadTopicData();
+    } else {
+      setLoadedTopicData(null);
+      setIsLoading(false);
+    }
+  }, [selectedTopicId, ALL_TOPICS]);
+
+  // If a topic is selected, show its content
   if (selectedTopicId) {
-    const topic = ALL_TOPICS.find(t_item => t_item.id === selectedTopicId);
-    
-    if (!topic) return <div className="p-12 text-center">{t("study.error")} {t("study.not_found")}</div>;
+    if (isLoading) {
+      return <div className="p-12 text-center">{t("common.loading")}</div>;
+    }
+
+    if (!loadedTopicData) {
+      return <div className="p-12 text-center">{t("study.error")} {t("study.not_found")}</div>;
+    }
 
     return (
       <div className="max-w-3xl mx-auto px-4 py-6 md:py-8">
@@ -34,12 +69,12 @@ const StudyPage = ({ selectedTopicId, setSelectedTopicId, ALL_TOPICS, setView, h
               <BookOpen size={20} className="md:w-8 md:h-8" />
             </div>
             <h2 className="text-xl md:text-3xl font-black text-slate-900 tracking-tight leading-tight">
-              {topic.title}
+              {loadedTopicData.title}
             </h2>
           </div>
           
           <div className="space-y-4 md:space-y-6">
-            {topic.studyMaterial.map((section, idx) => (
+            {loadedTopicData.studyMaterial.map((section, idx) => (
               <StudyCard key={idx} data={section} />
             ))}
           </div>
@@ -51,7 +86,7 @@ const StudyPage = ({ selectedTopicId, setSelectedTopicId, ALL_TOPICS, setView, h
             size="lg"
             onClick={() => {
               setSelectionMode('practice');
-              handleTopicSelect(topic);
+              handleTopicSelect(loadedTopicData);
             }} 
             className="w-full md:w-auto bg-indigo-600 hover:bg-indigo-700 text-white px-8 md:px-10 py-5 md:py-7 text-sm md:text-lg rounded-xl md:rounded-2xl font-black shadow-lg transition-all group h-auto"
           >
@@ -62,7 +97,7 @@ const StudyPage = ({ selectedTopicId, setSelectedTopicId, ALL_TOPICS, setView, h
     );
   }
 
-  // 2. Ha nincs kiválasztva semmi, mutassuk a listát
+  // If nothing is selected, show the list
   return (
     <div className="max-w-4xl mx-auto px-4 py-6 md:py-12">
       <div className="flex items-center gap-3 md:gap-4 mb-8 md:mb-12">

@@ -2962,7 +2962,7 @@ export const getLatinTermsData = () => ({
       sections: [
         {
           header: "Kifejezés - Jelentés - Definíció",
-          points: Array.isArray(latinTerms) ? latinTerms.map(term => `- **${term.term}**: ${term.translation} - _${term.description}_`) : []
+          points: (console.log('latinTerms in getLatinTermsData:', latinTerms), Array.isArray(latinTerms) ? latinTerms.map(term => `- **${term.term}**: ${term.translation} - _${term.description}_`) : [])
         },
       ],
     },
