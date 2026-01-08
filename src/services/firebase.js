@@ -27,6 +27,7 @@ const myRealConfig = {
 };
 
 export const configError = (() => {
+  console.log("Firebase: Starting initialization IIFE...");
   try {
     if (typeof __firebase_config !== 'undefined') {
       app = initializeApp(JSON.parse(__firebase_config));
@@ -35,12 +36,17 @@ export const configError = (() => {
     }
     auth = getAuth(app);
     db = getFirestore(app);
+    console.log("Firebase: app, auth, db initialized successfully.", { app, auth, db });
+    console.log("Firebase: configError set to false.");
     return false;
   } catch (e) {
-    console.error("Firebase initialization failed:", e);
+    console.error("Firebase: Initialization failed:", e);
+    console.log("Firebase: configError set to true.");
     return true;
   }
 })();
+
+console.log("Firebase: configError value after IIFE: ", configError);
 
 // --- Auth Helpers ---
 export const signIn = (email, password) => fbSignIn(auth, email, password);

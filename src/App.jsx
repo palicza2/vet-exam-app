@@ -7,6 +7,9 @@ import { useTranslation } from 'react-i18next';
 
 // --- SERVICE & HOOK IMPORTS ---
 import { configError } from './services/firebase';
+
+console.log("App.jsx: configError imported value:", configError);
+
 import { useExam } from './hooks/useExam';
 import { usePractice } from './hooks/usePractice';
 
@@ -218,10 +221,12 @@ function AuthGuard({ children }) {
   return children;
 }
 
-export default function App() {
-  if (configError) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-red-50 p-4">
+  export default function App() {
+    console.log("App.jsx: App component rendering. Current configError:", configError);
+    if (configError) {
+      console.log("App.jsx: configError is true, rendering error page.");
+      return (
+        <div className="min-h-screen flex items-center justify-center bg-red-50 p-4">
         <div className="bg-white p-8 rounded-2xl shadow-xl max-w-lg w-full text-center border-2 border-red-100">
           <div className="bg-red-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
             <Activity className="text-red-600" size={32} />
