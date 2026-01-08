@@ -23,8 +23,8 @@ const StudyPage = ({ selectedTopicId, setSelectedTopicId, ALL_TOPICS, setView, h
 
       if (topicMetadata.isLazy) {
         // Dynamically import the full topic data
-        const { latinTermsData } = await import('../data/topics/latin_terms.js');
-        setLoadedTopicData(latinTermsData);
+        const { getLatinTermsData } = await import('../data/topics/latin_terms.js');
+        setLoadedTopicData(getLatinTermsData());
       } else {
         setLoadedTopicData(topicMetadata);
       }

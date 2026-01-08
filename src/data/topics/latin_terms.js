@@ -871,7 +871,7 @@ export const latinTerms = [
 export const latinTermsQuestions = [
   {
     id: "latin_1",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Streptococcus suis' magyar jelentése?",
     options: [
       "Streptococcus suis (baktériumfaj)",
@@ -883,7 +883,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_2",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Gram-pozitív' magyar jelentése?",
     options: [
       "Gram-pozitív (festődési tulajdonság)",
@@ -895,7 +895,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_3",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Coccus' magyar jelentése?",
     options: [
       "Gömb alakú baktérium",
@@ -907,7 +907,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_4",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Fakultatív anaerob' magyar jelentése?",
     options: [
       "Képes oxigénnel és anélkül is élni",
@@ -919,7 +919,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_5",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi az 'Alfa-hemolízis' magyar jelentése?",
     options: [
       "Zöldülő hemolízis",
@@ -931,7 +931,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_6",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Poliszacharid tok (CPS)' magyar jelentése?",
     options: [
       "Kapszula",
@@ -943,7 +943,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_7",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Szerotípus' magyar jelentése?",
     options: [
       "Szerológiai típus",
@@ -955,7 +955,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_8",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Tonsillák' magyar jelentése?",
     options: [
       "Mandulák",
@@ -967,7 +967,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_9",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Zoonózis' magyar jelentése?",
     options: [
       "Állatról emberre terjedő betegség",
@@ -979,7 +979,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_10",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Meningitis' magyar jelentése?",
     options: [
       "Agyhártyagyulladás",
@@ -991,7 +991,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_11",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Perakut szeptikémia' magyar jelentése?",
     options: [
       "Hirtelen fellépő, súlyos vérfertőzés",
@@ -1003,7 +1003,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_12",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Cianózis' magyar jelentése?",
     options: [
       "Elkékülés",
@@ -1015,7 +1015,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_13",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi az 'Opisthotonus' magyar jelentése?",
     options: [
       "Hátrahajló fejtartás",
@@ -1027,7 +1027,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_14",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Nystagmus' magyar jelentése?",
     options: [
       "Szemtekerezgés",
@@ -1039,7 +1039,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_15",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Hyperaesthesia' magyar jelentése?",
     options: [
       "Túlérzékenység",
@@ -1051,7 +1051,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_16",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi az 'Arthritis' magyar jelentése?",
     options: [
       "Ízületgyulladás",
@@ -1063,7 +1063,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_17",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Kutyaszerű ülés' magyar jelentése?",
     options: [
       "Kutyaszerű ülés (klinikai tünet)",
@@ -1075,7 +1075,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_18",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi az 'Endocarditis' magyar jelentése?",
     options: [
       "Szívbelhártya-gyulladás",
@@ -1087,7 +1087,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_19",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Veseinfarktus' magyar jelentése?",
     options: [
       "A vese egy részének elhalása",
@@ -1099,7 +1099,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_20",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Liquor' magyar jelentése?",
     options: [
       "Agyvíz",
@@ -1111,7 +1111,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_21",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Polyserositis' magyar jelentése?",
     options: [
       "Több savóshártya gyulladása",
@@ -1123,7 +1123,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_22",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi az 'Antibiogram' magyar jelentése?",
     options: [
       "Antibiotikum-érzékenységi vizsgálat",
@@ -1135,7 +1135,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_23",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Béta-laktámok' magyar jelentése?",
     options: [
       "Béta-laktám antibiotikumok",
@@ -1147,7 +1147,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_24",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi az 'Aminopenicillinek' magyar jelentése?",
     options: [
       "Aminopenicillinek",
@@ -1159,7 +1159,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_25",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Cefalosporinok' magyar jelentése?",
     options: [
       "Cefalosporinok",
@@ -1171,7 +1171,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_26",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'HPCIA' magyar jelentése?",
     options: [
       "Kritikusan fontos antibiotikum",
@@ -1183,7 +1183,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_27",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Florfenikol' magyar jelentése?",
     options: [
       "Florfenikol (antibiotikum)",
@@ -1195,7 +1195,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_28",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Trimetoprim-szulfonamid' magyar jelentése?",
     options: [
       "Trimetoprim-szulfonamid (antibiotikum-kombináció)",
@@ -1207,7 +1207,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_29",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Tetraciklinek' magyar jelentése?",
     options: [
       "Tetraciklinek (antibiotikum-csoport)",
@@ -1219,7 +1219,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_30",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Makrolidok' magyar jelentése?",
     options: [
       "Makrolidok (antibiotikum-csoport)",
@@ -1231,7 +1231,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_31",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Linkózamidok' magyar jelentése?",
     options: [
       "Linkózamidok (antibiotikum-csoport)",
@@ -1243,7 +1243,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_32",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Multirezisztencia (MDR)' magyar jelentése?",
     options: [
       "Multirezisztencia",
@@ -1255,7 +1255,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_33",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi az 'Autogén vakcina' magyar jelentése?",
     options: [
       "Telepspecifikus oltóanyag",
@@ -1267,7 +1267,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_34",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi az 'All-in/All-out' magyar jelentése?",
     options: [
       "Mindent be-mindent ki rendszer",
@@ -1279,7 +1279,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_35",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'PRRS' magyar jelentése?",
     options: [
       "Sertés reprodukciós és légzőszervi szindróma",
@@ -1291,7 +1291,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_36",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'PCV2' magyar jelentése?",
     options: [
       "Sertés circovírus 2. típus",
@@ -1303,7 +1303,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_37",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'SIV' magyar jelentése?",
     options: [
       "Influenza vírus, mely légzőszervi betegséget okoz sertésekben",
@@ -1315,7 +1315,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_38",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'PCR' magyar jelentése?",
     options: [
       "Polimeráz-láncreakció",
@@ -1327,7 +1327,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_39",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'MALDI-TOF MS' magyar jelentése?",
     options: [
       "Tömegspektrometria",
@@ -1339,7 +1339,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_40",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'MIC' magyar jelentése?",
     options: [
       "Minimális Gátló Koncentráció",
@@ -1351,7 +1351,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_41",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Parenterális' magyar jelentése?",
     options: [
       "Injekciós beadási mód",
@@ -1363,7 +1363,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_42",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Dexametazon' magyar jelentése?",
     options: [
       "Dexametazon (szteroid gyulladáscsökkentő)",
@@ -1375,7 +1375,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_43",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Metafilaxis' magyar jelentése?",
     options: [
       "Csoportos gyógykezelés",
@@ -1387,7 +1387,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_44",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Dysbacteriosis' magyar jelentése?",
     options: [
       "Bélflóra egyensúlyának felborulása",
@@ -1399,7 +1399,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_45",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi az 'Exotoxin' magyar jelentése?",
     options: [
       "Exotoxin",
@@ -1411,7 +1411,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_46",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi az 'Endospóra' magyar jelentése?",
     options: [
       "Endospóra",
@@ -1423,7 +1423,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_47",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi az 'Obligát anaerob' magyar jelentése?",
     options: [
       "Csak oxigénmentes környezetben él",
@@ -1435,7 +1435,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_48",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Necrosis' magyar jelentése?",
     options: [
       "Szövetelhalás",
@@ -1447,7 +1447,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_49",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Toxémia' magyar jelentése?",
     options: [
       "Mérgezés (toxinok a vérben)",
@@ -1459,7 +1459,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_50",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Colitis' magyar jelentése?",
     options: [
       "Vastagbélgyulladás",
@@ -1471,7 +1471,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_51",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Clostridioides difficile' magyar jelentése?",
     options: [
       "Clostridioides difficile (baktériumfaj)",
@@ -1483,7 +1483,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_52",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi az 'Enteritis Necroticans' magyar jelentése?",
     options: [
       "Elhalásos bélgyulladás",
@@ -1495,7 +1495,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_53",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Crepitatio' magyar jelentése?",
     options: [
       "Gázos sercegés/ropogás (tapintáskor)",
@@ -1507,7 +1507,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_54",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Tetanus (Clostridium tetani)' magyar jelentése?",
     options: [
       "Tetanusz",
@@ -1519,7 +1519,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_55",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Botulizmus (Clostridium botulinum)' magyar jelentése?",
     options: [
       "Botulizmus",
@@ -1531,7 +1531,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_56",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi az 'Intoxikáció' magyar jelentése?",
     options: [
       "Mérgezés",
@@ -1543,7 +1543,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_57",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Spasztikus bénulás' magyar jelentése?",
     options: [
       "Merevgörcsös bénulás",
@@ -1555,7 +1555,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_58",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Petyhüdt bénulás' magyar jelentése?",
     options: [
       "Petyhüdt bénulás",
@@ -1567,7 +1567,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_59",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi az 'Erysipelothrix rhusiopathiae' magyar jelentése?",
     options: [
       "Erysipelothrix rhusiopathiae (baktériumfaj)",
@@ -1579,7 +1579,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_60",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi az 'Erysipelas suis' magyar jelentése?",
     options: [
       "Sertésorbánc",
@@ -1591,7 +1591,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_61",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Neuraminidáz' magyar jelentése?",
     options: [
       "Neuraminidáz (enzim)",
@@ -1603,7 +1603,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_62",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi az 'Erysipeloid' magyar jelentése?",
     options: [
       "Erysipeloid (emberi orbánc)",
@@ -1615,7 +1615,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_63",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi az 'Ankylosis' magyar jelentése?",
     options: [
       "Ízületi merevség/összecsontosodás",
@@ -1627,7 +1627,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_64",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi az 'Endocarditis vegetativa' magyar jelentése?",
     options: [
       "Vegetatív endocarditis",
@@ -1639,7 +1639,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_65",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Splenomegalia' magyar jelentése?",
     options: [
       "Lépduzzanat",
@@ -1651,7 +1651,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_66",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Mycoplasma hyorhinis' magyar jelentése?",
     options: [
       "Mycoplasma hyorhinis (baktériumfaj)",
@@ -1663,7 +1663,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_67",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Mycoplasma hyosynoviae' magyar jelentése?",
     options: [
       "Mycoplasma hyosynoviae (baktériumfaj)",
@@ -1675,7 +1675,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_68",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Mollicutes' magyar jelentése?",
     options: [
       "Mollicutes (baktériumosztály)",
@@ -1687,7 +1687,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_69",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Pleuromutilinek' magyar jelentése?",
     options: [
       "Pleuromutilin antibiotikumok",
@@ -1699,7 +1699,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_70",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'NSAID' magyar jelentése?",
     options: [
       "Nem szteroid gyulladáscsökkentő",
@@ -1711,7 +1711,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_71",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Synovia' magyar jelentése?",
     options: [
       "Ízületi folyadék",
@@ -1723,7 +1723,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_72",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Polyserositis fibrinosa' magyar jelentése?",
     options: [
       "Fibrines savóshártya-gyulladás",
@@ -1735,7 +1735,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_73",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Pericarditis fibrinosa' magyar jelentése?",
     options: [
       "Fibrines szívburokgyulladás",
@@ -1747,7 +1747,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_74",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Glaesserella parasuis' magyar jelentése?",
     options: [
       "Glaesserella parasuis (baktériumfaj)",
@@ -1759,7 +1759,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_75",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'NAD' magyar jelentése?",
     options: [
       "NAD (V-faktor)",
@@ -1771,7 +1771,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_76",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Szatellita növekedés' magyar jelentése?",
     options: [
       "Szatellita növekedés",
@@ -1783,7 +1783,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_77",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'vtaA gének' magyar jelentése?",
     options: [
       "vtaA gének (virulencia-asszociált gének)",
@@ -1795,7 +1795,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_78",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'PRDC' magyar jelentése?",
     options: [
       "Sertés Légzőszervi Betegség Komplex",
@@ -1807,7 +1807,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_79",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Szeptikémia' magyar jelentése?",
     options: [
       "Vérfertőzés",
@@ -1819,7 +1819,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_80",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Meningitis purulenta/fibrinosa' magyar jelentése?",
     options: [
       "Gennyes/fibrines agyhártyagyulladás",
@@ -1831,7 +1831,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_81",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Cyanosis' magyar jelentése?",
     options: [
       "Elkékülés",
@@ -1843,7 +1843,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_82",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Staphylococcus hyicus' magyar jelentése?",
     options: [
       "Staphylococcus hyicus (baktériumfaj)",
@@ -1855,7 +1855,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_83",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Staphylococcus aureus' magyar jelentése?",
     options: [
       "Staphylococcus aureus (baktériumfaj)",
@@ -1867,7 +1867,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_84",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi az 'Exudatív epidermitis' magyar jelentése?",
     options: [
       "Kenőcsös bőrgyulladás",
@@ -1879,7 +1879,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_85",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi az 'MRSA' magyar jelentése?",
     options: [
       "Meticillin-rezisztens Staphylococcus aureus",
@@ -1891,7 +1891,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_86",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi az 'LA-MRSA' magyar jelentése?",
     options: [
       "Haszonállatokhoz köthető MRSA",
@@ -1903,7 +1903,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_87",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Dequamatio' magyar jelentése?",
     options: [
       "Hámleválás",
@@ -1915,7 +1915,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_88",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Hematogén' magyar jelentése?",
     options: [
       "Vér útján terjedő",
@@ -1927,7 +1927,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_89",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Mastitis' magyar jelentése?",
     options: [
       "Tőgygyulladás",
@@ -1939,7 +1939,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_90",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi az 'Agalactia' magyar jelentése?",
     options: [
       "Tejhiány",
@@ -1951,7 +1951,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_91",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Metasztatikus tályogok' magyar jelentése?",
     options: [
       "Metasztatikus tályogok",
@@ -1963,7 +1963,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_92",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Kataláz-teszt' magyar jelentése?",
     options: [
       "Kataláz-teszt",
@@ -1975,7 +1975,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_93",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Koaguláz-teszt' magyar jelentése?",
     options: [
       "Koaguláz-teszt",
@@ -1987,7 +1987,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_94",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi az 'Escherichia coli' magyar jelentése?",
     options: [
       "Escherichia coli (baktériumfaj)",
@@ -1999,7 +1999,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_95",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi az 'ETEC' magyar jelentése?",
     options: [
       "Enterotoxint termelő E. coli",
@@ -2011,7 +2011,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_96",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi az 'EPEC' magyar jelentése?",
     options: [
       "Enteropatogén E. coli",
@@ -2023,7 +2023,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_97",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'VTEC / EDEC' magyar jelentése?",
     options: [
       "Verotoxint termelő E. coli / Ödémabetegség E. coli",
@@ -2035,7 +2035,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_98",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi az 'ExPEC' magyar jelentése?",
     options: [
       "Bélcsatornán kívüli patogén E. coli",
@@ -2047,7 +2047,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_99",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Fimbriák' magyar jelentése?",
     options: [
       "Fimbriák (adléziós faktorok)",
@@ -2059,7 +2059,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_100",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi az 'LT (Hőlabilis toxin)' magyar jelentése?",
     options: [
       "Hőlabilis toxin (LT)",
@@ -2071,7 +2071,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_101",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'STa, STb (Hőstabil toxinok)' magyar jelentése?",
     options: [
       "Hőstabil toxinok (STa, STb)",
@@ -2083,7 +2083,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_102",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Stx2e (Shiga-toxin / Verotoxin)' magyar jelentése?",
     options: [
       "Shiga-toxin / Verotoxin (Stx2e)",
@@ -2095,7 +2095,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_103",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Colibacillosis' magyar jelentése?",
     options: [
       "Colibacillosis",
@@ -2107,7 +2107,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_104",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'PWD' magyar jelentése?",
     options: [
       "Választás utáni hasmenés",
@@ -2119,7 +2119,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_105",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi az 'Ataxia' magyar jelentése?",
     options: [
       "Mozgászavar",
@@ -2131,7 +2131,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_106",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Paresis' magyar jelentése?",
     options: [
       "Részleges bénulás",
@@ -2143,7 +2143,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_107",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Bénulás' magyar jelentése?",
     options: [
       "Bénulás",
@@ -2155,7 +2155,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_108",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi az 'Ödéma' magyar jelentése?",
     options: [
       "Vizenyő",
@@ -2167,7 +2167,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_109",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Curvatura major' magyar jelentése?",
     options: [
       "A gyomor nagyobb görbülete",
@@ -2179,7 +2179,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_110",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi az 'Elektrolitpótlás' magyar jelentése?",
     options: [
       "Elektrolitpótlás",
@@ -2191,7 +2191,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_111",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi az 'ESBL' magyar jelentése?",
     options: [
       "Kiterjesztett Spektrumú Béta-Laktamáz",
@@ -2203,7 +2203,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_112",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Genetikai rezisztencia' magyar jelentése?",
     options: [
       "Genetikai rezisztencia",
@@ -2215,7 +2215,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_113",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Kompetitív kizárás' magyar jelentése?",
     options: [
       "Kompetitív kizárás",
@@ -2227,7 +2227,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_114",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Transzkriptomika' magyar jelentése?",
     options: [
       "Transzkriptomika",
@@ -2239,7 +2239,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_115",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Proteomika' magyar jelentése?",
     options: [
       "Proteomika",
@@ -2251,7 +2251,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_116",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Metagenomika' magyar jelentése?",
     options: [
       "Metagenomika",
@@ -2263,7 +2263,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_117",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'SNP' magyar jelentése?",
     options: [
       "Egyetlen Nukleotid Polimorfizmus",
@@ -2275,7 +2275,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_118",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Filogenetika (phylogeny)' magyar jelentése?",
     options: [
       "Törzsfejlődés",
@@ -2287,7 +2287,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_119",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Reference genome' magyar jelentése?",
     options: [
       "Referencia genom",
@@ -2299,7 +2299,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_120",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Phred score' magyar jelentése?",
     options: [
       "Phred score (minőségi pontszám)",
@@ -2311,7 +2311,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_121",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Core genome' magyar jelentése?",
     options: [
       "Core genome (közös genom)",
@@ -2323,7 +2323,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_122",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi az 'Accessory genome' magyar jelentése?",
     options: [
       "Accessory genome (kiegészítő genom)",
@@ -2335,7 +2335,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_123",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Bioinformatika' magyar jelentése?",
     options: [
       "Bioinformatika",
@@ -2347,7 +2347,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_124",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi az 'Illumina (Short-read)' magyar jelentése?",
     options: [
       "Illumina szekvenálás (rövid olvasatok)",
@@ -2359,7 +2359,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_125",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi az 'Oxford Nanopore (Long-read)' magyar jelentése?",
     options: [
       "Oxford Nanopore szekvenálás (hosszú olvasatok)",
@@ -2371,7 +2371,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_126",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Sanger szekvenálás' magyar jelentése?",
     options: [
       "Sanger szekvenálás",
@@ -2383,7 +2383,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_127",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi az 'NGS' magyar jelentése?",
     options: [
       "Következő Generációs Szekvenálás",
@@ -2395,7 +2395,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_128",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Contig' magyar jelentése?",
     options: [
       "Contig (összefüggő DNS szakasz)",
@@ -2407,7 +2407,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_129",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Scaffold' magyar jelentése?",
     options: [
       "Scaffold (állványzat)",
@@ -2419,7 +2419,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_130",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi az 'Annotation' magyar jelentése?",
     options: [
       "Annotáció (genomanalízis)",
@@ -2431,7 +2431,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_131",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Reverse vaccinology' magyar jelentése?",
     options: [
       "Reverz vakcinológia",
@@ -2443,7 +2443,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_132",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Hybrid assembly' magyar jelentése?",
     options: [
       "Hibrid összeállítás",
@@ -2455,7 +2455,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_133",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Pan-genom' magyar jelentése?",
     options: [
       "Pan-genom",
@@ -2467,7 +2467,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_134",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Phenotype' magyar jelentése?",
     options: [
       "Fenotípus",
@@ -2479,7 +2479,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_135",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Genotype' magyar jelentése?",
     options: [
       "Genotípus",
@@ -2491,7 +2491,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_136",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi az 'AMR' magyar jelentése?",
     options: [
       "Antimikrobiális Rezisztencia",
@@ -2503,7 +2503,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_137",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi az 'One Health' magyar jelentése?",
     options: [
       "Egy Egészség (megközelítés)",
@@ -2515,7 +2515,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_138",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Horizontális géntranszfer (HGT)' magyar jelentése?",
     options: [
       "Horizontális géntranszfer",
@@ -2527,7 +2527,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_139",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Konjugáció' magyar jelentése?",
     options: [
       "Konjugáció",
@@ -2539,7 +2539,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_140",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Transzdukció' magyar jelentése?",
     options: [
       "Transzdukció",
@@ -2551,7 +2551,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_141",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Transzformáció' magyar jelentése?",
     options: [
       "Transzformáció",
@@ -2563,7 +2563,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_142",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi az 'R-plazmidok' magyar jelentése?",
     options: [
       "R-plazmidok (rezisztencia plazmidok)",
@@ -2575,7 +2575,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_143",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi az 'Integronok' magyar jelentése?",
     options: [
       "Integronok",
@@ -2587,7 +2587,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_144",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi az 'IS elemek' magyar jelentése?",
     options: [
       "IS elemek (Inzerciós szekvenciák)",
@@ -2599,7 +2599,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_145",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi az 'SCCmec kazetta' magyar jelentése?",
     options: [
       "SCCmec kazetta",
@@ -2611,7 +2611,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_146",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi az 'ICE' magyar jelentése?",
     options: [
       "ICE (Integratív és Konjugatív Elemek)",
@@ -2623,7 +2623,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_147",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'blaCTX-M' magyar jelentése?",
     options: [
       "blaCTX-M gén",
@@ -2635,7 +2635,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_148",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi az 'mcr-1' magyar jelentése?",
     options: [
       "mcr-1 gén",
@@ -2647,7 +2647,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_149",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'blaNDM-1' magyar jelentése?",
     options: [
       "blaNDM-1 gén",
@@ -2659,7 +2659,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_150",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Karbapenemázok' magyar jelentése?",
     options: [
       "Karbapenemázok",
@@ -2671,7 +2671,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_151",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi az 'Aminoglikozid-módosító enzimek (AME)' magyar jelentése?िजन",
     options: [
       "Aminoglikozid-módosító enzimek",
@@ -2683,7 +2683,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_152",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'mecA gén' magyar jelentése?",
     options: [
       "mecA gén",
@@ -2695,7 +2695,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_153",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'vanA gén' magyar jelentése?",
     options: [
       "vanA gén",
@@ -2707,7 +2707,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_154",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'D-Ala-D-Lac' magyar jelentése?",
     options: [
       "D-Alanin-D-Laktát",
@@ -2719,7 +2719,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_155",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi az 'erm gének' magyar jelentése?",
     options: [
       "erm gének",
@@ -2731,7 +2731,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_156",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi az 'MLS rezisztencia' magyar jelentése?",
     options: [
       "MLS rezisztencia",
@@ -2743,7 +2743,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_157",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'QRDR mutációk' magyar jelentése?",
     options: [
       "QRDR mutációk",
@@ -2755,7 +2755,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_158",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'qnr gének' magyar jelentése?",
     options: [
       "qnr gének",
@@ -2767,7 +2767,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_159",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi az 'Efflux pumpák' magyar jelentése?",
     options: [
       "Efflux pumpák",
@@ -2779,7 +2779,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_160",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi az 'RND család' magyar jelentése?",
     options: [
       "RND család (efflux pumpa)",
@@ -2791,7 +2791,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_161",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi az 'MFS család' magyar jelentése?",
     options: [
       "MFS család (efflux pumpa)",
@@ -2803,7 +2803,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_162",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Porinok' magyar jelentése?",
     options: [
       "Porinok",
@@ -2815,7 +2815,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_163",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Co-szelekció' magyar jelentése?",
     options: [
       "Ko-szelekció",
@@ -2827,7 +2827,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_164",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Stewardship' magyar jelentése?",
     options: [
       "Antibiotikum-stewardship (felelős antibiotikum-használat)",
@@ -2839,7 +2839,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_165",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Surveillance' magyar jelentése?",
     options: [
       "Járványügyi felügyelet",
@@ -2851,7 +2851,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_166",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Bakteriofág terápia' magyar jelentése?",
     options: [
       "Bakteriofág terápia",
@@ -2863,7 +2863,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_167",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Pilus' magyar jelentése?",
     options: [
       "Pilus (szex-pilus)",
@@ -2875,7 +2875,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_168",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi az 'oriT' magyar jelentése?",
     options: [
       "oriT (origin of transfer)",
@@ -2887,7 +2887,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_169",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'tra-gének' magyar jelentése?",
     options: [
       "tra-gének (transzfer gének)",
@@ -2899,7 +2899,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_170",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Kompetencia' magyar jelentése?",
     options: [
       "Kompetencia (mikrobiológiai)",
@@ -2911,7 +2911,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_171",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Replikatív transzpozíció' magyar jelentése?",
     options: [
       "Replikatív transzpozíció",
@@ -2923,7 +2923,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_172",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Plasmid curing' magyar jelentése?",
     options: [
       "Plasmid curing (plazmid elvesztés)",
@@ -2935,7 +2935,7 @@ export const latinTermsQuestions = [
   },
   {
     id: "latin_173",
-    topic: "latin_terms",
+    topic: "latin-terms",
     question: "Mi a 'Fitness cost' magyar jelentése?",
     options: [
       "Fitness cost (életképességi költség)",
@@ -2949,7 +2949,7 @@ export const latinTermsQuestions = [
 
 // 4. Végül definiáljuk a latinTermsData-t, ami használja a fenti adatokat
 export const getLatinTermsData = () => ({
-  id: "latin_terms",
+  id: "latin-terms",
   title: "Latin kifejezések",
   shortTitle: "Latin",
   description: "A fontosabb latin kifejezések és magyar jelentésük, definíciójuk.",
