@@ -72,8 +72,10 @@ function AppRoutes() {
 
   const handleTopicSelect = async (topic) => {
     const questions = await GET_TOPIC_QUESTIONS_ASYNC(topic.id);
+    console.log("Questions in handleTopicSelect:", questions);
     if (questions.length === 0) {
       alert("Nincsenek elérhető kérdések ebben a témakörben!");
+      console.log("No questions available for the selected topic.");
       return;
     }
 
