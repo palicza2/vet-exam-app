@@ -1,25 +1,4 @@
-export const latinTermsData = {
-  id: "latin_terms",
-  title: "Latin kifejezések",
-  shortTitle: "Latin",
-  description: "A fontosabb latin kifejezések és magyar jelentésük, definíciójuk.",
-  studyMaterial: [
-    {
-      title: "Latin kifejezések és definíciók",
-      icon: "book",
-      color: "#336699",
-      iconColor: "#FFFFFF",
-      sections: [
-        {
-          header: "Kifejezés - Jelentés - Definíció",
-          points: latinTerms.map(term => `- **${term.term}**: ${term.translation} - _${term.description}_`)
-        },
-      ],
-    },
-  ],
-  questions: latinTermsQuestions,
-};
-
+// 1. Először definiáljuk az adatokat (latinTerms)
 export const latinTerms = [
   {
     term: "Streptococcus suis",
@@ -888,6 +867,7 @@ export const latinTerms = [
   }
 ];
 
+// 3. Ezután definiáljuk a kérdéseket (latinTermsQuestions)
 export const latinTermsQuestions = [
   {
     id: "latin_1",
@@ -2692,7 +2672,7 @@ export const latinTermsQuestions = [
   {
     id: "latin_151",
     topic: "latin_terms",
-    question: "Mi az 'Aminoglikozid-módosító enzimek (AME)' magyar jelentése?",
+    question: "Mi az 'Aminoglikozid-módosító enzimek (AME)' magyar jelentése?िजन",
     options: [
       "Aminoglikozid-módosító enzimek",
       "Metasztatikus tályogok",
@@ -2965,4 +2945,27 @@ export const latinTermsQuestions = [
     ],
     correctAnswer: "Fitness cost (életképességi költség)"
   }
-]
+];
+
+// 4. Végül definiáljuk a latinTermsData-t, ami használja a fenti adatokat
+export const latinTermsData = {
+  id: "latin_terms",
+  title: "Latin kifejezések",
+  shortTitle: "Latin",
+  description: "A fontosabb latin kifejezések és magyar jelentésük, definíciójuk.",
+  studyMaterial: [
+    {
+      title: "Latin kifejezések és definíciók",
+      icon: "book",
+      color: "#336699",
+      iconColor: "#FFFFFF",
+      sections: [
+        {
+          header: "Kifejezés - Jelentés - Definíció",
+          points: latinTerms.map(term => `- **${term.term}**: ${term.translation} - _${term.description}_`)
+        },
+      ],
+    },
+  ],
+  questions: latinTermsQuestions,
+};
