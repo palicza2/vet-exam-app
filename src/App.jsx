@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate, useNavigate } from 'react-router-dom';
-import { 
-  Activity, Brain
-} from 'lucide-react';
+import { Activity, Brain } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 // --- SERVICE & HOOK IMPORTS ---
@@ -194,7 +192,10 @@ function AuthGuard({ children }) {
       } else {
         await handleSignIn(email, password);
       }
-    } catch (err) {}
+    } catch (err) {
+      // Handle error in UI, maybe setAuthError
+      console.error("Auth submission error:", err);
+    }
   };
 
   if (authLoading) return <div className="min-h-screen flex items-center justify-center bg-slate-50"><Activity className="animate-spin text-indigo-600" size={32} /></div>;
@@ -219,18 +220,10 @@ function AuthGuard({ children }) {
 }
 
 export default function App() {
+  const { t } = useTranslation();
+
   if (configError) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-red-50 p-4">
-        <div className="bg-white p-8 rounded-2xl shadow-xl max-w-lg w-full text-center border-2 border-red-100">
-          <div className="bg-red-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
-            <Activity className="text-red-600" size={32} />
-          </div>
-          <h2 className="text-2xl font-bold text-slate-800 mb-3">Database Setup Required</h2>
-          <p className="text-slate-600 mb-6">The app cannot connect to Firebase.</p>
-        </div>
-      </div>
-    );
+    return <div>{t('firebase_config_error', 'Firebase Configuration Error')}</div>;
   }
 
   return (
