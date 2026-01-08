@@ -2960,7 +2960,6 @@ export const getLatinTermsData = () => ({
     iconColor: "#FFFFFF",
     sections: [
       {
-        header: "Jelentés és Definíció",
         points: [
           `**Jelentés**: ${term.translation}`,
           `**Definíció**: _${term.description}_`
