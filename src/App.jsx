@@ -22,7 +22,7 @@ import ExamPage from './pages/ExamPage';
 import StatsPage from './pages/StatsPage';
 
 // --- DATA IMPORTÁLÁSA ---
-import { ALL_TOPICS, GET_ALL_QUESTIONS } from './data/index.js';
+import { ALL_TOPICS, GET_TOPIC_QUESTIONS_ASYNC } from './data/index.js';
 
 // Wrapper for routing logic
 function AppRoutes() {
@@ -70,8 +70,8 @@ function AppRoutes() {
     navigate('/select-topic');
   };
 
-  const handleTopicSelect = (topic) => {
-    const questions = getQuestionsForTopic(topic);
+  const handleTopicSelect = async (topic) => {
+    const questions = await GET_TOPIC_QUESTIONS_ASYNC(topic.id);
     if (questions.length === 0) {
       alert("Nincsenek elérhető kérdések ebben a témakörben!");
       return;

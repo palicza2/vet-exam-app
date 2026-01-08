@@ -13,7 +13,16 @@ import { amrOneHealthData } from './topics/17_amr_one_health.js';
 import { amrMechanismsData } from './topics/18_amr_mechanisms.js';
 import { mobileElementsData } from './topics/19_mobile_elements.js';
 import { wgsData } from './topics/20_wgs.js';
-// import { latinTerms } from './topics/latin_terms.js';
+
+// A latin szavakat csak metadataként definiáljuk itt a kezdeti bundle méret csökkentése érdekében
+const latinTermsMetadata = {
+  id: 'latin-terms',
+  title: 'Latin szakkifejezések',
+  icon: 'Book',
+  color: 'text-amber-600',
+  description: 'Állatorvosi latin kifejezések és magyar megfelelőik',
+  isLazy: true
+};
 
 // 2. LISTA: Ez a tömb határozza meg, mi jelenik meg az alkalmazásban
 export const ALL_TOPICS = [
@@ -29,22 +38,43 @@ export const ALL_TOPICS = [
   amrMechanismsData,
   mobileElementsData,
   wgsData,
-  // latinTerms,
+  latinTermsMetadata,
 ];
 
-// --- Segédfüggvények (Ezekhez NEM kell nyúlni, automatikusan működnek) ---
+// --- Segédfüggvények ---
 
-// Összegyűjti az összes kérdést egy nagy közös kalapba a Vizsga módhoz
-export const GET_ALL_QUESTIONS = () => {
-  return ALL_TOPICS.reduce((acc, topic) => {
-    // Biztonsági ellenőrzés: ha véletlenül nincs kérdés, üres tömböt ad
-    const questions = topic.questions || [];
-    return [...acc, ...questions];
-  }, []);
+/**
+ * Aszinkron módon betölti egy témakör kérdéseit.
+ * Ez segít távol tartani a hatalmas adatfájlokat a kezdeti betöltéstől.
+ */
+export const GET_TOPIC_QUESTIONS_ASYNC = async (topicId) => {
+  const topic = ALL_TOPICS.find(t => t.id === topicId);
+  if (!topic) return [];
+
+  if (topic.id === 'latin-terms') {
+    // Dinamikus import: csak akkor töltődik le a fájl, ha ide belépünk
+    const { latinTerms } = await import('./topics/latin_terms.js');
+    return latinTerms.questions;
+  }
+
+  return topic.questions || [];
 };
 
-// Visszaadja egy adott téma kérdéseit a Gyakorló módhoz
-export const GET_TOPIC_QUESTIONS = (topicId) => {
-  const topic = ALL_TOPICS.find(t => t.id === topicId);
-  return topic ? topic.questions : [];
+/**
+ * Összegyűjti az összes kérdést (aszinkron módon)
+ * Megjegyzés: A vizsga módhoz érdemes lehet korlátozni a latin szavak számát, 
+ * mert több ezer van belőlük.
+ */
+export const GET_ALL_QUESTIONS_ASYNC = async () => {
+  const allResults = await Promise.all(
+    ALL_TOPICS.map(topic => GET_TOPIC_QUESTIONS_ASYNC(topic.id))
+  );
+  return allResults.flat();
+};
+
+// Visszafelé kompatibilitás (szinkron verzió, ami nem tartalmazza a lazy témákat)
+export const GET_ALL_QUESTIONS = () => {
+  return ALL_TOPICS
+    .filter(t => !t.isLazy)
+    .reduce((acc, topic) => [...acc, ...(topic.questions || [])], []);
 };
