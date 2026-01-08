@@ -2962,7 +2962,7 @@ export const latinTermsData = {
       sections: [
         {
           header: "Kifejezés - Jelentés - Definíció",
-          points: latinTerms.map(term => `- **${term.term}**: ${term.translation} - _${term.description}_`)
+          points: Array.isArray(latinTerms) ? latinTerms.map(term => `- **${term.term}**: ${term.translation} - _${term.description}_`) : []
         },
       ],
     },
