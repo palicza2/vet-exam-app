@@ -74,8 +74,8 @@ const StudyPage = ({ selectedTopicId, setSelectedTopicId, ALL_TOPICS, setView, h
           </div>
           
           <div className="space-y-4 md:space-y-6">
-            {loadedTopicData.studyMaterial.map((section, idx) => (
-              <StudyCard key={idx} data={section} />
+            {loadedTopicData.studyMaterial.map((cardData, idx) => (
+              <StudyCard key={idx} data={cardData} />
             ))}
           </div>
         </div>

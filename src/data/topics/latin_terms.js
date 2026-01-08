@@ -2953,19 +2953,20 @@ export const getLatinTermsData = () => ({
   title: "Latin kifejezések",
   shortTitle: "Latin",
   description: "A fontosabb latin kifejezések és magyar jelentésük, definíciójuk.",
-  studyMaterial: [
-    {
-      title: "Latin kifejezések és definíciók",
-      icon: "book",
-      color: "#336699",
-      iconColor: "#FFFFFF",
-      sections: [
-        {
-          header: "Kifejezés - Jelentés - Definíció",
-          points: (console.log('latinTerms in getLatinTermsData:', latinTerms), Array.isArray(latinTerms) ? latinTerms.map(term => `- **${term.term}**: ${term.translation} - _${term.description}_`) : [])
-        },
-      ],
-    },
-  ],
+  studyMaterial: latinTerms.map(term => ({
+    title: term.term,
+    icon: "Book", // You can choose an appropriate icon
+    color: "text-amber-600", // You can choose an appropriate color
+    iconColor: "#FFFFFF",
+    sections: [
+      {
+        header: "Jelentés és Definíció",
+        points: [
+          `**Jelentés**: ${term.translation}`,
+          `**Definíció**: _${term.description}_`
+        ]
+      },
+    ],
+  })),
   questions: latinTermsQuestions,
 });
