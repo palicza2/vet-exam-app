@@ -53,7 +53,8 @@ export const GET_TOPIC_QUESTIONS_ASYNC = async (topicId) => {
 
   if (topic.id === 'latin-terms') {
     // Dinamikus import: csak akkor töltődik le a fájl, ha ide belépünk
-    const { latinTermsData } = await import('./topics/latin_terms.js');
+    const { getLatinTermsData } = await import('./topics/latin_terms.js');
+    const latinTermsData = getLatinTermsData();
     return latinTermsData.questions;
   }
 

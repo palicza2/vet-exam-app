@@ -2948,7 +2948,7 @@ export const latinTermsQuestions = [
 ];
 
 // 4. Végül definiáljuk a latinTermsData-t, ami használja a fenti adatokat
-export const latinTermsData = {
+export const getLatinTermsData = () => ({
   id: "latin_terms",
   title: "Latin kifejezések",
   shortTitle: "Latin",
@@ -2968,4 +2968,4 @@ export const latinTermsData = {
     },
   ],
   questions: latinTermsQuestions,
-};
+});
