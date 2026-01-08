@@ -13,7 +13,7 @@ import { amrOneHealthData } from './topics/17_amr_one_health.js';
 import { amrMechanismsData } from './topics/18_amr_mechanisms.js';
 import { mobileElementsData } from './topics/19_mobile_elements.js';
 import { wgsData } from './topics/20_wgs.js';
-import { latinTerms } from './topics/latin_terms.js';
+// import { latinTerms } from './topics/latin_terms.js';
 
 // 2. LISTA: Ez a tömb határozza meg, mi jelenik meg az alkalmazásban
 export const ALL_TOPICS = [
@@ -29,7 +29,7 @@ export const ALL_TOPICS = [
   amrMechanismsData,
   mobileElementsData,
   wgsData,
-  latinTerms,
+  // latinTerms,
 ];
 
 // --- Segédfüggvények (Ezekhez NEM kell nyúlni, automatikusan működnek) ---
