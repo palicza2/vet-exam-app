@@ -87,7 +87,7 @@ const StudyPage = ({ selectedTopicId, setSelectedTopicId, ALL_TOPICS, setView, h
                 <Book size={18} className="md:w-6 md:h-6" />
               </div>
               <div className="flex-1 min-w-0">
-                <CardTitle className="text-sm md:text-lg font-bold text-slate-800 line-clamp-1 group-hover:text-indigo-700 transition-colors leading-tight">
+                <CardTitle className="text-sm md:text-lg font-bold text-slate-800 group-hover:text-indigo-700 transition-colors leading-tight">
                   {topic.title}
                 </CardTitle>
                 <CardDescription className="text-[10px] md:text-xs text-slate-400 font-medium">

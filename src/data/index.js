@@ -6,11 +6,14 @@ import { sertesorbancData } from './topics/02_sertesorbanc.js';
 import { streptococcus_suis as streptococcusSuisData } from './topics/03_streptococcus_suis.js';
 import { staphylococcusData } from './topics/04_staphylococcus.js';
 import { ecoliData } from './topics/05_ecoli.js';
+import { mycoplasmaData } from './topics/14_mycoplasma.js';
+import { glasserData } from './topics/15_glasser.js';
 import { antimicrobialMechanismsData } from './topics/16_antimicrobial_mechanisms.js';
 import { amrOneHealthData } from './topics/17_amr_one_health.js';
 import { amrMechanismsData } from './topics/18_amr_mechanisms.js';
 import { mobileElementsData } from './topics/19_mobile_elements.js';
 import { wgsData } from './topics/20_wgs.js';
+import { latinTerms } from './topics/latin_terms.js';
 
 // 2. LISTA: Ez a tömb határozza meg, mi jelenik meg az alkalmazásban
 export const ALL_TOPICS = [
@@ -19,11 +22,14 @@ export const ALL_TOPICS = [
   streptococcusSuisData,
   staphylococcusData,
   ecoliData,
+  mycoplasmaData,
+  glasserData,
   antimicrobialMechanismsData,
   amrOneHealthData,
   amrMechanismsData,
   mobileElementsData,
   wgsData,
+  latinTerms,
 ];
 
 // --- Segédfüggvények (Ezekhez NEM kell nyúlni, automatikusan működnek) ---

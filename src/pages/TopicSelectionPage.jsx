@@ -32,8 +32,8 @@ const TopicSelectionPage = ({ selectionMode, handleTopicSelect, setView, ALL_TOP
               <Brain size={18} className="md:w-6 md:h-6" />
             </div>
             <div className="flex-1 min-w-0">
-              <CardTitle className="text-sm md:text-xl font-bold text-slate-800 truncate">{t("topic_selection.all_topics")}</CardTitle>
-              <CardDescription className="text-[10px] md:text-sm text-indigo-600 font-bold truncate">
+              <CardTitle className="text-sm md:text-xl font-bold text-slate-800 leading-tight">{t("topic_selection.all_topics")}</CardTitle>
+              <CardDescription className="text-[10px] md:text-sm text-indigo-600 font-bold leading-tight">
                 {t("topic_selection.mixed_questions")}
               </CardDescription>
             </div>
@@ -53,7 +53,7 @@ const TopicSelectionPage = ({ selectionMode, handleTopicSelect, setView, ALL_TOP
                 <Book size={18} className="md:w-6 md:h-6" />
               </div>
               <div className="flex-1 min-w-0">
-                <CardTitle className="text-sm md:text-lg font-bold text-slate-800 line-clamp-1 leading-tight">
+                <CardTitle className="text-sm md:text-lg font-bold text-slate-800 leading-tight">
                   {topic.title}
                 </CardTitle>
                 <CardDescription className="text-[10px] md:text-xs text-slate-400 font-medium">

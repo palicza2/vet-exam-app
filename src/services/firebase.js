@@ -15,7 +15,6 @@ import {
 } from 'firebase/firestore';
 
 let app, auth, db;
-let configError = false;
 
 const myRealConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
@@ -27,18 +26,21 @@ const myRealConfig = {
   measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID
 };
 
-try {
-  if (typeof __firebase_config !== 'undefined') {
-    app = initializeApp(JSON.parse(__firebase_config));
-  } else {
-    app = initializeApp(myRealConfig);
+export const configError = (() => {
+  try {
+    if (typeof __firebase_config !== 'undefined') {
+      app = initializeApp(JSON.parse(__firebase_config));
+    } else {
+      app = initializeApp(myRealConfig);
+    }
+    auth = getAuth(app);
+    db = getFirestore(app);
+    return false;
+  } catch (e) {
+    console.error("Firebase initialization failed:", e);
+    return true;
   }
-  auth = getAuth(app);
-  db = getFirestore(app);
-} catch (e) {
-  console.error("Firebase initialization failed:", e);
-  configError = true;
-}
+})();
 
 // --- Auth Helpers ---
 export const signIn = (email, password) => fbSignIn(auth, email, password);
@@ -69,5 +71,5 @@ export const updateStatsInDB = (uid, newStats) => {
   return updateDoc(statsRef, newStats);
 };
 
-export { auth, db, configError };
+export { auth, db };
 export default app;
