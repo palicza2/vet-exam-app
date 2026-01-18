@@ -1,0 +1,418 @@
+export const ujgeneraciosszekvenalasitechnologiakattekinteseData = {
+  "id": "ujgeneracios_szekvenalasi_technologiak_attekintese",
+  "title": "Újgenerációs szekvenálási technológiák áttekintése",
+  "studyMaterial": [
+    {
+      "title": "Újgenerációs szekvenálási technológiák áttekintése",
+      "icon": "book",
+      "color": "bg-blue-50 border-blue-200",
+      "iconColor": "text-blue-500",
+      "sections": [
+        {
+          "header": "Általános",
+          "points": [
+            "A 21. század elején a Humán Genom Projekt lezárása mérföldkő volt, ám az akkor alkalmazott technológiák korlátai hamar nyilvánvalóvá váltak.",
+            "A klinikai diagnosztika és a kutatás igényei olyan módszereket követeltek, amelyek képesek nagy mennyiségű genetikai információt gyorsan, költséghatékonyan és nagy pontossággal előállítani.",
+            "Ezen igény hívta életre az NGS technológiákat, amelyek mára lehetővé teszik nemcsak az emberi genom, hanem komplex mikrobiális közösségek (mikrobiom) és patogén kórokozók részletes vizsgálatát is.",
+            "Az NGS technológiák közös jellemzője, hogy egyszerre több millió, vagy akár milliárdnyi DNS-fragmentumot képesek szekvenálni párhuzamosan. Ez a megközelítés teszi lehetővé, hogy egy teljes genomot sokszoros lefedettséggel, gyorsan és gazdaságosan szekvenáljunk.",
+            "Az NGS nem egyetlen módszert takar, hanem több, különböző elven működő technológiát foglal magába, mindegyiknek megvannak a maga előnyei és hátrányai."
+          ]
+        },
+        {
+          "header": "Az NGS technológiák legfontosabb előnyei",
+          "points": []
+        },
+        {
+          "header": "Mély szekvenálás",
+          "points": [
+            "A technológia lehetővé teszi ugyanazon genomi régió többszázszoros vagy többezerszeres leolvasását.",
+            "A Sanger-módszer érzékenysége jellemzően 15-20% körüli variánsfrekvenciánál van, míg az NGS képes 1% alatti variánsokat is detektálni."
+          ]
+        },
+        {
+          "header": "Hipotézis-mentes megközelítés",
+          "points": [
+            "Míg a Sanger-szekvenálás és a PCR módszerek specifikus primereket, és így előzetes ismeretet igényelnek a célszekvenciáról, az NGS képes \"vakon\" vizsgálni a mintában lévő összes genetikai anyagot.",
+            "ismeretlen kórokozó vizsgálatakor értékes"
+          ]
+        },
+        {
+          "header": "Költséghatékonyság",
+          "points": [
+            "lehetővé tette a rutinszerű alkalmazást",
+            "Második Generációs Technológiák: A Rövid Leolvasások Kora",
+            "A második generációs technológiák közös jellemzője, hogy a DNS-t apró fragmensekre törik, majd ezeket amplifikálják (klonális sokszorozás) a jel felerősítése érdekében.",
+            "A szekvenálás általában rövid szakaszokat (50-400 bázispár) eredményez, de hatalmas mennyiségben.",
+            "Illumina",
+            "Jelenleg a világ genetikai adatainak több mint 90%-át ezzel a technológiával állítják elő.",
+            "Sikerének titka a magas pontosság (>99,9% Q30 minőség felett) és a skálázhatóság."
+          ]
+        },
+        {
+          "header": "Az Illumina szekvenálás fő lépései a következők",
+          "points": []
+        },
+        {
+          "header": "Könyvtár-előkészítés",
+          "points": [
+            "A genomikus DNS-t fizikai (ultrahangos) vagy enzimatikus módszerrel fragmentálják (200-500 bp méretre).",
+            "A fragmensek végeire specifikus adaptereket ligálnak.",
+            "az adapterek kettős funkcióval bírnak:",
+            "tartalmazzák a szekvenáló primerek kötőhelyeit,",
+            "lehetővé teszik a fragmensek rögzítését a szekvenáló felülethez (flow cell).",
+            "Indexelés révén több minta is vizsgálható egyszerre."
+          ]
+        },
+        {
+          "header": "Klasztergenerálás",
+          "points": [
+            "Ez a lépés különbözteti meg az Illuminát a versenytársaktól.",
+            "A könyvtár molekulákat egy üveg felületre (flow cell) juttatják, amely sűrűn borított kétféle oligonukleotiddal.",
+            "A DNS-szálak hibridizálódnak ezekhez, majd egy \"híd-amplifikációs\" folyamat során minden egyes szálból egy lokális, klonális csoport (klaszter) jön létre.",
+            "Egy-egy klaszter több ezer azonos DNS-szálat tartalmaz, ami felerősíti a fluoreszcens jelet, hogy az optikailag detektálható legyen."
+          ]
+        },
+        {
+          "header": "Szekvenálás Szintézissel (SBS)",
+          "points": [
+            "A szekvenálás ciklusokban zajlik.",
+            "Minden ciklusban mind a négy nukleotidot (A, C, G, T) egyszerre adják a rendszerhez.",
+            "Ezek a nukleotidok speciális, reverzibilis terminátorral és egyedi fluoreszcens jelöléssel vannak ellátva.",
+            "A polimeráz beépíti a komplementer bázist.",
+            "A terminátor csoport megakadályozza a további beépülést.",
+            "A felesleges reagenseket kimossák.",
+            "Lézeres gerjesztés hatására a beépült bázis fluoreszkál, amit egy nagy felbontású kamera rögzít.",
+            "Kémiai úton eltávolítják a terminátort és a fluorofórt, így kezdődhet a következő ciklus.",
+            "Adatfeldolgozás: A kamera által rögzített fluoreszcens képeket egy szoftver elemzi, és minden klaszterhez hozzárendeli a megfelelő nukleotid-sorrendet.",
+            "Hátrányai: Az Illumina technológia fő korlátja a leolvasási hossz., ami kihívást jelenthet a komplex genomi régiók (pl. ismétlődések) összerakásakor. Hosszú futási idő (több nap).",
+            "Ion Torrent",
+            "A pH-változások detektálásán alapul.",
+            "Amikor egy nukleotid beépül a növekvő DNS-szálba, melléktermékként egy proton szabadul fel.",
+            "Ezt a pH-változást egy félvezető szenzor detektálja."
+          ]
+        },
+        {
+          "header": "Könyvtár-előkészítés és amplifikáció",
+          "points": [
+            "A könyvtárkészítés után a DNS-fragmenseket mikroszkopikus gyöngyökhöz kötik, majd olaj-víz emulzióban amplifikálják őket.",
+            "Minden mikroszkopikus vízcsepp egy reaktorként működik, így a gyöngy felszínét azonos DNS-másolatok milliói borítják be.",
+            "A gyöngyöket egy félvezető chipre helyezik, amely ionszelektív szenzorokat tartalmaz és rendkívül érzékeny pH-mérőként funkcionál."
+          ]
+        },
+        {
+          "header": "Szekvenálás",
+          "points": [
+            "A rendszert szekvenciálisan árasztják el a különböző dNTP-kkel.",
+            "Ha a nukleotid beépül, H+ szabadul fel, a pH csökken, amit a szenzor feszültségváltozásként érzékel.",
+            "A jel nagysága arányos a beépült nukleotidok számával.",
+            "Előnyei: legnagyobb előnye a sebesség: mivel nincs szükség lassú optikai képalkotásra, egy futtatás 2-4 óra alatt elkészülhet, ami ideális a sürgősségi klinikai diagnosztikában.",
+            "Hátrányai: Pontatlanság a homopolimer régiók (azonos nukleotidok hosszú sorozatai) szekvenálásakor, mivel nehéz megkülönböztetni a 3, 4 vagy 5 azonos nukleotid beépülését. Rövid leolvasási hossz.",
+            "III. Harmadik Generációs Technológiák: A Hosszú Leolvasások és a Valós Idejű Analízis",
+            "A harmadik generációs technológiák (Long-Read Sequencing) áttörést hoztak a genomikában azzal, hogy képesek hosszú, akár több tízezer vagy százezer bázispáros DNS-molekulák egybefüggő szekvenálására.",
+            "Pacific Biosciences (PacBio): Single Molecule Real-Time (SMRT)",
+            "A PacBio SMRT szekvenálás egy harmadik generációs, hosszú olvasathosszú szekvenálási technológia, amely egyetlen DNS-molekulát olvas le valós időben."
+          ]
+        },
+        {
+          "header": "A módszer lényege",
+          "points": [
+            "DNS-fragmentumok két végére speciális adaptereket kapcsolnak, így kör alakú DNS-templát jön létre",
+            "Ezután egyetlen DNS-polimeráz enzimet egy rendkívül kicsi, nanométeres méretű térbe, az úgynevezett zero-mode waveguide-ba (ZMW) helyeznek.",
+            "A ZMW olyan apró „megfigyelőkamra”, amely lehetővé teszi, hogy csak egyetlen DNS-polimeráz működését kövessék nyomon.",
+            "Amikor a polimeráz új bázist épít be a DNS-be, rövid fényjel keletkezik, amelyet a ZMW-ben optikailag detektálnak.",
+            "Ezekből a fényjelekből a rendszer valós időben állítja össze a DNS szekvenciáját.",
+            "A PacBio Sequel II rendszer képes nagyon hosszú DNS-szakaszokat szekvenálni, akár több tízezer bázispár hosszban.",
+            "A DNS körkörös szerkezete miatt ugyanazt a szakaszt többször is leolvassa, majd ezekből egy nagyon pontos konszenzus szekvenciát készít (HiFi olvasatok).",
+            "Ennek köszönhetően a módszer egyszerre biztosít hosszú olvasathosszt és nagy pontosságot."
+          ]
+        },
+        {
+          "header": "A technológia előnye, hogy",
+          "points": [
+            "hosszú, összefüggő szekvenciákat ad,",
+            "nem igényel PCR-amplifikációt,",
+            "képes a DNS bizonyos módosításainak (például metiláció) kimutatására."
+          ]
+        },
+        {
+          "header": "Hátránya ugyanakkor, hogy",
+          "points": [
+            "drágább, mint a rövid olvasathosszú módszerek,",
+            "jó minőségű, viszonylag nagy mennyiségű kiinduló DNS-t igényel.",
+            "Oxford Nanopore Technologies (ONT)",
+            "Megközelítése radikálisan eltér minden mástól: nem használ polimerázt a szintézishez, és nem optikai jelet mér.",
+            "Harmadik generációs, hosszú olvasathosszú technológia, amely elektromos jelek alapján határozza meg a DNS vagy RNS szekvenciáját."
+          ]
+        },
+        {
+          "header": "A módszer lényege",
+          "points": [
+            "a DNS- vagy RNS-molekulát átvezetik egy nanopóruson, amely egy vékony membránban helyezkedik el. A póruson normál esetben ionok áramlanak át, amit a műszer elektromos áramként mér.",
+            "Amikor a nukleinsav áthalad a nanopóruson, részben elzárja ezt az ionáramot.",
+            "Minden báziskombináció kicsit másképp változtatja meg az áramot, és ezekből az áramváltozásokból a készülék kiszámolja, hogy milyen sorrendben követik egymást a bázisok.",
+            "A DNS áthaladását egy speciális fehérje „lassítja”, így a mérés valós időben, folyamatosan történik. A módszer nem igényel PCR-amplifikációt, ezért közvetlenül natív DNS-ből vagy akár RNS-ből is lehet szekvenálni."
+          ]
+        },
+        {
+          "header": "A módszer előnyei",
+          "points": [
+            "rendkívül hosszú olvasathossz,",
+            "hordozható eszközök is léteznek,",
+            "gyorsan elindítható mérés,",
+            "natív DNS és RNS szekvenálása,",
+            "DNS-módosítások (pl. metiláció) kimutatása."
+          ]
+        },
+        {
+          "header": "Hátrányai",
+          "points": [
+            "egyetlen olvasat pontossága alacsonyabb, mint az Illumina vagy a PacBio HiFi esetében,",
+            "bizonyos szekvenciákban (pl. azonos bázisok hosszú ismétlődésekor) több hiba fordulhat elő."
+          ]
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "ujgeneracios_szekvenalasi_technologiak_attekintese_0",
+      "topic": "Újgenerációs szekvenálási technológiák áttekintése",
+      "type": "mcq",
+      "question": "Igaz-e az alábbi állítás: 'A 21. század elején a Humán Genom Projekt lezárása mérföldkő volt, ám az akkor alkalmazott technológiák korlátai hamar nyilvánvalóvá váltak.'?",
+      "options": [
+        "Igaz",
+        "Hamis"
+      ],
+      "correctAnswer": 0,
+      "explanation": "A tananyag alapján ez az állítás helyes."
+    },
+    {
+      "id": "ujgeneracios_szekvenalasi_technologiak_attekintese_1",
+      "topic": "Újgenerációs szekvenálási technológiák áttekintése",
+      "type": "mcq",
+      "question": "Igaz-e az alábbi állítás: 'A technológia lehetővé teszi ugyanazon genomi régió többszázszoros vagy többezerszeres leolvasását.'?",
+      "options": [
+        "Igaz",
+        "Hamis"
+      ],
+      "correctAnswer": 0,
+      "explanation": "A tananyag alapján ez az állítás helyes."
+    },
+    {
+      "id": "ujgeneracios_szekvenalasi_technologiak_attekintese_2",
+      "topic": "Újgenerációs szekvenálási technológiák áttekintése",
+      "type": "mcq",
+      "question": "Igaz-e az alábbi állítás: 'A Sanger-módszer érzékenysége jellemzően 15-20% körüli variánsfrekvenciánál van, míg az NGS képes 1% alatti variánsokat is detektálni.'?",
+      "options": [
+        "Igaz",
+        "Hamis"
+      ],
+      "correctAnswer": 0,
+      "explanation": "A tananyag alapján ez az állítás helyes."
+    },
+    {
+      "id": "ujgeneracios_szekvenalasi_technologiak_attekintese_3",
+      "topic": "Újgenerációs szekvenálási technológiák áttekintése",
+      "type": "mcq",
+      "question": "Igaz-e az alábbi állítás: 'ismeretlen kórokozó vizsgálatakor értékes'?",
+      "options": [
+        "Igaz",
+        "Hamis"
+      ],
+      "correctAnswer": 0,
+      "explanation": "A tananyag alapján ez az állítás helyes."
+    },
+    {
+      "id": "ujgeneracios_szekvenalasi_technologiak_attekintese_4",
+      "topic": "Újgenerációs szekvenálási technológiák áttekintése",
+      "type": "mcq",
+      "question": "Igaz-e az alábbi állítás: 'lehetővé tette a rutinszerű alkalmazást'?",
+      "options": [
+        "Igaz",
+        "Hamis"
+      ],
+      "correctAnswer": 0,
+      "explanation": "A tananyag alapján ez az állítás helyes."
+    },
+    {
+      "id": "ujgeneracios_szekvenalasi_technologiak_attekintese_5",
+      "topic": "Újgenerációs szekvenálási technológiák áttekintése",
+      "type": "mcq",
+      "question": "Igaz-e az alábbi állítás: 'Második Generációs Technológiák: A Rövid Leolvasások Kora'?",
+      "options": [
+        "Igaz",
+        "Hamis"
+      ],
+      "correctAnswer": 0,
+      "explanation": "A tananyag alapján ez az állítás helyes."
+    },
+    {
+      "id": "ujgeneracios_szekvenalasi_technologiak_attekintese_6",
+      "topic": "Újgenerációs szekvenálási technológiák áttekintése",
+      "type": "mcq",
+      "question": "Igaz-e az alábbi állítás: 'A szekvenálás általában rövid szakaszokat (50-400 bázispár) eredményez, de hatalmas mennyiségben.'?",
+      "options": [
+        "Igaz",
+        "Hamis"
+      ],
+      "correctAnswer": 0,
+      "explanation": "A tananyag alapján ez az állítás helyes."
+    },
+    {
+      "id": "ujgeneracios_szekvenalasi_technologiak_attekintese_7",
+      "topic": "Újgenerációs szekvenálási technológiák áttekintése",
+      "type": "mcq",
+      "question": "Igaz-e az alábbi állítás: 'Jelenleg a világ genetikai adatainak több mint 90%-át ezzel a technológiával állítják elő.'?",
+      "options": [
+        "Igaz",
+        "Hamis"
+      ],
+      "correctAnswer": 0,
+      "explanation": "A tananyag alapján ez az állítás helyes."
+    },
+    {
+      "id": "ujgeneracios_szekvenalasi_technologiak_attekintese_8",
+      "topic": "Újgenerációs szekvenálási technológiák áttekintése",
+      "type": "mcq",
+      "question": "Igaz-e az alábbi állítás: 'Sikerének titka a magas pontosság (>99,9% Q30 minőség felett) és a skálázhatóság.'?",
+      "options": [
+        "Igaz",
+        "Hamis"
+      ],
+      "correctAnswer": 0,
+      "explanation": "A tananyag alapján ez az állítás helyes."
+    },
+    {
+      "id": "ujgeneracios_szekvenalasi_technologiak_attekintese_9",
+      "topic": "Újgenerációs szekvenálási technológiák áttekintése",
+      "type": "mcq",
+      "question": "Igaz-e az alábbi állítás: 'A genomikus DNS-t fizikai (ultrahangos) vagy enzimatikus módszerrel fragmentálják (200-500 bp méretre).'?",
+      "options": [
+        "Igaz",
+        "Hamis"
+      ],
+      "correctAnswer": 0,
+      "explanation": "A tananyag alapján ez az állítás helyes."
+    },
+    {
+      "id": "ujgeneracios_szekvenalasi_technologiak_attekintese_10",
+      "topic": "Újgenerációs szekvenálási technológiák áttekintése",
+      "type": "mcq",
+      "question": "Igaz-e az alábbi állítás: 'A fragmensek végeire specifikus adaptereket ligálnak.'?",
+      "options": [
+        "Igaz",
+        "Hamis"
+      ],
+      "correctAnswer": 0,
+      "explanation": "A tananyag alapján ez az állítás helyes."
+    },
+    {
+      "id": "ujgeneracios_szekvenalasi_technologiak_attekintese_11",
+      "topic": "Újgenerációs szekvenálási technológiák áttekintése",
+      "type": "mcq",
+      "question": "Igaz-e az alábbi állítás: 'az adapterek kettős funkcióval bírnak:'?",
+      "options": [
+        "Igaz",
+        "Hamis"
+      ],
+      "correctAnswer": 0,
+      "explanation": "A tananyag alapján ez az állítás helyes."
+    },
+    {
+      "id": "ujgeneracios_szekvenalasi_technologiak_attekintese_12",
+      "topic": "Újgenerációs szekvenálási technológiák áttekintése",
+      "type": "mcq",
+      "question": "Igaz-e az alábbi állítás: 'tartalmazzák a szekvenáló primerek kötőhelyeit,'?",
+      "options": [
+        "Igaz",
+        "Hamis"
+      ],
+      "correctAnswer": 0,
+      "explanation": "A tananyag alapján ez az állítás helyes."
+    },
+    {
+      "id": "ujgeneracios_szekvenalasi_technologiak_attekintese_13",
+      "topic": "Újgenerációs szekvenálási technológiák áttekintése",
+      "type": "mcq",
+      "question": "Igaz-e az alábbi állítás: 'lehetővé teszik a fragmensek rögzítését a szekvenáló felülethez (flow cell).'?",
+      "options": [
+        "Igaz",
+        "Hamis"
+      ],
+      "correctAnswer": 0,
+      "explanation": "A tananyag alapján ez az állítás helyes."
+    },
+    {
+      "id": "ujgeneracios_szekvenalasi_technologiak_attekintese_14",
+      "topic": "Újgenerációs szekvenálási technológiák áttekintése",
+      "type": "mcq",
+      "question": "Igaz-e az alábbi állítás: 'Indexelés révén több minta is vizsgálható egyszerre.'?",
+      "options": [
+        "Igaz",
+        "Hamis"
+      ],
+      "correctAnswer": 0,
+      "explanation": "A tananyag alapján ez az állítás helyes."
+    },
+    {
+      "id": "ujgeneracios_szekvenalasi_technologiak_attekintese_15",
+      "topic": "Újgenerációs szekvenálási technológiák áttekintése",
+      "type": "mcq",
+      "question": "Igaz-e az alábbi állítás: 'Ez a lépés különbözteti meg az Illuminát a versenytársaktól.'?",
+      "options": [
+        "Igaz",
+        "Hamis"
+      ],
+      "correctAnswer": 0,
+      "explanation": "A tananyag alapján ez az állítás helyes."
+    },
+    {
+      "id": "ujgeneracios_szekvenalasi_technologiak_attekintese_16",
+      "topic": "Újgenerációs szekvenálási technológiák áttekintése",
+      "type": "mcq",
+      "question": "Igaz-e az alábbi állítás: 'A könyvtár molekulákat egy üveg felületre (flow cell) juttatják, amely sűrűn borított kétféle oligonukleotiddal.'?",
+      "options": [
+        "Igaz",
+        "Hamis"
+      ],
+      "correctAnswer": 0,
+      "explanation": "A tananyag alapján ez az állítás helyes."
+    },
+    {
+      "id": "ujgeneracios_szekvenalasi_technologiak_attekintese_17",
+      "topic": "Újgenerációs szekvenálási technológiák áttekintése",
+      "type": "mcq",
+      "question": "Igaz-e az alábbi állítás: 'Egy-egy klaszter több ezer azonos DNS-szálat tartalmaz, ami felerősíti a fluoreszcens jelet, hogy az optikailag detektálható legyen.'?",
+      "options": [
+        "Igaz",
+        "Hamis"
+      ],
+      "correctAnswer": 0,
+      "explanation": "A tananyag alapján ez az állítás helyes."
+    },
+    {
+      "id": "ujgeneracios_szekvenalasi_technologiak_attekintese_18",
+      "topic": "Újgenerációs szekvenálási technológiák áttekintése",
+      "type": "mcq",
+      "question": "Igaz-e az alábbi állítás: 'A szekvenálás ciklusokban zajlik.'?",
+      "options": [
+        "Igaz",
+        "Hamis"
+      ],
+      "correctAnswer": 0,
+      "explanation": "A tananyag alapján ez az állítás helyes."
+    },
+    {
+      "id": "ujgeneracios_szekvenalasi_technologiak_attekintese_19",
+      "topic": "Újgenerációs szekvenálási technológiák áttekintése",
+      "type": "mcq",
+      "question": "Igaz-e az alábbi állítás: 'Minden ciklusban mind a négy nukleotidot (A, C, G, T) egyszerre adják a rendszerhez.'?",
+      "options": [
+        "Igaz",
+        "Hamis"
+      ],
+      "correctAnswer": 0,
+      "explanation": "A tananyag alapján ez az állítás helyes."
+    }
+  ]
+};

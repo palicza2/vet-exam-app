@@ -1,112 +1,115 @@
 export const amrOneHealthData = {
   id: "amr_one_health",
-  title: "17. AMR jelentősége és One Health",
+  title: "17. AMR és One Health",
   studyMaterial: [
     {
-      title: "1. Az AMR Globális Jelentősége",
-      icon: "alertTriangle",
-      color: "bg-red-50 border-red-200",
-      iconColor: "text-red-500",
-      sections: [
+      "title": "1. AMR és One Health alapok",
+      "icon": "globe",
+      "color": "bg-emerald-50 border-emerald-200",
+      "iconColor": "text-emerald-600",
+      "sections": [
         {
-          header: "Egy fenyegető válság",
-          points: [
-            "Az antimikrobiális rezisztencia (AMR) miatt évente több millió ember halála várható 2050-re (becslés: 10 millió/év).",
-            "Veszélyezteti a modern orvosi beavatkozásokat (műtétek, kemoterápia).",
-            "Gazdasági hatás: Hatalmas egészségügyi többletköltségek és kieső termelékenység."
+          "header": "1.1. Mi az AMR?",
+          "points": [
+            "**Antimikrobiális rezisztencia (AMR):** Amikor a baktériumok ellenállóvá válnak a gyógyításukra használt szerekkel szemben",
+            "Szerzett rezisztencia: spontán mutáció vagy horizontális géntranszfer (konjugáció, transzformáció, transzdukció) útján",
+            "Mechanizmusok: antibiotikum lebontása enzimekkel, támadáspont módosítása, efflux pumpák (kiválasztás a sejtből)"
           ]
         },
         {
-          header: "Állategészségügyi vonatkozások",
-          points: [
-            "Az állományok kezelhetetlensége miatti veszteségek.",
-            "Zoonotikus rezisztens kórokozók (pl. MRSA, Salmonella) átadása az embernek.",
-            "Élelmiszerbiztonsági kockázatok a vágóhídi feldolgozás során."
+          "header": "1.2. One Health (Egy Egészség) szemlélet",
+          "points": [
+            "Lényege: az emberi, állati és környezeti egészség összefügg",
+            "A rezisztencia 'visszaáramlik' a szektorok között, ezért csak egységesen kezelhető",
+            "Résztvevők: orvosok, állatorvosok, környezetvédők, mezőgazdasági szakemberek"
           ]
         }
       ]
     },
     {
-      title: "2. A Rezisztencia Kialakulása",
-      icon: "bug",
-      color: "bg-orange-50 border-orange-200",
-      iconColor: "text-orange-500",
-      sections: [
+      "title": "2. Terjedési útvonalak és Kockázatok",
+      "icon": "share-2",
+      "color": "bg-blue-50 border-blue-200",
+      "iconColor": "text-blue-600",
+      "sections": [
         {
-          header: "Mechanizmusok",
-          points: [
-            "**Veleszületett (intrinsic):** A faj természetes adottsága (pl. Mycoplasma és a sejtfalgátlók).",
-            "**Szerzett:** Spontán mutáció vagy **horizontális géntranszfer (HGT)** útján.",
-            "**HGT formái:** Konjugáció (plazmidok), Transzdukció (bakteriofágok), Transzformáció (szabad DNS felvétele)."
+          "header": "2.1. Terjedési útvonalak",
+          "points": [
+            "**Közvetlen kontaktus:** Telepi dolgozók, állatorvosok (pl. LA-MRSA hordozás)",
+            "**Élelmiszerlánc:** Nyers hús szennyeződése, nem megfelelő hőkezelés vagy konyhatechnológia",
+            "**Környezet:** Trágya útján a talajba és vizekbe jutó antibiotikum-maradványok és rezisztens gének"
           ]
         },
         {
-          header: "Multirezisztencia",
-          points: [
-            "Több hatóanyagcsoportnak is ellenálló 'szuperbaktériumok' kialakulása.",
-            "Integronok szerepe: több rezisztenciagén 'csomagban' való átadása."
+          "header": "2.2. Kiemelt kórokozók",
+          "points": [
+            "**LA-MRSA:** Sertéshez köthető meticillin-rezisztens Staphylococcus aureus",
+            "**ESBL-termelő E. coli:** Széles spektrumú béta-laktamáz termelő baktériumok (bontják a cefalosporinokat)"
           ]
         }
       ]
     },
     {
-      title: "3. Környezeti Rezisztom",
-      icon: "microscope",
-      color: "bg-blue-50 border-blue-200",
-      iconColor: "text-blue-500",
-      sections: [
+      "title": "3. Szabályozás (EU és Magyarország)",
+      "icon": "gavel",
+      "color": "bg-slate-50 border-slate-200",
+      "iconColor": "text-slate-500",
+      "sections": [
         {
-          header: "A természet, mint rezervoár",
-          points: [
-            "**Rezisztom:** Az összes létező rezisztenciagén összessége a környezetben.",
-            "A környezeti mikrobák természetes módon is termelnek antibiotikumokat (védekezés).",
-            "Az emberi tevékenység (szennyvíz, hígtrágya) felgyorsítja ezek mobilizációját."
+          "header": "3.1. Az (EU) 2019/6 rendelet",
+          "points": [
+            "**Profilaxis (megelőzés) TILOS:** antibiotikumot rutinszerűen megelőzésre használni tilos",
+            "Metafilaxis: csak indokolt esetben, diagnózishoz kötve alkalmazható",
+            "A cink-oxid terápiás használatának betiltása (ko-szelekciós kockázat az MRSA-val)"
           ]
         },
         {
-          header: "Ko-szelekció",
-          points: [
-            "A nehézfémekkel vagy fertőtlenítőszerekkel szembeni ellenállás gyakran ugyanazon a plazmidon van, mint az antibiotikum-rezisztencia.",
-            "Így a környezeti szennyezés közvetve az AMR terjedését is segíti."
+          "header": "3.2. Hazai implementáció",
+          "points": [
+            "**Csökkentési terv:** A nagy sertéstelepeknek kötelező éves tervet készíteniük",
+            "**E-veny és FELIR:** Az antibiotikum-felhasználás valós idejű hatósági (Nébih) monitorozása",
+            "Hatósági engedély: Csak speciális képzést végzett állatorvos írhat fel antibiotikumot haszonállatnak"
           ]
         }
       ]
     },
     {
-      title: "4. One Health (Egy Egészség) Megközelítés",
-      icon: "heart",
-      color: "bg-emerald-50 border-emerald-200",
-      iconColor: "text-emerald-500",
-      sections: [
+      "title": "4. AMEG kategóriák (EMA)",
+      "icon": "list",
+      "color": "bg-amber-50 border-amber-200",
+      "iconColor": "text-amber-600",
+      "sections": [
         {
-          header: "Alapelv",
-          points: [
-            "Az ember, az állat és a környezet egészsége elválaszthatatlan egységet alkot.",
-            "A rezisztencia elleni küzdelem csak interdiszciplináris (orvos, állatorvos, ökológus) összefogással lehet sikeres."
-          ]
-        },
-        {
-          header: "Gyakorlati lépések",
-          points: [
-            "**Surveillance:** Egységes adatok gyűjtése emberi és állati rezisztenciáról (pl. ECDC, EFSA jelentések).",
-            "**Stewardship:** Felelős antibiotikum-használat (csak ha indokolt, megfelelő dózisban).",
-            "Szigorúbb szabályozás: Hozamfokozók tilalma, kritikus humán antibiotikumok kivonása az állatgyógyászatból."
+          "header": "Kategóriák és példák",
+          "points": [
+            "**'A' (Avoid):** TILOS (pl. Karbapenemek, Glikopeptidek)",
+            "**'B' (Restrict):** Korlátozott, humán kritikus szerek (pl. 3-4. gen. Cefalosporinok, Fluorokinolonok, Kolisztin)",
+            "**'C' (Caution):** Óvatosan (pl. Makrolidok, Pleuromutilinek, Florfenikol)",
+            "**'D' (Prudence):** Elsődlegesen választandó (pl. Penicillinek, Tetraciklinek, Szulfonamidok)"
           ]
         }
       ]
     },
     {
-      title: "5. Stratégiák és Jövő",
-      icon: "brain",
-      color: "bg-purple-50 border-purple-200",
-      iconColor: "text-purple-500",
-      sections: [
+      "title": "5. Diagnosztika és Alternatívák",
+      "icon": "shield-check",
+      "color": "bg-purple-50 border-purple-200",
+      "iconColor": "text-purple-600",
+      "sections": [
         {
-          header: "Alternatívák",
-          points: [
-            "**Bakteriofág terápia:** Specifikus vírusok használata a baktériumok ellen.",
-            "**Vakcinázás:** A fertőzések megelőzése csökkenti az antibiotikum-igényt.",
-            "**Gyors diagnosztika:** Point-of-care tesztek a célzottabb kezelés érdekében."
+          "header": "5.1. Döntési fa",
+          "points": [
+            "Mindig a D kategóriával kell kezdeni, ha lehetséges",
+            "B szert csak AST (érzékenységi vizsgálat) után, ha nincs más megoldás",
+            "PK/PD elvek: idő-függő (Penicillinek) vs. koncentráció-függő (Fluorokinolonok) szerek"
+          ]
+        },
+        {
+          "header": "5.2. Alternatívák",
+          "points": [
+            "**Vakcinázás:** A leghatékonyabb antibiotikum-csökkentő eszköz",
+            "**Szerves savak:** Csökkentik a pH-t, gátolják a patogéneket (pl. E. coli)",
+            "Probiotikumok, prebiotikumok és jobb biológiai biztonság"
           ]
         }
       ]
@@ -117,601 +120,241 @@ export const amrOneHealthData = {
       id: "amr_1",
       topic: "AMR és One Health",
       type: "mcq",
-      question: "Mit jelent a 'One Health' megközelítés?",
+      question: "Mit jelent a One Health (Egy Egészség) szemlélet lényege?",
       options: [
-        "Csak az emberi egészségre koncentrál",
-        "Az ember, az állat és a környezet egészségének kölcsönös összefüggését ismeri fel",
-        "Kizárólag az állatok gyógyítását jelenti",
-        "Egy újfajta antibiotikum neve"
+        "Minden állatnak ugyanazt a gyógyszert kell adni",
+        "Az emberi, állati és környezeti egészség szorosan összefügg és csak együtt kezelhető",
+        "Csak az állatorvosok foglalkoznak a rezisztenciával",
+        "Egy telepnek egy orvosa legyen"
       ],
       correctAnswer: 1,
-      explanation: "A One Health szemlélet szerint az emberi, állati és környezeti egészség egységes rendszer."
+      explanation: "Az AMR terjedése az emberek, állatok és a környezet között zajlik, így a megoldás is globális együttműködést igényel."
     },
     {
       id: "amr_2",
       topic: "AMR és One Health",
       type: "mcq",
-      question: "Melyik folyamat NEM tartozik a horizontális géntranszfer (HGT) mechanizmusai közé?",
-      options: ["Konjugáció", "Transzformáció", "Transzdukció", "Bináris hasadás (osztódás)"],
-      correctAnswer: 3,
-      explanation: "A bináris hasadás vertikális öröklődés, míg a többi horizontális (egyedek közötti) géntranszfer."
+      question: "Melyik AMEG kategóriába tartoznak a haszonállatoknál TILOSAN alkalmazható szerek (pl. Karbapenemek)?",
+      options: ["A kategória", "B kategória", "C kategória", "D kategória"],
+      correctAnswer: 0,
+      explanation: "Az 'A' kategóriás (Avoid) szerek állatgyógyászati felhasználása az EU-ban tilos a humán egészségügyi kockázat miatt."
     },
     {
       id: "amr_3",
       topic: "AMR és One Health",
-      type: "bool",
-      question: "Az Európai Unióban tilos az antibiotikumokat hozamfokozóként alkalmazni.",
-      options: ["Igaz", "Hamis"],
-      correctAnswer: 0,
-      explanation: "Igaz. Az EU 2006-ban betiltotta az antibiotikumok növekedésserkentő célú használatát."
+      type: "mcq",
+      question: "Melyik szer került át a 'B' (korlátozott) kategóriába a plazmidon terjedő mcr-1 gén miatt?",
+      options: ["Amoxicillin", "Kolisztin", "Doxiciklin", "Tiamulin"],
+      correctAnswer: 1,
+      explanation: "A kolisztin-rezisztencia terjedése miatt a szer használatát szigorúan korlátozták az állatgyógyászatban."
     },
     {
       id: "amr_4",
       topic: "AMR és One Health",
       type: "mcq",
-      question: "Mi a 'rezisztom' fogalma?",
+      question: "Mi az (EU) 2019/6 rendelet legfontosabb korlátozása az antibiotikum-használatban?",
       options: [
-        "Egy baktérium összes génje",
-        "A környezetben jelen lévő összes rezisztenciagén összessége",
-        "Az antibiotikumok lebomlási terméke",
-        "Egy új diagnosztikai eszköz"
+        "Mindent ingyen kell adni",
+        "Az antibiotikumok rutinszerű, megelőző célú (profilaktikus) alkalmazása TILOS",
+        "Bármikor lehet antibiotikumot adni, ha tetszik",
+        "Csak a hízók kaphatnak gyógyszert"
       ],
       correctAnswer: 1,
-      explanation: "A rezisztom a környezeti és patogén mikrobákban található összes rezisztenciagént jelenti."
+      explanation: "A rendelet értelmében az antibiotikumok nem használhatók a tartási körülmények hiányosságainak kompenzálására megelőzésképpen."
     },
     {
       id: "amr_5",
       topic: "AMR és One Health",
       type: "mcq",
-      question: "Mit jelent a 'ko-szelekció' jelensége?",
-      options: [
-        "Két állat egyszerre betegszik meg",
-        "Két különböző antibiotikumot adunk egyszerre",
-        "A nehézfém-rezisztencia vagy fertőtlenítőszer-rezisztencia segíti az antibiotikum-rezisztencia megmaradását",
-        "A baktériumok együttműködnek a gazdaszervezet ellen"
-      ],
-      correctAnswer: 2,
-      explanation: "Ha a rezisztenciagének egy genetikai elemen vannak, bármelyikre ható szelekciós nyomás megőrzi a többit is."
+      question: "Melyik hatóság felelős Magyarországon az antibiotikum-használat ellenőrzéséért?",
+      options: ["MÁV", "Nébih", "NAV", "Katasztrófavédelem"],
+      correctAnswer: 1,
+      explanation: "A Nébih felügyeli az e-vényeket és a telepi csökkentési terveket."
     },
     {
       id: "amr_6",
       topic: "AMR és One Health",
       type: "mcq",
-      question: "Mely szervezetek alkotják az AMR elleni 'Kvartett' együttműködést?",
+      question: "Mit jelent a metafilaxis fogalma?",
       options: [
-        "WHO, FAO, WOAH, UNEP",
-        "CIA, FBI, KGB, MI6",
-        "UNESCO, UNICEF, WTO, NATO",
-        "Csak a WHO és a FAO"
+        "Egyedi állat megelőző kezelése",
+        "Egy csoport kezelése a betegség terjedésének megállítására, ha már van beteg állat a csoportban",
+        "Takarmány-adalékanyag",
+        "Vakcinázási program"
       ],
-      correctAnswer: 0,
-      explanation: "A WHO (egészségügy), FAO (mezőgazdaság), WOAH (állategészségügy) és UNEP (környezetvédelem) alkotja."
+      correctAnswer: 1,
+      explanation: "Metafilaxisnál a csoport többi (még tünetmentes, de fertőzött) tagját kezeljük a betegség kitörésének megakadályozására."
     },
     {
       id: "amr_7",
       topic: "AMR és One Health",
       type: "mcq",
-      question: "Mi a 'stewardship' lényege az antibiotikum-használatban?",
-      options: [
-        "Minden állatnak adni kell antibiotikumot megelőzésre",
-        "Az antibiotikumok felelős, megfontolt és szakszerű alkalmazása",
-        "Az antibiotikumok teljes betiltása",
-        "Az antibiotikumok árának növelése"
-      ],
+      question: "Melyik rezisztens kórokozó terjedése köthető szorosan a sertéstartáshoz (Livestock-Associated)?",
+      options: ["Veszettség", "LA-MRSA (Meticillin-rezisztens Staphylococcus aureus)", "Influenza", "TBC"],
       correctAnswer: 1,
-      explanation: "A stewardship a gyógyszerek optimális kiválasztását, adagolását és alkalmazási időtartamát jelenti."
+      explanation: "A LA-MRSA hordozása gyakori a sertésekben és a velük érintkező dolgozókban."
     },
     {
       id: "amr_8",
       topic: "AMR és One Health",
-      type: "bool",
-      question: "A rezisztens baktériumok a trágyázott termőföldekről a növényekre is átkerülhetnek.",
-      options: ["Igaz", "Hamis"],
-      correctAnswer: 0,
-      explanation: "Igaz. Az élelmiszerláncban a zöldségek is közvetítői lehetnek a rezisztens mikrobáknak."
+      type: "mcq",
+      question: "Miért tiltották be a cink-oxid terápiás alkalmazását malacokban?",
+      options: [
+        "Mert túl drága",
+        "A ko-szelekció veszélye miatt (a cink-rezisztencia gyakran együtt öröklődik az MRSA-rezisztenciával)",
+        "Mert nem hatékony",
+        "Mert mérgezi a malacokat"
+      ],
+      correctAnswer: 1,
+      explanation: "A cink használata közvetve fenntarthatja az antibiotikum-rezisztens baktériumok jelenlétét az állományban."
     },
     {
       id: "amr_9",
       topic: "AMR és One Health",
       type: "mcq",
-      question: "Melyik technológia segítheti a jövőben a célzottabb antibiotikum-használatot?",
-      options: ["Hagyományos tenyésztés (3 nap)", "Gyors, point-of-care diagnosztikai tesztek", "Több vitamin adása", "A higiénia elhanyagolása"],
+      question: "Mit jelent az 'ESBL' kifejezés?",
+      options: [
+        "Egy új vakcina",
+        "Széles spektrumú béta-laktamáz (enzim, ami elbontja a penicillineket és cefalosporinokat)",
+        "Egy baktériumfaj",
+        "Hatósági engedély"
+      ],
       correctAnswer: 1,
-      explanation: "A percek alatt eredményt adó tesztekkel elkerülhető a felesleges, széles spektrumú kezelés."
+      explanation: "Az ESBL-termelő baktériumok (főleg E. coli) súlyos közegészségügyi kockázatot jelentenek."
     },
     {
       id: "amr_10",
       topic: "AMR és One Health",
       type: "mcq",
-      question: "Becslések szerint hány ember halhat meg évente AMR következtében 2050-re, ha nem változtatunk?",
-      options: ["100 ezer", "1 millió", "10 millió", "1 milliárd"],
-      correctAnswer: 2,
-      explanation: "A jelenlegi trendek alapján 2050-re évi 10 millió haláleset várható világszerte."
+      question: "Melyik AMEG kategóriába tartoznak az 'elsőként választandó' szerek (pl. amoxicillin)?",
+      options: ["A kategória", "B kategória", "C kategória", "D kategória"],
+      correctAnswer: 3,
+      explanation: "A 'D' kategóriás (Prudence) szerek a legkevésbé kritikusak, ezeket kell előnyben részesíteni a terápiában."
     },
     {
       id: "amr_11",
       topic: "AMR és One Health",
       type: "mcq",
-      question: "Melyik állatfajban jelent meg először a mcr-1 kolisztin-rezisztencia gén nagy számban?",
-      options: ["Kutya", "Ló", "Sertés (és baromfi)", "Macska"],
-      correctAnswer: 2,
-      explanation: "A kolisztin mezőgazdasági használata miatt sertésekben és baromfikban mutatták ki először széles körben."
+      question: "Mit jelent az AST (Antimicrobial Susceptibility Testing)?",
+      options: [
+        "Bakteriológiai érzékenységi vizsgálat",
+        "Súly mérés",
+        "Hőmérséklet ellenőrzés",
+        "Takarmány-analízis"
+      ],
+      correctAnswer: 0,
+      explanation: "Az AST során laboratóriumban határozzák meg, hogy melyik antibiotikum öli meg a baktériumot."
     },
     {
       id: "amr_12",
       topic: "AMR és One Health",
       type: "mcq",
-      question: "Mit jelent a 'kritikusan fontos antibiotikum' (CIA) fogalma?",
+      question: "Mi a MIC (Minimális Gátló Koncentráció) jelentősége?",
       options: [
-        "Olcsó gyógyszerek",
-        "Olyan szerek, amelyek elengedhetetlenek súlyos emberi fertőzések kezeléséhez és nincs alternatívájuk",
-        "Csak állatoknak adható szerek",
-        "Régi, már nem használt szerek"
+        "A legdrágább antibiotikum ára",
+        "A legkisebb hatóanyag-koncentráció, amely még gátolja a baktérium szaporodását",
+        "A legnagyobb adható dózis",
+        "A baktérium mérete"
       ],
       correctAnswer: 1,
-      explanation: "A CIA (Critically Important Antimicrobials) listáját a WHO tartja fenn az emberi élet védelmében."
+      explanation: "A MIC érték alapvető a PK/PD számításokhoz és a gyógyszerválasztáshoz."
     },
     {
       id: "amr_13",
       topic: "AMR és One Health",
       type: "mcq",
-      question: "Melyik folyamat segíti az AMR gének bejutását az ivóvízbázisokba?",
-      options: ["Párolgás", "Szennyvíztisztítás hiányosságai és hígtrágya-kijuttatás", "Esőzés", "Halászat"],
+      question: "Melyik antibiotikum-csoportnál kritikus az idő-függő hatás (T>MIC)?",
+      options: ["Fluorokinolonok", "Penicillinek és Cefalosporinok", "Aminoglikozidok", "Ionofórok"],
       correctAnswer: 1,
-      explanation: "A kezeletlen emberi és állati hulladék az egyik fő útja a rezisztencia környezetbe kerülésének."
+      explanation: "A béta-laktámoknál fontos, hogy a szintjük minél hosszabb ideig a MIC felett maradjon a vérben."
     },
     {
       id: "amr_14",
       topic: "AMR és One Health",
-      type: "bool",
-      question: "A vadon élő állatok (pl. vonuló madarak) is terjeszthetik a rezisztens baktériumokat.",
-      options: ["Igaz", "Hamis"],
-      correctAnswer: 0,
-      explanation: "Igaz. A vadon élő állatok rezisztencia-rezervoárként és vektorként is működhetnek."
+      type: "mcq",
+      question: "Melyik az antibiotikumok legfontosabb alternatívája a megelőzésben?",
+      options: ["Több só a vízben", "Vakcinázás", "Kevesebb alvás", "Zenehallgatás"],
+      correctAnswer: 1,
+      explanation: "A vakcinázás közvetlenül csökkenti a betegségek számát, így a gyógyszerigényt is."
     },
     {
       id: "amr_15",
       topic: "AMR és One Health",
       type: "mcq",
-      question: "Mit kódolnak általában a 'kazettás' integronok?",
-      options: ["Csak egyféle rezisztenciát", "Gyakran több, különböző osztályba tartozó antibiotikum-rezisztenciát egyszerre", "A baktérium mozgását", "A baktérium színét"],
-      correctAnswer: 1,
-      explanation: "Az integronok képesek sorba rendezni és egyszerre kifejezni több rezisztenciagént."
+      question: "Hogyan segítenek a szerves savak az antibiotikum-csökkentésben?",
+      options: [
+        "Csökkentik a pH-t a gyomorban, segítve az emésztést és gátolva a kóros baktériumok (pl. E. coli) szaporodását",
+        "Vitaminokat pótolnak",
+        "Gyorsítják az ürítést",
+        "Nem segítenek"
+      ],
+      correctAnswer: 0,
+      explanation: "Az acidifikálók kedvezőtlen környezetet teremtenek a patogén baktériumok számára."
     },
     {
       id: "amr_16",
       topic: "AMR és One Health",
       type: "mcq",
-      question: "Mi a célja az antibiotikum-fogyasztási adatok gyűjtésének (ESVAC)?",
+      question: "Mi a horizontális géntranszfer három fő módja?",
       options: [
-        "Hogy adót vessenek ki rá",
-        "A használat és a rezisztencia közötti összefüggések elemzése és a szakpolitikai döntések megalapozása",
-        "Hogy reklámozzák a gyógyszereket",
-        "Nincs célja"
+        "Evés, ivás, alvás",
+        "Konjugáció, transzdukció, transzformáció",
+        "Ikerellés, vetélés, fialás",
+        "Nincs ilyen"
       ],
       correctAnswer: 1,
-      explanation: "Az adatgyűjtés segít látni, hol használnak túl sok vagy nem megfelelő antibiotikumot."
+      explanation: "Ezekkel a mechanizmusokkal adják át egymásnak a baktériumok a rezisztenciagénjeiket."
     },
     {
       id: "amr_17",
       topic: "AMR és One Health",
-      type: "bool",
-      question: "A biológiai biztonság (biosecurity) növelése csökkenti az antibiotikum-használat szükségességét.",
-      options: ["Igaz", "Hamis"],
-      correctAnswer: 0,
-      explanation: "Igaz. Ha kevesebb a fertőzés a telepen, kevesebb gyógyszerre van szükség."
+      type: "mcq",
+      question: "Milyen következménye van az antibiotikum-maradványok környezetbe jutásának?",
+      options: [
+        "Semmilyen",
+        "Szelekciós nyomást gyakorolnak a talaj- és vízi baktériumokra, segítve a rezisztencia fennmaradását",
+        "Javítják a talaj termőképességét",
+        "Eltűnnek 1 óra alatt"
+      ],
+      correctAnswer: 1,
+      explanation: "A környezeti szennyezés 'rezervoárként' funkcionál az AMR számára."
     },
     {
       id: "amr_18",
       topic: "AMR és One Health",
       type: "mcq",
-      question: "Melyik állítás igaz a baktériumfágokra?",
+      question: "Mit jelent a 'csökkentési terv' a sertéstelepeken?",
       options: [
-        "Baktériumokat fertőző vírusok, amelyek alternatívát jelenthetnek az antibiotikumokkal szemben",
-        "Apró baktériumok",
-        "Antibiotikum-termelő gombák",
-        "Emberi sejteket pusztító vírusok"
+        "A kerítés alacsonyabb lesz",
+        "Dokumentum, amelyben a telep éves célokat tűz ki az antibiotikum-felhasználás mérséklésére",
+        "A malacok számának csökkentése",
+        "A munkabérek csökkentése"
       ],
-      correctAnswer: 0,
-      explanation: "A fágterápia a rezisztens baktériumok elleni küzdelem egyik ígéretes iránya."
+      correctAnswer: 1,
+      explanation: "Ez egy kötelező szakmai terv Magyarországon a nagy létszámú telepek számára."
     },
     {
       id: "amr_19",
       topic: "AMR és One Health",
       type: "mcq",
-      question: "Mi a baj az antibiotikumok profilaktikus (megelőző) használatával?",
-      options: [
-        "Túl drága",
-        "Felesleges szelekciós nyomást gyakorol, elősegítve a rezisztencia kialakulását",
-        "Megöli az állatot",
-        "Semmi baj nincs vele"
-      ],
+      question: "Melyik csoport preferált az antibiotikum adagolásánál a One Health szerint?",
+      options: ["Csoportos kezelés (itatás)", "Egyedi injekciós kezelés", "Takarmányba keverés", "Nincs preferencia"],
       correctAnswer: 1,
-      explanation: "A preventív tömegkezelés a rezisztencia kialakulásának egyik legfőbb hajtóereje."
+      explanation: "Az egyedi kezelés célzottabb, pontosabb dózist ad és csökkenti a felesleges szelekciós nyomást az egészséges állatokon."
     },
     {
       id: "amr_20",
       topic: "AMR és One Health",
       type: "mcq",
-      question: "Melyik szerotípusú Salmonella ismert kiemelkedő multirezisztenciájáról (pl. DT104)?",
-      options: ["S. Enteritidis", "S. Typhimurium", "S. Choleraesuis", "S. Gallinarum"],
-      correctAnswer: 1,
-      explanation: "A Salmonella Typhimurium bizonyos törzsei (pl. DT104) klasszikus példái a multirezisztenciának."
-    },
-    {
-      id: "amr_21",
-      topic: "AMR és One Health",
-      type: "mcq",
-      question: "Mit jelent a 'metaszelekció' az AMR összefüggésében?",
+      question: "Mi az összefoglalás lényege az AMR és One Health témakörben?",
       options: [
-        "Amikor egyetlen antibiotikum több baktériumfajt is rezisztenssé tesz",
-        "A baktériumok méretének növekedése",
-        "Az antibiotikumok lebomlása",
-        "Nincs ilyen fogalom"
-      ],
-      correctAnswer: 0,
-      explanation: "Egyetlen kezelés hatással van a szervezet teljes mikrobiótájára, nem csak a célkórokozóra."
-    },
-    {
-      id: "amr_22",
-      topic: "AMR és One Health",
-      type: "bool",
-      question: "A kutyák és macskák (társállatok) is átadhatnak rezisztens baktériumokat a gazdáiknak.",
-      options: ["Igaz", "Hamis"],
-      correctAnswer: 0,
-      explanation: "Igaz. A közeli kontaktus miatt a rezisztencia-átvitel lehetősége fennáll."
-    },
-    {
-      id: "amr_23",
-      topic: "AMR és One Health",
-      type: "mcq",
-      question: "Mi a feladata az EFSA-nak az AMR elleni küzdelemben?",
-      options: [
-        "Gyógyszerek gyártása",
-        "Élelmiszerbiztonsági kockázatok értékelése és jelentéstétel a rezisztenciáról",
-        "Kórházak irányítása",
-        "Állatok oltása"
+        "Csak a gyógyszergyárak profitja a fontos",
+        "Az AMR globális veszély, amely ellen felelős antibiotikum-használattal, vakcinázással és interszektoriális összefogással kell küzdeni",
+        "Mindenki szedjen antibiotikumot",
+        "Nem kell törődni vele"
       ],
       correctAnswer: 1,
-      explanation: "Az European Food Safety Authority (EFSA) felügyeli a rezisztenciát az élelmiszerláncban."
-    },
-    {
-      id: "amr_24",
-      topic: "AMR és One Health",
-      type: "mcq",
-      question: "Melyik antibiotikum-használati mód a LEGVESZÉLYESEBB a rezisztencia szempontjából?",
-      options: [
-        "Egyedi injekciós kezelés",
-        "Alacsony dózisú, tartós adagolás a takarmányban/vízben",
-        "Rövid, nagy dózisú kúra",
-        "Helyi kenőcsös kezelés"
-      ],
-      correctAnswer: 1,
-      explanation: "Az alacsony (szub-inhibitoros) dózisok ideális feltételeket teremtenek a rezisztens mutánsok kiválogatódásához."
-    },
-    {
-      id: "amr_25",
-      topic: "AMR és One Health",
-      type: "mcq",
-      question: "Milyen szerepe van a hígtrágyának az AMR terjedésében?",
-      options: [
-        "Trágyázza a földet",
-        "Antibiotikum-maradványokat és rezisztens baktériumokat juttat ki a környezetbe",
-        "Megöli a baktériumokat",
-        "Semmilyen szerepe nincs"
-      ],
-      correctAnswer: 1,
-      explanation: "A hígtrágya kijuttatása a rezisztenciagének és mikrobák mobilizációjának egyik legfontosabb útvonala."
-    },
-    {
-      id: "amr_26",
-      topic: "AMR és One Health",
-      type: "mcq",
-      question: "Mit jelent a 'zoonózis' kifejezés?",
-      options: [
-        "Csak állatokban előforduló betegség",
-        "Állatról emberre (és fordítva) terjedő betegség",
-        "Növényi betegség",
-        "Állatkerti orvoslás"
-      ],
-      correctAnswer: 1,
-      explanation: "A rezisztens baktériumok (pl. Campylobacter, Salmonella) zoonotikus úton kerülhetnek az emberbe."
-    },
-    {
-      id: "amr_27",
-      topic: "AMR és One Health",
-      type: "mcq",
-      question: "Melyik élelmiszer-biztonsági lépés csökkenti az AMR mikrobák átvitelét a konyhában?",
-      options: [
-        "A hús alapos hőkezelése és a keresztszennyeződés (pl. vágódeszka) elkerülése",
-        "Sok fűszer használata",
-        "A hús megmosása csapvízzel",
-        "A hús lefagyasztása"
-      ],
-      correctAnswer: 0,
-      explanation: "A megfelelő konyhai higiénia és a sütés/főzés elpusztítja a rezisztens baktériumokat is."
-    },
-    {
-      id: "amr_28",
-      topic: "AMR és One Health",
-      type: "bool",
-      question: "Az antibiotikumok túlzott használata az állattenyésztésben közvetlen hatással van az emberi gyógyítás sikerére.",
-      options: ["Igaz", "Hamis"],
-      correctAnswer: 0,
-      explanation: "Igaz. A közös antibiotikum-osztályok miatti kereszt-rezisztencia veszélyezteti a humán terápiát."
-    },
-    {
-      id: "amr_29",
-      topic: "AMR és One Health",
-      type: "mcq",
-      question: "Mit jelent a 'meta-analízis' a rezisztencia kutatásban?",
-      options: [
-        "Sok korábbi kutatás adatainak együttes, statisztikai elemzése",
-        "Egyetlen baktérium vizsgálata",
-        "A levegő elemzése",
-        "A talaj mélyfúrása"
-      ],
-      correctAnswer: 0,
-      explanation: "A meta-analízisek segítenek látni a globális trendeket és összefüggéseket."
-    },
-    {
-      id: "amr_30",
-      topic: "AMR és One Health",
-      type: "mcq",
-      question: "Melyik állítás igaz a 'rezisztencia fitnesz-költségére' (fitness cost)?",
-      options: [
-        "A rezisztens baktériumok mindig erősebbek",
-        "A rezisztencia hordozása gyakran lassabb szaporodással vagy gyengébb életképességgel jár antibiotikum-mentes környezetben",
-        "A baktériumoknak nem kerül energiába a rezisztencia",
-        "A rezisztens baktériumok gyorsabban mozognak"
-      ],
-      correctAnswer: 1,
-      explanation: "Ezért fontos az antibiotikum-nyomás csökkentése: hogy az érzékeny törzsek visszanyerjék az előnyüket."
-    },
-    {
-      id: "amr_31",
-      topic: "AMR és One Health",
-      type: "mcq",
-      question: "Mi a célja az állatgyógyászati receptkötelességnek?",
-      options: [
-        "Hogy drágább legyen a gyógyszer",
-        "Hogy csak szakember (állatorvos) dönthessen az antibiotikum szükségességéről és típusáról",
-        "Hogy többet kelljen adminisztrálni",
-        "Hogy korlátozzák a gazdák szabadságát"
-      ],
-      correctAnswer: 1,
-      explanation: "A szigorú felügyelet gátat szab a felesleges és szakszerűtlen gyógyszerhasználatnak."
-    },
-    {
-      id: "amr_32",
-      topic: "AMR és One Health",
-      type: "mcq",
-      question: "Melyik hatóság felelős az emberi gyógyszerek és antibiotikumok engedélyezéséért az EU-ban?",
-      options: ["EMA (European Medicines Agency)", "EASA", "Europol", "Frontex"],
-      correctAnswer: 0,
-      explanation: "Az EMA felügyeli a gyógyszerek biztonságát és hatékonyságát, beleértve az állatgyógyászati készítményeket is."
-    },
-    {
-      id: "amr_33",
-      topic: "AMR és One Health",
-      type: "bool",
-      question: "A rezisztenciagének jelenléte természetes jelenség, már az antibiotikumok felfedezése előtt is léteztek a természetben.",
-      options: ["Igaz", "Hamis"],
-      correctAnswer: 0,
-      explanation: "Igaz. A talajban élő mikrobák évmilliók óta versengenek egymással antibiotikumok és rezisztencia segítségével."
-    },
-    {
-      id: "amr_34",
-      topic: "AMR és One Health",
-      type: "mcq",
-      question: "Milyen hatással van a globális kereskedelem és utazás az AMR-re?",
-      options: [
-        "Nincs hatással",
-        "Segíti a rezisztens törzsek és gének gyors, világméretű elterjedését",
-        "Csökkenti a rezisztenciát a keveredés miatt",
-        "Csak a vírusokra hat"
-      ],
-      correctAnswer: 1,
-      explanation: "Egy Indiában megjelent rezisztenciagén napok alatt eljuthat Európába az utazók révén."
-    },
-    {
-      id: "amr_35",
-      topic: "AMR és One Health",
-      type: "mcq",
-      question: "Melyik állatcsoport antibiotikum-használatát követi az ESVAC projekt?",
-      options: ["Csak a kutyákat", "Élelmiszer-termelő haszonállatokat", "Csak a méheket", "Csak a halakat"],
-      correctAnswer: 1,
-      explanation: "Az European Surveillance of Veterinary Antimicrobial Consumption (ESVAC) a haszonállatokra fókuszál."
-    },
-    {
-      id: "amr_36",
-      topic: "AMR és One Health",
-      type: "mcq",
-      question: "Mi a 'metagenomika' előnye a rezisztencia-kutatásban?",
-      options: [
-        "Olcsóbb, mint a PCR",
-        "Lehetővé teszi a nem tenyészthető baktériumok rezisztenciagénjeinek vizsgálatát is",
-        "Képeket készít a baktériumokról",
-        "Megmutatja a baktériumok súlyát"
-      ],
-      correctAnswer: 1,
-      explanation: "A baktériumok nagy része laborban nem tenyészthető, de a DNS-ük metagenomikai módszerrel elemezhető."
-    },
-    {
-      id: "amr_37",
-      topic: "AMR és One Health",
-      type: "bool",
-      question: "Az antibiotikum-rezisztencia elleni küzdelemnek gazdasági vonatkozásai is vannak.",
-      options: ["Igaz", "Hamis"],
-      correctAnswer: 0,
-      explanation: "Igaz. A hosszabb kórházi kezelések és a munkakiesés hatalmas költséget jelentenek a társadalomnak."
-    },
-    {
-      id: "amr_38",
-      topic: "AMR és One Health",
-      type: "mcq",
-      question: "Mit jelent a 'biosecurity' (biológiai biztonság) egy állattartó telepen?",
-      options: [
-        "Sok biztonsági őr",
-        "Olyan intézkedések összessége, amelyek megakadályozzák a kórokozók bejutását és terjedését (pl. fertőtlenítés, belépési korlátok)",
-        "Kamerarendszer",
-        "Az állatok megjelölése"
-      ],
-      correctAnswer: 1,
-      explanation: "A jó biológiai biztonság a megelőzés alapja, ami kevesebb antibiotikumot jelent."
-    },
-    {
-      id: "amr_39",
-      topic: "AMR és One Health",
-      type: "mcq",
-      question: "Hogyan segíthetnek a probiotikumok az AMR elleni harcban?",
-      options: [
-        "Megölik az összes baktériumot",
-        "A bélflóra stabilizálásával csökkentik a fertőzések esélyét, így kevesebb gyógyszerre van szükség",
-        "Probiotikumokból lesz az antibiotikum",
-        "Semmilyen hatásuk nincs"
-      ],
-      correctAnswer: 1,
-      explanation: "A jótékony baktériumok erősítik az immunrendszert és gátolják a kórokozók megtelepedését."
-    },
-    {
-      id: "amr_40",
-      topic: "AMR és One Health",
-      type: "mcq",
-      question: "Melyik nemzetközi nap hívja fel a figyelmet az antibiotikum-rezisztenciára?",
-      options: [
-        "Víz Világnapja",
-        "Európai Antibiotikum Nap (november 18.)",
-        "Anyák Napja",
-        "Karácsony"
-      ],
-      correctAnswer: 1,
-      explanation: "Ezen a napon és a hozzá kapcsolódó héten világszerte kampányok indulnak a tudatosság növelésére."
-    },
-    {
-      id: "amr_41",
-      topic: "AMR és One Health",
-      type: "bool",
-      question: "A vadon élő halakban is találtak már emberi eredetű rezisztenciagéneket.",
-      options: ["Igaz", "Hamis"],
-      correctAnswer: 0,
-      explanation: "Igaz. A folyókba és tengerekbe jutó szennyvíz révén a vízi ökoszisztéma is érintetté vált."
-    },
-    {
-      id: "amr_42",
-      topic: "AMR és One Health",
-      type: "mcq",
-      question: "Melyik állítás igaz a 'kritikusan fontos' (CIA) antibiotikumok állategészségügyi használatára?",
-      options: [
-        "Bármikor szabadon használhatók",
-        "Csak szigorú korlátozások mellett, végszükség esetén, diagnosztikai tesztek után alkalmazhatók",
-        "Olcsóbbak a többinél",
-        "Sosem hatnak az állatokra"
-      ],
-      correctAnswer: 1,
-      explanation: "Ezeket a szereket (pl. 3. generációs cefalosporinok, kinolonok) meg kell őrizni az emberi gyógyítás számára."
-    },
-    {
-      id: "amr_43",
-      topic: "AMR és One Health",
-      type: "mcq",
-      question: "Mi a 'szociális felelősség' szerepe az AMR-ben?",
-      options: [
-        "Hogy ne dobjunk ki gyógyszert a szemétbe",
-        "Hogy az orvos utasításait pontosan betartsuk (dózis, időtartam)",
-        "Hogy ne kérjünk feleslegesen antibiotikumot vírusos betegségre",
-        "Mindegyik válasz helyes"
-      ],
-      correctAnswer: 3,
-      explanation: "A lakosság tudatossága és felelős viselkedése elengedhetetlen a rezisztencia lassításához."
-    },
-    {
-      id: "amr_44",
-      topic: "AMR és One Health",
-      type: "mcq",
-      question: "Hogyan juthatnak be antibiotikum-maradványok a talajba?",
-      options: [
-        "Közvetlenül a levegőből",
-        "Trágyázással, ha a kezelt állatok ürítik a le nem bomlott hatóanyagot",
-        "Az esővízzel",
-        "Nincs ilyen"
-      ],
-      correctAnswer: 1,
-      explanation: "Sok antibiotikum jelentős része változatlan formában ürül ki a szervezetből."
-    },
-    {
-      id: "amr_45",
-      topic: "AMR és One Health",
-      type: "bool",
-      question: "Az antibiotikum-rezisztencia csendes világjárványnak (silent pandemic) nevezhető.",
-      options: ["Igaz", "Hamis"],
-      correctAnswer: 0,
-      explanation: "Igaz. Lassan és észrevétlenül terjed, de globális szinten egyre súlyosabb problémát okoz."
-    },
-    {
-      id: "amr_46",
-      topic: "AMR és One Health",
-      type: "mcq",
-      question: "Mit jelent a 'cross-sectoral' együttműködés a One Health-ben?",
-      options: [
-        "Csak az orvosok beszélgetnek",
-        "Különböző szektorok (humán, állat, környezet) szakembereinek közös munkája",
-        "Mindenki külön dolgozik",
-        "Az állatok és növények keresztezése"
-      ],
-      correctAnswer: 1,
-      explanation: "A komplex problémákat csak az érintett területek együttműködésével lehet megoldani."
-    },
-    {
-      id: "amr_47",
-      topic: "AMR és One Health",
-      type: "mcq",
-      question: "Mi a szerepe a vakcinázásnak az AMR elleni küzdelemben?",
-      options: [
-        "A vakcinák maguk az antibiotikumok",
-        "A megelőzés révén kevesebb állat betegszik meg, így drasztikusan csökken az antibiotikum-igény",
-        "A vakcinák elpusztítják a rezisztenciagéneket",
-        "Nincs szerepe"
-      ],
-      correctAnswer: 1,
-      explanation: "A hatékony immunizálás a legjobb módja a gyógyszerhasználat minimalizálásának."
-    },
-    {
-      id: "amr_48",
-      topic: "AMR és One Health",
-      type: "mcq",
-      question: "Melyik állítás igaz az antibiotikum-érzékenységi vizsgálatokra?",
-      options: [
-        "Felesleges időpazarlás",
-        "Segítenek a legmegfelelőbb és legszűkebb spektrumú szer kiválasztásában",
-        "Csak laborban működnek, a valóságban nem",
-        "Minden baktériumra ugyanaz az eredmény"
-      ],
-      correctAnswer: 1,
-      explanation: "A diagnosztika alapú célzott kezelés a stewardship egyik alappillére."
-    },
-    {
-      id: "amr_49",
-      topic: "AMR és One Health",
-      type: "bool",
-      question: "A jövőben az antibiotikumok hatástalanná válhatnak az egyszerűbb műtétek esetén is.",
-      options: ["Igaz", "Hamis"],
-      correctAnswer: 0,
-      explanation: "Igaz. Ha nincs hatékony profilaktikus antibiotikum, a rutinszerű műtétek kockázata óriásira nő."
-    },
-    {
-      id: "amr_50",
-      topic: "AMR és One Health",
-      type: "mcq",
-      question: "Mi az 'állatorvos' legfontosabb feladata a One Health-ben az AMR kapcsán?",
-      options: [
-        "Minél több gyógyszert eladni",
-        "A felelős gyógyszerhasználat felügyelete és a járványvédelem javítása",
-        "Csak a háziállatok kezelése",
-        "Az adók beszedése"
-      ],
-      correctAnswer: 1,
-      explanation: "Az állatorvosok kulcsszereplői az élelmiszerlánc-biztonságnak és a felelős gyógyszeralkalmazásnak."
+      explanation: "A jövő záloga a tudatos, diagnosztika-alapú állatgyógyászat és a megelőzés."
     }
   ]
 };

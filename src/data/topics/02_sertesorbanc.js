@@ -1,110 +1,137 @@
 export const sertesorbancData = {
   id: "sertesorbanc",
-  title: "2. Sertésorbánc (Erysipelas suis)",
+  title: "2. Sertésorbánc",
   studyMaterial: [
     {
-      title: "1. A Kórokozó és Járványtan",
-      icon: "bug",
-      color: "bg-red-50 border-red-200",
-      iconColor: "text-red-600",
-      sections: [
+      "title": "1. A kórokozó jellemzői",
+      "icon": "microscope",
+      "color": "bg-blue-50 border-blue-200",
+      "iconColor": "text-blue-500",
+      "sections": [
         {
-          header: "Erysipelothrix rhusiopathiae",
-          points: [
-            "**Jellemzők:** Kisméretű, Gram-pozitív, egyenes vagy hajlott pálca.",
-            "**Ellenálló képesség:** Rendkívül nagy. Hónapokig túlél a talajban, dögben. Ellenáll a sózásnak, füstölésnek, pácolásnak!",
-            "**Virulencia faktorok:** **Neuraminidáz** (érkárosítás, trombózis), Tok (fagocitózis gátlás), SpaA antigén.",
-            "**Előfordulás:** Sertésen kívül madarakban, halakban, és **emberben is (zoonózis -> Erysipeloid)**."
+          "header": "1.1. Morfológia és alapvető tulajdonságok",
+          "points": [
+            "**Erysipelothrix rhusiopathiae**: Gram-pozitív, vékony pálcika",
+            "Nem mozgó, nem spóraképző, de **rendkívül ellenálló** a környezetben",
+            "**Fakultatív intracelluláris** → a gazda sejtjeiben is túlél",
+            "Sertésben főleg az 1-es és 2-es szerotípusok jelentősek"
           ]
         },
         {
-          header: "Terjedés",
-          points: [
-            "**Forrás:** Tünetmentes hordozó sertések (mandulában lakik).",
-            "**Ürítés:** Bélsárral, vizelettel, nyállal.",
-            "**Fertőzési kapu:** Szájon át (szennyezett takarmány/víz), Bőr sérülései (küzdelem, durva padozat).",
-            "**Vektorok:** Vérszívó rovarok, rágcsálók."
+          "header": "1.2. Előfordulás és Zoonózis",
+          "points": [
+            "Fő gazda a sertés, de előfordul baromfiban (pulyka!), vadmadarakban, halakban",
+            "**Zoonózis:** emberben **erysipeloid** (bőrgyulladás) néven ismert"
+          ]
+        },
+        {
+          "header": "1.3. Virulenciafaktorok",
+          "points": [
+            "**Neuraminidáz enzim:** károsítja az endotélsejteket → trombózishajlam → **mikrotrombózisok**",
+            "Ez felelős a rombusz alakú bőrelhalásokért!",
+            "**Poliszacharid tok:** védi a baktériumot a falósejtektől",
+            "**SpaA antigén:** erősen immunogén felszíni fehérje"
           ]
         }
       ]
     },
     {
-      title: "2. Klinikai Formák",
-      icon: "activity",
-      color: "bg-purple-50 border-purple-200",
-      iconColor: "text-purple-600",
-      sections: [
+      "title": "2. Terjedés és Fogékonyság",
+      "icon": "book",
+      "color": "bg-gray-50 border-gray-200",
+      "iconColor": "text-gray-500",
+      "sections": [
         {
-          header: "Heveny (Akut) Forma",
-          points: [
-            "**Tünetek:** Hirtelen magas láz (40-42°C), bágyadtság, étvágytalanság.",
-            "**Bőrtünetek:** **'Orbáncos csalánláz'** - Rombusz (gyémánt) alakú, vöröses-lilás, tapintható foltok.",
-            "**Ok:** A baktérium okozta érgyulladás és mikrotrombózis a bőrben.",
-            "**Következmény:** Kezeletlenül elhullás (szeptikémia), vetélés kocáknál."
+          "header": "2.1. Fertőzés forrása",
+          "points": [
+            "Tünetmentes hordozók (akár 50%): mandulákban telepszik meg",
+            "Ürítés: nyál, bélsár, vizelet útján"
           ]
         },
         {
-          header: "Félheveny (Szubakut) Forma",
-          points: [
-            "Enyhébb tünetek, alacsonyabb láz.",
-            "Kevesebb bőrelváltozás.",
-            "Gyakran spontán gyógyul, de krónikussá válhat."
+          "header": "2.2. Terjedési módok",
+          "points": [
+            "**Szájon át** (szennyezett takarmány, víz) – leggyakoribb",
+            "Bőrön át (sebek), rovarcsípéssel (vektorok)",
+            "Fertőzött tetemek (hónapokig túlél benne a baci!)"
           ]
         },
         {
-          header: "Idült (Krónikus) Forma",
-          points: [
-            "Az akut szakasz túlélői vagy lappangó fertőzés eredménye.",
-            "**Ízületgyulladás:** Sántaság, duzzadt ízületek, merevség (ankylosis).",
-            "**Szívbelhártya-gyulladás (Endocarditis):** Vegetációk ('karfiol') a szívbillentyűkön -> keringési elégtelenség, hirtelen halál.",
-            "**Bőrelhalás:** A rombusz alakú foltok helyén a bőr elhal, pörköösödik, leválik."
+          "header": "2.3. Fogékonyság",
+          "points": [
+            "Legfogékonyabbak: **3–6 hónapos süldők**",
+            "Hajlamosító tényezők: stressz, hirtelen időjárás-változás, rossz higiénia"
           ]
         }
       ]
     },
     {
-      title: "3. Kórbonctan és Diagnózis",
-      icon: "stethoscope",
-      color: "bg-blue-50 border-blue-200",
-      iconColor: "text-blue-600",
-      sections: [
+      "title": "3. Klinikai formák",
+      "icon": "alert-triangle",
+      "color": "bg-orange-50 border-orange-200",
+      "iconColor": "text-orange-500",
+      "sections": [
         {
-          header: "Kórbonctan",
-          points: [
-            "**Akut:** Szeptikémiás jelek. Lépduzzanat (vörös, lágy), pontszerű vérzések (vese, szív), tüdőödéma.",
-            "**Krónikus:** Torzult ízületek, porckopás. Szívbillentyűkön felrakódások (vegetációk)."
+          "header": "3.1. Akut (heveny) forma",
+          "points": [
+            "**Tünetek:** 40–42 °C láz, levertség, vetélés",
+            "**Bőrtünet:** rombusz (gyémánt) alakú kiütések, „orbáncos csalánláz”",
+            "A neuraminidáz okozta trombózis miatt kialakuló körülírt bőrinfarktusok"
           ]
         },
         {
-          header: "Diagnózis",
-          points: [
-            "**Klinikum:** Láz + Rombusz alakú foltok = Erős gyanú.",
-            "**Labor:** Tenyésztés (véres agar: apró telepek, alfa-hemolízis), PCR.",
-            "**Differenciál diagnózis:** Sertéspestis (nincs rombusz), Salmonella (hasmenés), Actinobacillus."
+          "header": "3.2. Krónikus (idült) forma",
+          "points": [
+            "Az akut szak túlélőiben alakul ki 2–3 hét után",
+            "**Proliferatív arthritis:** ízületi tok megvastagodás, porcerózió, **ankylosis** (összecsontosodás)",
+            "**Vegetatív endocarditis:** szemölcsszerű felrakódások a szívbillentyűkön (főleg mitrális) → embolizációveszély!",
+            "Bőrelhalás: a rombusz alakú foltok helyén"
           ]
         }
       ]
     },
     {
-      title: "4. Terápia és Megelőzés",
-      icon: "syringe",
-      color: "bg-green-50 border-green-200",
-      iconColor: "text-green-600",
-      sections: [
+      "title": "4. Diagnosztika és Terápia",
+      "icon": "search",
+      "color": "bg-slate-50 border-slate-200",
+      "iconColor": "text-slate-500",
+      "sections": [
         {
-          header: "Kezelés",
-          points: [
-            "**Antibiotikum:** **Penicillin** (első választás! Nagyon hatékony).",
-            "Alternatívák: Amoxicillin, Cephalosporinok.",
-            "**Fontos:** Az akut formát jól gyógyítja, a krónikus (ízületi/szív) elváltozások visszafordíthatatlanok!"
+          "header": "4.1. Diagnózis",
+          "points": [
+            "Klinikai kép: rombusz foltok + láz + sántaság",
+            "Bakteriológia: tenyésztés (lép, máj, nyirokcsomó, vér)",
+            "Véragaron apró telepek, **alfa-hemolízis** (zöldítő)"
           ]
         },
         {
-          header: "Megelőzés",
-          points: [
-            "**Vakcinázás:** Alapvető! Kocák (vemhesség alatt), malacok (választás után), kanok.",
-            "**Higiénia:** Rágcsálóirtás, takarítás, karantén.",
-            "**Megjegyzés:** A vakcina a SpaA antigén ellen termel ellenanyagot."
+          "header": "4.2. Kezelés",
+          "points": [
+            "Első választás: **penicillin** (24-48 órán belül látványos javulás)",
+            "Tetraciklinre gyakori a rezisztencia!",
+            "A krónikus formák (ízület, szív) gyógykezelése kevésbé eredményes a maradandó károsodások miatt."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "5. Megelőzés",
+      "icon": "shield-check",
+      "color": "bg-emerald-50 border-emerald-200",
+      "iconColor": "text-emerald-500",
+      "sections": [
+        {
+          "header": "5.1. Vakcinázás",
+          "points": [
+            "Kocák: fedeztetés előtt",
+            "Malacok: 8–12 hetes korban, emlékeztetővel",
+            "SpaA antigén elleni védelem"
+          ]
+        },
+        {
+          "header": "5.2. Higiénia",
+          "points": [
+            "Rágcsáló- és légyirtás, tetemek eltávolítása, karanténozás"
           ]
         }
       ]
@@ -113,453 +140,453 @@ export const sertesorbancData = {
   questions: [
     {
       id: "orb_1",
-      topic: "Sertésorbánc - Kórokozó",
+      topic: "Sertésorbánc",
       type: "mcq",
       question: "Mi a sertésorbánc kórokozója?",
-      options: ["Erysipelothrix rhusiopathiae", "Clostridium perfringens", "Streptococcus suis", "Escherichia coli"],
-      correctAnswer: 0,
-      explanation: "A kórokozó az Erysipelothrix rhusiopathiae, egy Gram-pozitív pálca."
+      options: ["Streptococcus suis", "Erysipelothrix rhusiopathiae", "Staphylococcus aureus", "E. coli"],
+      correctAnswer: 1,
+      explanation: "A sertésorbánc kórokozója az Erysipelothrix rhusiopathiae nevű baktérium."
     },
     {
       id: "orb_2",
-      topic: "Sertésorbánc - Kórokozó",
-      type: "bool",
-      question: "A sertésorbánc baktériuma spóraképző, ezért nagyon ellenálló.",
-      options: ["Igaz", "Hamis"],
+      topic: "Sertésorbánc",
+      type: "mcq",
+      question: "Melyik enzim felelős az endotélkárosodásért és a mikrotrombózisokért?",
+      options: ["Hialuronidáz", "Neuraminidáz", "Koaguláz", "Lipáz"],
       correctAnswer: 1,
-      explanation: "Hamis. Nem képez spórát, de ennek ellenére rendkívül ellenálló a környezetben."
+      explanation: "A neuraminidáz enzim hasítja le a sziálsavat, ami endotélkárosodáshoz és trombózishoz vezet."
     },
     {
       id: "orb_3",
-      topic: "Sertésorbánc - Kórokozó",
+      topic: "Sertésorbánc",
       type: "mcq",
-      question: "Melyik állatfajban NEM fordul elő jellemzően az Erysipelothrix rhusiopathiae?",
-      options: ["Sertés", "Pulyka/Baromfi", "Hal", "Kutya"],
-      correctAnswer: 3,
-      explanation: "Sertésben, madarakban és halakban gyakori, kutyában ritka."
+      question: "Mi a jellemző bőrtünet heveny orbánc esetén?",
+      options: ["Kerek, gennyes hólyagok", "Rombusz (gyémánt) alakú vörös foltok", "Egész testre kiterjedő hámlás", "Nincs bőrtünet"],
+      correctAnswer: 1,
+      explanation: "A kapillárisok trombózisa miatt jellegzetes rombusz alakú bőrinfarktusok jönnek létre."
     },
     {
       id: "orb_4",
-      topic: "Sertésorbánc - Zoonózis",
+      topic: "Sertésorbánc",
       type: "mcq",
-      question: "Hogy nevezik az emberi fertőzést, amit a sertésorbánc kórokozója okoz?",
-      options: ["Orbánc (Erysipelas)", "Erysipeloid", "Lépfene", "Tetanusz"],
+      question: "Melyik állatcsoport a legfogékonyabb az orbáncra?",
+      options: ["1-2 napos malacok", "3-6 hónapos süldők", "Öreg kanok", "Csak a vemhes kocák"],
       correctAnswer: 1,
-      explanation: "Emberben Erysipeloid a neve (a humán orbáncot Streptococcus okozza)."
+      explanation: "A 3-6 hónapos süldők a legfogékonyabbak, miután a kolosztrális immunitásuk lecsökken."
     },
     {
       id: "orb_5",
-      topic: "Sertésorbánc - Kórokozó",
+      topic: "Sertésorbánc",
       type: "mcq",
-      question: "Melyik enzim a baktérium fontos virulenciafaktora, ami érkárosodást okoz?",
-      options: ["Hialuronidáz", "Neuraminidáz", "Koaguláz", "Ureáz"],
+      question: "Mit okoz az orbáncbaktérium krónikus formában a szívben?",
+      options: ["Szívburokgyulladást", "Vegetatív endocarditist (szemölcsszerű felrakódás)", "Szívizom-elfajulást", "Semmit"],
       correctAnswer: 1,
-      explanation: "A neuraminidáz sziálsavat hasít le, érkárosodást és trombózist okozva."
+      explanation: "A szívbillentyűkön (főleg a mitrálison) karfiolszerű vegetációk alakulnak ki."
     },
     {
       id: "orb_6",
-      topic: "Sertésorbánc - Járványtan",
-      type: "bool",
-      question: "A kórokozó ellenáll a sózásnak és füstölésnek.",
-      options: ["Igaz", "Hamis"],
-      correctAnswer: 0,
-      explanation: "Igaz. A hagyományos tartósítási eljárások nem pusztítják el biztosan."
+      topic: "Sertésorbánc",
+      type: "mcq",
+      question: "Milyen hemolízist mutat az orbáncbaktérium véragaron?",
+      options: ["Béta (teljes)", "Alfa (zöldítő)", "Gamma (nincs)", "Kettős"],
+      correctAnswer: 1,
+      explanation: "Az E. rhusiopathiae jellegzetesen alfa-hemolizáló."
     },
     {
       id: "orb_7",
-      topic: "Sertésorbánc - Járványtan",
+      topic: "Sertésorbánc",
       type: "mcq",
-      question: "Hol hordozzák leggyakrabban a baktériumot a tünetmentes sertések?",
-      options: ["Bélcsatorna", "Mandulák", "Tüdő", "Vese"],
+      question: "Melyik az elsődlegesen választandó antibiotikum orbánc kezelésére?",
+      options: ["Tetraciklin", "Penicillin", "Gentamicin", "Szulfonamid"],
       correctAnswer: 1,
-      explanation: "A mandulákban telepedik meg és onnan ürülhet."
+      explanation: "A penicillin rendkívül hatékony, 24-48 órán belül javulást hoz."
     },
     {
       id: "orb_8",
-      topic: "Sertésorbánc - Klinikum",
+      topic: "Sertésorbánc",
       type: "mcq",
-      question: "Mi a heveny sertésorbánc legjellemzőbb bőrtünete?",
-      options: ["Kerek, viszkető foltok", "Rombusz (gyémánt) alakú sötétvörös foltok", "Apró gennyes hólyagok", "Szőrhullás"],
+      question: "Hogyan nevezzük az emberi fertőzést?",
+      options: ["Orbánc", "Erysipeloid", "Szeptikémia", "Dermatitis"],
       correctAnswer: 1,
-      explanation: "Az 'orbáncos csalánláz' jellegzetes rombusz alakú."
+      explanation: "Az emberben kialakuló bőrgyulladást erysipeloidnak nevezzük (zoonózis)."
     },
     {
       id: "orb_9",
-      topic: "Sertésorbánc - Klinikum",
-      type: "bool",
-      question: "Az akut sertésorbánc nem jár magas lázzal.",
-      options: ["Igaz", "Hamis"],
+      topic: "Sertésorbánc",
+      type: "mcq",
+      question: "Mit jelent az 'ankylosis'?",
+      options: ["Ízületi gyulladás", "Ízületek összecsontosodása, elmerevedése", "Bőrelhalás", "Vemhességi zavar"],
       correctAnswer: 1,
-      explanation: "Hamis. Hirtelen magas láz (40-42°C) az egyik első tünet."
+      explanation: "A krónikus ízületgyulladás végső stádiumában az ízület elmerevedik."
     },
     {
       id: "orb_10",
-      topic: "Sertésorbánc - Klinikum",
+      topic: "Sertésorbánc",
       type: "mcq",
-      question: "Mi okozza a rombusz alakú bőrelváltozásokat?",
-      options: ["Allergiás reakció", "Bőr alatti vérzések és mikrotrombózisok", "Rovarcsípés", "Gombás fertőzés"],
+      question: "Melyik antigén a legfontosabb a vakcinázás szempontjából?",
+      options: ["Lipopoliszacharid", "SpaA (Surface protective antigen A)", "Béta-toxin", "Flagellin"],
       correctAnswer: 1,
-      explanation: "A baktérium okozta érkárosodás és helyi érelzáródás (infarktus) a bőrben."
+      explanation: "A SpaA antigén a fő protektív immunogén fehérje a baktérium felszínén."
     },
     {
       id: "orb_11",
-      topic: "Sertésorbánc - Klinikum",
-      type: "mcq",
-      question: "Melyik szerv gyulladása jellemző az idült (krónikus) orbáncra?",
-      options: ["Tüdő", "Szívbillentyű (Endocarditis)", "Máj", "Gyomor"],
-      correctAnswer: 1,
-      explanation: "A krónikus forma gyakori szövődménye a szívbelhártya-gyulladás."
+      topic: "Sertésorbánc",
+      type: "bool",
+      question: "Az orbáncbaktérium képes túlélni a gazdasejteken belül is.",
+      options: ["Igaz", "Hamis"],
+      correctAnswer: 0,
+      explanation: "Igaz, fakultatív intracelluláris kórokozó, ami segíti a perzisztenciát."
     },
     {
       id: "orb_12",
-      topic: "Sertésorbánc - Klinikum",
+      topic: "Sertésorbánc",
       type: "bool",
-      question: "A krónikus ízületgyulladás orbánc esetén teljes gyógyulással végződik antibiotikum hatására.",
+      question: "Az orbánc spórával terjed a környezetben.",
       options: ["Igaz", "Hamis"],
       correctAnswer: 1,
-      explanation: "Hamis. A krónikus ízületi elváltozások (torzulás, csontosodás) általában visszafordíthatatlanok."
+      explanation: "Hamis, az orbáncbaktérium nem képez spórát, de anélkül is ellenálló."
     },
     {
       id: "orb_13",
-      topic: "Sertésorbánc - Klinikum",
+      topic: "Sertésorbánc",
       type: "mcq",
-      question: "Mit jelent az ankylosis?",
-      options: ["Vérszegénység", "Ízületi merevség/összecsontosodás", "Szívmegállás", "Bőrviszketés"],
+      question: "Melyik állatfajban okozhat még súlyos orbáncot a sertésen kívül?",
+      options: ["Kutya", "Pulyka", "Macska", "Ló"],
       correctAnswer: 1,
-      explanation: "A krónikus ízületgyulladás végső fázisa, az ízület merevvé válása."
+      explanation: "A baromfifajok közül a pulyka különösen fogékony."
     },
     {
       id: "orb_14",
-      topic: "Sertésorbánc - Terápia",
+      topic: "Sertésorbánc",
       type: "mcq",
-      question: "Mi az elsődlegesen választandó antibiotikum sertésorbánc kezelésére?",
-      options: ["Penicillin", "Gentamicin", "Sulfonamidok", "Enrofloxacin"],
-      correctAnswer: 0,
-      explanation: "A kórokozó rendkívül érzékeny a penicillinre."
+      question: "Hány fokos láz jellemző az akut formára?",
+      options: ["38-39 °C", "40-42 °C", "43-45 °C", "Nincs láz"],
+      correctAnswer: 1,
+      explanation: "A heveny szeptikémiás szakban magas, akár 42 fokos láz is kialakulhat."
     },
     {
       id: "orb_15",
-      topic: "Sertésorbánc - Kórbonctan",
+      topic: "Sertésorbánc",
       type: "mcq",
-      question: "Mit látunk a szívbillentyűkön krónikus esetben?",
-      options: ["Sima felületet", "Karfiolszerű felrakódásokat (vegetációkat)", "Lyukakat", "Semmit"],
+      question: "Melyik billentyű érintett leggyakrabban endocarditis esetén?",
+      options: ["Aorta", "Mitrális (kéthegyű)", "Trikuszpidális", "Pulmonális"],
       correctAnswer: 1,
-      explanation: "Vegetatív endocarditis alakul ki, szemölcsszerű felrakódásokkal."
+      explanation: "Leggyakrabban a bal szívfél mitrális billentyűjén alakulnak ki vegetációk."
     },
     {
       id: "orb_16",
-      topic: "Sertésorbánc - Megelőzés",
-      type: "bool",
-      question: "Sertésorbánc ellen nincs hatékony vakcina.",
-      options: ["Igaz", "Hamis"],
+      topic: "Sertésorbánc",
+      type: "mcq",
+      question: "Mennyi az akut forma lappangási ideje?",
+      options: ["Néhány óra", "1-3 nap", "2 hét", "1 hónap"],
       correctAnswer: 1,
-      explanation: "Hamis. Hatékony vakcinák léteznek és széles körben használják őket."
+      explanation: "A fertőzés után 1-3 nappal már jelentkezhetnek a tünetek."
     },
     {
       id: "orb_17",
-      topic: "Sertésorbánc - Járványtan",
+      topic: "Sertésorbánc",
       type: "mcq",
-      question: "Melyik korcsoport a legfogékonyabb a megbetegedésre?",
-      options: ["Szopós malacok (1-2 hetes)", "Növendék sertések (3-6 hónapos)", "Idős kocák", "Minden korcsoport egyformán"],
+      question: "Hogyan terjed leggyakrabban a fertőzés?",
+      options: ["Légúton", "Szájon át (per os)", "Csak mesterséges termékenyítéssel", "Idegpályákon"],
       correctAnswer: 1,
-      explanation: "A kolosztrális immunitás lecsengése után, 3 hónapos kor körül a legfogékonyabbak."
+      explanation: "A szájon át történő felvétel a leggyakoribb természetes út."
     },
     {
       id: "orb_18",
-      topic: "Sertésorbánc - Diagnózis",
+      topic: "Sertésorbánc",
       type: "mcq",
-      question: "Mivel lehet összetéveszteni az akut orbáncot (differenciál diagnózis)?",
-      options: ["Sertéspestis", "Aujeszky-betegség", "Sertésinfluenza", "Rühösség"],
-      correctAnswer: 0,
-      explanation: "A magas láz és a bőrvérzések miatt a sertéspestisre hasonlíthat."
+      question: "Mi jellemző az orbáncbaktérium morfológiájára?",
+      options: ["Nagy pálca", "Vékony, rövid pálcika, esetleg fonalszerű", "Gömbalakú", "Spirális"],
+      correctAnswer: 1,
+      explanation: "Gram-pozitív, vékony, rövid pálcika, krónikus esetben fonallá nyúlhat."
     },
     {
       id: "orb_19",
-      topic: "Sertésorbánc - Kórbonctan",
-      type: "mcq",
-      question: "Milyen elváltozás látható a lépben akut szeptikémia esetén?",
-      options: ["Zsugorodott, kicsi", "Megnagyobbodott, sötétvörös (lépduzzanat)", "Fehér göbök", "Nincs elváltozás"],
-      correctAnswer: 1,
-      explanation: "Heveny szeptikémiára jellemző a lépduzzanat (splenomegalia)."
+      topic: "Sertésorbánc",
+      type: "bool",
+      question: "A sertésorbánc ellen létezik vakcina.",
+      options: ["Igaz", "Hamis"],
+      correctAnswer: 0,
+      explanation: "Igaz, a vakcinázás a megelőzés kulcsa."
     },
     {
       id: "orb_20",
-      topic: "Sertésorbánc - Klinikum",
-      type: "bool",
-      question: "A vemhes kocák orbánc fertőzése vetélést okozhat.",
-      options: ["Igaz", "Hamis"],
-      correctAnswer: 0,
-      explanation: "Igaz. A magas láz és a szeptikémia vetéléshez vezethet."
+      topic: "Sertésorbánc",
+      type: "mcq",
+      question: "Melyik szervet érdemes beküldeni laborvizsgálatra szeptikémiás gyanú esetén?",
+      options: ["Csak bélsár", "Lép, máj, nyirokcsomó", "Csak vizelet", "Szőrminta"],
+      correctAnswer: 1,
+      explanation: "A parenchimás szervekből jól tenyészthető a kórokozó."
     },
     {
       id: "orb_21",
-      topic: "Sertésorbánc - Kórokozó",
+      topic: "Sertésorbánc",
       type: "mcq",
-      question: "Milyen Gram-festődésű az Erysipelothrix rhusiopathiae?",
-      options: ["Gram-pozitív", "Gram-negatív", "Saválló", "Nem festhető"],
-      correctAnswer: 0,
-      explanation: "Gram-pozitív pálca."
+      question: "A neuraminidáz hatására mi történik a vérlemezkékkel?",
+      options: ["Elpusztulnak", "Összecsapzódnak (aggregáció)", "Felszaporodnak", "Nem változnak"],
+      correctAnswer: 1,
+      explanation: "Fokozódik az aggregációs hajlam, ami mikrotrombózisokhoz vezet."
     },
     {
       id: "orb_22",
-      topic: "Sertésorbánc - Járványtan",
+      topic: "Sertésorbánc",
       type: "mcq",
-      question: "Milyen szerepet játszhatnak a rágcsálók a terjesztésben?",
-      options: ["Semmilyet", "Mechanikai vektorok lehetnek", "A fő gazdái a baktériumnak", "Elpusztítják a baktériumot"],
+      question: "Mikor oltják a kocákat orbánc ellen?",
+      options: ["Csak ha betegek", "Fedeztetés előtt", "Ellés után 1 órával", "Soha"],
       correctAnswer: 1,
-      explanation: "A rágcsálók és madarak mechanikusan terjeszthetik a kórokozót."
+      explanation: "A fedeztetés előtti oltás védi a kocát és biztosítja a malacok védelmét."
     },
     {
       id: "orb_23",
-      topic: "Sertésorbánc - Diagnózis",
+      topic: "Sertésorbánc",
       type: "mcq",
-      question: "Milyen hemolízist mutat a kórokozó véres agaron?",
-      options: ["Béta (teljes)", "Alfa (zöldítő)", "Gamma (nincs)", "Delta"],
+      question: "Milyen színűek a rombusz alakú foltok a bőrön?",
+      options: ["Hófehér", "Vörös vagy lilás", "Zöld", "Fekete"],
       correctAnswer: 1,
-      explanation: "Gyakran keskeny, zöldes (alfa) hemolízis udvar látható."
+      explanation: "A pangás és gyulladás miatt vörös-lilás színűek."
     },
     {
       id: "orb_24",
-      topic: "Sertésorbánc - Terápia",
+      topic: "Sertésorbánc",
       type: "bool",
-      question: "A tetraciklinek minden esetben hatásosak az orbánc ellen.",
+      question: "A sertések mandulája lehet a baktérium rejtekhelye.",
       options: ["Igaz", "Hamis"],
-      correctAnswer: 1,
-      explanation: "Hamis. Gyakori a tetraciklin-rezisztencia, ezért antibiotikum-érzékenységi vizsgálat javasolt."
+      correctAnswer: 0,
+      explanation: "Igaz, a tünetmentes hordozók mandulájában perzisztálhat a baci."
     },
     {
       id: "orb_25",
-      topic: "Sertésorbánc - Klinikum",
+      topic: "Sertésorbánc",
       type: "mcq",
-      question: "Mit jelent a 'bőrnekrózis' krónikus orbáncban?",
-      options: ["A bőr kifehéredését", "A rombusz alakú területek elhalását és leválását", "Szőrnövekedést", "Zsírosodást"],
+      question: "Melyik antibiotikum-csoport hatástalan az orbáncra?",
+      options: ["Penicillinek", "Szulfonamidok", "Makrolidok", "Linkózamidok"],
       correctAnswer: 1,
-      explanation: "A vérellátás hiánya miatt az érintett bőrterület elhal, pörkösödik és leválik."
+      explanation: "A szulfonamidok általában hatástalanok ellene."
     },
     {
       id: "orb_26",
-      topic: "Sertésorbánc - Járványtan",
+      topic: "Sertésorbánc",
       type: "mcq",
-      question: "Mennyi ideig maradhat életképes a baktérium a talajban?",
-      options: ["Pár percig", "1-2 óráig", "Legalább 4-5 hétig (akár hónapokig)", "Évekig"],
-      correctAnswer: 2,
-      explanation: "Viszonylag ellenálló, hetekig-hónapokig fertőzőképes marad a környezetben."
+      question: "Meddig maradhat életképes a baktérium a tetemben?",
+      options: ["1 napig", "Hónapokig", "10 évig", "1 óráig"],
+      correctAnswer: 1,
+      explanation: "Rendkívüli ellenálló képessége miatt tetemben hónapokig túlél."
     },
     {
       id: "orb_27",
-      topic: "Sertésorbánc - Megelőzés",
+      topic: "Sertésorbánc",
       type: "mcq",
-      question: "Mikor javasolt a tenyészkocák vakcinázása?",
-      options: ["Ellés után közvetlenül", "Fedeztetés előtt (és évente)", "Soha", "Csak ha betegek"],
+      question: "Melyik tényező hajlamosíthat az orbánc kitörésére?",
+      options: ["Sok pihenés", "Hirtelen lehűlés vagy kánikula (stressz)", "Jó minőségű takarmány", "Zenehallgatás"],
       correctAnswer: 1,
-      explanation: "A fedeztetés előtti oltás védi a kocát a vemhesség alatt és biztosítja a kolosztrális immunitást."
+      explanation: "A stresszhatások (pl. időjárás) gyengítik az immunrendszert, segítve a betegség kitörését."
     },
     {
       id: "orb_28",
-      topic: "Sertésorbánc - Kórokozó",
-      type: "bool",
-      question: "Az Erysipelothrix rhusiopathiae fakultatív intracelluláris kórokozó.",
-      options: ["Igaz", "Hamis"],
-      correctAnswer: 0,
-      explanation: "Igaz. Képes túlélni a gazdaszervezet sejtjeiben (makrofágokban) is."
+      topic: "Sertésorbánc",
+      type: "mcq",
+      question: "Milyen jellegű a gyulladás az ízületekben idült esetben?",
+      options: ["Csak savós", "Proliferatív (szövetszaporulattal járó)", "Nincs gyulladás", "Gennyes"],
+      correctAnswer: 1,
+      explanation: "A krónikus forma szövetszaporulattal és porckárosodással jár."
     },
     {
       id: "orb_29",
-      topic: "Sertésorbánc - Klinikum",
+      topic: "Sertésorbánc",
       type: "mcq",
-      question: "Melyik szívbillentyű a leggyakrabban érintett endocarditis esetén?",
-      options: ["Mitrális (kéthegyű) billentyű", "Trikuszpidális billentyű", "Pulmonális billentyű", "Egyik sem"],
-      correctAnswer: 0,
-      explanation: "Leggyakrabban a szív bal oldalán, a mitrális billentyűn alakulnak ki elváltozások."
+      question: "Mi a teendő a 'csalánlázas' sertéssel?",
+      options: ["Kivárni", "Azonnal antibiotikummal (pl. penicillin) kezelni", "Csak lemosni", "Selyemkendőbe csavarni"],
+      correctAnswer: 1,
+      explanation: "Az időben megkezdett kezelés életmentő és gyors gyógyulást hoz."
     },
     {
       id: "orb_30",
-      topic: "Sertésorbánc - Diagnózis",
+      topic: "Sertésorbánc",
       type: "mcq",
-      question: "Melyik laboratóriumi módszerrel mutatható ki a baktérium DNS-e gyorsan?",
-      options: ["Gram-festés", "PCR", "ELISA", "Agglutináció"],
+      question: "Melyik állítás igaz az orbáncbaktériumra?",
+      options: ["Obligát aerob", "Fakultatív anaerob", "Csak mesterségesen tenyészthető", "Vírus"],
       correctAnswer: 1,
-      explanation: "A PCR (polimeráz-láncreakció) a genetikai anyag gyors kimutatására szolgál."
+      explanation: "Az E. rhusiopathiae fakultatív anaerob életmódú."
     },
     {
       id: "orb_31",
-      topic: "Sertésorbánc - Terápia",
-      type: "bool",
-      question: "A hiperimmun szérumot ma már soha nem használják.",
-      options: ["Igaz", "Hamis"],
+      topic: "Sertésorbánc",
+      type: "mcq",
+      question: "Mit okozhat a szívbillentyűről leszakadó vegetáció?",
+      options: ["Tüsszentést", "Embóliát és hirtelen elhullást", "Székrekedést", "Fokozott étvágyat"],
       correctAnswer: 1,
-      explanation: "Hamis. Bár ritkábban, de nagy értékű állatoknál vagy járvány kezdetén még használható passzív védelemre."
+      explanation: "A leszakadó darabok elzárhatják az ereket (embólia)."
     },
     {
       id: "orb_32",
-      topic: "Sertésorbánc - Járványtan",
+      topic: "Sertésorbánc",
       type: "mcq",
-      question: "Hogyan juthat be a kórokozó a bőrön keresztül?",
-      options: ["Csak szúnyogcsípéssel", "Sértetlen bőrön át is", "Sebzéseken, horzsolásokon keresztül", "Sehogy"],
-      correctAnswer: 2,
-      explanation: "A hámhiányos, sérült bőr fontos behatolási kapu."
+      question: "Milyen gyakran ürítik a hordozók a baktériumot?",
+      options: ["Soha", "Periódikusan vagy folyamatosan", "Csak teliholdkor", "Csak egyszer az életben"],
+      correctAnswer: 1,
+      explanation: "A hordozók váladékaikkal folyamatosan szennyezhetik a környezetet."
     },
     {
       id: "orb_33",
-      topic: "Sertésorbánc - Kórbonctan",
+      topic: "Sertésorbánc",
       type: "mcq",
-      question: "Milyen színűre színeződhet a bőr akut szeptikémia esetén (cyanosis)?",
-      options: ["Sárga", "Kékes-lilás", "Zöld", "Fehér"],
+      question: "Hogyan néz ki a baktérium Gram-festéssel?",
+      options: ["Gram-negatív vörös", "Gram-pozitív kék/lila", "Nem festődik", "Zöld"],
       correctAnswer: 1,
-      explanation: "A keringési zavar miatt a fülek, orr, hasalj kékes-lilásra (livid) színeződhet."
+      explanation: "Az orbáncbaktérium Gram-pozitív."
     },
     {
       id: "orb_34",
-      topic: "Sertésorbánc - Megelőzés",
-      type: "bool",
-      question: "A betegség átvészelése után nem alakul ki immunitás.",
-      options: ["Igaz", "Hamis"],
+      topic: "Sertésorbánc",
+      type: "mcq",
+      question: "Milyen bőrelváltozás maradhat az idült szak után?",
+      options: ["Selymes szőr", "Hegesedés és bőrelhalás", "Pikkelysömör", "Szeplők"],
       correctAnswer: 1,
-      explanation: "Hamis. A gyógyult állatokban kialakul immunitás, de a baktérium hordozói maradhatnak."
+      explanation: "A súlyos infarktusok helyén a bőr elhalhat és hegesedhet."
     },
     {
       id: "orb_35",
-      topic: "Sertésorbánc - Klinikum",
-      type: "mcq",
-      question: "Mi a teendő, ha egy állományban hirtelen több sertés belázasodik és rombusz alakú foltok jelennek meg?",
-      options: ["Azonnali kényszervágás", "Antibiotikumos kezelés (Penicillin) elkezdése és állatorvos hívása", "Várni pár napot", "Csak vitamint adni"],
-      correctAnswer: 1,
-      explanation: "A gyors antibiotikumos beavatkozás életmentő és megakadályozza a terjedést."
+      topic: "Sertésorbánc",
+      type: "bool",
+      question: "A tetraciklinre való rezisztencia gyakori az orbáncbaktériumoknál.",
+      options: ["Igaz", "Hamis"],
+      correctAnswer: 0,
+      explanation: "Igaz, ezért nem a tetraciklin az elsődleges választás."
     },
     {
       id: "orb_36",
-      topic: "Sertésorbánc - Kórokozó",
+      topic: "Sertésorbánc",
       type: "mcq",
-      question: "Melyik antigén ellen termelődött antitestek nyújtanak védelmet?",
-      options: ["SpaA antigén", "O antigén", "H antigén", "K antigén"],
-      correctAnswer: 0,
-      explanation: "A Surface protective antigen A (SpaA) a kulcsfontosságú immunogén."
+      question: "Melyik antigén ellen véd a legtöbb vakcina?",
+      options: ["O-antigén", "SpaA", "K-antigén", "H-antigén"],
+      correctAnswer: 1,
+      explanation: "A SpaA a legfontosabb protektív felszíni fehérje."
     },
     {
       id: "orb_37",
-      topic: "Sertésorbánc - Járványtan",
+      topic: "Sertésorbánc",
       type: "mcq",
-      question: "Mi befolyásolhatja a betegség kitörését (hajlamosító tényezők)?",
-      options: ["Stressz, meleg időjárás, zsúfoltság", "Csak a takarmány típusa", "A sertés színe", "A holdállás"],
-      correctAnswer: 0,
-      explanation: "A környezeti stresszorok (pl. hirtelen melegfront) gyakran aktiválják a lappangó fertőzést."
+      question: "Milyen jellegű a láz akut orbáncban?",
+      options: ["Hőemelkedés", "Magas, folyamatos láz (akár 42 °C)", "Hullámzó láz", "Nincs láz"],
+      correctAnswer: 1,
+      explanation: "Heveny szeptikémiában nagyon magas láz jellemző."
     },
     {
       id: "orb_38",
-      topic: "Sertésorbánc - Klinikum",
-      type: "bool",
-      question: "Az idült orbáncos sertés húsa feltétel nélkül fogyasztható.",
-      options: ["Igaz", "Hamis"],
+      topic: "Sertésorbánc",
+      type: "mcq",
+      question: "Milyen alakúak a telepek véragaron?",
+      options: ["Nagy, szétterülő", "Apró, harmatcsepp-szerű", "Fekete", "Sárga"],
       correctAnswer: 1,
-      explanation: "Hamis. Vágóhídi vizsgálat tárgya, gyakran elkobzás vagy hőkezelés szükséges."
+      explanation: "Kicsi, áttetsző, harmatcseppre emlékeztető telepeket képez."
     },
     {
       id: "orb_39",
-      topic: "Sertésorbánc - Kórokozó",
+      topic: "Sertésorbánc",
       type: "mcq",
-      question: "Milyen alakúak a telepek a régebbi tenyészetekben?",
-      options: ["Mindig rövid pálcák", "Hosszú, fonalszerű (filamentózus) alakok is lehetnek", "Coccusok", "Spirálok"],
+      question: "Mit jelent a 'fakultatív intracelluláris' kifejezés?",
+      options: ["Csak sejten belül él", "Sejten belül és kívül is képes élni", "Csak laborban él", "Sejtromboló"],
       correctAnswer: 1,
-      explanation: "A baktérium pleomorf, öregebb tenyészetben fonalasodik."
+      explanation: "Képes túlélni és szaporodni a gazdaszervezet sejtjeiben (pl. makrofágok) is."
     },
     {
       id: "orb_40",
-      topic: "Sertésorbánc - Terápia",
+      topic: "Sertésorbánc",
       type: "mcq",
-      question: "Miért nem hatékony a kezelés krónikus endocarditis esetén?",
-      options: ["Mert a baktérium rezisztens", "Mert a szívbillentyű károsodása visszafordíthatatlan és a baktériumok el vannak zárva a vegetációkban", "Mert a penicillin nem jut el a szívhez", "Mert a sertés nem nyeli le a gyógyszert"],
+      question: "Melyik állítás igaz a zoonózisról?",
+      options: ["Csak harapással terjed emberre", "A fertőzött hús kezelésekor bőrsérülésen át juthat be", "Emberre nem veszélyes", "Csak a gyerekekre veszélyes"],
       correctAnswer: 1,
-      explanation: "A vegetációk belsejébe nehezen jut be a gyógyszer, és a mechanikai kár már megtörtént."
+      explanation: "Bőrsérüléseken keresztül jut be, gyakran henteseknél, horgászoknál."
     },
     {
       id: "orb_41",
-      topic: "Sertésorbánc - Járványtan",
-      type: "mcq",
-      question: "Milyen hosszú a lappangási idő akut fertőzésnél?",
-      options: ["1-3 nap", "2 hét", "1 hónap", "Fél év"],
-      correctAnswer: 0,
-      explanation: "Rövid, általában 1-3 (max 7) nap."
+      topic: "Sertésorbánc",
+      type: "bool",
+      question: "Az orbáncbaktérium mozgásra képes ostoraival.",
+      options: ["Igaz", "Hamis"],
+      correctAnswer: 1,
+      explanation: "Hamis, az orbáncbaktérium nem mozgó."
     },
     {
       id: "orb_42",
-      topic: "Sertésorbánc - Diagnózis",
+      topic: "Sertésorbánc",
       type: "mcq",
-      question: "Melyik szervből érdemes mintát venni bakteriológiai vizsgálatra elhullás esetén?",
-      options: ["Lép, vese, nyirokcsomó", "Szőr", "Pata", "Szem"],
-      correctAnswer: 0,
-      explanation: "A szeptikémia miatt a belső szervekben (főleg lépben) dúsul a kórokozó."
+      question: "Mi a sántaság oka az orbánc kezdeti szakaszában?",
+      options: ["Csonttörés", "Ízületgyulladás (arthritis)", "Izomláz", "Hosszú körmök"],
+      correctAnswer: 1,
+      explanation: "A baktérium korán megtelepszik az ízületekben, gyulladást okozva."
     },
     {
       id: "orb_43",
-      topic: "Sertésorbánc - Klinikum",
-      type: "bool",
-      question: "A 'szubakut' forma súlyosabb, mint az 'akut'.",
-      options: ["Igaz", "Hamis"],
+      topic: "Sertésorbánc",
+      type: "mcq",
+      question: "Hogyan hat a hideg füstölés a baktériumra?",
+      options: ["Azonnal elpusztítja", "Jól tűri, életben maradhat", "Megsokszorozza", "Zölddé teszi"],
       correctAnswer: 1,
-      explanation: "Hamis. A szubakut (félheveny) enyhébb lefolyású."
+      explanation: "Rendkívül ellenálló a tartósítási eljárásokkal (füstölés, sózás) szemben."
     },
     {
       id: "orb_44",
-      topic: "Sertésorbánc - Megelőzés",
+      topic: "Sertésorbánc",
       type: "mcq",
-      question: "Mit kell tenni az új sertésekkel az állományba kerülés előtt?",
-      options: ["Azonnal összeereszteni a többiekkel", "Karanténozni és vakcinázni", "Megfürdetni", "Csak megjelölni"],
+      question: "Mikor a legcélszerűbb a malacok első oltása?",
+      options: ["1 napos korban", "8-12 hetes korban", "1 éves korban", "Soha"],
       correctAnswer: 1,
-      explanation: "A karantén és immunizálás megakadályozza a betegség behurcolását."
+      explanation: "Ekkorra csökken le a kolosztrális védettség annyira, hogy az oltás hatékony legyen."
     },
     {
       id: "orb_45",
-      topic: "Sertésorbánc - Kórbonctan",
+      topic: "Sertésorbánc",
       type: "mcq",
-      question: "Mit jelent a 'festékanyag-injekció' szerű vérzés a vesén?",
-      options: ["Sertésorbánc specifikus jele", "Pestisre jellemző, de orbáncnál is előfordulhat hasonló", "Sérülés jele", "Normális jelenség"],
+      question: "Mi a teendő a beteg állattal?",
+      options: ["Együtt hagyni a többivel", "Elkülöníteni és azonnal kezelni", "Eladni", "Éheztetni"],
       correctAnswer: 1,
-      explanation: "A vesevérzések szeptikémiás betegségeknél (pestis, orbánc) gyakoriak."
+      explanation: "Az elkülönítés gátolja a terjedést, a gyors kezelés pedig menti az állatot."
     },
     {
       id: "orb_46",
-      topic: "Sertésorbánc - Terápia",
-      type: "bool",
-      question: "A lázcsillapítók (NSAID) adása felesleges orbánc esetén.",
-      options: ["Igaz", "Hamis"],
+      topic: "Sertésorbánc",
+      type: "mcq",
+      question: "Melyik szerv megnagyobbodása (daganata) jellemző kórbonctanilag?",
+      options: ["Vese", "Lép", "Tüdő", "Gyomor"],
       correctAnswer: 1,
-      explanation: "Hamis. Segítenek a közérzet javításában és a láz okozta károk (pl. vetélés) csökkentésében."
+      explanation: "A szeptikémiás szakban a lép kifejezetten megnagyobbodik."
     },
     {
       id: "orb_47",
-      topic: "Sertésorbánc - Klinikum",
+      topic: "Sertésorbánc",
       type: "mcq",
-      question: "Milyen mozgászavar jellemző az akut szakban?",
-      options: ["Sántaság, merev mozgás (fájdalmas ízületek)", "Körkörös mozgás", "Teljes bénulás", "Nincs mozgászavar"],
-      correctAnswer: 0,
-      explanation: "A kezdődő ízületi gyulladás és a lábvégek fájdalma miatt tipegő, merev járás jellemző."
+      question: "Mi a PCR vizsgálat előnye?",
+      options: ["Lassú", "Gyors és megbízhatóan kimutatja a baktérium DNS-t", "Csak halott állatnál jó", "Nagyon olcsó"],
+      correctAnswer: 1,
+      explanation: "A molekuláris módszerekkel gyorsan igazolható a kórokozó jelenléte."
     },
     {
       id: "orb_48",
-      topic: "Sertésorbánc - Járványtan",
+      topic: "Sertésorbánc",
       type: "mcq",
-      question: "Hogyan viselkedik a baktérium a környezetben?",
-      options: ["Gyorsan elpusztul", "Kiemelkedően szívós, sokáig fertőzőképes", "Csak vízben él meg", "A napfény azonnal megöli"],
+      question: "Hány szerotípus ismert összesen?",
+      options: ["Csak 2", "Több mint 25", "100", "1"],
       correctAnswer: 1,
-      explanation: "A talajban, alomban hetekig-hónapokig túlél."
+      explanation: "Számos szerotípust (1-26, N) leírtak már."
     },
     {
       id: "orb_49",
-      topic: "Sertésorbánc - Diagnózis",
+      topic: "Sertésorbánc",
       type: "mcq",
-      question: "A szerológiai vizsgálat (ELISA) mire a legalkalmasabb?",
-      options: ["Akut betegség azonnali diagnózisára", "Átfertőzöttség vagy vakcinázás sikerességének ellenőrzésére", "A baktérium tenyésztésére", "Bőrtünetek kezelésére"],
-      correctAnswer: 1,
-      explanation: "Az ellenanyagszint mérésére jó, akut diagnózisra a tenyésztés/PCR jobb."
+      question: "Melyik kórkép nem tartozik az orbánchoz?",
+      options: ["Csalánláz", "Endocarditis", "Választási hasmenés", "Arthritis"],
+      correctAnswer: 2,
+      explanation: "A választási hasmenést általában E. coli okozza, nem az orbánc."
     },
     {
       id: "orb_50",
-      topic: "Sertésorbánc - Általános",
-      type: "bool",
-      question: "A sertésorbánc gazdasági kártétele elhanyagolható.",
-      options: ["Igaz", "Hamis"],
+      topic: "Sertésorbánc",
+      type: "mcq",
+      question: "Mi az összegzés fő tanulsága?",
+      options: ["Az orbánc nem veszélyes", "A megelőzés kulcsa a vakcinázás és higiénia", "Csak a kanok betegek", "Nincs ellene gyógyszer"],
       correctAnswer: 1,
-      explanation: "Hamis. Jelentős kárt okoz az elhullás, a kényszervágás és a fejlődésben való visszamaradás miatt."
+      explanation: "A rendszeres oltás és a tiszta környezet tartja távol a betegséget."
     }
   ]
 };

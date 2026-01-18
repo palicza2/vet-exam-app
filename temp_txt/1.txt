@@ -1,0 +1,161 @@
+Clostridiumok okozta megbetegedések sertésben
+
+1. A Clostridium fajok jellemzői
+1.1. Alapvető tulajdonságok
+Gram-pozitív, pálcika alakú baktériumok
+Endospóraképzés → extrém környezeti ellenállás (talajban, trágyában évekig túlél)
+Többségük szigorúan anaerob
+Spórák különböző helyzetben: terminális, szubterminális, centrális
+C. tetani: „dobverő” / teniszütő forma
+1.2. Előfordulás
+Széles körben megtalálhatók a környezetben
+Normál bélflóra részei (emberben, állatokban)
+1.3. Patogenitás alapja: exotoxinok
+Fajspecifikus toxinkészletek
+Példa: C. perfringens A–E toxintípusok
+Fő toxinok:
+szövetbontó toxinok (foszfolipázok, proteázok)
+enterotoxinok
+neurotoxinok
+Hatások:
+bélhám roncsolása, boholyatrophia
+transzmurális necrosis
+gázképzés (H₂S) → emphysema
+toxémia, shock
+
+2. A Clostridium-fertőzések fő formái sertésben
+Enterális megbetegedések
+Gázödémás (hisztotoxikus) fertőzések
+Neurotoxikus fertőzések
+
+3. Enterális clostridiosisok
+3.1. C. perfringens C – újszülöttkori hemorrágiás-necrotizáló enteritis
+Élet első napjaiban, perakut lefolyás
+Toxin: béta-toxin (tripszinérzékeny → újszülöttekben hatékonyabb)
+Patogenezis:
+fejletlen bélflóra → gyors elszaporodás
+bélnyálkahártya transzmurális necrosisa
+vérzés, gázképződés
+Klinikum:
+hirtelen elhullás vagy véres-híg hasmenés
+gyors kiszáradás, shock
+Megelőzés: kocák vakcinázása → kolosztrális immunitás
+3.2. C. perfringens A – dysbacteriosis jellegű hasmenések
+Korábban ártalmatlan kommensálnak tartották
+Enyhébb, nem véres hasmenés szopós malacokban
+Gyakoribb legyengült, nagy almos vagy stresszes malacokban
+Boholyatrophia, felszínes hámkárosodás
+Fontos: minden sertésben jelen lehet → toxintermelő törzs kimutatása szükséges
+3.3. C. difficile colitis (álhártyás vastagbélgyulladás)
+Antibiotikum-használathoz társuló dysbacteriosis után gyakori
+Toxinok: A- és B-toxin
+Jellemző elváltozás:
+megvastagodott colonfal
+fibrines-álhártyás colitis
+„vulkán lézió”
+bélfodri ödéma, ascites
+Klinikum: vizes, pépes hasmenés, hasi fájdalom
+Újszülöttekben és választási malacokban is előfordulhat
+3.4. Dysbacteriosis (hemorrágiás bél szindróma jelleg)
+Takarmányváltás, stressz, rossz takarmány → bélflóra felborul
+Opportunista anaerobok túlszaporodása (C. perfringens A, coli stb.)
+Klinikum:
+hirtelen puffadás, nehézlégzés
+gyors elhullás
+Nem specifikus fertőzés → management probléma
+Megelőzés: takarmányminőség, etetési rend, probiotikumok
+
+4. Gázödémás (hisztotoxikus) clostridiosisok
+4.1. Kórokozók
+C. chauvoei, C. septicum, C. novyi, C. sordellii, C. perfringens bizonyos törzsek
+4.2. Kialakulás
+Exogén: sérülés → szennyeződés → anaerob közeg
+Endogén: régebben bejutott spórák → izomsérülés után aktiválódnak
+4.3. Formák
+a) „Sercegő üszög” (blackleg-szerű betegség)
+Főleg C. chauvoei
+Izomfájdalom, duzzanat, crepitatio, láz
+Gyors lefolyás, 1–2 napon belüli elhullás
+b) Clostridiumos méh- és májfertőzések kocákban
+Ellés körüli sérülések → akut metritis
+„Black disease”-szerű nekrotizáló hepatitis (C. novyi B)
+Hirtelen kocaelhullások
+4.4. Boncolási kép
+Feketés, nedves, bűzös, gázzal átitatott izom/szerv
+Fontos elkülönítés: postmortem gázképződésnél a gáz nem lokalizált
+4.5. Diagnosztika
+Bélyegzőlenyomati kenet (Gram+ pálcák)
+Immunfluoreszcencia
+PCR
+Anaerob tenyésztés (gyors növekedés, dupla hemolízis)
+
+5. Neurotoxikus clostridiosisok
+5.1. Tetanusz (C. tetani)
+Fertőzési kapu: mély seb (kasmírozás, farokkurtítás, szülészeti beavatkozás)
+Toxin: tetanospazmin
+Mechanizmus: gátló neurotranszmitterek blokádja → spasztikus bénulás
+Tünetek:
+rágóizmok merevsége, szájzár
+fokozott ingerlékenység
+„fűrészbak-állás”, opisthotonus
+Kezelés: antitoxin, nyugtatók, penicillin – korlátozott siker
+Megelőzés: sebkezelés, higiénia; ritkán toxoid oltás
+5.2. Botulizmus (C. botulinum)
+Nem fertőzés → toxin bevitelével alakul ki (romlott takarmány, döghús)
+Toxin hatása: acetilkolinfelszabadítás blokkolása → petyhüdt bénulás
+Tünetek:
+gyengeség → parézis → teljes bénulás
+nyelészavar, nyálcsorgás
+légzőizombénulás → elhullás
+Diagnózis: toxin kimutatása (bio-próba, ELISA)
+Kezelés korlátozott; megelőzés: takarmányhigiénia
+
+6. Diagnosztika összefoglalása
+Klinikai és kórtörténet
+Malac életkora, takarmányváltás, sérülés, antibiotikum-használat alapján gyanítható
+Boncolás
+C. perfringens C: haemorragiás, nekrotizáló jejunoileitis
+C. difficile: álhártyás colitis, mesocolon ödéma
+Gázödéma: elhalt, gázzal átitatott izom/szerv
+Mikrobiológia
+Anaerob tenyésztés
+Toxin PCR (C. perfringens toxinok; C. difficile A/B)
+MALDI-TOF
+Toxinvizsgálatok (ELISA, egérbio-próba)
+Szövettan
+„Vulkán lézió” (C. difficile)
+Boholyatrophia, necrosis, Gram+ bacillusok a laesio szélén
+
+7. Kezelés és megelőzés
+7.1. Antibiotikumok
+Hatékonyak: penicillin, aminopenicillinek, lincomycin, tylosin
+C. difficile esetén: tilozin (de változó)
+Nem hatékonyak: aminoglikozidok, quinolonok
+7.2. Szupportív terápia
+Folyadékpótlás, NSAID
+Tetanusznál nyugtatók, izomrelaxánsok
+Botulizmus: intenzív ápolás
+7.3. Antitoxinok
+Tetanusz antitoxin
+C. perfringens C elleni hyperimmun szérum (bizonyos országokban)
+7.4. Vakcinázás
+Kocák oltása C. perfringens C ellen (rutin)
+Polivalens clostridium vakcinák speciális esetben használhatók
+Tetanusz toxoid ritkán, egyedi esetekben
+7.5. Higiénia és tartástechnológia
+Sebellátás, steril eszközök
+Jó takarmányminőség, silókezelés
+Dögök eltávolítása → botulizmus megelőzése
+Takarmányváltás fokozatosan
+Telepi járványvédelem, fertőtlenítés (spóraölő szerek!)
+7.6. Probiotikumok
+Lactobacillus, Bifidobacterium, Bacillus spórák
+Prebiotikumok, szerves savak
+Cink-oxid választási stresszben
+
+8. Összefoglalás
+A Clostridium fajok sokrétű betegséget okozhatnak sertésben: enterális, szöveti, idegrendszeri formákat.
+Patogenitásuk toxinképzésen alapul.
+Diagnosztikájuk összetett, toxinvizsgálat döntő jelentőségű.
+A megelőzés a legfontosabb: vakcinázás, higiénia, takarmányozás, probiotikumok.
+A kezelés nehéz, különösen hisztotoxikus és neurotoxikus formákban → korai felismerés kritikus.

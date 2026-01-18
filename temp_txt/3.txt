@@ -1,0 +1,135 @@
+3. tétel – Streptococcus suis okozta megbetegedések sertésben
+
+I. A kórokozó jellemzése
+Gram-pozitív, láncokba rendeződő coccus
+Fakultatív anaerob
+Véres agaron alfa-hemolízist okoz
+Poliszacharid tok alapján szerotípusokba sorolható → fontos virulenciafaktor
+a tok fontos szerepet játszik a kórokozó ellenálló képességében és patogenitásában
+35 szerotípus ismert, leggyakoribbak: 1–9
+különösen jelentős: 2-es szerotípus, ezek gyakran okoznak súlyos megbetegedést
+Tok nélküli, nem tipizálható törzsek is előfordulnak
+Egy sertésben több szerotípus egyidejűleg is jelen lehet
+Molekuláris tipizálás lehetséges:
+MLST-vel: multilocus szekvencia-tipizálás
+pl. 2-es szerotípus ST1 törzs → magas virulencia
+
+II. Járványtani szempontból
+A sertések normál flórájának része
+a felső légutak nyálkahártyáján (tonsillák, orrüreg)
+húgy-nemi traktusban
+Terjedés:
+fertőzött élő állatok: A legfőbb fertőzési forrás a tünetmentes hordozó koca és süldő.
+ A malacok már a fialás közben, a szülőcsatornán áthaladva, vagy közvetlenül a születés után, a koca testváladékaival (nyál, orrváladék) érintkezve kolonizálódhatnak.
+ A választás után, amikor a malacok anyai immunitása (maternalis ellenanyagok) csökken, a fertőzés az alomtársak közötti közvetlen kontaktussal.
+hordozás mértéke és a baktériumürítés intenzitása stresszhatásra fokozódik.
+ragályfogó tárgyak (eszközök, ruházat)
+mechanikus terjesztők (pl. rovarok)
+Hajlamosító tényezők:
+túlzsúfoltság, rossz szellőzés
+takarmányváltás
+társfertőzések
+pl. PRRS vírus immunszupresszív hatása, a S. suis könnyebben bejut a véráramba
+Kórfejlődés:
+A fertőzés kapuja általában a mandula (tonsilla) vagy az orrnyálkahártya.
+ A baktérium a hámsejtekhez tapadva kolonizál, majd stresszhatásra vagy nyálkahártya-sérülés révén átjut a hámon és bekerül a nyirokkeringésbe (regionális nyirokcsomók), majd a véráramba (bakterémia/szeptikémia).
+A S. suis képes a monocitákban és makrofágokban túlélni és szaporodni ("trójai faló" mechanizmus), így védett a humorális immunválasztól és az antibiotikumok egy részétől, miközben eljut a cél-szervekhez: az ízületekhez, az agyvelőhöz és a szívbelhártyához
+Környezetben:
+rövid ideig életképes
+elhullott állatokban hetekig fertőzőképes
+Zoonózis:
+emberre terjedhet
+főleg sertésekkel dolgozók
+Európában ritka, Ázsiában súlyos esetek
+
+III. Klinikai formák sertésben
+1. Érintett korosztály
+Leggyakrabban:
+választás utáni malacok
+5–10 hetes korban válnak először észlelhetővé
+Ritkábban:
+hízókorú fiatal sertéseknél is előfordul
+
+2. Klinikai lefolyás szerint
+a) Perakut lefolyás esetén
+Hirtelen elhullás dominál, előzetes tünetek nélkül
+Oka: fulmináns szeptikémia
+Ez a forma gyakran társul a virulens 2-es szerotípushoz.
+
+b) Akut forma: általános tünetek és idegrendszeri jelenségek figyelhetők meg:
+Magas láz
+Levertség
+Bizonytalan mozgás (ataxia)
+Oldalfekvés
+Idegrendszeri tünetek:
+tarkó- és hátizmok merevsége miatt hátrahajló testtartás (opisthotonus)
+szemtekerezgés (nystagmus)
+Ezek a tünetek elsősorban agyhártyagyulladásra (meningitis) utalnak 
+
+c) Félheveny (szubakut) forma: a lokalizált gyulladásos folyamatok kerülnek előtérbe:
+Lokalizált elváltozások:
+gennyes ízületigyulladás (arthritis)
+a baktériumok megtelepednek az ízületekben, gennyes gyulladást okozva
+sántaságot, bénulást eredményez
+különböző súlyosságú tüdőgyulladás
+szívbelhártya-gyulladás (endocarditis)
+A szívbillentyűkön (mitrális, aorta) növedékek képződnek, ami billentyűelégtelenséget, keringési zavart, cianózist, nehézlégzést és hirtelen elhullást okozhat.
+főleg növendékeken és hízókon fordul elő
+Ritkábban:
+vaginitis
+vetélés kocákban
+
+IV. Kórbonctani elváltozások
+Az elhullott sertések boncolásakor a S. suis fertőzés számos szervet érintő, szeptikémiás jellegű elváltozásokat mutathat.
+savóshártyákon és a nyálkahártyákon vérzések,
+nyirokcsomók duzzanata
+lép megnagyobbodása 
+Meningitis: Az agyvelő burkai vérbőek, az agyvíz (liquor) mennyisége megnövekedett, zavaros, gennyes, fibrines lehet. A gyulladás az agyalapi tájékon gyakran kifejezettebb.
+Polyserositis: Fibrines-gennyes gyulladás a mellhártyán, szívburkon és a hashártyán. 
+Arthritis: Az ízületi tokban sárgás, zavaros, fibrines-gennyes synovia található. A szinoviális hártya megvastagodott, vérbő.
+Endocarditis: A szívbillentyűkön karfiolszerű, omlékony, trombotikus felrakódások láthatók, amelyek leszakadva embóliát (pl. veseinfarktust) okozhatnak.
+A leírt elváltozások együttese – bár nem tekinthető teljesen specifikusnak – erősen felveti a Streptococcus suis okozta generalizált fertőzés gyanúját.
+
+V. Diagnosztika
+1. Klinikai gyanú: Az idegrendszeri tünetek (meningitis jelei) fiatal malacokban, különösen ha lázas állapottal és ízületgyulladással társulnak, tipikusan S. suis fertőzésre utalhatnak, de a diagnózishoz laboratóriumi megerősítés.
+2. Kórbonctani és mikrobiológiai vizsgálat
+Mintavétel: elváltozott szervből
+agyvelő, agyhártya
+ízületi folyadék
+lép
+Tenyésztés:
+véres agar
+Gram-pozitív coccusok láncokban
+A telepek Gram-festéssel igazolhatók (Gram-pozitív coccusok láncokban), 
+további biokémiai tesztekkel és szükség esetén fajspecifikus PCR-rel megerősíthető a fajazonosság. 
+a törzsek közötti rokonsági viszony felderítésében segítséget nyújthatnak a molekuláris tipizáló eljárások is, mint amilyen az MLST 
+VI. Kezelés
+1. Első választás (Béta-laktámok)
+A béta-laktám antibiotikumok képezik a S. suis elleni terápia gerincét. A hazai törzsek több mint 90%-a érzékeny ezekre a szerekre.
+Amoxicillin / Ampicillin: Kiváló választás, széles körben elérhető, baktericid hatású. Meningitis esetén nagy dózisban kell alkalmazni a megfelelő vér-agy gát penetráció eléréséhez. Vízoldékony formában csoportos kezelésre is alkalmas.
+Penicillin G: Parenterálisan hatékony, de a rezisztencia lassan emelkedő tendenciát mutat (intermedier érzékenység előfordulhat), ezért a dózisra ügyelni kell.
+Ceftiofur: 3. generációs cefalosporin, kiváló hatékonyságú a S. suis ellen. Mivel kritikusan fontos antibiotikum használatát a súlyos, egyedi esetekre kell korlátozni, és kerülni kell a rutinszerű tömeges alkalmazást.
+2. Második választás és Alternatívák
+Florfenikol: A hazai törzsek több mint 90%-a érzékeny rá. Lipofil tulajdonsága miatt kiválóan penetrál a szövetekbe, így a központi idegrendszerbe és az ízületekbe is. 
+Trimetoprim-szulfonamid: A kombináció szinergista hatású, és a hazai izolátumok >90%-a érzékeny rá. Képes átjutni a vér-agy gáton, és költséghatékony megoldást jelent az ivóvízkezelésre.
+3. Kerülendő szerek (Magas rezisztencia)
+A következő antibiotikum csoportok használata S. suis ellen empirikus módon, antibiogram nélkül nem javasolt a kiterjedt rezisztencia miatt:
+Tetraciklinek (Doxiciklin, Oxitetraciklin, Klórtetraciklin): A rezisztencia aránya rendkívül magas, gyakran meghaladja a 80-90%-ot. Ennek genetikai háttere a tet(O), tet(W) és egyéb rezisztenciagének széles körű elterjedése, amelyek gyakran mobilis genetikai elemeken (pl. plazmidokon) találhatók.
+Makrolidok (Tilozin, Tilmikozin, Tulatromicin) és Linkózamidok (Linkomicin, Klindamicin): A rezisztencia szintén nagyon magas, gyakran a tetraciklin-rezisztenciával együtt (multirezisztencia) fordul elő. A rezisztenciát főként az erm(B) gén kódolja, amely metilálja a riboszómát, megakadályozva az antibiotikum kötődését. 
+4. Multirezisztencia (MDR)
+A sertésekből izolált S. suis törzsek körében gyakori a multirezisztencia (három vagy több antibiotikum-csoporttal szembeni ellenálló képesség). Vizsgálatok kimutatták, hogy a tünetmentes hordozó sertésekben gyakrabban fordulnak elő MDR törzsek, mint a beteg állatokban, így az egészséges állomány is jelentős rezisztencia-rezervoárként szolgálhat.
+VII. Megelőzés
+Nincs univerzális vakcina, a kórokozónak számos szerotípusa van
+Sok szerotípus → részleges keresztvédelem
+Autogén (telepspecifikus) vakcinák:
+az adott sertéstelepen izolált S. suis törzsekből állítanak elő 
+rendszeres felülvizsgálat szükséges, ha kell frissíteni kell a vakcina törzskészletét
+Gyakori gyakorlat:
+kocák vakcinázása fialás előtt
+kolosztrális védelem 3-5 hetes korig
+Esetenként:
+malacok vakcinázása választás után
+Általános járványvédelem:
+zsúfoltság csökkentése
+higiénia: Sebészeti beavatkozások: A fogcsípés, farokkurtítás és kasztrálás során a szigorú higiénia, fertőtlenítés és tiszta eszközök használata elengedhetetlen a bemeneti kapuk minimalizálása érdekében.
+Társfertőzések kontrollja: A PRRS és a PCV2 elleni hatékony vakcinázás kulcsfontosságú a S. suis másodlagos kártételének megelőzésében.

@@ -1,123 +1,104 @@
 export const staphylococcusData = {
   id: "staphylococcus",
-  title: "4. Staphylococcusok okozta megbetegedések",
+  title: "4. Staphylococcus fertőzések",
   studyMaterial: [
     {
-      title: "1. A Kórokozók Jellemzői",
-      icon: "microscope",
-      color: "bg-blue-50 border-blue-200",
-      iconColor: "text-blue-500",
-      sections: [
+      "title": "1. A kórokozók jellemzése",
+      "icon": "microscope",
+      "color": "bg-blue-50 border-blue-200",
+      "iconColor": "text-blue-500",
+      "sections": [
         {
-          header: "Staphylococcus hyicus és S. aureus",
-          points: [
-            "**Gram-pozitív**, gömb alakú (coccus) baktériumok.",
-            "A környezetben széles körben elterjedtek, a normál flóra részei lehetnek.",
-            "**S. hyicus:** Fehér pigmentet termel, véres agaron **nem hemolizál**. Exfoliatív toxinokat termel.",
-            "**S. aureus:** Sárgás pigment ('arany' staphylococcus), **kettős zónájú béta-hemolízist** okoz.",
-            "**MRSA:** Meticillin-rezisztens S. aureus törzsek is előfordulhatnak sertésben (LA-MRSA)."
+          "header": "1.1. Fontosabb fajok",
+          "points": [
+            "**Staphylococcus hyicus:** Főleg bőrbetegségekért felelős",
+            "**Staphylococcus aureus:** Gennyes gyulladások, szeptikémia (LA-MRSA jelentősége!)",
+            "**Jellemzők:** Gram-pozitív coccusok, aerob/fakultatív anaerobok, opportunisták (sérült bőrön át fertőznek)"
+          ]
+        },
+        {
+          "header": "1.2. Különbségek",
+          "points": [
+            "**S. hyicus:** Fehér pigment, nem hemolizál, exfoliatív toxinokat termel",
+            "**S. aureus:** Sárgás pigment, **kettős béta-hemolízis**, koaguláz-pozitív"
           ]
         }
       ]
     },
     {
-      title: "2. Kenőcsös Bőrgyulladás (Exudatív epidermitis)",
-      icon: "alertTriangle",
-      color: "bg-orange-50 border-orange-200",
-      iconColor: "text-orange-500",
-      sections: [
+      "title": "2. Exudatív epidermitis (Kenőcsös bőrgyulladás)",
+      "icon": "alert-triangle",
+      "color": "bg-orange-50 border-orange-200",
+      "iconColor": "text-orange-500",
+      "sections": [
         {
-          header: "Kialakulás és Hajlamosító tényezők",
-          points: [
-            "**Kórokozó:** Elsősorban a **Staphylococcus hyicus**.",
-            "**Célcsoport:** Újszülött és fiatal malacok (gyakran 3-5 napos korban).",
-            "**Hajlamosít:** Kevés kolosztrum, bőrsérülések (harapás, durva padozat), magas kocasüldő arány.",
-            "**Terjedés:** Horizontális (alomtársak) vagy vertikális (kocától)."
+          "header": "2.1. Jellemzők",
+          "points": [
+            "**Kórokozó:** S. hyicus",
+            "**Érintett kor:** Újszülött és fiatal malacok (3–5 napos kor)",
+            "**Hajlamosítás:** Elégtelen kolosztrumfelvétel, bőrsérülések (harapás), nedves környezet"
           ]
         },
         {
-          header: "Tünetek és Kórlefolyás",
-          points: [
-            "**Kezdet:** Pofa, szemek körül, hónaljban, lágyékon.",
-            "**Bőrtünet:** Zsíros tapintatú, barnás pörkökkel fedett gennyes gyulladás. Alatta a bőr vörös és nedvező.",
-            "**Különbség:** **NINCS láz** és **NINCS viszketés** (elkülönítés a rühességtől!).",
-            "**Kimenetel:** Kiszáradás, legyengülés, súlyos esetben elhullás.",
-            "**Vese:** A toxinok miatt a vesemedencében hámleválás (dequamatio) tapasztalható."
+          "header": "2.2. Tünetek",
+          "points": [
+            "**Kezdet:** Pofa, szemek körül, lágyékon hólyagok",
+            "**Folyamat:** Zsíros tapintatú exudátum → barnás pörkök alakulnak ki",
+            "**Kritikus:** Viszketés és láz NINCS, de a kiterjedt bőrkárosodás miatt súlyos kiszáradás és elhullás következhet",
+            "**Vese:** A toxinok miatt a vesecsatornák hámja leválhat"
           ]
         }
       ]
     },
     {
-      title: "3. Lokalizált Fertőzések",
-      icon: "activity",
-      color: "bg-purple-50 border-purple-200",
-      iconColor: "text-purple-500",
-      sections: [
+      "title": "3. Egyéb Staphylococcus kórformák",
+      "icon": "thermometer",
+      "color": "bg-red-50 border-red-200",
+      "iconColor": "text-red-500",
+      "sections": [
         {
-          header: "Ízületgyulladás (Arthritis)",
-          points: [
-            "Bakteriális eredetű, gyakran hematogén (köldökön át) terjedés.",
-            "**Tünetek:** Sántaság, duzzadt, fájdalmas ízületek.",
-            "**Kórbonctan:** Savós-gennyes vagy fibrines-gennyes ízületi folyadék.",
-            "Gyakran társul a kenőcsös bőrgyulladáshoz."
+          "header": "3.1. Arthritis (Ízületgyulladás)",
+          "points": [
+            "**Ok:** S. hyicus vagy S. aureus",
+            "**Bejutás:** Hematogén úton, gyakran a **köldökön** keresztül",
+            "**Tünet:** Sántaság, meleg ízületi duzzanat, polyarthritis"
           ]
         },
         {
-          header: "Tőgygyulladás (Mastitis)",
-          points: [
-            "S. aureus okozhat sporadikusan gennyes tőgygyulladást.",
-            "**Tünetek:** Duzzadt, fájdalmas emlők, láz, agalactia (tejhiány).",
-            "Tályogképződésre hajlamosít."
+          "header": "3.2. Szeptikémia és Mastitis",
+          "points": [
+            "**Szeptikémia:** Gennyes gócok (tályogok) az agyban, májban, vesében",
+            "**Mastitis:** A koca tőgygyulladása, gennyes-tályogos jellegű, agalactiát okozhat"
           ]
         },
         {
-          header: "Fülvégelhalás",
-          points: [
-            "Összetett kórkép, de a S. hyicus helyi túlszaporodása és toxintermelése kulcsszerepet játszhat.",
-            "Fiatal malacoknál (6-14 hetes) szimmetrikus, száraz elhalás a fülkagylókon."
+          "header": "3.3. Fülvégelhalás",
+          "points": [
+            "6–14 hetes malacoknál szimmetrikus, száraz necrosis",
+            "Összetett ok: S. hyicus toxinok + másodlagos fertőzések"
           ]
         }
       ]
     },
     {
-      title: "4. Szeptikémia (Vérfertőzés)",
-      icon: "shieldAlert",
-      color: "bg-red-50 border-red-200",
-      iconColor: "text-red-500",
-      sections: [
+      "title": "4. Diagnosztika és Kezelés",
+      "icon": "search",
+      "color": "bg-slate-50 border-slate-200",
+      "iconColor": "text-slate-500",
+      "sections": [
         {
-          header: "S. aureus szepszis",
-          points: [
-            "A baktérium bejut a véráramba (köldök, sebek, tőgy útján).",
-            "**Metasztatikus tályogok:** Gennyes gócok alakulhatnak ki a májban, vesében, agyban, szívben.",
-            "**Endocarditis:** Szívbelhártya-gyulladás és szívizom-tályogok hirtelen elhullást okozhatnak."
-          ]
-        }
-      ]
-    },
-    {
-      title: "5. Diagnózis és Terápia",
-      icon: "pill",
-      color: "bg-emerald-50 border-emerald-200",
-      iconColor: "text-emerald-500",
-      sections: [
-        {
-          header: "Laboratóriumi Diagnózis",
-          points: [
-            "**Minta:** Pörkök alatti genny, ízületi folyadék, tej, belső szervek.",
-            "**Tenyésztés:** Aerob, véres agaron 24 óra alatt jól nő.",
-            "**Azonosítás:** Kataláz-teszt (pozitív), koaguláz-teszt.",
-            "**Differenciál:** Sertéshimlő (viszket!), rühesség (viszket!), cinkhiány."
+          "header": "4.1. Labor",
+          "points": [
+            "Pörk alatti mintavétel, tenyésztés véres agaron",
+            "Koaguláz-próba, kataláz-pozitivitás igazolása"
           ]
         },
         {
-          header: "Kezelés és Megelőzés",
-          points: [
-            "**Antibiotikum:** Penicillin, amoxicillin, ceftiofur, cefquinom.",
-            "**Fontos:** Antibiotikum-érzékenységi vizsgálat az MRSA veszélye miatt!",
-            "**Helyi kezelés:** Antiszeptikus (jódos) lemosás.",
-            "**Megelőzés:** Kolosztrum felvétel biztosítása, higiénia (alom, fertőtlenítés), traumák elkerülése (fogcsípés).",
-            "**Vakcina:** Telepspecifikus (autogén) vakcinák, kocák oltása a vemhesség végén."
+          "header": "4.2. Terápia",
+          "points": [
+            "**Antibiotikum:** Penicillin, amoxicillin, ceftiofur",
+            "**Rezisztencia:** MRSA (LA-MRSA) esetén béta-laktámok hatástalanok!",
+            "**Kiegészítés:** Antiszeptikus (jódos) lemosás, folyadékpótlás"
           ]
         }
       ]
@@ -126,453 +107,453 @@ export const staphylococcusData = {
   questions: [
     {
       id: "staph_1",
-      topic: "Staphylococcus - Általános",
+      topic: "Staphylococcus",
       type: "mcq",
-      question: "Melyik Staphylococcus faj okozza leggyakrabban a kenőcsös bőrgyulladást?",
-      options: ["Staphylococcus aureus", "Staphylococcus hyicus", "Staphylococcus sciuri", "Staphylococcus xylosus"],
+      question: "Melyik Staphylococcus faj okozza a kenőcsös bőrgyulladást?",
+      options: ["S. aureus", "S. hyicus", "S. intermedius", "S. saprophyticus"],
       correctAnswer: 1,
-      explanation: "A kenőcsös bőrgyulladás (exudatív epidermitis) fő kórokozója a S. hyicus."
+      explanation: "A Staphylococcus hyicus a fő kórokozója az exudatív epidermitisnek."
     },
     {
       id: "staph_2",
-      topic: "Staphylococcus - Általános",
+      topic: "Staphylococcus",
       type: "mcq",
-      question: "Milyen morfológiájúak a Staphylococcusok?",
-      options: ["Gram-negatív pálcák", "Gram-pozitív gömbök (coccusok)", "Gram-pozitív pálcák", "Gram-negatív coccusok"],
-      correctAnswer: 1,
-      explanation: "A Staphylococcusok Gram-pozitív, gömb alakú baktériumok."
+      question: "Milyen életkorú malacokra jellemző leginkább a kenőcsös bőrgyulladás?",
+      options: ["3-5 napos újszülöttek", "Választási malacok", "Hízók", "Kocák"],
+      correctAnswer: 0,
+      explanation: "Az újszülött és fiatal malacok a legfogékonyabbak a heveny formára."
     },
     {
       id: "staph_3",
-      topic: "Staphylococcus - Epidermitis",
-      type: "bool",
-      question: "A kenőcsös bőrgyulladásban szenvedő malacokra jellemző a magas láz és a viszketés.",
-      options: ["Igaz", "Hamis"],
-      correctAnswer: 1,
-      explanation: "Hamis. Jellemző diagnosztikai bélyeg, hogy NINCS láz és NINCS viszketés."
+      topic: "Staphylococcus",
+      type: "mcq",
+      question: "Jellemző-e a láz és a viszketés a kenőcsös bőrgyulladásra?",
+      options: ["Igen, mindkettő", "Láz van, viszketés nincs", "Viszketés van, láz nincs", "Egyik sem jellemző"],
+      correctAnswer: 3,
+      explanation: "Jellegzetes, hogy sem viszketés, sem láz nem kíséri általában a folyamatot."
     },
     {
       id: "staph_4",
-      topic: "Staphylococcus - Epidermitis",
+      topic: "Staphylococcus",
       type: "mcq",
-      question: "Melyik szervben tapasztalható jellegzetes elváltozás (hámleválás) S. hyicus toxinhatás miatt?",
-      options: ["Máj", "Vese (gyűjtőcsatornák és vesemedence)", "Tüdő", "Lép"],
-      correctAnswer: 1,
-      explanation: "A S. hyicus toxinok szisztémás hatása miatt a vesében hámsejt-leválás (dequamatio) látható."
+      question: "Melyik szerv károsodhat a S. hyicus toxinok szisztémás hatása miatt?",
+      options: ["Máj", "Tüdő", "Vese (gyűjtőcsatornák hámja leválik)", "Lép"],
+      correctAnswer: 2,
+      explanation: "A toxinok kiválasztódása során a vesehám károsodhat."
     },
     {
       id: "staph_5",
-      topic: "Staphylococcus - Epidermitis",
+      topic: "Staphylococcus",
       type: "mcq",
-      question: "Mikor jelentkeznek leggyakrabban a tünetek újszülött malacokban?",
-      options: ["1 órán belül", "3-5 napos korban", "Csak választás után", "6 hónapos korban"],
+      question: "Mi a kenőcsös bőrgyulladás (exudatív epidermitis) legfőbb veszélye?",
+      options: ["Csak esztétikai hiba", "Súlyos kiszáradás a bőrkárosodás miatt", "Vakság", "Sántaság"],
       correctAnswer: 1,
-      explanation: "A heveny forma leggyakrabban az élet első hetében, 3-5 napos korban jelentkezik."
+      explanation: "A nagy felületű bőrelváltozás miatt az állat rengeteg folyadékot veszít, ami halálos lehet."
     },
     {
       id: "staph_6",
-      topic: "Staphylococcus - Diagnózis",
+      topic: "Staphylococcus",
       type: "mcq",
-      question: "Milyen hemolízist mutat a S. aureus véres agaron?",
-      options: ["Nincs hemolízis", "Alfa-hemolízis", "Kettős zónájú béta-hemolízis", "Gamma-hemolízis"],
-      correctAnswer: 2,
-      explanation: "A S. aureus-ra jellemző a kettős zónájú béta-hemolízis."
+      question: "Melyik Staphylococcus faj mutat kettős béta-hemolízist véragaron?",
+      options: ["S. hyicus", "S. aureus", "S. xylosus", "S. sciuri"],
+      correctAnswer: 1,
+      explanation: "A S. aureusra jellemző a kettős hemolízis zóna a telepek körül."
     },
     {
       id: "staph_7",
-      topic: "Staphylococcus - Általános",
+      topic: "Staphylococcus",
       type: "mcq",
-      question: "Mit jelent az MRSA rövidítés?",
-      options: ["Magas Rezisztenciájú Staphylococcus", "Meticillin-rezisztens Staphylococcus aureus", "Máj-reaktív Staphylococcus", "Mindenre Rezisztens Staphylococcus"],
+      question: "Hogyan terjed leggyakrabban az ízületgyulladás malacokban?",
+      options: ["Légúton", "Köldökön keresztül (hematogén út)", "Szájon át", "Kullancscsípéssel"],
       correctAnswer: 1,
-      explanation: "Meticillin-rezisztens Staphylococcus aureus."
+      explanation: "A köldökcsonk a Staphylococcusok és más gennykeltők fő bemeneti kapuja újszülötteknél."
     },
     {
       id: "staph_8",
-      topic: "Staphylococcus - Arthritis",
+      topic: "Staphylococcus",
       type: "mcq",
-      question: "Hogyan jutnak be leggyakrabban a baktériumok az ízületekbe újszülött malacokban?",
-      options: ["Széllel", "Köldökön keresztül (hematogén úton)", "Kizárólag szájon át", "Semennyire, nem fertőző"],
+      question: "Melyik antibiotikum-csoport hatástalan MRSA fertőzés esetén?",
+      options: ["Aminoglikozidok", "Béta-laktámok (penicillinek, cefalosporinok)", "Tetraciklinek", "Fluorokinolonok"],
       correctAnswer: 1,
-      explanation: "A bakteriális arthritis gyakran köldökfertőzésből kiinduló véráramfertőzés útján alakul ki."
+      explanation: "Az MRSA (Meticillin-rezisztens S. aureus) minden béta-laktám antibiotikumra rezisztens."
     },
     {
       id: "staph_9",
-      topic: "Staphylococcus - Mastitis",
+      topic: "Staphylococcus",
       type: "mcq",
-      question: "Milyen jellegű tőgygyulladást okoz tipikusan a S. aureus?",
-      options: ["Szevas", "Gennyes (suppuratív), tályogképződésre hajlamos", "Csak vizenyős", "Nekrotizáló"],
+      question: "Mi jellemző a S. hyicus telepekre véres agaron?",
+      options: ["Sárga pigment, hemolízis", "Fehér pigment, nincs hemolízis", "Fekete telepek", "Zöldítő hemolízis"],
       correctAnswer: 1,
-      explanation: "S. aureus-ra jellemző a gennyes gyulladás és a tályogképződés."
+      explanation: "A S. hyicus fehér telepeket képez és nem mutat hemolízist."
     },
     {
       id: "staph_10",
-      topic: "Staphylococcus - Terápia",
+      topic: "Staphylococcus",
       type: "mcq",
-      question: "Melyik antibiotikum csoport az első választás Staphylococcus ellen (ha érzékeny)?",
-      options: ["Aminoglikozidok", "Béta-laktámok (pl. Penicillinek)", "Kinolonok", "Szulfonamidok"],
+      question: "Melyik kórkép szimmetrikus necrosis a fülkagylón?",
+      options: ["Fülrüh", "Fülvégelhalás", "Fültályog", "Sertésorbánc"],
       correctAnswer: 1,
-      explanation: "A penicillinek és aminopenicillinek az elsődlegesen választandó szerek, ha a tőrzs érzékeny."
+      explanation: "A fülvégelhalás süldőkben jelentkező, Staphylococcusokkal is összefüggő kórkép."
     },
     {
       id: "staph_11",
-      topic: "Staphylococcus - Megelőzés",
+      topic: "Staphylococcus",
       type: "bool",
-      question: "A kenőcsös bőrgyulladás megelőzésében fontos a malacok fogainak lecsípése.",
+      question: "A Staphylococcusok Gram-pozitív coccusok.",
       options: ["Igaz", "Hamis"],
       correctAnswer: 0,
-      explanation: "Igaz. A fogcsípéssel csökkenthető a bőr sérülése, ami a baktérium bejutási kapuja."
+      explanation: "Igaz, morfológiailag gömb alakúak és festődésük szerint Gram-pozitívak."
     },
     {
       id: "staph_12",
-      topic: "Staphylococcus - Általános",
-      type: "mcq",
-      question: "Milyen színű pigmentet termel a S. hyicus?",
-      options: ["Aranysárga", "Fehér", "Zöld", "Fekete"],
+      topic: "Staphylococcus",
+      type: "bool",
+      question: "A Staphylococcusok spórát képeznek, ezért maradnak fenn a környezetben.",
+      options: ["Igaz", "Hamis"],
       correctAnswer: 1,
-      explanation: "A S. hyicus fehér pigmentet termel és nem hemolizál."
+      explanation: "Hamis, a Staphylococcusok nem képeznek spórát."
     },
     {
       id: "staph_13",
-      topic: "Staphylococcus - Szeptikémia",
+      topic: "Staphylococcus",
       type: "mcq",
-      question: "Melyik szívbetegséget okozhatja a S. aureus szepszis?",
-      options: ["Szívburok-vízkór", "Endocarditis (szívbelhártya-gyulladás)", "Szívbillentyű hiány", "Semmit"],
-      correctAnswer: 1,
-      explanation: "Metasztatikus gócokat és endocarditist okozhat a szívben."
+      question: "Mi a kataláz-próba jelentősége?",
+      options: ["Elkülöníti a Staphylococcust (pozitív) a Streptococcustól (negatív)", "Kimutatja a vírust", "A vese funkcióját méri", "Semmi"],
+      correctAnswer: 0,
+      explanation: "A kataláz-pozitivitás alapvető differenciáló bélyeg a Staphylococcus nemzetség számára."
     },
     {
       id: "staph_14",
-      topic: "Staphylococcus - Megelőzés",
+      topic: "Staphylococcus",
       type: "mcq",
-      question: "Milyen vakcinát használnak leggyakrabban a védekezésben, ha a telepen visszatérő a probléma?",
-      options: ["Univerzális kereskedelmi vakcina", "Telepspecifikus (autogén) vakcina", "Humán vakcina", "Nincs vakcina"],
+      question: "Melyik kórkép nem tipikusan Staphylococcus eredetű?",
+      options: ["Kenőcsös bőrgyulladás", "Petyhüdt bénulás", "Arthritis", "Mastitis"],
       correctAnswer: 1,
-      explanation: "Kereskedelmi vakcina nincs, ezért a telepspecifikus (autogén) vakcinák használatosak."
+      explanation: "A petyhüdt bénulást a Botulismus toxinja okozza, nem a Staphylococcus."
     },
     {
       id: "staph_15",
-      topic: "Staphylococcus - Általános",
+      topic: "Staphylococcus",
       type: "mcq",
-      question: "Mit jelent a 'pleomorf' kifejezés a staphylococcusoknál?",
-      options: ["Mindig egyforma", "Változatos alakú (pl. fonalasodhat)", "Két magja van", "Nem létezik ilyen"],
+      question: "Hogyan kolonizálódnak a malacok S. hyicussal?",
+      options: ["Csak a levegőből", "A koca bőrflórájából az ellés során", "Csak injekcióval", "Nincs kolonizáció"],
       correctAnswer: 1,
-      explanation: "Változatos megjelenési forma, bár a staphylococcusoknál ez kevésbé jellemző, mint pálcáknál, de öreg tenyészetben előfordulhat."
+      explanation: "A malacok az anyjuktól veszik fel a normál bőrflóra részeként, ami később kárt okozhat."
     },
     {
       id: "staph_16",
-      topic: "Staphylococcus - Epidermitis",
+      topic: "Staphylococcus",
       type: "mcq",
-      question: "Mivel érdemes kiegészíteni a kezelést kiszáradt malacoknál?",
-      options: ["Több takarmánnyal", "Elektrolitoldat itatásával", "Hideg vízzel", "Semmivel"],
-      correctAnswer: 1,
-      explanation: "A bőr kiterjedt károsodása miatti kiszáradást elektrolitokkal kell kezelni."
+      question: "Melyik hajlamosító tényező fontos a bőrgyulladásnál?",
+      options: ["Bőrsérülések (pl. térdsérülés a padozattól)", "Sok vitamintartalmú takarmány", "Zenehallgatás", "Sötét ól"],
+      correctAnswer: 0,
+      explanation: "A mikrosérülések bejutási kaput nyitnak az opportunista baktériumnak."
     },
     {
       id: "staph_17",
-      topic: "Staphylococcus - Diagnózis",
+      topic: "Staphylococcus",
       type: "mcq",
-      question: "Milyen enzimteszt választja el a Staphylococcusokat a Streptococcusoktól?",
-      options: ["Ureáz", "Kataláz (Staph +, Strep -)", "Oxidáz", "Lipáz"],
+      question: "Milyen állagú az exudátum kenőcsös bőrgyulladásnál?",
+      options: ["Vizes", "Zsíros tapintatú, fehérjedús", "Kemény, száraz", "Gázos"],
       correctAnswer: 1,
-      explanation: "A kataláz-pozitivitás alapvető differenciáló bélyeg a staphylococcusok javára."
+      explanation: "Innen ered a 'kenőcsös' elnevezés is."
     },
     {
       id: "staph_18",
-      topic: "Staphylococcus - Epidermitis",
-      type: "bool",
-      question: "A kenőcsös bőrgyulladás viszketéssel jár.",
-      options: ["Igaz", "Hamis"],
+      topic: "Staphylococcus",
+      type: "mcq",
+      question: "Mit okozhat a S. aureus szeptikémia útján az agyban?",
+      options: ["Agydaganatot", "Gennyes agyvelőtályogot", "Agyvízkórt", "Semmit"],
       correctAnswer: 1,
-      explanation: "Hamis. Nem viszket, ez fontos különbség a rühességtől."
+      explanation: "A szeptikémia során távoli szervekben, így az agyban is gennyes gócok alakulhatnak ki."
     },
     {
       id: "staph_19",
-      topic: "Staphylococcus - Lokalizált",
+      topic: "Staphylococcus",
       type: "mcq",
-      question: "Melyik korcsoportot érinti leginkább a fülvégelhalás?",
-      options: ["Újszülöttek", "Választott malacok (6-14 hetes)", "Kocák", "Kanok"],
-      correctAnswer: 1,
-      explanation: "Jellemzően 6-14 hetes korban jelentkezik."
+      question: "Hogyan kell kezelni a kenőcsös malacokat?",
+      options: ["Szisztémás antibiotikummal és helyi antiszeptikus lemosással", "Csak vízzel", "Selyemkendővel", "Éheztetéssel"],
+      correctAnswer: 0,
+      explanation: "A kombinált szisztémás és helyi kezelés a leghatékonyabb."
     },
     {
       id: "staph_20",
-      topic: "Staphylococcus - Általános",
-      type: "mcq",
-      question: "Melyik állítás igaz a S. hyicus koaguláz termelésére?",
-      options: ["Mindig pozitív", "Mindig negatív", "Törzstől függően lehet pozitív vagy negatív", "Nem termel koagulázt"],
-      correctAnswer: 2,
-      explanation: "A S. hyicus variábilis koaguláz termelés szempontjából."
-    },
-    {
-      id: "staph_21",
-      topic: "Staphylococcus - Epidermitis",
-      type: "mcq",
-      question: "Hogyan befolyásolja a kocasüldők aránya a kenőcsös bőrgyulladás előfordulását?",
-      options: ["Nincs összefüggés", "A kocasüldők malacai veszélyeztetettebbek az alacsonyabb kolosztrális immunitás miatt", "A kocasüldők malacai rezisztensebbek", "Csak az öreg kocák malacai betegek"],
-      correctAnswer: 1,
-      explanation: "A kocasüldők gyakran kevesebb ellenanyagot adnak át a S. hyicus ellen, így malacaik fogékonyabbak."
-    },
-    {
-      id: "staph_22",
-      topic: "Staphylococcus - Általános",
-      type: "mcq",
-      question: "Melyik Staphylococcus faj okozhat 'botriomikózist' (idült gennyes-kötőszövetes gyulladást) sertésben?",
-      options: ["S. aureus", "S. hyicus", "S. epidermidis", "S. saprophyticus"],
-      correctAnswer: 0,
-      explanation: "A S. aureus képes idült, daganatszerű gennyes burjánzásokat okozni a bőrben vagy a tőgyben."
-    },
-    {
-      id: "staph_23",
-      topic: "Staphylococcus - Diagnózis",
-      type: "bool",
-      question: "A Staphylococcusok spóraképző baktériumok.",
-      options: ["Igaz", "Hamis"],
-      correctAnswer: 1,
-      explanation: "Hamis. A Staphylococcusok nem képeznek spórát."
-    },
-    {
-      id: "staph_24",
-      topic: "Staphylococcus - Epidermitis",
-      type: "mcq",
-      question: "Milyen hatással van a toxin a malacok bélcsatornájára?",
-      options: ["Súlyos hasmenést okoz", "Gátolja a tápanyagfelszívódást", "Nincs közvetlen enterális hatása, a kiszáradást a bőrveszteség okozza", "Kilyukasztja a gyomrot"],
-      correctAnswer: 2,
-      explanation: "A kenőcsös bőrgyulladásnál a kiszáradás oka a bőr barrier funkciójának elvesztése, nem a hasmenés."
-    },
-    {
-      id: "staph_25",
-      topic: "Staphylococcus - Terápia",
-      type: "mcq",
-      question: "Miért fontos a sebzések (pl. farokkurtítás, fogcsípés) utáni fertőtlenítés?",
-      options: ["Hogy szebb legyen az állat", "Mert ezek a Staphylococcusok behatolási kapui", "Hogy ne vérezzen", "Felesleges, magától gyógyul"],
-      correctAnswer: 1,
-      explanation: "A Staphylococcusok opportunista kórokozók, amelyek a hámhiányokon át jutnak a szervezetbe."
-    },
-    {
-      id: "staph_26",
-      topic: "Staphylococcus - Általános",
-      type: "mcq",
-      question: "Melyik Staphylococcus faj termel exfoliátív toxinokat?",
-      options: ["S. aureus", "S. hyicus", "S. epidermidis", "S. saprophyticus"],
-      correctAnswer: 1,
-      explanation: "A S. hyicus exfoliátív (bőrhámlasztó) toxinokat termel, amelyek a kenőcsös bőrgyulladást okozzák."
-    },
-    {
-      id: "staph_27",
-      topic: "Staphylococcus - Epidermitis",
-      type: "mcq",
-      question: "Milyen állagúak a pörkök a kenőcsös bőrgyulladásnál?",
-      options: ["Száraz, porszerű", "Zsíros tapintatú, barnás", "Kemény, kőszerű", "Nincsenek pörkök"],
-      correctAnswer: 1,
-      explanation: "A zsíros tapintat az exudátum (izzadmány) és a faggyú keveredése miatt alakul ki."
-    },
-    {
-      id: "staph_28",
-      topic: "Staphylococcus - Általános",
-      type: "bool",
-      question: "A Staphylococcusok kataláz-pozitívak.",
-      options: ["Igaz", "Hamis"],
-      correctAnswer: 0,
-      explanation: "Igaz. Ez különbözteti meg őket a Streptococcusoktól, amelyek kataláz-negatívak."
-    },
-    {
-      id: "staph_29",
-      topic: "Staphylococcus - Epidermitis",
-      type: "mcq",
-      question: "Mi a leggyakoribb oka az elhullásnak kenőcsös bőrgyulladásban?",
-      options: ["Fulladás", "Kiszáradás és toxémia", "Belső vérzés", "Éhezés"],
-      correctAnswer: 1,
-      explanation: "A nagy bőrfelületen keresztül történő folyadékvesztés és a felszívódó toxinok okozzák az elhullást."
-    },
-    {
-      id: "staph_30",
-      topic: "Staphylococcus - Általános",
-      type: "mcq",
-      question: "Mit jelent a 'LA-MRSA' kifejezés?",
-      options: ["Lassú Staphylococcus", "Livestock-Associated MRSA (haszonállatokhoz köthető)", "Laboratóriumi Staphylococcus", "Legyengített Staphylococcus"],
-      correctAnswer: 1,
-      explanation: "A LA-MRSA a haszonállatokban (főleg sertésben) előforduló meticillin-rezisztens S. aureus."
-    },
-    {
-      id: "staph_31",
-      topic: "Staphylococcus - Lokalizált",
-      type: "mcq",
-      question: "Milyen színű genny jellemző a Staphylococcus fertőzésekre?",
-      options: ["Zöld", "Sárgásfehér, krémszerű", "Fekete", "Víztiszta"],
-      correctAnswer: 1,
-      explanation: "A Staphylococcusok sűrű, sárgásfehér genny képződését okozzák."
-    },
-    {
-      id: "staph_32",
-      topic: "Staphylococcus - Epidermitis",
-      type: "mcq",
-      question: "Hogyan terjedhet a S. hyicus a telepen belül?",
-      options: ["Csak vízzel", "Kocák tőgybőréről, szülőcsatornából és malacok közötti kontaktussal", "Csak rágcsálókkal", "Csak mesterséges termékenyítéssel"],
-      correctAnswer: 1,
-      explanation: "A fertőzés forrása gyakran a koca bőre vagy nyálkahártyája."
-    },
-    {
-      id: "staph_33",
-      topic: "Staphylococcus - Diagnózis",
-      type: "mcq",
-      question: "Melyik teszt pozitív a S. aureus esetében és negatív a S. hyicus-nál általában?",
-      options: ["Kataláz", "Koaguláz (csőmódszerrel)", "Gram-festés", "Oxidáz"],
-      correctAnswer: 1,
-      explanation: "A S. aureus tipikusan koaguláz-pozitív, a S. hyicus gyakran negatív vagy későn lesz pozitív."
-    },
-    {
-      id: "staph_34",
-      topic: "Staphylococcus - Terápia",
-      type: "bool",
-      question: "A rezisztens Staphylococcusok ellen a negyedik generációs cefalosporinok mindig hatásosak.",
-      options: ["Igaz", "Hamis"],
-      correctAnswer: 1,
-      explanation: "Hamis. Az MRSA törzsek szinte minden béta-laktámra, így a cefalosporinokra is rezisztensek."
-    },
-    {
-      id: "staph_35",
-      topic: "Staphylococcus - Epidermitis",
-      type: "mcq",
-      question: "Mi a teendő a beteg malacokkal a kezelés mellett?",
-      options: ["Sötétben tartani", "Elkülönítés és bőséges alom/meleg biztosítása", "Éheztetés", "Hideg vizes fürdetés"],
-      correctAnswer: 1,
-      explanation: "A beteg malacok hőháztartása felborul, ezért a meleg és a higiénia kulcsfontosságú."
-    },
-    {
-      id: "staph_36",
-      topic: "Staphylococcus - Általános",
-      type: "mcq",
-      question: "Melyik enzim bontja a hidrogén-peroxidot a Staphylococcusoknál?",
-      options: ["Lipáz", "Kataláz", "Proteáz", "Amiláz"],
-      correctAnswer: 1,
-      explanation: "A kataláz enzim vízzé és oxigénné bontja a hidrogén-peroxidot (pezsgés)."
-    },
-    {
-      id: "staph_37",
-      topic: "Staphylococcus - Epidermitis",
-      type: "mcq",
-      question: "Melyik vitamin hiánya okozhat a kenőcsös bőrgyulladáshoz hasonló tüneteket?",
-      options: ["C-vitamin", "B7-vitamin (Biotin)", "A-vitamin", "D-vitamin"],
-      correctAnswer: 1,
-      explanation: "A biotinhiány is okozhat bőrgyulladást, ezért differenciál-diagnosztikailag fontos."
-    },
-    {
-      id: "staph_38",
-      topic: "Staphylococcus - Lokalizált",
-      type: "mcq",
-      question: "Milyen beavatkozás hajlamosít a fülvégelhalásra?",
-      options: ["Csak az oltás", "Rossz szellőzés, zsúfoltság és egymás fülének rágása", "A jó minőségű táp", "A zenehallgatás"],
-      correctAnswer: 1,
-      explanation: "A stressz és a mechanikai sérülések utat nyitnak a kórokozóknak."
-    },
-    {
-      id: "staph_39",
-      topic: "Staphylococcus - Általános",
+      topic: "Staphylococcus",
       type: "bool",
       question: "A Staphylococcusok fakultatív anaerobok.",
       options: ["Igaz", "Hamis"],
       correctAnswer: 0,
-      explanation: "Igaz. Oxigén jelenlétében és hiányában is képesek szaporodni."
+      explanation: "Igaz, oxigén jelenlétében és hiányában is képesek szaporodni."
+    },
+    {
+      id: "staph_21",
+      topic: "Staphylococcus",
+      type: "mcq",
+      question: "Mi a 'LA-MRSA' jelentése?",
+      options: ["Laboratóriumi Alga", "Livestock-Associated MRSA (haszonállatokhoz kötődő MRSA)", "Lassan Alakuló Betegség", "Nincs ilyen"],
+      correctAnswer: 1,
+      explanation: "Haszonállatokban (sertésben is) elterjedt meticillin-rezisztens S. aureus törzs."
+    },
+    {
+      id: "staph_22",
+      topic: "Staphylococcus",
+      type: "mcq",
+      question: "Mi jellemző a tőgygyulladásra Staphylococcus esetén?",
+      options: ["Gennyes-tályogos jellegű", "Csak vízszerű tej", "Kék tőgy", "Semmi"],
+      correctAnswer: 0,
+      explanation: "A Staphylococcusok jellemzően gennyes folyamatokat és tályogokat okoznak."
+    },
+    {
+      id: "staph_23",
+      topic: "Staphylococcus",
+      type: "mcq",
+      question: "Hogyan lehet megelőzni az újszülöttkori fertőzést?",
+      options: ["Jó kolosztrumfelvétel és higiénia biztosításával", "Sok altatással", "Sötétben tartással", "Nincs mód rá"],
+      correctAnswer: 0,
+      explanation: "A megfelelő passzív immunitás (kolosztrum) és a tiszta környezet kulcsfontosságú."
+    },
+    {
+      id: "staph_24",
+      topic: "Staphylococcus",
+      type: "mcq",
+      question: "Milyen antibiotikum-érzékenységi vizsgálat javasolt?",
+      options: ["Vérvétel", "Antibiogram (izolált kórokozóból)", "Hőmérőzés", "Szemrevételezés"],
+      correctAnswer: 1,
+      explanation: "A rezisztencia (MRSA) miatt elengedhetetlen a pontos érzékenységi vizsgálat."
+    },
+    {
+      id: "staph_25",
+      topic: "Staphylococcus",
+      type: "mcq",
+      question: "Mi a teendő a pörkökkel lemosás előtt?",
+      options: ["Semmi", "Antiszeptikus jódoldatos lemosás javasolt", "Körömlakkal lefesteni", "Beolajozni"],
+      correctAnswer: 1,
+      explanation: "A külső fertőtlenítés segít csökkenteni a baktériumszámot."
+    },
+    {
+      id: "staph_26",
+      topic: "Staphylococcus",
+      type: "mcq",
+      question: "Melyik csoportba tartozik a ceftiofur?",
+      options: ["Penicillin", "3. generációs cefalosporin", "Aminoglikozid", "Makrolid"],
+      correctAnswer: 1,
+      explanation: "A ceftiofur egy széles spektrumú béta-laktám (cefalosporin)."
+    },
+    {
+      id: "staph_27",
+      topic: "Staphylococcus",
+      type: "mcq",
+      question: "Mit jelent a 'polyarthritis'?",
+      options: ["Egy ízület gyulladása", "Több ízület egyidejű gyulladása", "Ízületi daganat", "Bőrgyulladás"],
+      correctAnswer: 1,
+      explanation: "A hematogén (véráram útján történő) terjedés miatt gyakran több ízület érintett."
+    },
+    {
+      id: "staph_28",
+      topic: "Staphylococcus",
+      type: "bool",
+      question: "A Staphylococcusok opportunista kórokozók.",
+      options: ["Igaz", "Hamis"],
+      correctAnswer: 0,
+      explanation: "Igaz, kedvező alkalomra (pl. sérülés, gyenge immunrendszer) várnak a kártételhez."
+    },
+    {
+      id: "staph_29",
+      topic: "Staphylococcus",
+      type: "mcq",
+      question: "Milyen az ízületi folyadék S. aureus arthritis esetén?",
+      options: ["Tiszta", "Savós-gennyes vagy fibrines-gennyes", "Vörös", "Nincs"],
+      correctAnswer: 1,
+      explanation: "A Staphylococcus fertőzésre a gennyes exszudátum a jellemző."
+    },
+    {
+      id: "staph_30",
+      topic: "Staphylococcus",
+      type: "mcq",
+      question: "Mi az agalactia?",
+      options: ["Sok tej", "Tejhiány vagy tejtermelés megszűnése", "Gyors növés", "Hízás"],
+      correctAnswer: 1,
+      explanation: "A mastitis miatt a koca tejtermelése leállhat."
+    },
+    {
+      id: "staph_31",
+      topic: "Staphylococcus",
+      type: "mcq",
+      question: "Hogyan azonosítjuk a Staphylococcust laborban?",
+      options: ["Röntgensugárral", "Biokémiai tesztekkel és MALDI-TOF-fal", "Tapintással", "Ízleléssel"],
+      correctAnswer: 1,
+      explanation: "A modern laboratóriumi diagnosztika ezeket a módszereket használja."
+    },
+    {
+      id: "staph_32",
+      topic: "Staphylococcus",
+      type: "mcq",
+      question: "Melyik Staphylococcus termel exfoliatív toxinokat?",
+      options: ["S. hyicus", "S. aureus", "Mindkettő", "Egyik sem"],
+      correctAnswer: 0,
+      explanation: "A S. hyicus exfoliatív toxinjai okozzák a hám leválását és a kenőcsös jelleget."
+    },
+    {
+      id: "staph_33",
+      topic: "Staphylococcus",
+      type: "bool",
+      question: "A Staphylococcus aureus koaguláz-pozitív.",
+      options: ["Igaz", "Hamis"],
+      correctAnswer: 0,
+      explanation: "Igaz, ez egy fontos faji bélyege."
+    },
+    {
+      id: "staph_34",
+      topic: "Staphylococcus",
+      type: "mcq",
+      question: "Milyen az idült forma a választás utáni malacoknál?",
+      options: ["Halálos", "Lokalizált, enyhébb bőrelváltozások", "Csonttörés", "Tüsszentés"],
+      correctAnswer: 1,
+      explanation: "Az idősebb állatokban a folyamat gyakran kevésbé heveny."
+    },
+    {
+      id: "staph_35",
+      topic: "Staphylococcus",
+      type: "mcq",
+      question: "Mit jelent a 'pyoderma'?",
+      options: ["Bőrgyulladás", "Gennyes bőrgyulladás", "Bőrhámlás", "Bőrkeményedés"],
+      correctAnswer: 1,
+      explanation: "A gennyes bőrfelületi folyamatokat nevezzük így."
+    },
+    {
+      id: "staph_36",
+      topic: "Staphylococcus",
+      type: "mcq",
+      question: "Milyen pigmentet termel a S. aureus?",
+      options: ["Fekete", "Sárgás/Arany", "Zöld", "Kék"],
+      correctAnswer: 1,
+      explanation: "Az aureus név jelentése is arany, a pigmentje miatt."
+    },
+    {
+      id: "staph_37",
+      topic: "Staphylococcus",
+      type: "mcq",
+      question: "Mit okozhat a S. aureus a méhben ellés után?",
+      options: ["Daganatot", "Gennyes méhgyulladást (endometritis)", "Sok malacot", "Semmit"],
+      correctAnswer: 1,
+      explanation: "A sebeken át feljutva gyulladást okozhat, rontva a termékenyülést."
+    },
+    {
+      id: "staph_38",
+      topic: "Staphylococcus",
+      type: "bool",
+      question: "A fülvégelhalás pontos oka nem teljesen tisztázott, de a Staphylococcusok szerepet játszhatnak benne.",
+      options: ["Igaz", "Hamis"],
+      correctAnswer: 0,
+      explanation: "Igaz, összetett kórkép, de a S. hyicus toxinok közreműködhetnek."
+    },
+    {
+      id: "staph_39",
+      topic: "Staphylococcus",
+      type: "mcq",
+      question: "Hogyan festődnek a Staphylococcusok?",
+      options: ["Gram-pozitív (kék/lila)", "Gram-negatív (piros)", "Sárga", "Átlátszó"],
+      correctAnswer: 0,
+      explanation: "Gram-pozitív festődésűek."
     },
     {
       id: "staph_40",
-      topic: "Staphylococcus - Diagnózis",
+      topic: "Staphylococcus",
       type: "mcq",
-      question: "Melyik állítás igaz a Staphylococcusok ellenálló képességére?",
-      options: ["Nagyon érzékenyek", "Viszonylag ellenállóak a kiszáradással és a sóval szemben", "Csak vízben élnek meg", "Azonnal elpusztulnak 40 fokon"],
+      question: "Hány hétig tarthat az ízületgyulladás kezelése?",
+      options: ["1 nap", "2-3 hét", "1 év", "1 óra"],
       correctAnswer: 1,
-      explanation: "A Staphylococcusok jól bírják a környezeti hatásokat és a magas sókoncentrációt."
+      explanation: "A krónikus gennyes folyamatok gyógyulása lassú."
     },
     {
       id: "staph_41",
-      topic: "Staphylococcus - Szeptikémia",
+      topic: "Staphylococcus",
       type: "mcq",
-      question: "Hogyan néz ki a szívizom-tályog makroszkóposan?",
-      options: ["Fekete folt", "Sárgásfehér, körülírt gennyes góc", "Üreges rész", "Vizes hólyag"],
-      correctAnswer: 1,
-      explanation: "A metasztatikus tályogok sárgásfehér gennyet tartalmazó gócok a szervekben."
+      question: "Melyik állítás igaz a Staphylococcusokra?",
+      options: ["Nem spóráznak", "Nem mozgók", "Fakultatív anaerobok", "Mindhárom igaz"],
+      correctAnswer: 3,
+      explanation: "Ezek a baktérium nemzetség alapvető tulajdonságai."
     },
     {
       id: "staph_42",
-      topic: "Staphylococcus - Terápia",
+      topic: "Staphylococcus",
       type: "mcq",
-      question: "Melyik szer használható a bőr fertőtlenítésére kenőcsös bőrgyulladásnál?",
-      options: ["Alkohol", "Hígított jódoldat vagy klórhexidin", "Ecet", "Olaj"],
+      question: "Milyen elhelyezkedésűek a coccusok a kenetben?",
+      options: ["Láncok", "Fürtök", "Kettesével", "Spirál"],
       correctAnswer: 1,
-      explanation: "Az antiszeptikus lemosás csökkenti a baktériumok számát a bőr felszínén."
+      explanation: "A Staphylococcusok jellemzően szőlőfürt-szerű csoportokat alkotnak."
     },
     {
       id: "staph_43",
-      topic: "Staphylococcus - Általános",
+      topic: "Staphylococcus",
       type: "mcq",
-      question: "Milyen szerkezetben látszanak a Staphylococcusok mikroszkóp alatt?",
-      options: ["Láncok", "Szőlőfürtszerű csoportok", "Párok", "Egyesével"],
+      question: "Mit jelent az 'exudátum'?",
+      options: ["Vitamin", "Gyulladásos izzadmány", "Méreg", "Étel"],
       correctAnswer: 1,
-      explanation: "A név a görög 'staphyle' (szőlőfürt) szóból ered."
+      explanation: "A gyulladás során kilépő fehérjedús folyadék."
     },
     {
       id: "staph_44",
-      topic: "Staphylococcus - Epidermitis",
-      type: "bool",
-      question: "A kenőcsös bőrgyulladás általában a választás utáni hízók betegsége.",
-      options: ["Igaz", "Hamis"],
+      topic: "Staphylococcus",
+      type: "mcq",
+      question: "Mi a staphylokináz funkciója?",
+      options: ["Étel emésztése", "Virulenciafaktor (segíti a terjedést)", "Látás javítása", "Nincs neki"],
       correctAnswer: 1,
-      explanation: "Hamis. Elsősorban a szopós és fiatal választott malacokat érinti."
+      explanation: "Egy enzim, ami segíti a baktériumot a szövetekben való terjedésben."
     },
     {
       id: "staph_45",
-      topic: "Staphylococcus - Megelőzés",
+      topic: "Staphylococcus",
       type: "mcq",
-      question: "Mi a legfontosabb a koca-malac kapcsolatban a védekezés szempontjából?",
-      options: ["A malacok elvétele azonnal", "A föcstej (kolosztrum) időben történő felvétele", "A koca fürdetése jéghideg vízben", "Nincs jelentősége"],
+      question: "Melyik antibiotikum-csoportba tartozik az amoxicillin?",
+      options: ["Aminoglikozid", "Penicillin (béta-laktám)", "Tetraciklin", "Szulfonamid"],
       correctAnswer: 1,
-      explanation: "A kolosztrum tartalmazza azokat az antitesteket, amelyek megvédik a malacot az élet első heteiben."
+      explanation: "Az amoxicillin egy félszintetikus penicillin."
     },
     {
       id: "staph_46",
-      topic: "Staphylococcus - Általános",
+      topic: "Staphylococcus",
       type: "mcq",
-      question: "Mit bont a hialuronidáz enzim a Staphylococcusoknál?",
-      options: ["DNS-t", "Kötőszöveti alapállományt (hialuronsavat)", "Fehérjét", "Zsírt"],
+      question: "Mi a teendő ha nem hat az amoxicillin?",
+      options: ["Emeljük a dózist végtelenig", "Végezzünk rezisztenciavizsgálatot és váltsunk hatékony szerre", "Hagyjuk abba a kezelést", "Várjunk"],
       correctAnswer: 1,
-      explanation: "Ez az enzim segíti a baktérium terjedését a szövetekben (spreading factor)."
+      explanation: "A rezisztencia (pl. béta-laktamáz termelés) miatt ilyenkor váltani kell."
     },
     {
       id: "staph_47",
-      topic: "Staphylococcus - Diagnózis",
+      topic: "Staphylococcus",
       type: "mcq",
-      question: "Milyen táptalajt használnak a Staphylococcusok szelektív tenyésztésére?",
-      options: ["McConkey agar", "Mannit-só agar", "Sabouraud agar", "TSI agar"],
-      correctAnswer: 1,
-      explanation: "A Staphylococcusok jól bírják a magas (7.5%) sókoncentrációt, a mannitot pedig fermentálják (sárga szín)."
+      question: "Hogyan előzhető meg a fülvégelhalás?",
+      options: ["Management javításával és a hajlamosító vírusok (pl. PCV2) elleni vakcinázással", "Csak tiszta füllel", "Meleg sapkával", "Semmivel"],
+      correctAnswer: 0,
+      explanation: "Mivel összetett kórkép, a menedzsment és a víruskontroll a legfontosabb."
     },
     {
       id: "staph_48",
-      topic: "Staphylococcus - Általános",
-      type: "bool",
-      question: "A Staphylococcus aureus zoonózis kórokozó.",
-      options: ["Igaz", "Hamis"],
+      topic: "Staphylococcus",
+      type: "mcq",
+      question: "Mi a 'koaguláz' enzim funkciója?",
+      options: ["Vér alvasztása (segít a baktériumnak elrejtőzni)", "Cukor bontása", "Fény termelése", "Nincs"],
       correctAnswer: 0,
-      explanation: "Igaz. Az emberre is veszélyes lehet, különösen a rezisztens törzsek (MRSA)."
+      explanation: "A vérplazmát megalvasztja, fibrinréteget képezve a baci körül."
     },
     {
       id: "staph_49",
-      topic: "Staphylococcus - Epidermitis",
-      type: "mcq",
-      question: "Hány százalékos lehet az elhullás egy kezeletlen, súlyos állományban?",
-      options: ["1-5%", "Akár 70-90%", "Mindig 100%", "0%"],
-      correctAnswer: 1,
-      explanation: "Súlyos, heveny járvány esetén az elhullási arány rendkívül magas lehet fiatal malacokban."
+      topic: "Staphylococcus",
+      type: "bool",
+      question: "A Staphylococcus aureus törzsek egy része sárgás pigmentet termel.",
+      options: ["Igaz", "Hamis"],
+      correctAnswer: 0,
+      explanation: "Igaz, az aureus (arany) név is erre utal."
     },
     {
       id: "staph_50",
-      topic: "Staphylococcus - Általános",
+      topic: "Staphylococcus",
       type: "mcq",
-      question: "Melyik Staphylococcus faj okozhat húgyúti fertőzést kocákban?",
-      options: ["S. aureus", "S. hyicus", "S. saprophyticus", "S. epidermidis"],
-      correctAnswer: 2,
-      explanation: "A S. saprophyticus ismert húgyúti kórokozó."
+      question: "Mi az összegzés fő tanulsága a Staphylococcusokról?",
+      options: ["Mindig halálosak", "Opportunisták, a higiénia és a kolosztrumvédelem a kulcs", "Csak kocákban vannak", "Nem léteznek"],
+      correctAnswer: 1,
+      explanation: "A jó menedzsmenttel és tisztasággal megelőzhető a tömeges kártételük."
     }
   ]
 };

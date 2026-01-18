@@ -1,133 +1,99 @@
 export const glasserData = {
   id: "glasser",
-  title: "15. Glaesserella parasuis (Glässer-kór)",
-  shortTitle: "Glässer-kór",
-  description: "A sertések fertőző savóshártya- és ízületgyulladása (Glaesserella parasuis).",
+  title: "15. Glaesserella parasuis (Glässer-betegség)",
   studyMaterial: [
     {
-      title: "1. Kóroktan és Etiológia",
-      icon: "microscope",
-      color: "bg-blue-50 border-blue-200",
-      iconColor: "text-blue-600",
-      sections: [
+      "title": "1. Kóroktan és Jellemzők",
+      "icon": "bug",
+      "color": "bg-red-50 border-red-200",
+      "iconColor": "text-red-600",
+      "sections": [
         {
-          header: "A Kórokozó Jellemzői",
-          points: [
-            "**Glaesserella parasuis** (korábban *Haemophilus parasuis*).",
-            "Gram-negatív, kisméretű, pleomorf pálca.",
-            "Tenyésztése igényes: **NAD (V-faktor) igényű**. Csokoládéagaron vagy *S. aureus* melletti szatellita növekedéssel tenyészthető."
+          "header": "1.1. Glaesserella parasuis",
+          "points": [
+            "Korábban: *Haemophilus parasuis*",
+            "Gram-negatív, kisméretű, pleomorf pálca",
+            "**NAD (V-faktor) igényes:** Csak csokoládéagaron vagy dajkacsíkkal (S. aureus) nő"
           ]
         },
         {
-          header: "Szerotípusok és Virulencia",
-          points: [
-            "15 szerotípusa ismert (Kielstein-Rapp-Gabrielson séma).",
-            "**Magas virulenciájúak:** 1, 5, 10, 12, 13, 14 (akut Glässer-betegség).",
-            "Magyarországon a **4-es és 5-ös szerotípus** a leggyakoribb.",
-            "A virulencia markere a **vtaA (Group 1)** gének jelenléte."
+          "header": "1.2. Szerotípusok",
+          "points": [
+            "15 szerotípus (tokpoliszacharidok alapján)",
+            "Magas virulenciájúak: 1, 5, 10, 12, 13, 14",
+            "Magyarországon a **4-es és 5-ös szerotípus** a leggyakoribb"
           ]
         }
       ]
     },
     {
-      title: "2. Járványtan",
-      icon: "users",
-      color: "bg-amber-50 border-amber-200",
-      iconColor: "text-amber-600",
-      sections: [
+      "title": "2. Járványtan és Kórfejlődés",
+      "icon": "share-2",
+      "color": "bg-blue-50 border-blue-200",
+      "iconColor": "text-blue-600",
+      "sections": [
         {
-          header: "Kolonizáció és Immunitás",
-          points: [
-            "A felső légutak (orrüreg, tonsilla) természetes kolonizálója.",
-            "A malacok ideális esetben az anyai védelem alatt fertőződnek meg, így aktív immunitás alakul ki.",
-            "**High health status kockázat:** A kórokozóval korábban nem találkozott (naiv) állományokban robbanásszerű járványt okozhat."
+          "header": "2.1. Kolonizáció",
+          "points": [
+            "A felső légutak (orrüreg, tonsillák) természetes lakója",
+            "A malacok az anyjuktól fertőződnek korán",
+            "Betegség akkor van, ha a **naiv malacok** (pl. SPF telep) találkoznak virulens törzzsel"
           ]
         },
         {
-          header: "Hajlamosító Tényezők",
-          points: [
-            "Tipikus **stressz-betegség**: választás, szállítás, huzat, hideg.",
-            "Társfertőzések: **PRRS és Sertésinfluenza (SIV)** drasztikusan növelik a fogékonyságot."
+          "header": "2.2. Hajlamosító tényezők",
+          "points": [
+            "**Stressz-betegség:** Választás, szállítás, falkásítás",
+            "Társfertőzések: **PRRS, Influenza** (károsítják a légúti barriert)",
+            "Rossz klíma: huzat, hideg"
           ]
         }
       ]
     },
     {
-      title: "3. Klinikai Tünetek és Kórbonctan",
-      icon: "activity",
-      color: "bg-purple-50 border-purple-200",
-      iconColor: "text-purple-600",
-      sections: [
+      "title": "3. Tünetek és Kórbonctan",
+      "icon": "activity",
+      "color": "bg-orange-50 border-orange-200",
+      "iconColor": "text-orange-500",
+      "sections": [
         {
-          header: "Klinikai Formák",
-          points: [
-            "**Heveny forma:** Magas láz (40,5-42 °C), bágyadtság.",
-            "**Polyserositis miatti fájdalom:** Nehezített \"hasi légzés\", púposítás, mozgásra visítás.",
-            "**Idegrendszeri tünetek:** Oldalfekvés, evező mozgás, remegés (hasonló a S. suis-hoz).",
-            "**Krónikus forma:** \"Borzas malacok\", lesoványodás, tartós sántaság."
+          "header": "3.1. Klinikai formák",
+          "points": [
+            "**Akut:** Magas láz (41-42 °C), sántaság, duzzadt ízületek, púposítás a fájdalom miatt",
+            "**Idegrendszeri:** Meningitis (oldalfekvés, evező mozgás, remegés)",
+            "**Krónikus:** Lesoványodás ('borzas malacok'), tartós sántaság"
           ]
         },
         {
-          header: "Kórbonctan",
-          points: [
-            "**Fibrines polyserositis:** Sárgás, bőséges fibrines lepedék a mellhártyán, szívburkon (**bundás szív**) és a hashártyán.",
-            "**Arthritis:** Zavaros, fibrines ízületi nedv.",
-            "**Meningitis:** Gennyes-fibrines agyhártyagyulladás."
+          "header": "3.2. Kórbonctan",
+          "points": [
+            "**Fibrines polyserositis iskolapéldája**",
+            "Sárgás fibrinlepedék a tüdőn, szíven ('bundás szív'), májon és beleken",
+            "Zavaros, fibrines ízületi nedv; gennyes-fibrines meningitis"
           ]
         }
       ]
     },
     {
-      title: "4. Diagnosztika és Elkülönítés",
-      icon: "stethoscope",
-      color: "bg-teal-50 border-teal-200",
-      iconColor: "text-teal-600",
-      sections: [
+      "title": "4. Diagnózis és Kezelés",
+      "icon": "search",
+      "color": "bg-slate-50 border-slate-200",
+      "iconColor": "text-slate-500",
+      "sections": [
         {
-          header: "Mintavétel",
-          points: [
-            "Minta: pleura, pericardium, peritoneum, ízületek vagy agyvelő.",
-            "**Fontos:** Az orr/tonsilla minta nem diagnosztikai értékű (hordozás miatt)!",
-            "A baktérium gyorsan pusztul a hullában, friss minta kell."
+          "header": "4.1. Diagnosztika",
+          "points": [
+            "Minta: testüregekből (pleura, pericardium), ízületekből vagy agyvelőből",
+            "**Az orrtampon diagnosztikai szempontból értéktelen** (egészségesekben is ott van)",
+            "PCR: fajazonosítás és virulenciafaktorok (vtaA) meghatározása"
           ]
         },
         {
-          header: "Módszerek",
-          points: [
-            "**PCR:** Leggyorsabb és legpontosabb (vtaA gének és szerotipizálás).",
-            "**Tenyésztés:** Nehézkes, NAD igény miatt."
-          ]
-        }
-      ]
-    },
-    {
-      title: "5. Gyógykezelés és Megelőzés",
-      icon: "syringe",
-      color: "bg-green-50 border-green-200",
-      iconColor: "text-green-600",
-      sections: [
-        {
-          header: "Antibiotikum Választás",
-          points: [
-            "**Ceftiofur:** Kiváló hatékonyság heveny esetekben.",
-            "**Florfenikol:** Nagyon jó szöveti eloszlás, hatékony légzőszervi kórokozó ellen.",
-            "**Amoxicillin:** Ivóvízben vagy takarmányban csoportos kezelésre.",
-            "**Kerülendő:** Tetraciklinek és makrolidok (gyakori rezisztencia)."
-          ]
-        },
-        {
-          header: "Kezelési Stratégia",
-          points: [
-            "Beteg állatok: **egyedi injekció** + **NSAID**.",
-            "Falka: **ivóvízkezelés** 5-7 napig (metafilaxis)."
-          ]
-        },
-        {
-          header: "Megelőzés",
-          points: [
-            "**Vakcinázás:** Inaktivált kereskedelmi (szerotípus-specifikus) vagy autogén vakcinák.",
-            "Kocák oltása fialás előtt a passzív védelemért.",
-            "Menedzsment: Stresszmentes választás, PRRS kontroll."
+          "header": "4.2. Gyógykezelés",
+          "points": [
+            "**Ceftiofur:** Kiváló hatékonyság heveny esetekben",
+            "Amoxicillin, Florfenikol, Enrofloxacin (ha indokolt)",
+            "**NSAID:** Láz- és fájdalomcsillapításra kötelező"
           ]
         }
       ]
@@ -135,74 +101,184 @@ export const glasserData = {
   ],
   questions: [
     {
-      id: "glasser_1",
+      id: "glass_1",
       topic: "Glaesserella parasuis",
-      question: "Mi volt a Glaesserella parasuis korábbi tudományos neve?",
-      options: ["Haemophilus parasuis", "Actinobacillus pleuropneumoniae", "Pasteurella multocida", "Streptococcus suis"],
-      correctAnswer: 0
+      type: "mcq",
+      question: "Mi a Glaesserella parasuis korábbi neve?",
+      options: ["Pasteurella multocida", "Haemophilus parasuis", "Actinobacillus suis", "Streptococcus suis"],
+      correctAnswer: 1,
+      explanation: "A Glaesserella parasuis-t korábban Haemophilus parasuis-ként ismertük (Glässer-kór)."
     },
     {
-      id: "glasser_2",
+      id: "glass_2",
       topic: "Glaesserella parasuis",
-      question: "Milyen speciális igénye van a G. parasuis-nak a laboratóriumi tenyésztés során?",
-      options: ["Oxigénmentes környezet", "NAD (V-faktor) igény", "Magas sókoncentráció", "Csak sejttenyészeten nő"],
-      correctAnswer: 1
+      type: "mcq",
+      question: "Melyik faktor szükséges a G. parasuis növekedéséhez a táptalajban?",
+      options: ["X-faktor", "V-faktor (NAD)", "Csak oxigén", "Cukor"],
+      correctAnswer: 1,
+      explanation: "A G. parasuis NAD-dependens, ezért csokoládéagaron vagy dajkatenyészettel nő."
     },
     {
-      id: "glasser_3",
+      id: "glass_3",
       topic: "Glaesserella parasuis",
-      question: "Mely szerotípusok a leggyakoribbak a G. parasuis izolátumok között Magyarországon?",
-      options: ["1-es és 2-es", "4-es és 5-ös", "10-es és 12-es", "14-es és 15-ös"],
-      correctAnswer: 1
+      type: "mcq",
+      question: "Mely szerotípusok a leggyakoribbak Magyarországon?",
+      options: ["1 és 2", "4 és 5", "10 és 12", "15"],
+      correctAnswer: 1,
+      explanation: "Hazánkban és világszerte a 4-es és 5-ös szerotípus a leggyakoribb klinikai izolátum."
     },
     {
-      id: "glasser_4",
+      id: "glass_4",
       topic: "Glaesserella parasuis",
-      question: "Melyik géncsoport jelenléte utal a G. parasuis törzsek invazivitására és virulenciájára?",
-      options: ["tet(O)", "vtaA (Group 1)", "erm(B)", "blaROB-1"],
-      correctAnswer: 1
+      type: "mcq",
+      question: "Mi a Glässer-betegség jellemző kórbonctani elváltozása?",
+      options: ["Sajtos tüdőgyulladás", "Fibrines polyserositis (többszörös savóshártya-gyulladás)", "Vérzéses bélgyulladás", "Májzsugor"],
+      correctAnswer: 1,
+      explanation: "A G. parasuis sárgás fibrines felrakódásokat okoz a tüdőn, szíven, májon és az ízületekben."
     },
     {
-      id: "glasser_5",
+      id: "glass_5",
       topic: "Glaesserella parasuis",
-      question: "Mi a Glässer-betegség klasszikus kórbonctani elváltozása?",
-      options: ["Elhalásos tüdőgyulladás", "Fibrines polyserositis (pl. bundás szív)", "Lépmegnagyobbodás nélkül", "Kizárólag bőrvérzések"],
-      correctAnswer: 1
+      type: "mcq",
+      question: "Honnan TILOS mintát venni a Glässer-betegség igazolására?",
+      options: ["Szívburokból", "Orrüregből / Tonsillából", "Ízületi folyadékból", "Agyvelőből"],
+      correctAnswer: 1,
+      explanation: "Az orrüregben egészséges állatokban is ott van a baktérium, így onnan nem igazolható a betegség."
     },
     {
-      id: "glasser_6",
+      id: "glass_6",
       topic: "Glaesserella parasuis",
-      question: "Melyik állítás igaz a 'naiv' (kórokozótól mentes) állományok G. parasuis fertőzésére?",
-      options: ["Enyhe lefolyású marad", "Robbanásszerű járványt és magas elhullást okozhat", "Nem betegszenek meg", "Csak az öreg kocák hullanak el"],
-      correctAnswer: 1
+      type: "mcq",
+      question: "Melyik korosztály a legérzékenyebb a Glässer-betegségre?",
+      options: ["Szopós malacok", "4-8 hetes választott malacok", "Kifejlett kanok", "Vemhes kocák"],
+      correctAnswer: 1,
+      explanation: "A választás utáni stresszperiódusban a leggyakoribb a betegség jelentkezése."
     },
     {
-      id: "glasser_7",
+      id: "glass_7",
       topic: "Glaesserella parasuis",
-      question: "Hogyan jellemezhető a Glässer-betegség során jelentkező légzési zavar?",
-      options: ["Száraz, kínzó köhögés", "Nehezített 'hasi légzés' a fájdalmas polyserositis miatt", "Nincs légzési zavar", "Csak tüsszögés"],
-      correctAnswer: 1
+      type: "mcq",
+      question: "Mi jellemző az idegrendszeri formára?",
+      options: ["Vakság", "Oldalfekvés, evező mozgás, görcsök (meningitis)", "Süketség", "Szőrhullás"],
+      correctAnswer: 1,
+      explanation: "Az agyhártyagyulladás miatt az állatok evező mozgást és idegrendszeri kiesési tüneteket mutatnak."
     },
     {
-      id: "glasser_8",
+      id: "glass_8",
       topic: "Glaesserella parasuis",
-      question: "Melyik antibiotikum az egyik leggyakrabban használt szer az akut esetek injekciós kezelésére?",
-      options: ["Penicillin", "Ceftiofur", "Tilozin", "Tiamulin"],
-      correctAnswer: 1
+      type: "mcq",
+      question: "Melyik antibiotikum kiváló választás a heveny esetek injekciós kezelésére?",
+      options: ["Penicillin G", "Ceftiofur", "Tiloszin", "Tetraciklin"],
+      correctAnswer: 1,
+      explanation: "A Ceftiofur rendkívül hatékony a Gram-negatív G. parasuis ellen."
     },
     {
-      id: "glasser_9",
+      id: "glass_9",
       topic: "Glaesserella parasuis",
-      question: "Miért fontos a G. parasuis esetén a szerotipizálás a vakcinázás előtt?",
-      options: ["Mert a védelem szerotípus-specifikus", "Mert így olcsóbb a vakcina", "Mert csak így lehet beadni", "Mert a hatóság előírja"],
-      correctAnswer: 0
+      type: "mcq",
+      question: "Miért fontos az anyai immunitás (kolosztrum) a Glässer-betegségnél?",
+      options: ["Mert finom", "Lehetővé teszi a kolonizációt betegség kialakulása nélkül (immunitást ad)", "Megöli az összes baktériumot", "Nincs szerepe"],
+      correctAnswer: 1,
+      explanation: "Az anyai ellenanyagok védelme alatt a malacok találkoznak a baktériummal és saját immunitást építenek ki."
     },
     {
-      id: "glasser_10",
+      id: "glass_10",
       topic: "Glaesserella parasuis",
-      question: "Honnan KELL mintát venni a szisztémás Glässer-betegség biztos igazolásához?",
-      options: ["Orrnyílás", "Mandula", "Testüregek (pleura, pericardium) vagy agyvelő", "Bélsár"],
-      correctAnswer: 2
+      type: "mcq",
+      question: "Mit jelent a 'bundás szív' kifejezés?",
+      options: ["Szőr nő a szíven", "Fibrines pericarditis (vastag sárgás lepedék a szívburkon)", "Nagyobb szív", "Zsíros szív"],
+      correctAnswer: 1,
+      explanation: "A szívburok fibrines gyulladása miatt a szív felszíne borzas, sárgás lepedékkel fedett."
+    },
+    {
+      id: "glass_11",
+      topic: "Glaesserella parasuis",
+      type: "mcq",
+      question: "Melyik vírusfertőzés hajlamosít leginkább a Glässer-betegségre?",
+      options: ["Parvovírus", "PRRS", "Rotavírus", "Veszettség"],
+      correctAnswer: 1,
+      explanation: "A PRRS vírus gyengíti az immunrendszert, utat nyitva a G. parasuis inváziójának."
+    },
+    {
+      id: "glass_12",
+      topic: "Glaesserella parasuis",
+      type: "mcq",
+      question: "Milyen az ízületi nedv Glässer-betegségben?",
+      options: ["Tiszta", "Zavaros, sárgás-zöldes fibrines csapadékkal", "Csak tiszta vér", "Nincs folyadék"],
+      correctAnswer: 1,
+      explanation: "Az ízületi gyulladás fibrines jellegű, zavaros folyadékkal."
+    },
+    {
+      id: "glass_13",
+      topic: "Glaesserella parasuis",
+      type: "mcq",
+      question: "Mi a teendő a 'naiv' állományokkal a biosecurity szempontjából?",
+      options: ["Mindent szabad", "Szigorú karantén és védelem a behurcolás ellen (katasztrofális lehet a kitörés)", "Nem kell védekezni", "Minden malacot beoltani"],
+      correctAnswer: 1,
+      explanation: "A korábban mentes állományokban nincs alapimmunitás, így a kórokozó bejutása óriási pusztítást okoz."
+    },
+    {
+      id: "glass_14",
+      topic: "Glaesserella parasuis",
+      type: "mcq",
+      question: "Melyik gén felelős a virulencia meghatározásáért PCR-nél?",
+      options: ["toxA", "vtaA", "stx2e", "tet(B)"],
+      correctAnswer: 1,
+      explanation: "A vtaA gének vizsgálatával a törzsek virulenciája (betegségokozó képessége) becsülhető."
+    },
+    {
+      id: "glass_15",
+      topic: "Glaesserella parasuis",
+      type: "mcq",
+      question: "Milyen antibiotikum-rezisztencia gyakori a G. parasuis-nál?",
+      options: ["Ceftiofur rezisztencia", "Tetraciklin és makrolid rezisztencia", "Nincs rezisztencia", "Csak penicillin rezisztencia"],
+      correctAnswer: 1,
+      explanation: "A tetraciklinekre és a tilozinra (makrolid) gyakran rezisztensek a törzsek."
+    },
+    {
+      id: "glass_16",
+      topic: "Glaesserella parasuis",
+      type: "mcq",
+      question: "Hogyan hívják a krónikus esetet túlélő állatokat?",
+      options: ["Hősök", "Borzas malacok (soványak, szőrösek)", "Óriások", "Nincs nevük"],
+      correctAnswer: 1,
+      explanation: "A krónikus gyulladás és összenövések miatt a malacok fejlődése megáll, szőrük borzas lesz."
+    },
+    {
+      id: "glass_17",
+      topic: "Glaesserella parasuis",
+      type: "mcq",
+      question: "Melyik állítás igaz a vakcinázásra?",
+      options: ["Csak egy szerotípus létezik", "A védelem szerotípus-specifikus (tudni kell, mi van a telepen)", "A vakcina megöli a vírusokat", "Minden vakcina egyforma"],
+      correctAnswer: 1,
+      explanation: "Mivel 15 szerotípus van, a vakcinának tartalmaznia kell a telepen lévő törzset a hatékonysághoz."
+    },
+    {
+      id: "glass_18",
+      topic: "Glaesserella parasuis",
+      type: "mcq",
+      question: "Miért 'stressz-betegség' a Glässer-kór?",
+      options: ["Mert a gazda stresszes", "Mert a stresszhatások (szállítás, keverés) váltják ki a tünetmentes hordozókból a betegséget", "Mert fáj a fejük", "Nem az"],
+      correctAnswer: 1,
+      explanation: "A baktérium sok állatban ott van, de csak a stressz okozta legyengüléskor válik kórokozóvá."
+    },
+    {
+      id: "glass_19",
+      topic: "Glaesserella parasuis",
+      type: "mcq",
+      question: "Mit jelent a 'hasi légzés' Glässer-betegségben?",
+      options: ["Hason fekve alszanak", "A mellhártyagyulladás fájdalma miatt az állat igyekszik csak a hasi izmokkal lélegezni", "Sokat esznek", "Gyors légzés"],
+      correctAnswer: 1,
+      explanation: "A pleuritis (mellhártyagyulladás) rendkívül fájdalmas, ezért a sertés kerüli a mellkas tágítását."
+    },
+    {
+      id: "glass_20",
+      topic: "Glaesserella parasuis",
+      type: "mcq",
+      question: "Mi az összefoglalás lényege a Glässer-betegségnél?",
+      options: ["Nem veszélyes", "Választott malacok súlyos fibrines polyserositise, amit stressz és vírusok segítenek elő", "Csak idős kocák betegsége", "Hasmenést okoz"],
+      correctAnswer: 1,
+      explanation: "A Glässer-kór az egyik legjelentősebb választás körüli betegség, komoly mortalitási kockázattal."
     }
   ]
 };

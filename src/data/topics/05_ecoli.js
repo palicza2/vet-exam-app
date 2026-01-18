@@ -1,113 +1,121 @@
 export const ecoliData = {
   id: "ecoli",
-  title: "5. Escherichia coli megbetegedések",
+  title: "5. Escherichia coli fertőzések",
   studyMaterial: [
     {
-      title: "1. A Kórokozó és Patotípusok",
-      icon: "microscope",
-      color: "bg-blue-50 border-blue-200",
-      iconColor: "text-blue-500",
-      sections: [
+      "title": "1. A kórokozó jellemzése",
+      "icon": "microscope",
+      "color": "bg-blue-50 border-blue-200",
+      "iconColor": "text-blue-500",
+      "sections": [
         {
-          header: "Escherichia coli",
-          points: [
-            "**Gram-negatív**, pálca alakú baktérium, a bélflóra normális tagja is lehet.",
-            "**ETEC (Enterotoxint termelő):** Hasmenést okoz újszülött és választott malacokban.",
-            "**EPEC (Enteropatogén):** Tapadásával károsítja a bélbolyhokat (AEEC - attaching-and-effacing).",
-            "**VTEC / EDEC (Verotoxint termelő):** Az ödémabetegség okozója.",
-            "**ExPEC:** Bélcsatornán kívüli fertőzések (szepszis)."
-          ]
-        }
-      ]
-    },
-    {
-      title: "2. Virulenciafaktorok",
-      icon: "bug",
-      color: "bg-red-50 border-red-200",
-      iconColor: "text-red-500",
-      sections: [
-        {
-          header: "Adhéziós faktorok (Fimbriák)",
-          points: [
-            "A bélfalhoz való tapadást biztosítják.",
-            "**Újszülöttekben:** F4 (K88), F5 (K99), F6 (987P), F41.",
-            "**Választott malacokban:** F18 (fontos az ödémabetegségnél és PWD-nél is)."
+          "header": "1.1. Általános jellemzők",
+          "points": [
+            "**Gram-negatív**, pálca alakú baktérium",
+            "A normál bélflóra része, de bizonyos virulenciafaktorokkal rendelkező törzsei megbetegedést okoznak",
+            "**Fakultatív anaerob**, 24 óra alatt kiválóan növekszik"
           ]
         },
         {
-          header: "Toxinok",
-          points: [
-            "**LT (Hőlabilis toxin):** cAMP szintet emel, szekréciós hasmenést okoz.",
-            "**STa, STb (Hőstabil toxinok):** cGMP szintet emelnek vagy Ca-felszabadulást okoznak.",
-            "**Stx2e (Shiga-toxin / Verotoxin):** Az érfalakat károsítja (fibrinoid nekrózis) -> ödémabetegség."
+          "header": "1.2. Főbb patotípusok sertésben",
+          "points": [
+            "**ETEC (Enterotoxint termelő):** Legfontosabb; hasmenést okoz toxinok útján",
+            "**EPEC (Enteropatogén):** Az intimin fehérjével tapad, károsítja a mikrobolyhokat",
+            "**STEC/VTEC (Shiga-toxint termelő):** Ödémabetegség okozója",
+            "**ExPEC (Extraintestinalis):** Bélből kijutva szeptikémiát, tőgy- vagy méhgyulladást okoz"
           ]
         }
       ]
     },
     {
-      title: "3. Klinikai Megjelenési Formák",
-      icon: "activity",
-      color: "bg-purple-50 border-purple-200",
-      iconColor: "text-purple-500",
-      sections: [
+      "title": "2. Virulenciafaktorok (ETEC)",
+      "icon": "zap",
+      "color": "bg-yellow-50 border-yellow-200",
+      "iconColor": "text-yellow-600",
+      "sections": [
         {
-          header: "Hasmenéses kórképek",
-          points: [
-            "**Újszülöttkori colibacillosis (1-4 nap):** Hirtelen fellépő, nagy mennyiségű vízszerű hasmenés, gyors kiszáradás.",
-            "**Szopós malacok hasmenése:** 5 napos kortól választásig. Gyakran kevert fertőzés (rotavírus, coccidium).",
-            "**Választás utáni hasmenés (PWD):** Stressz és takarmányváltás után. Folyadékvesztés, néha vérzés nélkül."
+          "header": "2.1. Tapadás (Fimbriák)",
+          "points": [
+            "**Újszülöttkor:** F5 (K99), F6 (987P), F41 fimbriák",
+            "**Szopós és választott kor:** F4 (K88), F18 fimbriák",
+            "A fimbriák segítségével tapadnak a bélhámsejtek receptoraihoz"
           ]
         },
         {
-          header: "Ödémabetegség (EDEC)",
-          points: [
-            "**Időpont:** Választás után 1-2 héttel, gyors növekedési szakaszban.",
-            "**Tünetek:** Hirtelen neurológiai jelek (ataxia, bénulás), rekedt hang (gégeödéma).",
-            "**Külső jelek:** **Duzzadt arc, szemhéjak és orrhát**.",
-            "**Kimenetel:** Gyors elhullás (fulladás).",
-            "**Kórbonctan:** Gyomorfal ödémája, agytörzsi kiserek károsodása."
+          "header": "2.2. Toxinok",
+          "points": [
+            "**Enterotoxinok:** LT (hőlabilis), STa és STb (hőstabil)",
+            "**Hatás:** Fokozzák a Cl⁻ szekréciót, gátolják a Na⁺ és víz visszaszívását",
+            "**Eredmény:** Szekréciós hasmenés (a bélhám szerkezetileg ép marad!)"
           ]
         }
       ]
     },
     {
-      title: "4. Diagnózis",
-      icon: "stethoscope",
-      color: "bg-amber-50 border-amber-200",
-      iconColor: "text-amber-600",
-      sections: [
+      "title": "3. Klinikai formák",
+      "icon": "alert-triangle",
+      "color": "bg-orange-50 border-orange-200",
+      "iconColor": "text-orange-500",
+      "sections": [
         {
-          header: "Kórbonctan és Labor",
-          points: [
-            "**Boncolás:** Hasmenésnél telt bélkapillárisok, híg béltartalom, ép bélbolyhok (ETEC).",
-            "**Ödémabetegség:** Gyomorfal ödéma, agyi érkárosodás.",
-            "**Tenyésztés:** Aerob, gyakran hemolizáló telepek véres agaron.",
-            "**Tipizálás:** Fimbria- és toxinantigének kimutatása (ELISA, PCR)."
-          ]
-        }
-      ]
-    },
-    {
-      title: "5. Kezelés és Megelőzés",
-      icon: "syringe",
-      color: "bg-green-50 border-green-200",
-      iconColor: "text-green-600",
-      sections: [
-        {
-          header: "Terápia",
-          points: [
-            "**Folyadékpótlás:** Elektrolitok (szájon át vagy infúzió) kulcsfontosságú.",
-            "**Antibiotikum:** Érzékenységi vizsgálat alapján! (ESBL veszély).",
-            "**Takarmány:** Rost növelése, fehérje csökkentése választáskor."
+          "header": "3.1. Újszülöttkori colihasmenés",
+          "points": [
+            "Élet első napjaiban; vizes, sárgás hasmenés",
+            "**Boncolás:** Híg béltartalom, de a bélfal ép, a bélfodri nyirokerek tejfehérek (felszívódott zsír miatt - a bélhám működik!)",
+            "**Ok:** Kolosztrumhiány, hideg környezet"
           ]
         },
         {
-          header: "Megelőzés",
-          points: [
-            "**Vakcinázás:** Kocák oltása (vemhesség végén) -> kolosztrális védelem (F4, F5, F6, F41).",
-            "**Malacok oltása:** Szájon át adható élő (toxin-inaktivált) vakcinák (F4, F18).",
-            "**Genetika:** Receptor-negatív sertésvonalak tenyésztése (rezisztencia az F4/F18-ra).",
-            "**Adalékok:** Probiotikumok, szerves savak, cink-oxid (ZnO - bár alkalmazása korlátozott)."
+          "header": "3.2. Választás utáni colihasmenés",
+          "points": [
+            "Stressz és takarmányváltás hatására (4–6 hetes korban)",
+            "Főleg F4-fimbriás ETEC törzsek",
+            "Tünet: híg bélsár, dehidráció, 'csapzott' hát"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "4. Diagnózis és Kezelés",
+      "icon": "search",
+      "color": "bg-slate-50 border-slate-200",
+      "iconColor": "text-slate-500",
+      "sections": [
+        {
+          "header": "4.1. Diagnosztika",
+          "points": [
+            "Kórtörténet és életkor alapján gyanítható",
+            "**PCR:** A virulenciagének (fimbriák, toxinok) kimutatása döntő",
+            "Sima E. coli kimutatása nem elég, mert a normál flórában is ott van!"
+          ]
+        },
+        {
+          "header": "4.2. Terápia",
+          "points": [
+            "**Antibiotikum:** Amoxicillin, kolisztin, fluorokinolonok, neomycin",
+            "**Rezisztencia:** ESBL-termelés (kiterjesztett spektrumú béta-laktamáz) egyre gyakoribb!",
+            "**Szupportív:** Folyadék- és elektrolitpótlás, melegítés"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "5. Megelőzés",
+      "icon": "shield-check",
+      "color": "bg-emerald-50 border-emerald-200",
+      "iconColor": "text-emerald-500",
+      "sections": [
+        {
+          "header": "5.1. Vakcinázás",
+          "points": [
+            "**Kocák oltása:** A vemhesség végén (fimbria-antigénekkel), kolosztrális védelmet ad",
+            "**Malacok orális immunizálása:** Legyengített törzsekkel választás körül"
+          ]
+        },
+        {
+          "header": "5.2. Menedzsment",
+          "points": [
+            "Fialó fertőtlenítése, száraz/meleg fészek, fokozatos választás, cink-oxid használata"
           ]
         }
       ]
@@ -116,453 +124,453 @@ export const ecoliData = {
   questions: [
     {
       id: "ecoli_1",
-      topic: "E. coli - Általános",
+      topic: "E. coli",
       type: "mcq",
-      question: "Milyen Gram-festődésű és alakú az E. coli?",
-      options: ["Gram-pozitív coccus", "Gram-negatív pálca", "Gram-pozitív pálca", "Gram-negatív coccus"],
-      correctAnswer: 1,
-      explanation: "Az E. coli egy Gram-negatív pálca alakú baktérium."
+      question: "Melyik E. coli patotípus a legfontosabb hasmenést okozó csoport sertésben?",
+      options: ["ETEC", "EPEC", "STEC", "ExPEC"],
+      correctAnswer: 0,
+      explanation: "Az ETEC (Enterotoxint termelő E. coli) felelős a legtöbb hasmenéses megbetegedésért."
     },
     {
       id: "ecoli_2",
-      topic: "E. coli - Virulencia",
+      topic: "E. coli",
       type: "mcq",
-      question: "Melyik fimbria antigén fontos a választás utáni malacoknál?",
-      options: ["F5 (K99)", "F6 (987P)", "F18", "F41"],
-      correctAnswer: 2,
-      explanation: "Választás után az F18 fimbria válik jelentőssé a megtapadásban."
+      question: "Hogyan tapadnak az ETEC törzsek a bélhámsejtekhez?",
+      options: ["Ostorral", "Fimbriákkal (adhézinekkel)", "Tokkal", "Spórával"],
+      correctAnswer: 1,
+      explanation: "A fimbriák (pl. F4, F5) teszik lehetővé a specifikus tapadást a receptorokhoz."
     },
     {
       id: "ecoli_3",
-      topic: "E. coli - Hasmenés",
+      topic: "E. coli",
       type: "mcq",
-      question: "Mi jellemzi az ETEC okozta hasmenés mechanizmusát?",
-      options: ["Bélbolyhok elpusztítása", "Szekréciós hasmenés (ion- és vízvesztés a toxinok miatt)", "Bélfal kilyukadása", "Vérzéses gyulladás"],
+      question: "Melyik fimbria jellemző az újszülöttkori colihasmenésre?",
+      options: ["F18", "F5 (K99)", "P-fimbria", "Nincs fimbriájuk"],
       correctAnswer: 1,
-      explanation: "Az ETEC toxinok (LT, ST) az ioncsatornák zavarával szekréciós (vizes) hasmenést okoznak."
+      explanation: "Az újszülött malacokban az F5, F6 és F41 fimbriák a leggyakoribbak."
     },
     {
       id: "ecoli_4",
-      topic: "E. coli - Ödémabetegség",
+      topic: "E. coli",
       type: "mcq",
-      question: "Melyik toxin felelős az ödémabetegség kialakulásáért?",
-      options: ["LT (Hőlabilis toxin)", "STa (Hőstabil toxin)", "Stx2e (Shiga-toxin / Verotoxin)", "Béta-toxin"],
-      correctAnswer: 2,
-      explanation: "Az ödémabetegséget a Shiga-toxin (Stx2e) érkárosító hatása okozza."
+      question: "Milyen típusú hasmenést okoznak az ETEC toxinok?",
+      options: ["Malabszorpciós (felszívódási zavar)", "Szekréciós (folyadékkiválasztás fokozódása)", "Véres", "Nem okoznak hasmenést"],
+      correctAnswer: 1,
+      explanation: "A toxinok a Cl- kiválasztást növelik és gátolják a Na+ visszaszívást, ami szekréciós hasmenést okoz."
     },
     {
       id: "ecoli_5",
-      topic: "E. coli - Ödémabetegség",
+      topic: "E. coli",
       type: "mcq",
-      question: "Melyik klinikai tünet jellemző az ödémabetegségre?",
-      options: ["Véres hasmenés", "Duzzadt arc és szemhéjak", "Folyamatos köhögés", "Sántaság"],
-      correctAnswer: 1,
-      explanation: "Az arc és szemhéj ödémája az ödémabetegség klasszikus tünete."
+      question: "Mi látható a bélfodri nyirokerekben újszülöttkori colihasmenésnél boncoláskor?",
+      options: ["Vér", "Gázbuborékok", "Tejfehér folyadék (felszívódott zsír)", "Üresek"],
+      correctAnswer: 2,
+      explanation: "A fehér nyirokerek azt jelzik, hogy a bélhám ép és képes a tápanyagok (zsír) felszívására."
     },
     {
       id: "ecoli_6",
-      topic: "E. coli - Diagnózis",
-      type: "bool",
-      question: "Az ETEC-fertőzés során a bélbolyhok súlyosan károsodnak és elpusztulnak.",
-      options: ["Igaz", "Hamis"],
+      topic: "E. coli",
+      type: "mcq",
+      question: "Melyik fehérje segítségével tapad az EPEC patotípus a bélhámhoz?",
+      options: ["Exotoxin", "Intimin", "Hemolizin", "Inzulin"],
       correctAnswer: 1,
-      explanation: "Hamis. Az ETEC-nél a bélbolyhok épek maradnak, a hasmenés funkcionális (toxin-mediált)."
+      explanation: "Az EPEC törzsek az intimin fehérje révén hoznak létre szoros kötődést (attachment/effacement)."
     },
     {
       id: "ecoli_7",
-      topic: "E. coli - Megelőzés",
+      topic: "E. coli",
       type: "mcq",
-      question: "Hogyan kapják meg a védelmet az újszülött malacok a koca vakcinázása után?",
-      options: ["Méhlepényen át", "A föcstejjel (kolosztrális immunitás)", "A koca nyálával", "Közvetlen érintkezéssel"],
-      correctAnswer: 1,
-      explanation: "A koca vemhesség végi vakcinázása ellenanyagokat juttat a kolosztrumba."
+      question: "Melyik fimbria játszik szerepet a választás utáni hasmenésben és az ödémabetegségben?",
+      options: ["F5", "F6", "F18", "F41"],
+      correctAnswer: 2,
+      explanation: "Az F18 fimbria receptorai csak idősebb malacokban jelennek meg a bélhám felszínén."
     },
     {
       id: "ecoli_8",
-      topic: "E. coli - Megelőzés",
+      topic: "E. coli",
       type: "mcq",
-      question: "Mit jelent a genetikai rezisztencia az E. coli esetében?",
-      options: ["A sertés nem eszi meg a baktériumot", "A bélhámsejtekből hiányoznak a fimbria-receptorok", "A sertésnek több gyomorsava van", "A sertés gyorsabban fut"],
+      question: "Mit jelent az ESBL rövidítés?",
+      options: ["Nagyon Erős Baci", "Kiterjesztett spektrumú béta-laktamáz (antibiotikum rezisztencia enzim)", "Európai Sertés Labor", "Extra Sós Béltartalom"],
       correctAnswer: 1,
-      explanation: "Egyes sertésvonalak nem rendelkeznek az F4 vagy F18 receptorokkal, így a baktérium nem tud megtapadni."
+      explanation: "Az ESBL-termelő baktériumok rezisztensek a legtöbb béta-laktám antibiotikumra (pl. cefalosporinok)."
     },
     {
       id: "ecoli_9",
-      topic: "E. coli - Ödémabetegség",
+      topic: "E. coli",
       type: "mcq",
-      question: "Milyen jellegzetes tünet utal a gége ödémájára ödémabetegségben?",
-      options: ["Hányás", "Rekedt hangú visítás", "Tüsszögés", "Nyelési nehézség"],
+      question: "Melyik diagnosztikai módszer alkalmas a virulenciagének gyors kimutatására?",
+      options: ["Röntgen", "PCR", "Tapintás", "Ízlelés"],
       correctAnswer: 1,
-      explanation: "A gége ödémája miatt a malacok hangja rekedtté válik."
+      explanation: "A PCR segítségével azonosíthatók a toxinok és fimbriák génjei a baktériumban."
     },
     {
       id: "ecoli_10",
-      topic: "E. coli - Terápia",
+      topic: "E. coli",
       type: "mcq",
-      question: "Mi a legfontosabb tennivaló súlyos hasmenéses malacoknál?",
-      options: ["Csak antibiotikum adása", "Folyadék- és elektrolitpótlás", "Elválasztás az anyjától", "Hideg fürdő"],
+      question: "Mikor a legcélszerűbb a kocák vakcinázása E. coli ellen?",
+      options: ["Fedeztetéskor", "A vemhesség utolsó harmadában", "Ellés után közvetlenül", "Soha"],
       correctAnswer: 1,
-      explanation: "A kiszáradás megelőzése és kezelése (elektrolitok) életmentő."
+      explanation: "A vemhesség végén végzett oltás biztosítja a legmagasabb ellenanyagszintet a kolosztrumban."
     },
     {
       id: "ecoli_11",
-      topic: "E. coli - Általános",
-      type: "mcq",
-      question: "Melyik patotípus felelős az 'AEEC' elváltozásért?",
-      options: ["ETEC", "EPEC", "ExPEC", "VTEC"],
-      correctAnswer: 1,
-      explanation: "Az EPEC (enteropatogén) törzsek okozzák az attaching-and-effacing (tapadás és letörlés) elváltozást."
+      topic: "E. coli",
+      type: "bool",
+      question: "Az E. coli Gram-negatív pálca alakú baktérium.",
+      options: ["Igaz", "Hamis"],
+      correctAnswer: 0,
+      explanation: "Igaz, az Enterobacteriaceae család tagja."
     },
     {
       id: "ecoli_12",
-      topic: "E. coli - Megelőzés",
-      type: "mcq",
-      question: "Melyik fimbria antigén jelenléte utalhat arra, hogy a koca vakcinázása elmaradt?",
-      options: ["F5 (K99)", "F18", "AIDA", "eae"],
-      correctAnswer: 0,
-      explanation: "Az F5 (K99) elleni védelem alapvető a kereskedelmi koca-vakcinákban."
+      topic: "E. coli",
+      type: "bool",
+      question: "Az ETEC törzsek súlyos bélbolyoh-pusztulást okoznak.",
+      options: ["Igaz", "Hamis"],
+      correctAnswer: 1,
+      explanation: "Hamis, az ETEC okozta hasmenés során a bélhám szerkezetileg ép marad."
     },
     {
       id: "ecoli_13",
-      topic: "E. coli - Diagnózis",
-      type: "bool",
-      question: "A legtöbb patogén E. coli törzs véres agaron hemolizál.",
-      options: ["Igaz", "Hamis"],
-      correctAnswer: 0,
-      explanation: "Igaz. A virulens törzsek (különösen az F4-pozitívak) gyakran mutatnak hemolízist."
+      topic: "E. coli",
+      type: "mcq",
+      question: "Melyik a legfontosabb szupportív kezelés colihasmenés esetén?",
+      options: ["Altatás", "Folyadék- és elektrolitpótlás", "Vitaminszuri", "Vérátömlesztés"],
+      correctAnswer: 1,
+      explanation: "A malacok az el nem távozó folyadék és sók hiánya miatt pusztulnak el, így a pótlásuk létfontosságú."
     },
     {
       id: "ecoli_14",
-      topic: "E. coli - Ödémabetegség",
+      topic: "E. coli",
       type: "mcq",
-      question: "Hol okozza a legnagyobb kárt a Shiga-toxin az ödémabetegség során?",
-      options: ["Májsejtekben", "A kisartériák falában (fibrinoid nekrózis)", "Izomszövetben", "Csontvelőben"],
+      question: "Milyen színű jellemzően a colihasmenéses bélsár?",
+      options: ["Véres piros", "Sárgás vagy fehéres, híg/vizes", "Fekete", "Zöld"],
       correctAnswer: 1,
-      explanation: "A toxin az érfalak endotheljét károsítja, ami ödémához és elhaláshoz vezet."
+      explanation: "Az újszülöttkori colira a sárgás, vízszerű hasmenés jellemző."
     },
     {
       id: "ecoli_15",
-      topic: "E. coli - Terápia",
+      topic: "E. coli",
       type: "mcq",
-      question: "Miért javasolt a takarmány fehérjetartalmának csökkentése választáskor?",
-      options: ["Mert túl drága", "Mert a felesleges fehérje kedvez a patogén E. coli szaporodásának", "Mert a malac nem szereti", "Hogy több rostot egyen"],
-      correctAnswer: 1,
-      explanation: "A magas fehérjetartalom kedvez a baktériumok elszaporodásának a bélben."
+      question: "Melyik fimbria receptorai hiányoznak az újszülött malacokból?",
+      options: ["F4", "F5", "F18", "F6"],
+      correctAnswer: 2,
+      explanation: "Az F18 receptorai csak a 3. hét után jelennek meg a bélhámsejteken."
     },
     {
       id: "ecoli_16",
-      topic: "E. coli - Általános",
+      topic: "E. coli",
       type: "mcq",
-      question: "Melyik korcsoportban fordul elő a PWD (post-weaning diarrhea)?",
-      options: ["Újszülöttek", "Választás utáni malacok", "Kocák", "Kanok"],
+      question: "Hogyan hat a hideg környezet a malacok colihasmenésére?",
+      options: ["Gyógyítja", "Súlyosbítja (hajlamosító tényező)", "Nincs hatása", "Megállítja a baktériumokat"],
       correctAnswer: 1,
-      explanation: "PWD = Választás utáni hasmenés."
+      explanation: "A hideg gyengíti a malacok ellenállását és lassítja a bélmozgást, segítve a colik elszaporodását."
     },
     {
       id: "ecoli_17",
-      topic: "E. coli - Virulencia",
+      topic: "E. coli",
       type: "mcq",
-      question: "Hogyan hat az LT toxin a sejtben?",
-      options: ["Gátolja a fehérjeszintézist", "Emeli a cAMP szintet", "Roncsolja a sejtmagot", "Bénítja az izmokat"],
-      correctAnswer: 1,
-      explanation: "Az LT toxin az adenilát-cikláz stimulálásával cAMP növekedést okoz."
+      question: "Melyik patotípus felelős a tőgygyulladásért?",
+      options: ["ETEC", "EPEC", "ExPEC", "VTEC"],
+      correctAnswer: 2,
+      explanation: "Az extraintestinalis (bélcsatornán kívüli) törzsek okoznak mastitist."
     },
     {
       id: "ecoli_18",
-      topic: "E. coli - Ödémabetegség",
+      topic: "E. coli",
       type: "mcq",
-      question: "Milyen neurológiai tünet jellemző az ödémabetegségre?",
-      options: ["Túlzott éberség", "Ataxia (mozgászavar), paresis és bénulás", "Szemtengelyferdülés", "Csuklás"],
+      question: "Mi a kolisztin-szulfát fő jellemzője?",
+      options: ["Csak vírusra hat", "Bélből nem szívódik fel, így helyileg hat a colikra", "Mérgező a sertésre", "Mindenre jó"],
       correctAnswer: 1,
-      explanation: "Az agyi ödéma és érkárosodás súlyos mozgáskoordinációs zavarokat okoz."
+      explanation: "A kolisztin kiválóan alkalmas a bélcsatorna fertőtlenítésére szájon át adva."
     },
     {
       id: "ecoli_19",
-      topic: "E. coli - Diagnózis",
+      topic: "E. coli",
       type: "mcq",
-      question: "Melyik baktériumot kell elkülöníteni (differenciál diagnózis) hasmenés esetén?",
-      options: ["Salmonella", "Rotavírus", "Coccidium", "Mindhármat"],
-      correctAnswer: 3,
-      explanation: "A hasmenésnek számos kórokozója lehet, amelyeket laboratóriumi úton kell elkülöníteni."
+      question: "Mi történik a Na+ felszívódással ETEC fertőzéskor?",
+      options: ["Fokozódik", "Gátlódik", "Változatlan", "Azonnal megszűnik"],
+      correctAnswer: 1,
+      explanation: "A toxinok gátolják a nátrium visszaszívását, ami magával rántja a vizet a bélbe."
     },
     {
       id: "ecoli_20",
-      topic: "E. coli - Megelőzés",
-      type: "mcq",
-      question: "Mit jelent a 'kompetitív kizárás' a vakcinázásnál?",
-      options: ["A baktériumok birkóznak", "A vakcinatörzs elfoglalja a receptorokat a vad törzsek elől", "A sertés nem engedi be a baktériumot", "A koca elűzi a malacot"],
-      correctAnswer: 1,
-      explanation: "Az élő vakcina megtapad a bélfalon, így a patogén törzsek nem találnak szabad kötőhelyet."
+      topic: "E. coli",
+      type: "bool",
+      question: "Az E. coli baktériumok mozgásra képesek (többségük).",
+      options: ["Igaz", "Hamis"],
+      correctAnswer: 0,
+      explanation: "Igaz, a legtöbb E. coli törzs rendelkezik peritrich ostorokkal."
     },
     {
       id: "ecoli_21",
-      topic: "E. coli - Általános",
+      topic: "E. coli",
       type: "mcq",
-      question: "Melyik szervrendszert érinti az ExPEC (Extraintestinal Pathogenic E. coli)?",
-      options: ["Csak a bélcsatornát", "Bélcsatornán kívüli szerveket (pl. tüdő, agyhártya, vese, véráram)", "Csak a bőrt", "Csak a patákat"],
+      question: "Milyen kémhatású jellemzően a colihasmenéses bélsár?",
+      options: ["Savanyú", "Lúgos", "Semleges", "Erősen savas"],
       correctAnswer: 1,
-      explanation: "Az ExPEC törzsek szepszist, meningitiszt vagy húgyúti fertőzéseket okoznak a bélen kívül."
+      explanation: "A szekréciós hasmenés lúgos kémhatású (szemben pl. a rotavírusos savanyú hasmenéssel)."
     },
     {
       id: "ecoli_22",
-      topic: "E. coli - Ödémabetegség",
+      topic: "E. coli",
       type: "mcq",
-      question: "Mi a Shiga-toxin receptorának neve a sertés ereiben?",
-      options: ["CD4", "Gb3 (vagy Gb4)", "ACE2", "Glükóz-receptor"],
+      question: "Hogyan jut el az ellenanyag a malachoz kocaoltás után?",
+      options: ["A méhlepényen át", "A kolosztrummal (föcstejjel)", "A levegőből", "Injekcióval"],
       correctAnswer: 1,
-      explanation: "A toxin a glikoszfingolipid receptorokhoz (Gb3/Gb4) kötődik az érfal sejtjein."
+      explanation: "Sertésben nincs transzplacentáris ellenanyag-átvitel, csak a föcstejjel."
     },
     {
       id: "ecoli_23",
-      topic: "E. coli - Hasmenés",
-      type: "bool",
-      question: "A hőlabilis toxin (LT) szerkezetileg és hatásában hasonlít a kolera-toxinhoz.",
-      options: ["Igaz", "Hamis"],
-      correctAnswer: 0,
-      explanation: "Igaz. Mindkettő AB5 típusú toxin és az adenilát-cikláz aktiválásával okoz hasmenést."
+      topic: "E. coli",
+      type: "mcq",
+      question: "Melyik elem adagolása segít megelőzni a választási hasmenést?",
+      options: ["Vas", "Cink (Cink-oxid formájában)", "Réz", "Arany"],
+      correctAnswer: 1,
+      explanation: "A cink-oxid (ZnO) gátolja az E. coli tapadását és szaporodását a bélben."
     },
     {
       id: "ecoli_24",
-      topic: "E. coli - Ödémabetegség",
+      topic: "E. coli",
       type: "mcq",
-      question: "Melyik korosztályban a LEGGYAKORIBB az ödémabetegség?",
-      options: ["1 napos malacok", "Választás után 1-2 héttel", "Felnőtt kocák", "Vágásérett hízók"],
+      question: "Mit jelent a 'virulenciagén'?",
+      options: ["A baktérium színét kódolja", "A betegségokozó képességért felelős tényezőt (pl. toxint) kódol", "A baktérium halálát okozza", "Semmit"],
       correctAnswer: 1,
-      explanation: "Az ödémabetegség tipikusan a választás körüli időszak betegsége."
+      explanation: "Ezek a gének teszik a békés E. colit kórokozóvá."
     },
     {
       id: "ecoli_25",
-      topic: "E. coli - Diagnózis",
+      topic: "E. coli",
       type: "mcq",
-      question: "Milyen pH jellemző az E. coli okozta hasmenéses béltartalomra?",
-      options: ["Erősen savas", "Lúgos (alkalikus)", "Semleges", "Nincs pH-ja"],
+      question: "Mi a teendő ha egy egész alom hasmenéses?",
+      options: ["Csak az egyiket kezelni", "Az egész almot kezelni és a környezetet rendbetenni", "Várni", "Kocát eladni"],
       correctAnswer: 1,
-      explanation: "A szekréciós hasmenésnél a béltartalom általában lúgos (ellentétben a vírusos hasmenéssel)."
+      explanation: "A csoportos kezelés és a higiénia javítása elengedhetetlen."
     },
     {
       id: "ecoli_26",
-      topic: "E. coli - Általános",
+      topic: "E. coli",
       type: "mcq",
-      question: "Melyik családba tartozik az Escherichia coli?",
-      options: ["Pasteurellaceae", "Enterobacteriaceae", "Bacillaceae", "Clostridiaceae"],
-      correctAnswer: 1,
-      explanation: "Az E. coli az Enterobacteriaceae család tagja."
+      question: "Melyik toxin hőlabilis (LT)?",
+      options: ["Hőre érzékeny fehérje", "Hőnek ellenálló zsír", "Cukor", "Vitaminkomplex"],
+      correctAnswer: 0,
+      explanation: "Az LT toxin hőhatásra elbomlik (denaturálódik)."
     },
     {
       id: "ecoli_27",
-      topic: "E. coli - Virulencia",
+      topic: "E. coli",
       type: "mcq",
-      question: "Melyik antigén felelős a baktérium csillójáért (H-antigén)?",
-      options: ["O-antigén", "K-antigén", "H-antigén", "F-antigén"],
-      correctAnswer: 2,
-      explanation: "A H-antigén a baktérium ostorát (flagellum) alkotó fehérje."
+      question: "Milyen táptalajon nő jól az E. coli?",
+      options: ["Csak speciális csokoládé agaron", "Egyszerű táptalajokon is (pl. véres agar, MacConkey)", "Csak vírusokon", "Soha nem nő"],
+      correctAnswer: 1,
+      explanation: "Az E. coli nem igényes, általános laboratóriumi táptalajokon jól tenyészthető."
     },
     {
       id: "ecoli_28",
-      topic: "E. coli - Virulencia",
+      topic: "E. coli",
       type: "bool",
-      question: "Az O-antigén a baktérium külső membránjában lévő lipopoliszacharid (LPS).",
+      question: "Minden E. coli törzs betegséget okoz.",
       options: ["Igaz", "Hamis"],
-      correctAnswer: 0,
-      explanation: "Igaz. Ez az endotoxin részét képező szomatikus antigén."
+      correctAnswer: 1,
+      explanation: "Hamis, a legtöbb E. coli békés lakója a bélcsatornának."
     },
     {
       id: "ecoli_29",
-      topic: "E. coli - Hasmenés",
+      topic: "E. coli",
       type: "mcq",
-      question: "Hogyan hat az STa toxin a bélsejtekben?",
-      options: ["cAMP szintet emel", "cGMP szintet emel", "Bénítja az izmokat", "Roncsolja a sejtmagot"],
+      question: "Mi a 'malabszorpció'?",
+      options: ["Sok evés", "Felszívódási zavar", "Hányás", "Láz"],
       correctAnswer: 1,
-      explanation: "Az STa hőstabil toxin a cGMP szint emelésével okoz hasmenést."
+      explanation: "A bélhám károsodása (pl. EPEC esetén) miatt a tápanyagok nem szívódnak fel megfelelően."
     },
     {
       id: "ecoli_30",
-      topic: "E. coli - Hasmenés",
+      topic: "E. coli",
       type: "mcq",
-      question: "Milyen állapotot okoz a gyors folyadékvesztés malacokban?",
-      options: ["Lázat", "Exsiccosis (kiszáradás)", "Elhízást", "Bőrpírt"],
+      question: "Hány óra alatt ad eredményt a tenyésztés?",
+      options: ["1 óra", "18-24 óra", "1 hét", "1 hónap"],
       correctAnswer: 1,
-      explanation: "A nagy mennyiségű vízvesztés miatt a malacok szeme beesik, bőrük rugalmatlan lesz (kiszáradás)."
+      explanation: "Az E. coli gyorsan növő baktérium, egy nap alatt látható telepeket képez."
     },
     {
       id: "ecoli_31",
-      topic: "E. coli - Ödémabetegség",
+      topic: "E. coli",
       type: "mcq",
-      question: "Miért 'jó kondíciójú' malacoknál jelentkezik leggyakrabban az ödémabetegség?",
-      options: ["Mert ők esznek a legtöbbet, így több baktérium és toxin jut be", "Mert nekik gyengébb a szívük", "Mert ők többet mozognak", "Nincs ilyen összefüggés"],
-      correctAnswer: 0,
-      explanation: "A bőséges takarmányfelvétel kedvez az E. coli gyors elszaporodásának a bélben."
+      question: "Melyik fimbria receptorai 'kopnak le' a malacról az életkor előrehaladtával?",
+      options: ["F18", "F5 (K99)", "F4", "AIDA"],
+      correctAnswer: 1,
+      explanation: "Az F5 receptorai csak az élet első napjaiban vannak jelen, ezért az újszülöttekre jellemző."
     },
     {
       id: "ecoli_32",
-      topic: "E. coli - Általános",
-      type: "bool",
-      question: "Az E. coli képes a laktóz fermentálására.",
-      options: ["Igaz", "Hamis"],
-      correctAnswer: 0,
-      explanation: "Igaz. Ez fontos bélyeg a laboratóriumi azonosítás során."
+      topic: "E. coli",
+      type: "mcq",
+      question: "Milyen hatással van a stressz a választási colihasmenésre?",
+      options: ["Csökkenti a kockázatot", "Súlyosbítja a tüneteket és hajlamosít", "Nincs hatása", "Csak a kanokra hat"],
+      correctAnswer: 1,
+      explanation: "A stressz gyengíti a bélnyálkahártya védelmét."
     },
     {
       id: "ecoli_33",
-      topic: "E. coli - Ödémabetegség",
+      topic: "E. coli",
       type: "mcq",
-      question: "Hol látható a legkifejezettebb ödéma a boncoláskor ödémabetegségben?",
-      options: ["A tüdőben", "A gyomor falában (curvatura major)", "A lábakon", "A májban"],
+      question: "Miért fontos a köldökfertőtlenítés?",
+      options: ["Esztétika", "A szeptikémiát okozó (ExPEC) Colik bejutásának gátlása", "Hogy ne legyen büdös", "Semmiért"],
       correctAnswer: 1,
-      explanation: "A gyomorfal (cardia tájék) ödémája klasszikus kórbonctani elváltozás."
+      explanation: "A friss köldökcsonk nyitott kapu a baktériumok számára a véráram felé."
     },
     {
       id: "ecoli_34",
-      topic: "E. coli - Diagnózis",
-      type: "mcq",
-      question: "Milyen táptalajon mutatnak az E. coli telepek jellegzetes metálfényű csillogást?",
-      options: ["Véragar", "EMB agar (eozin-metilénkék)", "McConkey agar", "S-S agar"],
-      correctAnswer: 1,
-      explanation: "Az EMB agaron az erős savtermelés miatt fémes zöld csillogás látható."
+      topic: "E. coli",
+      type: "bool",
+      question: "Az E. coli fakultatív anaerob.",
+      options: ["Igaz", "Hamis"],
+      correctAnswer: 0,
+      explanation: "Igaz, oxigénnel és anélkül is szaporodik."
     },
     {
       id: "ecoli_35",
-      topic: "E. coli - Megelőzés",
+      topic: "E. coli",
       type: "mcq",
-      question: "Mi a célja a szerves savak (pl. tejsav, hangyasav) ivóvízbe adagolásának?",
-      options: ["A víz ízesítése", "A pH csökkentése, ami gátolja az E. coli szaporodását", "Vitaminpótlás", "A malacok nyugtatása"],
+      question: "Mi a 'csapzott' hát oka?",
+      options: ["Sok víz", "Dehidráció (kiszáradás) miatt a bőr rugalmassága csökken és a szőr borzolt lesz", "Sár", "Helytelen fésülés"],
       correctAnswer: 1,
-      explanation: "Az alacsony pH kedvezőtlen a Gram-negatív kórokozók számára."
+      explanation: "A folyadékvesztés tipikus külső jele malacokban."
     },
     {
       id: "ecoli_36",
-      topic: "E. coli - Megelőzés",
-      type: "bool",
-      question: "A cink-oxid (ZnO) terápiás dózisú alkalmazását az EU-ban betiltották környezetvédelmi okok miatt.",
-      options: ["Igaz", "Hamis"],
-      correctAnswer: 0,
-      explanation: "Igaz. A környezeti terhelés miatt ma már más alternatívákat kell keresni."
+      topic: "E. coli",
+      type: "mcq",
+      question: "Mit tartalmaznak a malacoknak szánt orális vakcinák?",
+      options: ["Mérget", "Legyengített, nem toxintermelő E. coli törzseket", "Csak vizet", "Antibiotikumot"],
+      correctAnswer: 1,
+      explanation: "Ezek a törzsek versengenek a patogénekkel a bélben (kompetitív kizárás)."
     },
     {
       id: "ecoli_37",
-      topic: "E. coli - Hasmenés",
+      topic: "E. coli",
       type: "mcq",
-      question: "Melyik szerotípus okoz leggyakrabban újszülöttkori colibacillosist?",
-      options: ["O138, O139", "O8, O141, O147, O149", "O157", "O1"],
+      question: "Melyik enzimcsoport bontja le a penicillineket bizonyos Colikban?",
+      options: ["Lipáz", "Béta-laktamázok", "Proteáz", "Amiláz"],
       correctAnswer: 1,
-      explanation: "Ezek a klasszikus ETEC szerocsoportok sertésben."
+      explanation: "A béta-laktamáz termelés a rezisztencia egyik fő oka."
     },
     {
       id: "ecoli_38",
-      topic: "E. coli - Virulencia",
+      topic: "E. coli",
       type: "mcq",
-      question: "Mi a K-antigén a baktériumon?",
-      options: ["A csilló", "A tok (kapszula)", "A sejtfal", "A plazmid"],
+      question: "Mi jellemző a gyomor állapotára boncoláskor újszülött colinál?",
+      options: ["Üres", "Tejjel telt (az állat evett, nem az étvágytalanság a baj)", "Vérzik", "Kilyukadt"],
       correctAnswer: 1,
-      explanation: "A K-antigén a baktérium tokját alkotó poliszacharid."
+      explanation: "A telt gyomor jelzi, hogy a folyamat olyan gyors, hogy még az emésztésre sem volt idő."
     },
     {
       id: "ecoli_39",
-      topic: "E. coli - Terápia",
+      topic: "E. coli",
       type: "mcq",
-      question: "Melyik antibiotikum csoportra jellemző a magas rezisztencia az E. coli törzseknél?",
-      options: ["Kolisztin", "Régi penicillinek és tetraciklinek", "Negyedik generációs cefalosporinok", "Karbapenemek"],
+      question: "Milyen antibiotikum-csoportba tartozik az enrofloxacin?",
+      options: ["Penicillin", "Fluorokinolon", "Aminoglikozid", "Makrolid"],
       correctAnswer: 1,
-      explanation: "A túlhasználat miatt a régebbi antibiotikumokra már nagyon sok törzs rezisztens."
+      explanation: "Széles spektrumú, jól penetráló antibiotikum."
     },
     {
       id: "ecoli_40",
-      topic: "E. coli - Ödémabetegség",
-      type: "mcq",
-      question: "Hogyan jut el a Shiga-toxin a bélből a szervekbe?",
-      options: ["A béltartalommal", "A vérárammal (toxémia)", "Idegpályákon", "Sehogy"],
-      correctAnswer: 1,
-      explanation: "A toxin felszívódik a vérbe és az erek falát károsítja testszerte."
+      topic: "E. coli",
+      type: "bool",
+      question: "Az E. coli szelektiv táptalajon (pl. MacConkey) is tenyészthető.",
+      options: ["Igaz", "Hamis"],
+      correctAnswer: 0,
+      explanation: "Igaz, a MacConkey agar segít elkülöníteni a laktóz-bontó baktériumokat."
     },
     {
       id: "ecoli_41",
-      topic: "E. coli - Megelőzés",
-      type: "bool",
-      question: "A probiotikumok a bélflóra egyensúlyának fenntartásával segítik a megelőzést.",
-      options: ["Igaz", "Hamis"],
-      correctAnswer: 0,
-      explanation: "Igaz. A jótékony baktériumok kiszorítják a patogén E. colit."
+      topic: "E. coli",
+      type: "mcq",
+      question: "Mit jelent a 'szekréció'?",
+      options: ["Felszívás", "Kiválasztás / Kiürítés", "Megállás", "Növekedés"],
+      correctAnswer: 1,
+      explanation: "A sók és víz sejtből való kiáramlását jelenti ebben a kontextusban."
     },
     {
       id: "ecoli_42",
-      topic: "E. coli - Általános",
+      topic: "E. coli",
       type: "mcq",
-      question: "Milyen oxigénigényű az E. coli?",
-      options: ["Obligát aerob", "Obligát anaerob", "Fakultatív anaerob", "Mikroaerofil"],
+      question: "Melyik patotípus okozhat húgyúti fertőzést kocákban?",
+      options: ["ETEC", "EPEC", "ExPEC", "STEC"],
       correctAnswer: 2,
-      explanation: "Az E. coli képes oxigénnel és anélkül is élni."
+      explanation: "Az ExPEC (UPEC alcsoport) gyakran okoz cystitist."
     },
     {
       id: "ecoli_43",
-      topic: "E. coli - Hasmenés",
+      topic: "E. coli",
       type: "mcq",
-      question: "Mit okozhat az E. coli szeptikémia újszülött malacokban?",
-      options: ["Csak hasmenést", "Hirtelen elhullást és ízület- vagy agyhártyagyulladást", "Szőrnövekedést", "Nincs hatása"],
-      correctAnswer: 1,
-      explanation: "Ha a baktérium bejut a vérbe, súlyos szervi gyulladásokat és gyors halált okoz."
+      question: "Mi a fimbria másik neve?",
+      options: ["Pilus", "Adhézin", "Burok", "Ostor"],
+      correctAnswer: 0,
+      explanation: "A fimbria és a pilus gyakran szinonimaként használatos fehérjefonalakat jelöl."
     },
     {
       id: "ecoli_44",
-      topic: "E. coli - Diagnózis",
+      topic: "E. coli",
       type: "mcq",
-      question: "Milyen színűek az E. coli telepek McConkey agaron?",
-      options: ["Színtelenek", "Rózsaszínűek (laktóz pozitív)", "Feketék", "Kékek"],
+      question: "Mi a teendő a malacokkal választás után, ha hűvös van?",
+      options: ["Kinyitni az ablakot", "Fűteni / Infralámpát adni", "Leönteni őket vízzel", "Semmi"],
       correctAnswer: 1,
-      explanation: "A laktóz-bontás miatt a telepek rózsaszínűek lesznek ezen a táptalajon."
+      explanation: "A meleg csökkenti a stresszt és segíti az emésztést."
     },
     {
       id: "ecoli_45",
-      topic: "E. coli - Virulencia",
+      topic: "E. coli",
       type: "mcq",
-      question: "Melyik toxin kódolása található gyakran plazmidon?",
-      options: ["Endotoxin", "LT és ST enterotoxinok", "Minden toxin", "Egyik sem"],
+      question: "Mit kódol az stx2e gén?",
+      options: ["Fimbriát", "Ödémabetegség toxinát (Shiga-toxin variáns)", "Inzulint", "Színanyagot"],
       correctAnswer: 1,
-      explanation: "Az enterotoxinok és fimbriák génjei gyakran mobilis genetikai elemeken (plazmidokon) vannak."
+      explanation: "Ez a toxin felelős az ödémabetegség súlyos tüneteiért."
     },
     {
       id: "ecoli_46",
-      topic: "E. coli - Megelőzés",
-      type: "bool",
-      question: "A malacok választás előtti stressz-mentesítése segít a PWD megelőzésében.",
-      options: ["Igaz", "Hamis"],
-      correctAnswer: 0,
-      explanation: "Igaz. A stressz (hideg, szállítás) rontja az immunrendszert és a bélműködést."
+      topic: "E. coli",
+      type: "mcq",
+      question: "Melyik antibiotikum adható takarmányba keverve?",
+      options: ["Csak a penicillin", "Neomycin", "Semelyik", "Inzulin"],
+      correctAnswer: 1,
+      explanation: "A neomycin vízben vagy takarmányban is alkalmazható tömegkezelésre."
     },
     {
       id: "ecoli_47",
-      topic: "E. coli - Általános",
+      topic: "E. coli",
       type: "mcq",
-      question: "Ki fedezte fel az E. colit?",
-      options: ["Louis Pasteur", "Robert Koch", "Theodor Escherich", "Alexander Fleming"],
-      correctAnswer: 2,
-      explanation: "Róla nevezték el a baktériumot (Escherichia)."
+      question: "Hogyan hat az intimin fehérje?",
+      options: ["Mérget termel", "Szoros kötődést és mikrobolyoh-pusztulást okoz", "Segíti a mozgást", "Sárgává teszi a bacit"],
+      correctAnswer: 1,
+      explanation: "Az EPEC törzsek jellemző virulenciafaktora."
     },
     {
       id: "ecoli_48",
-      topic: "E. coli - Hasmenés",
+      topic: "E. coli",
       type: "mcq",
-      question: "Mi a 'colostrum-depriváció' jelentése?",
-      options: ["Túl sok föcstej", "A föcstej felvételének hiánya vagy elégtelensége", "Egy új vakcina", "A koca betegsége"],
+      question: "Melyik korcsoportban a legritkább a colihasmenés okozta elhullás?",
+      options: ["Újszülött", "Hízó (idősebb korban)", "Választás után", "Soha nem ritka"],
       correctAnswer: 1,
-      explanation: "Ha a malac nem jut elég föcstejhez, védtelen marad az E. colival szemben."
+      explanation: "Az idősebb állatok ellenállóbbak és ritkábban száradnak ki végzetesen."
     },
     {
       id: "ecoli_49",
-      topic: "E. coli - Ödémabetegség",
-      type: "mcq",
-      question: "Milyen hőmérsékletű a malac teste ödémabetegségben?",
-      options: ["Magas láza van", "Gyakran normális vagy csak enyhén emelkedett", "Jéghideg", "Folyamatosan változik"],
-      correctAnswer: 1,
-      explanation: "Az ödémabetegség nem klasszikus gyulladásos lázas betegség, a toxin hatása dominál."
+      topic: "E. coli",
+      type: "bool",
+      question: "Az E. coli laktózbontó baktérium.",
+      options: ["Igaz", "Hamis"],
+      correctAnswer: 0,
+      explanation: "Igaz, a legtöbb törzs bontja a laktózt, ami fontos differenciáló bélyeg."
     },
     {
       id: "ecoli_50",
-      topic: "E. coli - Diagnózis",
+      topic: "E. coli",
       type: "mcq",
-      question: "Mit keresnek a PCR vizsgálat során az E. coli diagnosztikában?",
-      options: ["A baktérium súlyát", "Specifikus virulenciagének (toxinok, fimbriák) jelenlétét", "A baktérium színét", "Nincs ilyen vizsgálat"],
+      question: "Mi az összefoglalás lényege az E. coli fertőzéseknél?",
+      options: ["Nem lehet megelőzni", "Összetett menedzsment, higiénia és vakcinázás szükséges", "Csak az antibiotikum számít", "Minden coli egyforma"],
       correctAnswer: 1,
-      explanation: "A PCR-rel gyorsan azonosíthatók a patogén törzsekre jellemző gének."
+      explanation: "A sikeres védekezés a technológia és az immunizálás kombinációja."
     }
   ]
 };
